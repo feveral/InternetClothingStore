@@ -7,9 +7,11 @@ const ProductServer = require('./server/ProductServer.js')
 var db = mysql.createConnection({
   	host: "localhost",
   	user: "root",
-  	password: "5566",
+  	password: "timmy880925",
   	database: "Shtick"
 });
+
+
 
 var app = express();
 var apiServer = http.createServer(app);
