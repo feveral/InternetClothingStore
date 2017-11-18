@@ -1,17 +1,19 @@
 'use strict';
 
-const http = require('http');
 const ProductManager = require('./ProductManager.js');
+const querystring = require('querystring');
+const path = require('path');
+const url = require('url');
 
 module.exports = class{
 
 	constructor(app,db){
 		this.app = app;
 		this.productManager = new ProductManager(db);
-		this.setapi();
+		this.SetAPI();
 	}
 
-	setapi(){
+	SetAPI(){
 		var self = this;
 		self.app.all('*',function (req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
@@ -20,19 +22,39 @@ module.exports = class{
 			next();
 		});
 
-		// add an Pant
-		self.app.get('/add/pant',function(req,res){
-			self.productManager.addProduct(product,function(err,result){
-				if (err) 
+		// Get SubCategory from Category
+		self.app.get('/GET/subCategory/*/',function(req,res){
+			var category = path.basename(req.url);
+			console.log('category = ' , category);
+			self.productManager.GetSubCategoryByCategory(category,function(err,result){
+				if (err)
+				{
 					console.log(err);
+				} 
 				else
-					console.log(result);
-			}); 
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
 		});
 
-		//Get all pant
-		self.app.get('/pant',function(req,res){
-			self.productManager.getAllProductByCategory('LowerBody',function(err,result){
+		// Get all pant
+		self.app.get('/GET/product/workingPant',function(req,res){
+			self.productManager.GetAllProductBySubCategory('工作長褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get all Bottom product
+		self.app.get('GET/product/bottom',function(req,res){
+			self.productManager.GetAllProductByCategory('Bottom',function(err,result){
 				if (err)
 				{
 					console.log(err);

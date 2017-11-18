@@ -3,11 +3,10 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "GET",
-		url: "http://0.0.0.0:8080/pant",
+		url: "http://0.0.0.0:8080/GET/product/workingPant/",
 		data: "send",
 		dataType: 'text',
 		success: function(msg){
-
 	   		var object = JSON.parse(msg)
 	   		for (var i = 0; i < object['data'].length ; i++)
 	   		{
@@ -41,7 +40,3 @@ function productToHtml(product){
 
 	return html;
 }
-
-function productBasicHtml(){
-
-} 

@@ -58,7 +58,7 @@
 	[class*="col-"] {
 	    float: left;
 	    padding: 15px;
-	    border: 1px solid black;
+	    /*border: 1px solid black;*/
 	}
 
 	.row::after {
@@ -108,8 +108,8 @@
 
 	#main{
 		display: block;
-		margin-left: 10%;
-		margin-right: 10%;
+		margin-left: 13%;
+		margin-right: 13%;
 	}
 
 	#product{
@@ -170,3 +170,20 @@
 		#header nav {
 			height: 100%;
 		}
+
+/*SubHeader*/
+
+	#subHeader{
+		text-align: center;
+		margin: 30px;
+	}
+
+	#subHeader a {
+		text-decoration:underline;
+		color: black;
+		font-size: 20px;
+		padding: 10px;
+	}
+
+
+

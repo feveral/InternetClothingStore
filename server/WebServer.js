@@ -4,6 +4,7 @@ const parse = require('url').parse;
 const path = require('path');
 const http = require('http');
 const fs = require('fs');
+const querystring = require('querystring');
 
 const fileTypes = {
     ".html": "text/html",
@@ -25,7 +26,7 @@ module.exports = class{
 	createWebServer(self){
 
 		http.createServer(function(req,res){
-			var url = parse(req.url);
+			var url = parse(decodeURI(req.url));
 			var filePath = path.join(self.root,url.pathname);
 			var fileType = fileTypes[path.extname(filePath)];
 			var ACAO = "Access-Control-Allow-Origin";

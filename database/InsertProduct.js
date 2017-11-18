@@ -1,1 +1,0 @@
-require('./InsertProductBottomPant.js');
