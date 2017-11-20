@@ -10,10 +10,10 @@ module.exports = class{
 	constructor(app,db){
 		this.app = app;
 		this.productManager = new ProductManager(db);
-		this.SetAPI();
+		this.SetAllAPI();
 	}
 
-	SetAPI(){
+	SetAllAPI(){
 		var self = this;
 		self.app.all('*',function (req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
@@ -37,8 +37,8 @@ module.exports = class{
 			});
 		});
 
-		// Get all pant
-		self.app.get('/GET/product/workingPant',function(req,res){
+		// Get product which subHeader is workingPant
+		self.app.get('/GET/product/WorkingPant',function(req,res){
 			self.productManager.GetAllProductBySubCategory('工作長褲',function(err,result){
 				if (err)
 				{
@@ -51,8 +51,64 @@ module.exports = class{
 			});
 		});
 
+		// Get product which subHeader is cowBoyShorts
+		self.app.get('/GET/product/CowBoyShorts',function(req,res){
+			self.productManager.GetAllProductBySubCategory('牛仔短褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is plainTee
+		self.app.get('/GET/product/PlainTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面大學TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is plainHatLongTee
+		self.app.get('/GET/product/PlainHatLongTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面連帽TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is plainTee
+		self.app.get('/GET/product/PlainRoundNeckTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面圓領長TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		// Get all Bottom product
-		self.app.get('GET/product/bottom',function(req,res){
+		self.app.get('/GET/product/Bottom',function(req,res){
 			self.productManager.GetAllProductByCategory('Bottom',function(err,result){
 				if (err)
 				{
@@ -64,5 +120,20 @@ module.exports = class{
 				}
 			});
 		});
+
+		// Get all Top product
+		self.app.get('/GET/product/Top',function(req,res){
+			self.productManager.GetAllProductByCategory('Top',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 	}
 }

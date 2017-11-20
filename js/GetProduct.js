@@ -1,39 +1,45 @@
 
-$(document).ready(function(){
-
-	$.ajax({
-		type: "GET",
-		url: "http://0.0.0.0:8080/GET/product/workingPant/",
-		success: function(msg){
-	   		var object = JSON.parse(msg)
-	   		var productArray = [];
-	   		var productList = [];
-	   		for (var i = 0; i < object['data'].length ; i++)
-	   			isNotRepeat(object['data'][i], productList);
-	   		for (var i = 0; i< productList.length ; i++)
-	   		 	$("#main").append(productToHtml(productList[i]));
-	   	},
-	   	error: function(xhr, textStatus, error){
-	        console.log(xhr.statusText);
-	   	}
+function GetProduct(categoryOrSubCategory){
+	$(document).ready(function(){
+		$.ajax({
+			type: "GET",
+			url: "http://0.0.0.0:8080/GET/product/" + categoryOrSubCategory,
+			success: function(msg){
+				$("#main").empty();
+		   		var object = JSON.parse(msg)
+		   		var productArray = [];
+		   		var productList = [];
+		   		for (var i = 0; i < object['data'].length ; i++)
+		   			isNotRepeat(object['data'][i], productList);
+		   		for (var i = 0; i< productList.length ; i++)
+		   		 	$("#main").append(productToHtml(productList[i]));
+		   	},
+		   	error: function(xhr, textStatus, error){
+		        console.log(xhr.statusText);
+		   	}
+		});
 	});
-});
-
+}
 
 function isNotRepeat(product, productList){
 	var theSame = 0;
-	if(productList.length == 0)
+	if(productList.length == 0)	
+	{
 		AddNewProduct(product, productList);
-	else{
-		for(var i = 0; i <= productList.length - 1; i++){
+	}
+	else
+	{
+		for(var i = 0; i <= productList.length - 1; i++)
+		{
 			if(productList[i]['Name'] + productList[i]['Color'] == product['Name'] + product['Color'])
 			{
 				theSame = 1;
 				productList[i]['Size'].push(product['Size']); 	
 			}
 		}
-		if(theSame != 1)
+		if(theSame != 1){
 			AddNewProduct(product, productList);
+		}
 		theSame = 0;
 	}
 }
