@@ -2,7 +2,6 @@
 
 var DatabaseUtility = require('./DatabaseUtility.js');
 
-
 var dropTableProduct = 
 	"DROP TABLE IF EXISTS PRODUCT;"
 var createProduct = 
