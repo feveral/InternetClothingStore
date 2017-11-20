@@ -21,3 +21,10 @@ exports.ExecuteSQLCommand = function(command){
 			console.log(result);
 	});
 }
+
+exports.callback = function(err,result){
+	if(err)
+		console.log(err)
+	else
+		console.log(result)
+}

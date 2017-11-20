@@ -4,15 +4,8 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
-function callback(err,result){
-	if(err)
-		console.log(err)
-	else
-		console.log(result)
-}
-
-var subCategory = 'Bottom' 
-var category = '工作長褲'
+var subCategory = 'Bottom';
+var category = '工作長褲';
 
 productManager.AddProductIterately(
 	{
@@ -29,7 +22,7 @@ productManager.AddProductIterately(
 	},
 	['黑色'],
 	['30','32','34','36'],
-	callback
+	DatabaseUtility.callback
 );
 
 productManager.AddProductIterately(
@@ -47,7 +40,7 @@ productManager.AddProductIterately(
 	},
 	['紫色','綠色','黃色','黑色'],
 	['XL'],
-	callback
+	DatabaseUtility.callback
 );
 
 productManager.AddProductIterately(
@@ -65,7 +58,7 @@ productManager.AddProductIterately(
 	},
 	['黑色'],
 	['M','L','XL','2XL'],
-	callback
+	DatabaseUtility.callback
 );
 
 productManager.AddProductIterately(
@@ -83,7 +76,7 @@ productManager.AddProductIterately(
 	},
 	['綠色'],
 	['32'],
-	callback
+	DatabaseUtility.callback
 );
 
 productManager.AddProductIterately(
@@ -101,5 +94,5 @@ productManager.AddProductIterately(
 	},
 	['卡其','深藍','綠色'],
 	['30','32','34','36'],
-	callback
+	DatabaseUtility.callback
 );
