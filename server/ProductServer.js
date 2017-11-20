@@ -25,7 +25,6 @@ module.exports = class{
 		// Get SubCategory from Category
 		self.app.get('/GET/subCategory/*/',function(req,res){
 			var category = path.basename(req.url);
-			console.log('category = ' , category);
 			self.productManager.GetSubCategoryByCategory(category,function(err,result){
 				if (err)
 				{
