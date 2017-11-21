@@ -7,3 +7,4 @@ require('./InsertProductBasicPlainTee.js');
 require('./InsertProductBasicPlainRoundNeckTee.js');
 require('./InsertProductBasicPlainHatLongTee.js');
 require('./InsertProductBaseBallCoat.js');
+require('./InsertProductAccessoriesHat.js');
