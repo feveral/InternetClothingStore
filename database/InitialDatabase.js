@@ -6,5 +6,6 @@ require('./InsertProductBottomCowBoyShorts.js');
 require('./InsertProductBasicPlainTee.js');
 require('./InsertProductBasicPlainRoundNeckTee.js');
 require('./InsertProductBasicPlainHatLongTee.js');
-require('./InsertProductBaseBallCoat.js');
+require('./InsertProductCoatBaseBallCoat.js');
 require('./InsertProductAccessoriesHat.js');
+require('./InsertProductCoatFlightCoat.js');
