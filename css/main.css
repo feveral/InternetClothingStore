@@ -112,7 +112,7 @@
 		margin-left: 13%;
 		margin-right: 13%;
 	}
-
+/*
 	#product{
 		display: inline-block;
 		text-align: center;
@@ -144,26 +144,26 @@
 		height: 100%;
 		margin-bottom: 10px;
 	}
-
-	#main_v2{
+*/
+	#main{
 		display: block;
 		margin-left: 13%;
 		margin-right: 13%;
 	}
 
-	#product_v2{
+	#product{
 		display: inline-block;
 	}
 
-	#productName_v2{
+	#productName{
 		padding-bottom: 3px;
 	}
 
-	#productSize_v2{
+	#productSize{
 		text-align: right;
 	}
 
-	#productSize_v2 a{
+	#productSize a{
 		color: black;
 		border: 1px solid black;
 		padding-left: 2px;
