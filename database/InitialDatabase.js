@@ -9,3 +9,6 @@ require('./InsertProductBasicPlainHatLongTee.js');
 require('./InsertProductCoatBaseBallCoat.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductCoatFlightCoat.js');
+require('./InsertProductCoatCowboyCoat.js');
+require('./InsertProductCoatHoodedCoat.js');
+require('./InsertProductCoatWindCoat.js');
