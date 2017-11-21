@@ -5,7 +5,7 @@ var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
 var category = 'Accessories';
-var subCategory = '手機殼';
+var subCategory = '背包';
 
 productManager.AddProductIterately(
 	{
