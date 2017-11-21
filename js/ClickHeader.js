@@ -42,6 +42,24 @@ function GetSubHeaderEnglish(subHeader){
 	else if(subHeader == '牛仔短褲'){
 		return 'CowBoyShorts';
 	}
+	else if(subHeader == '棒球外套'){
+		return 'BaseBallCoat';
+	}
+	else if(subHeader == '飛行外套'){
+		return 'FlightCoat';
+	}
+	else if(subHeader == '帽子'){
+		return 'Hat';
+	}
+	else if(subHeader == 'Bottom'){
+		return 'Bottom';
+	}
+	else if(subHeader == 'Top'){
+		return 'Top';
+	}
+	else if(subHeader == 'Basic'){
+		return 'Basic';
+	}
 	else{
 		return '';
 	}
