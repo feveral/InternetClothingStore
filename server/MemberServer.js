@@ -26,9 +26,4 @@ module.exports = class MemberServer{
 			res.end('you get all member');
 		});
 	}
-
-
-
-
-
 }
