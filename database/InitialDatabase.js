@@ -13,3 +13,4 @@ require('./InsertProductCoatHoodedCoat.js');
 require('./InsertProductCoatWindCoat.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductAccessoriesScoks.js');
+require('./InsertProductAccessoriesAccessories.js');
