@@ -1,9 +1,9 @@
 
-function ClickCategoryHeader(catagoey){
+function ClickHeader(catagoey){
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: "http://0.0.0.0:8080/GET/subCategory/" + catagoey,
+			url: GetServerUrl() + "/GET/subCategory/" + catagoey,
 			success: function(msg){
 				var object = JSON.parse(msg);
 				$("#subHeader").empty();

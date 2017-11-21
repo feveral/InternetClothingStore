@@ -1,9 +1,11 @@
 'use strict';
 
+const DatabaseUtility = require('../database/DatabaseUtility.js')
+
 module.exports = class ProductManager{
 
-	constructor(db){
-		this.db = db
+	constructor(){
+		this.db = DatabaseUtility.Getdb();
 	}
 
 	AddProduct(attribute,callback){

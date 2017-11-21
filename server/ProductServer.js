@@ -1,19 +1,18 @@
 'use strict';
 
 const ProductManager = require('./ProductManager.js');
-const querystring = require('querystring');
 const path = require('path');
 const url = require('url');
 
 module.exports = class{
 
-	constructor(app,db){
+	constructor(app){
 		this.app = app;
-		this.productManager = new ProductManager(db);
-		this.SetAllAPI();
+		this.productManager = new ProductManager();
+		this.SetAPI();
 	}
 
-	SetAllAPI(){
+	SetAPI(){
 		var self = this;
 		self.app.all('*',function (req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
@@ -124,6 +123,20 @@ module.exports = class{
 		// Get all Top product
 		self.app.get('/GET/product/Top',function(req,res){
 			self.productManager.GetAllProductByCategory('Top',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get all Basic product
+		self.app.get('/GET/product/Basic',function(req,res){
+			self.productManager.GetAllProductByCategory('Basic',function(err,result){
 				if (err)
 				{
 					console.log(err);

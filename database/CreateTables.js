@@ -19,5 +19,17 @@ var createProduct =
 	    "PRIMARY KEY (Id)" + 
 	");";
 
+var createMember = 
+	"CREATE TABLE MEMBER" + 
+		"(Id INT NOT NULL AUTO_INCREMENT , " +
+		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " +
+		"MemberType , " +
+		"Email VARCHAR(255) NOT NULL , " + 
+		"Cellphone CHAR(10) NOT NULL ," + 
+		"Password VARCHAR(255) NOT NULL , " +
+		"Address VARCHAR(255) CHARACTER SET utf8 ,"+
+		"PRIMARY KEY (Id)" + 
+	");";
+
 DatabaseUtility.ExecuteSQLCommand(dropTableProduct);
 DatabaseUtility.ExecuteSQLCommand(createProduct);

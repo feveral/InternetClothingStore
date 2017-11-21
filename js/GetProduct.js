@@ -3,7 +3,7 @@ function GetProduct(categoryOrSubCategory){
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: "http://0.0.0.0:8080/GET/product/" + categoryOrSubCategory,
+			url: GetServerUrl() + "/GET/product/" + categoryOrSubCategory,
 			success: function(msg){
 				$("#main").empty();
 		   		var object = JSON.parse(msg)
@@ -37,7 +37,8 @@ function isNotRepeat(product, productList){
 				productList[i]['Size'].push(product['Size']); 	
 			}
 		}
-		if(theSame != 1){
+		if(theSame != 1)
+		{
 			AddNewProduct(product, productList);
 		}
 		theSame = 0;
