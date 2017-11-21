@@ -14,3 +14,5 @@ require('./InsertProductCoatWindCoat.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductAccessoriesScoks.js');
 require('./InsertProductAccessoriesAccessories.js');
+require('./InsertProductAccessoriesPhoneCase.js');
+require('./InsertProductAccessoriesBag.js');
