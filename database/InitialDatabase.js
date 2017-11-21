@@ -8,5 +8,8 @@ require('./InsertProductBasicPlainRoundNeckTee.js');
 require('./InsertProductBasicPlainHatLongTee.js');
 require('./InsertProductCoatBaseBallCoat.js');
 require('./InsertProductCoatFlightCoat.js');
+require('./InsertProductCoatCowboyCoat.js');
+require('./InsertProductCoatHoodedCoat.js');
+require('./InsertProductCoatWindCoat.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductAccessoriesScoks.js');
