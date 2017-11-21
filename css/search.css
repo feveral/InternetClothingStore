@@ -9,6 +9,7 @@
 		font: inherit;
 		vertical-align: baseline;
 		font-family: 'Microsoft JhengHei', MingLiU, Arial;
+		display: inline-block;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -16,6 +17,7 @@
 	}
 
 	body {
+		width: 100%;
 		line-height: 1;
 	}
 
@@ -105,3 +107,29 @@
 	}
 
 /* Main */
+
+	#header{
+		display: block;
+		width: 100%;
+	}
+
+	#logo{
+
+	}
+
+	#mainMenu{
+		height: 139px;
+	}
+
+	#mainMenu p{
+		font-family: 'Larsseit',Helvetica,sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		cursor: pointer;
+		letter-spacing: 1px;
+		padding-right: 10px;
+	}
+
+	#feature{
+		height: 139px;
+	}
