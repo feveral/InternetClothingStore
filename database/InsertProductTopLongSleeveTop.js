@@ -104,7 +104,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['黑白','白色','橘色','灰色','空軍藍','緞彩灰','緞彩黑','黑白條','藍白條','灰白條'],
+	['黑色','白色','橘色','灰色','空軍藍','緞彩灰','緞彩黑','黑白條','藍白條','灰白條'],
 	['S','M','L','XL'],
 	DatabaseUtility.callback
 );
