@@ -1,0 +1,221 @@
+
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	a{
+		text-decoration:none;
+		color: black;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+/* Header */
+
+	#header{
+		display: block;
+		text-align: center;
+		height: 60px;
+		line-height: 60px;
+		background-color: #333;
+	}
+
+		#header a {
+			font-size: 20px;
+			height: 100%;
+			text-align: center;
+			display: inline-block;
+			padding: 0px 20px 0px 20px;
+			color: white;
+		}
+
+		#header a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		#header nav {
+			height: 100%;
+		}
+
+/*SubHeader*/
+
+	#subHeader{
+		text-align: center;
+		margin: 30px;
+	}
+
+	#subHeader a {
+		text-decoration:underline;
+		color: black;
+		font-size: 20px;
+		padding: 10px;
+	}
+
+/*Product*/
+
+	#product p{
+		margin-top: 2%;
+		margin-bottom: 3%;
+	}
+
+	#product a:hover {
+		background: black;
+		color: white;
+		cursor: pointer;
+	}
+
+	#product a.button{
+		display:inline-block;
+		font-size: 14px;
+		border: 1px solid black;
+		padding-left: 10%;
+		padding-right: 10%;
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	#product a.sizeButton{
+		display:inline-block;
+		font-size: 14px;
+		border: 1px solid black;
+		padding-left: 3%;
+		padding-right: 3%;
+		padding-top: 1.5%;
+		padding-bottom: 1.5%;
+		margin-bottom: 3%;
+	}
+
+/*ProductImage*/
+
+	#productImage{
+		float: left;
+		width: 50%;
+	}
+
+	#productImage img {
+		width : 60%;
+		padding-left: 40%;
+	}
+
+/*ProductInformation*/
+	#productInformation{
+		padding-top: 6%;
+		float: right; 
+		width: 45%;
+	}
+
+/*ProductName*/
+	#productName{
+		font-weight: bolder;
+		font-size: 20px;
+	}
+
+/*ProductPrice*/
+	#productPrice{
+		display:inline-block;
+		width: 32%;
+		border-bottom: 1px black solid;
+		margin-bottom: 3%;
+	}
+
+/*ProductColorDiv*/
+	#productColorDiv{
+		display:inline-block;
+		float: left;
+		width: 20%;
+	}
+
+/*ProductSizeDiv*/
+	#selectSizeDiv{
+		display:inline-block;
+		float: right;
+		width: 80%;
+	}
+
+/*Color*/
+	#color{
+		display: inline-block;
+		border: 1px solid black;
+		font-size: 14px;
+		margin-top: 2%;
+		margin-bottom: 3%;
+	}
+
+/*ProductColor*/
+	div.productColor{
+		background-color: green;
+		width: 20px;
+		height: 20px;
+		margin-top: 5%;
+		margin-bottom: 3%;
+	}
+
+	div.productColor:active {
+		border: 1px solid black;
+		background-color: yellow;
+	}
+
+
+/*Productquantity*/
+	#productQuantity{
+		margin-bottom: 3%;
+	}
+
+	#productQuantity a{
+		display: inline-block;
+		height: 25px;
+		text-align: center;
+		width: 4%;
+		background: gray;
+		vertical-align: top;
+		cursor: pointer;
+		line-height: 20px;
+	}
+
+	#itemQuantity{
+		width: 5%;
+		text-align: center; 
+		margin-left: -4px;
+		margin-right: -4px;
+		line-height: 20px;
+		padding-left: 3%;
+		padding-right:  3%;
+		vertical-align: top;
+	}
+

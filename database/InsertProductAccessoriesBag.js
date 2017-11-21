@@ -5,13 +5,13 @@ var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
 var category = 'Accessories';
-var subCategory = '帽子';
+var subCategory = '手機殼';
 
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',
-		Name:"KNOW_ME棒球帽",
-		Price:390,
+		Name:"簡約純色帆布包",
+		Price:780,
 		Color:'',
 		Size:'',
 		Stock:0,
@@ -27,8 +27,8 @@ productManager.AddProductIterately(
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',
-		Name:"街頭條繩字母長尾老帽",
-		Price:397,
+		Name:"魔術貼撞色旅行後背包",
+		Price:880,
 		Color:'',
 		Size:'',
 		Stock:0,
@@ -36,7 +36,7 @@ productManager.AddProductIterately(
 		SubCategory: subCategory,
 		ImagePath:''
 	},
-	['黃色'],
+	['藍色','灰色'],
 	['F'],
 	DatabaseUtility.callback
 );
@@ -44,8 +44,8 @@ productManager.AddProductIterately(
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',
-		Name:"AIR_HOME棒球帽",
-		Price:390,
+		Name:"防盜隱形啤酒肚包",
+		Price:790,
 		Color:'',
 		Size:'',
 		Stock:0,
@@ -53,7 +53,7 @@ productManager.AddProductIterately(
 		SubCategory: subCategory,
 		ImagePath:''
 	},
-	['白色','黑色'],
+	['卡其'],
 	['F'],
 	DatabaseUtility.callback
 );
@@ -61,8 +61,8 @@ productManager.AddProductIterately(
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',
-		Name:"後扣棒球帽",
-		Price:290,
+		Name:"多功能電腦USB充電雙肩包",
+		Price:1280,
 		Color:'',
 		Size:'',
 		Stock:0,
@@ -70,7 +70,7 @@ productManager.AddProductIterately(
 		SubCategory: subCategory,
 		ImagePath:''
 	},
-	['寶藍色','暗紅色','深藍色','白色','粉色'],
+	['灰色','黑色'],
 	['F'],
 	DatabaseUtility.callback
 );
