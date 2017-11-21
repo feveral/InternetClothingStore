@@ -4,8 +4,8 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
-var subCategory = 'Bottom';
-var category = '工作長褲';
+var category = 'Bottom';
+var subCategory = '工作長褲';
 
 productManager.AddProductIterately(
 	{
@@ -16,8 +16,8 @@ productManager.AddProductIterately(
 		Color:'black',
 		Size:'30',
 		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
+		Category: category,
+		SubCategory: subCategory,
 		ImagePath:''
 	},
 	['黑色'],
@@ -34,8 +34,8 @@ productManager.AddProductIterately(
 		Color:'',
 		Size:'',
 		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
+		Category: category,
+		SubCategory: subCategory,
 		ImagePath:''
 	},
 	['紫色','綠色','黃色','黑色'],
@@ -52,8 +52,8 @@ productManager.AddProductIterately(
 		Color:'',
 		Size:'',
 		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
+		Category: category,
+		SubCategory: subCategory,
 		ImagePath:''
 	},
 	['黑色'],
@@ -70,8 +70,8 @@ productManager.AddProductIterately(
 		Color:'',
 		Size:'',
 		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
+		Category: category,
+		SubCategory: subCategory,
 		ImagePath:''
 	},
 	['綠色'],
@@ -88,8 +88,8 @@ productManager.AddProductIterately(
 		Color:'',
 		Size:'',
 		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
+		Category: category,
+		SubCategory: subCategory,
 		ImagePath:''
 	},
 	['卡其','深藍','綠色'],

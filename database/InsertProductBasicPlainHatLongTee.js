@@ -4,14 +4,14 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
-var subCategory = 'Top' 
-var category = '素面圓領長TEE'
+var subCategory = 'Basic' 
+var category = '素面連帽TEE'
 
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820004',
-		Name:"SHTICK素面圓領長TEE",
-		Price:239,
+		Name:"SHTICK簡約多色連帽長TEE",
+		Price:980,
 		Color:'',
 		Size:'',
 		Stock:0,
@@ -19,7 +19,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['空軍藍','黑','白','灰','橘','緞彩灰','緞彩黑','黑白條','藍白條','灰白條'],
+	['麻花白','米黃','緞彩黑','藕粉','麻深藍','墨綠','深灰','黑色'],
 	['S','M','L','XL'],
 	DatabaseUtility.callback
 );

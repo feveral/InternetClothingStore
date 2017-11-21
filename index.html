@@ -11,9 +11,9 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
-	<script type="text/javascript" src="js/GetSubHeader.js"></script>
-	<script type="text/javascript" src="js/getProduct.js"></script>
-	<script type="text/javascript" src="js/addProduct.js"></script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
+	<script type="text/javascript" src="js/ClickHeader.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
 </head>
 
 <body>
@@ -21,22 +21,16 @@
 		<nav>
 			<a href="#">SALE</a>
 			<a href="#">NEW</a>
-			<a href="#" onclick="ClickTopCategoryHeader()">TOP</a>
-			<a href="#" onclick="ClickBottomCategoryHeader()">BOTTOM</a>
-			<a href="#" onclick="ClickCoatCategoryHeader()">COAT</a>
-			<a href="#" onclick="ClickAccessoriesCategoryHeader()">ACCESSORIES</a>
+			<a href="#" onclick="ClickHeader('Basic')">BASIC</a>
+			<a href="#" onclick="ClickHeader('Top')">TOP</a>
+			<a href="#" onclick="ClickHeader('Bottom')">BOTTOM</a>
+			<a href="#" onclick="ClickHeader('Coat')" >COAT</a>
+			<a href="#" onclick="ClickHeader('Accessories')">ACCESSORIES</a>
 			<a href="#">&#9776;</a>
 		</nav>
 	</header>
 
-	<div id="subHeader">
-		<a href="#">工作長褲</a>
-		<a href="#">牛仔短褲</a>
-		<a href="#">棉長褲</a>
-		<a href="#">牛仔褲</a>
-		<a href="#">棉短褲</a>
-		<a href="#">工作短褲</a>
-	</div>
+	<div id="subHeader"></div>
 
 	<div id="main" class="row">
 		<!--<div id="product" class="col-3">
@@ -51,7 +45,6 @@
 			<p id="productSize">NT.980</p>
 		</div>-->
 	</div>
-<button id="Add">Add Product</button>
-
 </body>
+
 </html>
