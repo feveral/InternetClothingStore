@@ -17,3 +17,6 @@ require('./InsertProductAccessoriesScoks.js');
 require('./InsertProductAccessoriesAccessories.js');
 require('./InsertProductAccessoriesPhoneCase.js');
 require('./InsertProductAccessoriesBag.js');
+require('./InsertProductTopHoodedTee.js');
+require('./InsertProductTopShirt.js');
+require('./InsertProductTopVest.js');
