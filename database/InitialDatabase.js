@@ -1,8 +1,12 @@
 'use strict';
 
 require('./CreateTables.js');
-require('./InsertProductBottomWorkingPant.js');
-require('./InsertProductBottomCowBoyShorts.js');
+require('./InsertProductBottomJeans.js');
+require('./InsertProductBottomShortJeans.js');
+require('./InsertProductBottomWorkingTrousers.js');
+require('./InsertProductBottomWorkingShorts.js');
+require('./InsertProductBottomCottonTrousers.js');
+require('./InsertProductBottomCottonShorts.js');
 require('./InsertProductBasicPlainTee.js');
 require('./InsertProductBasicPlainRoundNeckTee.js');
 require('./InsertProductBasicPlainHatLongTee.js');
@@ -11,6 +15,7 @@ require('./InsertProductCoatFlightCoat.js');
 require('./InsertProductCoatCowboyCoat.js');
 require('./InsertProductCoatHoodedCoat.js');
 require('./InsertProductCoatWindCoat.js');
+require('./InsertProductTopKid.js');
 require('./InsertProductTopLongSleeveTop.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductAccessoriesScoks.js');
