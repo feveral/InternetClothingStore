@@ -4,7 +4,7 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var ProductManager = require('../server/ProductManager.js');
 var productManager = new ProductManager(DatabaseUtility.Getdb());
 
-var category = 'Basic';
+var category = 'Bottom';
 var subCategory = '工作短褲';
 
 productManager.AddProductIterately(
