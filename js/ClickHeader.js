@@ -42,6 +42,45 @@ function GetSubHeaderEnglish(subHeader){
 	else if(subHeader == '牛仔短褲'){
 		return 'CowBoyShorts';
 	}
+	else if(subHeader == '棒球外套'){
+		return 'BaseBallCoat';
+	}
+	else if(subHeader == '飛行外套'){
+		return 'FlightCoat';
+	}
+	else if(subHeader == '帽子'){
+		return 'Hat';
+	}
+	else if(subHeader == 'Bottom'){
+		return 'Bottom';
+	}
+	else if(subHeader == 'Top'){
+		return 'Top';
+	}
+	else if(subHeader == 'Basic'){
+		return 'Basic';
+	}
+	else if(subHeader == '連帽外套'){
+		return 'HoodedCoat';
+	}
+	else if(subHeader == '飾品'){
+		return 'Necklace';
+	}
+	else if(subHeader == '手機殼'){
+		return 'Phonecase';
+	}
+	else if(subHeader == '襪子'){
+		return 'Socks';
+	}
+	else if(subHeader == '背包'){
+		return 'Bag';
+	}
+	else if(subHeader == '風衣外套'){
+		return 'WindCoat';
+	}
+	else if(subHeader == '長袖上衣'){
+		return 'LongSleeveTop';
+	}
 	else{
 		return '';
 	}

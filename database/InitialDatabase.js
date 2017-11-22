@@ -12,6 +12,7 @@ require('./InsertProductCoatFlightCoat.js');
 require('./InsertProductCoatCowboyCoat.js');
 require('./InsertProductCoatHoodedCoat.js');
 require('./InsertProductCoatWindCoat.js');
+require('./InsertProductTopLongSleeveTop.js');
 require('./InsertProductAccessoriesHat.js');
 require('./InsertProductAccessoriesScoks.js');
 require('./InsertProductAccessoriesAccessories.js');

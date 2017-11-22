@@ -64,20 +64,6 @@ module.exports = class{
 			});
 		});
 
-		// Get product which subHeader is plainTee
-		self.app.get('/GET/product/PlainTee',function(req,res){
-			self.productManager.GetAllProductBySubCategory('素面大學TEE',function(err,result){
-				if (err)
-				{
-					console.log(err);
-				} 
-				else
-				{
-					res.end(JSON.stringify({success:true , data:result}));
-				}
-			});
-		});
-
 		// Get product which subHeader is plainHatLongTee
 		self.app.get('/GET/product/PlainHatLongTee',function(req,res){
 			self.productManager.GetAllProductBySubCategory('素面連帽TEE',function(err,result){
@@ -105,6 +91,192 @@ module.exports = class{
 				}
 			});
 		});
+
+		// Get product which subHeader is plainTee
+		self.app.get('/GET/product/PlainTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面大學TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is CowBoyShorts
+		self.app.get('/GET/product/CowBoyShorts',function(req,res){
+			self.productManager.GetAllProductBySubCategory('牛仔短褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is WorkingPant
+		self.app.get('/GET/product/WorkingPant',function(req,res){
+			self.productManager.GetAllProductBySubCategory('工作長褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is BaseBallCoat
+		self.app.get('/GET/product/BaseBallCoat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('棒球外套',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+			// Get product which subHeader is FlightCoat
+		self.app.get('/GET/product/FlightCoat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('飛行外套',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+
+			// Get product which subHeader is FlightCoat
+		self.app.get('/GET/product/HoodedCoat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('連帽外套',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+
+			// Get product which subHeader is Hat
+		self.app.get('/GET/product/Necklace',function(req,res){
+			self.productManager.GetAllProductBySubCategory('飾品',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+			// Get product which subHeader is Hat
+		self.app.get('/GET/product/Phonecase',function(req,res){
+			self.productManager.GetAllProductBySubCategory('手機殼',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+				// Get product which subHeader is Hat
+		self.app.get('/GET/product/Socks',function(req,res){
+			self.productManager.GetAllProductBySubCategory('襪子',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+			// Get product which subHeader is Hat
+		self.app.get('/GET/product/Bag',function(req,res){
+			self.productManager.GetAllProductBySubCategory('背包',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+
+			// Get product which subHeader is Hat
+		self.app.get('/GET/product/WindCoat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('風衣外套',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+				// Get product which subHeader is Hat
+		self.app.get('/GET/product/LongSleeveTop',function(req,res){
+			self.productManager.GetAllProductBySubCategory('長袖上衣',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is Hat
+		self.app.get('/GET/product/Hat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('帽子',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 
 		// Get all Bottom product
 		self.app.get('/GET/product/Bottom',function(req,res){

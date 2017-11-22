@@ -59,14 +59,13 @@ function AddSize(html, product){
 
 function productToHtml(product){
 	var html = "";
-	html += '<div id="product" class="col-3 col-m-4">';
+	html += '<div id="product" class="col-3">';
 	html += '<img class="image" src="{ImagePath}"/>';
-	html += '<p id="productName">{Name}</p>';
-	html += '<div>';
-
+	html += '<div id="productName">{Name}</div>';
+	html += '<div id="productPrice">NT.{Price}</div>';
+	html += '<div id="productSize">';
 	html = AddSize(html, product);
 	html += '</div>';
-	html += '<p id="productSize">NT.{Price}</p>';
 	html += '</div>';
 
 	html = html.replace('{Name}',product['Name']);

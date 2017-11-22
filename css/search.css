@@ -9,6 +9,7 @@
 		font: inherit;
 		vertical-align: baseline;
 		font-family: 'Microsoft JhengHei', MingLiU, Arial;
+		display: inline-block;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -16,6 +17,7 @@
 	}
 
 	body {
+		width: 100%;
 		line-height: 1;
 	}
 
@@ -104,85 +106,30 @@
 	    .col-12 {width: 100%;}
 	}
 
-	
 /* Main */
-
-	#main{
-		display: block;
-		margin-left: 13%;
-		margin-right: 13%;
-	}
-
-	#product{
-		display: inline-block;
-	}
-
-	#productName{
-		padding-bottom: 3px;
-	}
-
-	#productSize{
-		text-align: right;
-	}
-
-	#product a{
-		color: black;
-		border: 1px solid black;
-		margin-left: 4px;
-		padding-left: 2px;
-		padding-right: 2px;
-		font-size: 15px;
-	}
-
-	.image{
-		display: block;
-		width: 100%;
-		height: 100%;
-		margin-bottom: 10px;
-	}
-
-
-/* Header */
 
 	#header{
 		display: block;
-		text-align: center;
-		height: 60px;
-		line-height: 60px;
-		background-color: #333;
+		width: 100%;
 	}
 
-		#header a {
-			font-size: 20px;
-			height: 100%;
-			text-align: center;
-			display: inline-block;
-			padding: 0px 20px 0px 20px;
-			color: white;
-		}
+	#logo{
 
-		#header a:hover {
-			background-color: #ddd;
-			color: black;
-		}
-
-		#header nav {
-			height: 100%;
-		}
-
-/*SubHeader*/
-
-	#subHeader{
-		text-align: center;
-		margin: 30px;
 	}
 
-	#subHeader a {
-		text-decoration:underline;
-		color: black;
-		font-size: 20px;
-		padding: 10px;
+	#mainMenu{
+		height: 139px;
 	}
 
+	#mainMenu p{
+		font-family: 'Larsseit',Helvetica,sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		cursor: pointer;
+		letter-spacing: 1px;
+		padding-right: 10px;
+	}
 
-
+	#feature{
+		height: 139px;
+	}
