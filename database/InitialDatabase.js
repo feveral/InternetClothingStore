@@ -1,9 +1,12 @@
 'use strict';
 
 require('./CreateTables.js');
-require('./InsertProductBottomWorkingTrousers.js');
+require('./InsertProductBottomJeans.js');
 require('./InsertProductBottomShortJeans.js');
+require('./InsertProductBottomWorkingTrousers.js');
+require('./InsertProductBottomWorkingShorts.js');
 require('./InsertProductBottomCottonTrousers.js');
+require('./InsertProductBottomCottonShorts.js');
 require('./InsertProductBasicPlainTee.js');
 require('./InsertProductBasicPlainRoundNeckTee.js');
 require('./InsertProductBasicPlainHatLongTee.js');
