@@ -59,6 +59,7 @@ module.exports = class{
 				} 
 				else
 				{
+					console.log(result);
 					res.end(JSON.stringify({success:true , data:result}));
 				}
 			});
