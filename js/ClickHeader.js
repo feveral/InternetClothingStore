@@ -3,7 +3,7 @@ function ClickHeader(catagoey){
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: GetServerUrl() + "/GET/subCategory/" + catagoey,
+			url: GetServerUrl() + "/product/subCategory/" + catagoey,
 			success: function(msg){
 				var object = JSON.parse(msg);
 				$("#subHeader").empty();

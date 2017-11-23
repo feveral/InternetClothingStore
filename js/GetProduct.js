@@ -3,7 +3,7 @@ function GetProduct(categoryOrSubCategory){
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: GetServerUrl() + "/GET/product/" + categoryOrSubCategory,
+			url: GetServerUrl() + "/product/" + categoryOrSubCategory,
 			success: function(msg){
 				$("#main").empty();
 		   		var object = JSON.parse(msg)
