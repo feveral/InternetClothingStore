@@ -10,7 +10,7 @@ var apiServer = http.createServer(app);
 var router = express.Router();
 
 new WebServer(__dirname);
-new ProductServer(app,router);
+new ProductServer(router);
 new MemberServer(app);
 
 app.use('/product', router);

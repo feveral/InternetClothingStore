@@ -6,8 +6,7 @@ const url = require('url');
 
 module.exports = class{
 
-	constructor(app,router){
-		this.app = app;
+	constructor(router){
 		this.router = router;
 		this.productManager = new ProductManager();
 		this.SetAPI();
@@ -60,7 +59,6 @@ module.exports = class{
 				} 
 				else
 				{
-					console.log(result);
 					res.end(JSON.stringify({success:true , data:result}));
 				}
 			});
@@ -171,7 +169,7 @@ module.exports = class{
 			});
 		});
 
-		self.app.get('/Necklace',function(req,res){
+		self.router.get('/Necklace',function(req,res){
 			self.productManager.GetAllProductBySubCategory('飾品',function(err,result){
 				if (err)
 				{
@@ -300,6 +298,10 @@ module.exports = class{
 					res.end(JSON.stringify({success:true , data:result}));
 				}
 			});
+		});
+
+		self.router.post('/Basic',function(req,res){
+			res.end("111222333");
 		});
 
 	}
