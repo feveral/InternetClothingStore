@@ -1,4 +1,3 @@
-
 var Passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var Express = require('express');
@@ -50,10 +49,9 @@ app.use(session({
     secret: "test",
     resave: false,
     saveUninitialized: false,
-}))
+}));
 app.use(Passport.initialize());
 app.use(Passport.session());
-
 
 Passport.serializeUser(function (user, done) {
     done(null, user.id);
@@ -62,24 +60,14 @@ Passport.serializeUser(function (user, done) {
 Passport.deserializeUser(function (user_id,done) {
     console.log("deserial~~~");
     done(null, user_id);
-});
-
-
-app.all('*',function(req,res,next){
-	res.header('Access-Control-Allow-Origin', '*');
-	res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
-	res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-	next();
-});
-
-app.post('/test',function(req,res){
-	console.log(req.body);
 })
 
 app.post(
     '/login',
     Passport.authenticate('local',{session: true}),
     function (req, res) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "X-Requested-With");
         res.send('User ID ' + req.user.id.toString());
     }
 );
@@ -87,7 +75,7 @@ app.post(
 app.get('/getInfo',function(req,res){
     const user = req.user;
     res.send(user);
-});
+})
 
 app.listen(3000, function () {
     console.log('Listening on 3000');
