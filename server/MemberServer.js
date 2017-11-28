@@ -6,15 +6,15 @@ const url = require('url');
 
 module.exports = class MemberServer{
 
-	constructor(app){
-		this.app = app;
+	constructor(router){
+		this.router = router;
 		this.memberManager = new MemberManager();
 		this.SetApi();
 	}
 
 	SetApi(){
 		var self = this;
-		self.app.all('*',function (req, res, next) {
+		self.router.use('*',function (req, res, next) {
 			res.header('Access-Control-Allow-Origin', '*');
 			res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
 			res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
@@ -22,7 +22,7 @@ module.exports = class MemberServer{
 		});
 
 		// Get SubCategory from Category
-		self.app.get('/GET/member/',function(req,res){
+		self.router.get('/GET/member/',function(req,res){
 			res.end('you get all member');
 		});
 	}

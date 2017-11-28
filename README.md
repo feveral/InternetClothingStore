@@ -7,10 +7,21 @@
 node InitialDatabase.js
 ```
 
+
+
 ### Command
 
 ##### 開啟server
 
 ```shell=
 node server.js
+
+### Dependent
+
+1. express
+2. mysql
+3. body-parser 
+4. passport
+5. passport-local
+
 ```
