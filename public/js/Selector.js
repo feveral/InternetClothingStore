@@ -29,9 +29,9 @@ function AddSubCategoryToCategory(catagoey,order){
 		success: function(msg){
 			var object = JSON.parse(msg);
 			$('#selector div:nth-child(' + order + ')').empty();
-			$('#selector div:nth-child(' + order + ')').append(SubCategoryToHtml(catagoey));
+			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagoey));
 			for (var i = 0; i < object['data'].length ; i++)
-	   			$('#selector div:nth-child(' + order + ')').append(SubCategoryToHtml(object['data'][i]));
+	   			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(object['data'][i]));
 		},
 	   	error: function(xhr, textStatus, error){
 	        console.log(xhr.statusText);
@@ -39,71 +39,72 @@ function AddSubCategoryToCategory(catagoey,order){
 	});
 }
 
-function SubCategoryToHtml(category){
+function CategoryToHtml(category){
 	var html = '<a href="#" onclick="GetProduct(\'{category}\')">{category}</a>';
-	html = html.replace('{category}',GetSubCategoryEnglish(category));
+	html = html.replace('{category}',GetCategoryEnglish(category));
 	return html.replace('{category}',category);
 }
 
-function GetSubCategoryEnglish(subHeader){
-	if(subHeader == '素面大學TEE'){
+function GetCategoryEnglish(category){
+
+	if(category == '素面大學TEE'){
 		return 'PlainTee';
 	}
-	else if(subHeader == '素面連帽TEE'){
+	else if(category == '素面連帽TEE'){
 		return 'PlainHatLongTee';
 	}
-	else if(subHeader == '素面圓領長TEE'){
+	else if(category == '素面圓領長TEE'){
 		return 'PlainRoundNeckTee';
 	}
-	else if(subHeader == '牛仔褲'){
+	else if(category == '牛仔褲'){
 		return 'CowBoyPant';
 	}
-	else if(subHeader == '牛仔短褲'){
+	else if(category == '牛仔短褲'){
 		return 'CowBoyShorts';
 	}
-	else if(subHeader == '工作長褲'){
+	else if(category == '工作長褲'){
 		return 'WorkingPant';
 	}
-	else if(subHeader == '工作短褲'){
+	else if(category == '工作短褲'){
 		return 'WorkingShorts';
 	}
-	else if(subHeader == '棉長褲'){
+	else if(category == '棉長褲'){
 		return 'CottonPant';
 	}
-	else if(subHeader == '棉短褲'){
+	else if(category == '棉短褲'){
 		return 'CottonShorts';
 	}
-	else if(subHeader == '棒球外套'){
+	else if(category == '棒球外套'){
 		return 'BaseBallCoat';
 	}
-	else if(subHeader == '飛行外套'){
+	else if(category == '飛行外套'){
 		return 'FlightCoat';
 	}
-	else if(subHeader == '帽子'){
+	else if(category == '帽子'){
 		return 'Hat';
 	}
-	else if(subHeader == '連帽外套'){
+	else if(category == '連帽外套'){
 		return 'HoodedCoat';
 	}
-	else if(subHeader == '飾品'){
+	else if(category == '飾品'){
 		return 'Necklace';
 	}
-	else if(subHeader == '手機殼'){
+	else if(category == '手機殼'){
 		return 'Phonecase';
 	}
-	else if(subHeader == '襪子'){
+	else if(category == '襪子'){
 		return 'Socks';
 	}
-	else if(subHeader == '背包'){
+	else if(category == '背包'){
 		return 'Bag';
 	}
-	else if(subHeader == '風衣外套'){
+	else if(category == '風衣外套'){
 		return 'WindCoat';
 	}
-	else if(subHeader == '長袖上衣'){
+	else if(category == '長袖上衣'){
 		return 'LongSleeveTop';
 	}
 	else{
-		return '';
+		return category;
 	}
 }

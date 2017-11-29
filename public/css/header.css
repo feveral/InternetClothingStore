@@ -1,0 +1,87 @@
+
+/* Header */
+
+	#header{
+		display: block;
+		font-size: 12px;
+		font-weight: bold;
+		letter-spacing: 1px;
+		height: 14.5vh;
+		border-bottom: 2px solid black;
+	}
+		#header div{
+			display: inline-block;
+		}
+
+	#logo{
+		margin-top: 12px;
+		margin-left: 85px;
+	}
+
+	#mainMenu{
+		vertical-align: top;
+		margin-top: 93px;
+		margin-left: 24px;
+	}
+
+		#mainMenu span{
+			padding-bottom: 35px;
+			cursor: pointer;
+			margin-left: 22px;
+			margin-right: 22px;
+		}
+
+	#member{
+		vertical-align: top;
+		margin-top: 85px;
+		margin-right: 20px;
+		float:right;
+		font-size: 18px;
+	}
+		#member a{
+			cursor: pointer;
+			margin-right: 10px;
+		}
+
+/* Selector */
+
+	#selector{
+		position: absolute;
+		padding-top: 20px;
+		padding-left: 50vh;
+		background-color: white; 
+		border-bottom:1px solid black;
+		display: none;
+		clear:left;
+		width: 100%;
+		height: 400px;
+		z-index: 1;
+	}
+
+		#selector:hover{
+			display: block;
+		}
+
+		#selector div{
+			font-size: 14px;
+			cursor: pointer;
+			margin-right: 90px;
+			display: inline-block;
+			vertical-align: top;
+		}
+			#selector a:nth-child(1){
+				border-radius: 2px;
+				padding:3px 2px 3px 2px;
+				color: white;
+				display: block;
+				background-color: black;
+				width: max-content;
+				margin-bottom: 10px;
+			}
+
+			#selector a{
+				border-radius: 2px;
+				padding:4px 0px 4px 0px;
+				display: block;
+			}
+
