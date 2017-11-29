@@ -19,10 +19,11 @@ var createProduct =
 	    "PRIMARY KEY (Id)" +
 	");";
 
+var dropTableMember =
+	"DROP TABLE IF EXISTS MEMBER;"
 var createMember =
 	"CREATE TABLE MEMBER" +
 		"(Id INT NOT NULL AUTO_INCREMENT , " +
-		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " +
 		"MemberType , " +
 		"Email VARCHAR(255) NOT NULL , " +
 		"Cellphone CHAR(10) NOT NULL ," +
@@ -33,3 +34,6 @@ var createMember =
 
 DatabaseUtility.ExecuteSQLCommand(dropTableProduct);
 DatabaseUtility.ExecuteSQLCommand(createProduct);
+
+DatabaseUtility.ExecuteSQLCommand(dropTableMember);
+DatabaseUtility.ExecuteSQLCommand(createMember);

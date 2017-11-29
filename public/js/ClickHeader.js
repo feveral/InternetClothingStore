@@ -36,11 +36,23 @@ function GetSubHeaderEnglish(subHeader){
 	else if(subHeader == '素面圓領長TEE'){
 		return 'PlainRoundNeckTee';
 	}
-	else if(subHeader == '工作長褲'){
-		return 'WorkingPant';
+	else if(subHeader == '牛仔褲'){
+		return 'CowBoyPant';
 	}
 	else if(subHeader == '牛仔短褲'){
 		return 'CowBoyShorts';
+	}
+	else if(subHeader == '工作長褲'){
+		return 'WorkingPant';
+	}
+	else if(subHeader == '工作短褲'){
+		return 'WorkingShorts';
+	}
+	else if(subHeader == '棉長褲'){
+		return 'CottonPant';
+	}
+	else if(subHeader == '棉短褲'){
+		return 'CottonShorts';
 	}
 	else if(subHeader == '棒球外套'){
 		return 'BaseBallCoat';
@@ -50,15 +62,6 @@ function GetSubHeaderEnglish(subHeader){
 	}
 	else if(subHeader == '帽子'){
 		return 'Hat';
-	}
-	else if(subHeader == 'Bottom'){
-		return 'Bottom';
-	}
-	else if(subHeader == 'Top'){
-		return 'Top';
-	}
-	else if(subHeader == 'Basic'){
-		return 'Basic';
 	}
 	else if(subHeader == '連帽外套'){
 		return 'HoodedCoat';

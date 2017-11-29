@@ -30,3 +30,5 @@ require('./InsertProductBasicPlainVNeckTee.js');
 require('./InsertProductBasicPlainRoundNeckShortTee.js');
 require('./InsertProductBasicPlainMiddleSleeveTee.js');
 require('./InsertProductBasicPlainVest.js');
+
+require('./InsertMemberManager.js');

@@ -1,18 +1,17 @@
 
 function Login(){
 
-
 	$(document).ready(function(){
+
 		$.ajax({
 			type: "POST",
 			url: GetServerUrl() + "/login",
-			data: {username: "mark",password: "1234"},
+			data: {username: $('input[name=loginEmail]').val(),password: $('input[name=loginPassword]').val()},
 			xhrFields: {
 				withCredentials: true
 			},
 			success: function(msg)
 			{
-				console.log(msg);
 				location.href = GetServerUrl();
 		   	},
 		   	error: function(xhr, textStatus, error)
