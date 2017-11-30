@@ -5,47 +5,43 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8"/>
 
+	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
-	<script type="text/javascript" src="js/ClickHeader.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
 </head>
 
 <body>
-	<header id="header">
-		<nav>
-			<a href="#">SALE</a>
-			<a href="#">NEW</a>
-			<a href="#" onclick="ClickHeader('Basic')">BASIC</a>
-			<a href="#" onclick="ClickHeader('Top')">TOP</a>
-			<a href="#" onclick="ClickHeader('Bottom')">BOTTOM</a>
-			<a href="#" onclick="ClickHeader('Coat')" >COAT</a>
-			<a href="#" onclick="ClickHeader('Accessories')">ACCESSORIES</a>
-			<a href="#" onclick="GetInfo()">getInfo</a>
-		</nav>
-	</header>
 
-	<div id="subHeader"></div>
+<div id="header">
+	<div id="logo"><img src="./image/logo.png"></div>
+	<div id="mainMenu">
+		<span>STILLAS</span>
+		<span>SALE</span>
+	</div>
+	<div id="member">
+		<a>登入</a>
+		<a>購物車</a>
+	</div>
+</div>
 
- 	<div id="main" class="row">
-<!-- 		<div id="product" class="col-3">
-			<img class="image" src="image/SHTICK_MA-1空軍飛行外套_粉紅.jpg"/>
-			<div id="productName">SHTICK_MA-1空軍飛行外套</div>
-			<div id="productPrice">NT.980</div>
-			<div id="productSize">
-				<a href="#">S</a>
-				<a href="#">M</a>
-				<a href="#">L</a>
-				<a href="#">XL</a>
-			</div>
-		</div> -->
-	</div> 
+<div id="selector">
+	<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
+	<div><a>Top</a></div>
+	<div><a>Coat</a></div>
+	<div><a>Bottom</a></div>
+	<div><a>Accessories</a></div>
+</div>
+
+<div id="main" class="row"></div> 
 
 </body>
 

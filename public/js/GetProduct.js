@@ -5,14 +5,7 @@ function GetProduct(categoryOrSubCategory){
 			type: "GET",
 			url: GetServerUrl() + "/product/" + categoryOrSubCategory,
 			success: function(msg){
-				$("#main").empty();
-		   		var object = JSON.parse(msg)
-		   		var productArray = [];
-		   		var productList = [];
-		   		for (var i = 0; i < object['data'].length ; i++)
-		   			isNotRepeat(object['data'][i], productList);
-		   		for (var i = 0; i< productList.length ; i++)
-		   		 	$("#main").append(productToHtml(productList[i]));
+				RenderProduct(msg);
 		   	},
 		   	error: function(xhr, textStatus, error){
 		        console.log(xhr.statusText);
@@ -20,6 +13,18 @@ function GetProduct(categoryOrSubCategory){
 		});
 	});
 }
+
+function RenderProduct(msg){
+	$("#main").empty();
+	var object = JSON.parse(msg)
+	var productArray = [];
+	var productList = [];
+	for (var i = 0; i < object['data'].length ; i++)
+		isNotRepeat(object['data'][i], productList);
+	for (var i = 0; i< productList.length ; i++)
+	 	$("#main").append(productToHtml(productList[i]));
+}
+
 
 function isNotRepeat(product, productList){
 	var theSame = 0;
@@ -62,7 +67,7 @@ function productToHtml(product){
 	html += '<div id="product" class="col-3">';
 	html += '<img class="image" src="{ImagePath}"/>';
 	html += '<div id="productName">{Name}</div>';
-	html += '<div id="productPrice">NT.{Price}</div>';
+	html += '<div id="productPrice">TWD.{Price}</div>';
 	html += '<div id="productSize">';
 	html = AddSize(html, product);
 	html += '</div>';

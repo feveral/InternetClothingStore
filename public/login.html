@@ -3,30 +3,55 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/initial.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
 </head>
 <body>
 
+<div id="header">
+	<div id="logo"><img src="./image/logo.png"></div>
+	<div id="mainMenu">
+		<span>STILLAS</span>
+		<span>SALE</span>
+	</div>
+	<div id="member">
+		<a>登入</a>
+		<a>購物車</a>
+	</div>
+</div>
+
+<div id="selector">
+	<div><a>Basic</a></div>
+	<div><a>Top</a></div>
+	<div><a>Coat</a></div>
+	<div><a>Bottom</a></div>
+	<div><a>Accessories</a></div>
+</div>
+
 <div id="main">
+	<div id="loginTitle"  onclick="ChangeToLogin()">登   入</div><div id="registerTitle"  onclick="ChangeToRegister()">註   冊</div>
 
-	<div id="loginTitle">會員登入</div>
-	
-	<div id="account">
-		<span>E-mail : </span>		
-		<input type="text" name="account">
-	</div>
-	
-	<div id="password">
-		<span>密碼 : </span>
-		<input type="password" name="password">
+	<div id="login">
+		<div><input type="text" name="loginEmail" placeholder="E-mail"></div>
+		<div><input type="password" name="loginPassword" placeholder="密碼 : "></div>
+		<a id="submit" onclick="Login()" href="#">會 員 登 入</a>
 	</div>
 
-	<a id="submit" onclick="Login()" href="#">會 員 登 入</a>
-	<a href="#" onclick="GetInfo()">getInfo</a>
+	<div id="register">
+		<div><input type="text" name="registerEmail" placeholder="E-mail"></div>
+		<div><input type="password" name="registerPassword" placeholder="密碼 : "></div>
+		<div><input type="password" name="registerComfirmPassword" placeholder="確認密碼 : "></div>
+		<div><input type="text" name="registerCellphone" placeholder="手機"></div>
+		<a href="#" >會 員 註 冊</a>
+	</div>
+	</br>
 </div>
 
 </body>

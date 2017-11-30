@@ -28,6 +28,7 @@ module.exports = class{
 		this.app = app;
 		this.router = router;
 		this.SetStrategy();
+		this.InitialPassport();
 		this.SetAPI();
 	}
 
@@ -53,20 +54,14 @@ module.exports = class{
 		Passport.use('local', localStrategy);
 	}
 
-	SetAPI(){
+	InitialPassport(){
 		var self = this;
 		this.app.use(BodyParser.urlencoded({ extended: false }));
 		this.app.use(BodyParser.json());
 		this.app.use(cookieParser());
-
-		this.app.use(session({
-		    secret: "test",
-		    resave: false,
-		    saveUninitialized: false,
-		}));
+		this.app.use(session( { secret: "test",resave: false, saveUninitialized: false, }));
 		this.app.use(Passport.initialize());
 		this.app.use(Passport.session());
-
 
 		Passport.serializeUser(function (user, done) {
 		    done(null, user.id);
@@ -75,7 +70,10 @@ module.exports = class{
 		Passport.deserializeUser(function (user_id,done) {
 		    done(null, user_id);
 		});
+	}
 
+	SetAPI(){
+		var self = this;
 
 		this.router.use('*',function(req,res,next){
 			res.header('Access-Control-Allow-Origin', 'http://127.0.0.1');

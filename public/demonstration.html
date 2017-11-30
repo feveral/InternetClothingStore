@@ -4,75 +4,79 @@
 	<title>Shtick</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8"/>
-
+	<link rel="stylesheet" type="text/css" href="css/initial.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/demonstrate.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
 </head>
 
 <body>
-	<header id="header">
-		<nav>
-			<a id="sale" href="#">SALE</a>
-			<a id="newProduct">NEW</a>
-			<a id="top">TOP</a>
-			<a id="bottom">BOTTOM</a>
-			<a id="accessory">ACCESSORIES</a>
-			<a href="#">&#9776;</a>
-		</nav>
-	</header>
-
-	<div id="subHeader">
-		<a href="#">工作長褲</a>
-		<a href="#">牛仔短褲</a>
-		<a href="#">棉長褲</a>
-		<a href="#">牛仔褲</a>
-		<a href="#">棉短褲</a>
-		<a href="#">工作短褲</a>
+<div id="header">
+	<div id="logo"><img src="./image/logo.png"></div>
+	<div id="mainMenu">
+		<span>STILLAS</span>
+		<span>SALE</span>
 	</div>
-	<div id="product">
-		<div id="productImage">
-			<img class="demonstrateImage" src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" >
+	<div id="member">
+		<a>登入</a>
+		<a>購物車</a>
+	</div>
+</div>
+
+<div id="selector">
+	<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
+	<div><a>Top</a></div>
+	<div><a>Coat</a></div>
+	<div><a>Bottom</a></div>
+	<div><a>Accessories</a></div>
+</div>
+
+<div id="product">
+	<div id="productImage">
+		<img class="demonstrateImage" src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" >
+	</div>
+
+	<div id="productInformation">
+		<p id="productName">簡約多色刷毛長袖大學TEE</p>
+		<p id="productId">商品編號:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7788</p>
+		<a id="addIntoCollection" class="button">加入收藏</a>
+		<p id="onSale">百搭大學TEE 單件三百 /三件組</p>			
+
+		<div id="productPriceDiv">
+			<span id="productPrice">TWD.580</span>
 		</div>
 
-		<div id="productInformation">
-			<p id="productName">簡約多色刷毛長袖大學TEE</p>
-			<p id="productId">商品編號:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7788</p>
-			<a id="addIntoCollection" class="button">加入收藏</a>
-			<p id="onSale">百搭大學TEE 單件三百 /三件組</p>			
-
-			<div id="productPriceDiv">
-				<span id="productPrice">TWD.580</span>
-			</div>
-
-			<div id=colorStr>
-				<div id="productColorDiv">麻黑</div>
-				<div id="selectSizeDiv">尚未選擇尺寸</div>
-			</div>
-
-			<div id="productColorArray">
-				<div class="productColor"></div>
-			<div>
-
-			<div id="productSizeArray">
-				<a class="sizeButton">S</a>
-				<a class="sizeButton">M</a>
-				<a class="sizeButton">L</a>
-				<a class="sizeButton">XL</a>
-			<div>
-				
-			<div id="productQuantity">
-				<a>-</a>
-				<input id="itemQuantity" value=1></input>
-				<a>+</a>
-			</div>
-
-			<a id="addProductIntoShoppingCar" class="button">加入購物車</a>
-			<a id="buyInstantly" class="button">立即購買</a>	
+		<div id=colorStr>
+			<div id="productColorDiv">麻黑</div>
+			<div id="selectSizeDiv">尚未選擇尺寸</div>
 		</div>
+
+		<div id="productColorArray">
+			<div class="productColor"></div>
+		<div>
+
+		<div id="productSizeArray">
+			<a class="sizeButton">S</a>
+			<a class="sizeButton">M</a>
+			<a class="sizeButton">L</a>
+			<a class="sizeButton">XL</a>
+		<div>
+			
+		<div id="productQuantity">
+			<a>-</a>
+			<input id="itemQuantity" value=1></input>
+			<a>+</a>
+		</div>
+
+		<a id="addProductIntoShoppingCar" class="button">加入購物車</a>
+		<a id="buyInstantly" class="button">立即購買</a>	
+	</div>
 </body>
 
 

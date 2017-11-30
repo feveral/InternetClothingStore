@@ -38,6 +38,8 @@ var createProduct =
 	    "PRIMARY KEY (Id)" +
 	");";
 
+var dropTableMember =
+	"DROP TABLE IF EXISTS MEMBER;"
 var createMember =
 	"CREATE TABLE MEMBER" +
 		"(Id INT NOT NULL AUTO_INCREMENT , " +
@@ -98,15 +100,21 @@ var createOrderList =
 
 DatabaseUtility.ExecuteSQLCommand(dropTableProduct);
 DatabaseUtility.ExecuteSQLCommand(createProduct);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableMember);
 DatabaseUtility.ExecuteSQLCommand(createMember);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableShoppingCar);
 DatabaseUtility.ExecuteSQLCommand(createShoppingCar);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableFavorite);
 DatabaseUtility.ExecuteSQLCommand(createFavorite);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableOnSale);
 DatabaseUtility.ExecuteSQLCommand(createOnSale);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableOrderList);
 DatabaseUtility.ExecuteSQLCommand(createOrderList);
+
 DatabaseUtility.ExecuteSQLCommand(dropTableOrderItem);
 DatabaseUtility.ExecuteSQLCommand(createOrderItem);

@@ -7,8 +7,6 @@
 node InitialDatabase.js
 ```
 
-
-
 ### Command
 
 ##### 開啟server

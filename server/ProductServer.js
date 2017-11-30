@@ -14,12 +14,6 @@ module.exports = class{
 
 	SetAPI(){
 		var self = this;
-		self.router.use(function(req,res,next){
-			res.header('Access-Control-Allow-Origin', '*');
-			res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
-			res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-			next();
-		});
 
 		// Get SubCategory from Category
 		self.router.get('/subCategory/:category',function(req,res){
@@ -39,6 +33,60 @@ module.exports = class{
 		// Get product which subHeader is workingPant
 		self.router.get('/WorkingPant',function(req,res){
 			self.productManager.GetAllProductBySubCategory('工作長褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is WorkingShorts
+		self.router.get('/WorkingShorts',function(req,res){
+			self.productManager.GetAllProductBySubCategory('工作短褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/CottonPant',function(req,res){
+			self.productManager.GetAllProductBySubCategory('棉長褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/CottonShorts',function(req,res){
+			self.productManager.GetAllProductBySubCategory('棉短褲',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		// Get product which subHeader is CowBoyPant
+		self.router.get('/CowBoyPant',function(req,res){
+			self.productManager.GetAllProductBySubCategory('牛仔褲',function(err,result){
 				if (err)
 				{
 					console.log(err);
@@ -260,7 +308,6 @@ module.exports = class{
 			});
 		});
 
-
 		self.router.get('/Bottom',function(req,res){
 			self.productManager.GetAllProductByCategory('Bottom',function(err,result){
 				if (err)
@@ -300,9 +347,30 @@ module.exports = class{
 			});
 		});
 
-		self.router.post('/Basic',function(req,res){
-			res.end("111222333");
+		self.router.get('/Coat',function(req,res){
+			self.productManager.GetAllProductByCategory('Coat',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
 		});
 
+		self.router.get('/Accessories',function(req,res){
+			self.productManager.GetAllProductByCategory('Accessories',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
 	}
 }
