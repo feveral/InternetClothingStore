@@ -8,13 +8,13 @@ module.exports = class MemberManager{
 		this.db = DatabaseUtility.Getdb();
 	}
 
-	AddCustomerMember(attribute,callback){
+	AddCustomer(attribute,callback){
 		this.db.query(
 			"INSERT INTO MEMBER " +
 			"(Name,MemberType,Email,Cellphone,Password,Address)" +
 			"VALUES ( " + 
 			"'" + attribute['Name'] +  "' , " + 
-			"'" + attribute['MemberType'] + "' , " +  
+			"'" + "Customer" + "' , " +  
 			"'" + attribute['Email'] + "' , " +  
 			"'" + attribute['Cellphone'] + "' , " +  
 			"'" + attribute['Password'] + "' , " +
@@ -23,5 +23,51 @@ module.exports = class MemberManager{
 				callback(err,result);
 			}  
 		);
+	}
+
+	AddManager(attribute,callback){
+		this.db.query(
+			"INSERT INTO MEMBER " +
+			"(Id,Name,MemberType,Email,Cellphone,Password,Address)" +
+			"VALUES ( " + 
+			attribute['Id'] + " , " + 
+			"'" + attribute['Name'] +  "' , " + 
+			"'" + "Manager" + "' , " +  
+			"'" + attribute['Email'] + "' , " +  
+			"'" + attribute['Cellphone'] + "' , " +  
+			"'" + attribute['Password'] + "' , " +
+			"'" + attribute['Address'] +  "' ); " , 
+			function(err,result){
+				callback(err,result);
+			}  
+		);
+	}
+
+
+	GetMemberFromEmail(email,callback){
+		this.db.query(
+			"SELECT * " + 
+			"FROM MEMBER " +  
+			"WHERE Email=" + "'" + email + "'" + ";",
+			function(err,result){
+				callback(err,result[0]);
+			}
+		);
+	}
+
+	// return correct or not and member information
+	IsSignInCorrect(email,password,callback){
+
+		this.GetMemberFromEmail(email,function(err,result){
+			var member = result;
+			if(result.Password === password)
+			{
+				callback(err,{success:true,user:result});
+			}
+			else
+			{
+				callback(err,{success:true,user:result})
+			}
+		});
 	}
 }

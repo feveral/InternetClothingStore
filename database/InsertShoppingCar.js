@@ -7,8 +7,8 @@ var shoppingCarManager = new ShoppingCarManager(DatabaseUtility.Getdb());
 shoppingCarManager.AddShoppingCar(
 	{
 		ProductId:1,
-		MemberId:1,
-		Quantity:5
+		MemberId:104820004,
+		Quantity:1
 	},
 	DatabaseUtility.callback
 );

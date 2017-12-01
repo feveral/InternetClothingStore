@@ -42,7 +42,7 @@ var createMember =
 		"Membertype VARCHAR(50) NOT NULL , " +
 		"Email VARCHAR(255) NOT NULL , " +
 		"Cellphone VARCHAR(10) NOT NULL ," +
-		"Password VARCHAR(255) NOT NULL , " +
+		"Password VARCHAR(255) NOT NULL ," +
 		"Address VARCHAR(255) CHARACTER SET utf8 ," +
 		"PRIMARY KEY (Id)" +
 	");";
@@ -59,7 +59,7 @@ var createProduct =
 	 	"Category VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
 	 	"SubCategory VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
 	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 NOT NULL , " +
-	    "PRIMARY KEY (Id) , " +
+	    "PRIMARY KEY (Id) ," +
 	    "FOREIGN KEY(ManagerId) REFERENCES MEMBER(Id) " +
 	");";
 

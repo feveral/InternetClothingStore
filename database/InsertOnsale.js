@@ -4,7 +4,7 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var OnsaleManager = require('../server/OnsaleManager.js');
 var onsaleManager = new OnsaleManager(DatabaseUtility.Getdb());
 
-memberManager.AddOnsaleManager(
+onsaleManager.AddOnsale(
 	{
 		ProductId: 22 ,
 		Date: "2017/12/8" ,
