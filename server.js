@@ -19,3 +19,8 @@ app.use(express.static('public'));
 
 app.listen(80);
 
+const MemberManager = require('./server/MemberManager.js');
+m = new MemberManager();
+// m.IsSignInCorrect('joh860829nny@gmail.com','AA5566',function(err,result){
+// 	console.log(result);
+// });

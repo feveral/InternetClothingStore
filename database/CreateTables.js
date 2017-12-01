@@ -39,7 +39,8 @@ var createProduct =
 	");";
 
 var dropTableMember =
-	"DROP TABLE IF EXISTS MEMBER;"
+	"DROP TABLE IF EXISTS MEMBER;";
+	
 var createMember =
 	"CREATE TABLE MEMBER" +
 		"(Id INT NOT NULL AUTO_INCREMENT , " +

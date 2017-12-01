@@ -6,21 +6,7 @@ var Express = require('express');
 var BodyParser = require('body-parser');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-
-
-var users = {
-    mark: {
-        username: 'mark',
-        password: '1234',
-        id: 1,
-    },
-    node: {
-        username: 'node',
-        password: '5678',
-        id: 2,
-    },
-}
-
+var MemberManager = require('./MemberManager.js');
 
 module.exports = class{
 	
@@ -34,22 +20,22 @@ module.exports = class{
 
 	SetStrategy(){
 		var localStrategy = new LocalStrategy({
-    		usernameField: 'username',
-    		passwordField: 'password',
+    		usernameField: 'Email',
+    		passwordField: 'Password',
 		},
-    	function (username, password, done) {
-        	var user = users[username];
+    	function (email, password, done) {
+    		new MemberManager().IsSignInCorrect(email,password,function(err,result){
+    			if(err || (!result))
+    			{
+            		return done(null, false, { message: 'Invalid user' });
+    			}
 
-        	if (user == null) 
-        	{
-            	return done(null, false, { message: 'Invalid user' });
-        	};
-
-        	if (user.password !== password) 
-        	{
-            	return done(null, false, { message: 'Invalid password' });
-        	};
-	        done(null, user);
+    			if(!result.success)
+    			{
+            		return done(null, false, { message: 'Invalid password' });
+    			}
+	        	done(null, result.user);
+    		});
     	});
 		Passport.use('local', localStrategy);
 	}
@@ -64,35 +50,44 @@ module.exports = class{
 		this.app.use(Passport.session());
 
 		Passport.serializeUser(function (user, done) {
-		    done(null, user.id);
+		    done(null, user.Email);
 		});
 
-		Passport.deserializeUser(function (user_id,done) {
-		    done(null, user_id);
+		Passport.deserializeUser(function (user_email,done) {
+		    done(null, user_email);
 		});
 	}
 
 	SetAPI(){
 		var self = this;
 
-		this.router.use('*',function(req,res,next){
-			res.header('Access-Control-Allow-Origin', 'http://127.0.0.1');
-			res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
-			res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
-			next();
-		});
-
 		this.router.post(
 		    '/',
 		    Passport.authenticate('local',{session: true}),
 		    function (req, res) {
-		        res.send('User ID ' + req.user.id.toString());
+		        res.send('User Name ' + req.user.Email.toString());
 		    }
 		);
 
-		this.router.get('/getInfo',function(req,res){
-		    const user = req.user;
-		    res.send(JSON.stringify(user));
+		this.router.get('/getUserName',function(req,res){
+			if(!req.user)
+			{
+				res.send(JSON.stringify({success:false}));
+			}
+			else
+			{
+				new MemberManager().GetMemberFromEmail(req.user,function(err,result){
+			    	res.send(JSON.stringify({success:true,data:result.Name}));
+		    	});
+			}
+		});
+
+		// does not test at all
+		self.router.get('/logout',function (req, res) {
+			req.logout();
+		    delete req.session;
+		    console.log('logged out');
+		    //res.sendFile(path.resolve('./public/logout.html'));
 		});
 	}
 }

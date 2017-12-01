@@ -4,10 +4,9 @@ var DatabaseUtility = require('./DatabaseUtility.js');
 var MemberManager = require('../server/MemberManager.js');
 var memberManager = new MemberManager(DatabaseUtility.Getdb());
 
-memberManager.AddCustomerMember(
+memberManager.AddCustomer(
 	{
 		Name:"胖虎",
-		MemberType:"Customer",
 		Email:"joh860829nny@gmail.com",
 		Cellphone:"0923961566",
 		Password:"AA5566",

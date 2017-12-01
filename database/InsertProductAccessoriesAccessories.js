@@ -2,7 +2,7 @@
 
 var DatabaseUtility = require('./DatabaseUtility.js');
 var ProductManager = require('../server/ProductManager.js');
-var productManager = new ProductManager(DatabaseUtility.Getdb());
+var productManager = new ProductManager();
 
 var category = 'Accessories';
 var subCategory = '飾品';

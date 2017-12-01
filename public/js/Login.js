@@ -6,7 +6,7 @@ function Login(){
 		$.ajax({
 			type: "POST",
 			url: GetServerUrl() + "/login",
-			data: {username: $('input[name=loginEmail]').val(),password: $('input[name=loginPassword]').val()},
+			data: {Email: $('input[name=loginEmail]').val(),Password: $('input[name=loginPassword]').val()},
 			xhrFields: {
 				withCredentials: true
 			},
@@ -23,14 +23,22 @@ function Login(){
 }
 
 
-function GetInfo(){
+function ClickMemberButton(){
 	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
-			url: GetServerUrl() + "/login/getInfo",
+			url: GetServerUrl() + "/login/getUserName",
 			success: function(msg)
 			{
-				console.log(msg);
+				var object = JSON.parse(msg);
+				if(object.success)
+				{
+					location.href = GetServerUrl();
+				}
+				else
+				{
+					location.href = GetServerUrl() + "/login.html";
+				}
 		   	},
 		   	error: function(xhr, textStatus, error)
 		   	{

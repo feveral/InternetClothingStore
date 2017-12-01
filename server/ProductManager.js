@@ -38,7 +38,7 @@ module.exports = class ProductManager{
 				attribute['ImagePath'] = './image/' + attribute['Name'] + '_' + attribute['Color'] + '.jpg';
 				this.AddProduct(attribute,callback);
 			}	
-}
+	}
 
 	GetSubCategoryByCategory(category,callback){
 		this.db.query(
