@@ -7,8 +7,9 @@ var onsaleManager = new OnsaleManager(DatabaseUtility.Getdb());
 onsaleManager.AddOnsale(
 	{
 		ProductId: 22 ,
+		Name: "開幕特賣8折",
 		Date: "2017/12/8" ,
-		Price: 200
+		PercentOff: 20
 	},
 	DatabaseUtility.callback
 );

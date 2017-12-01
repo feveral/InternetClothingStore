@@ -11,11 +11,12 @@ module.exports = class OnsaleManager{
 	AddOnsale(attribute,callback){
 		this.db.query(
 			"INSERT INTO ONSALE " +
-			"(ProductId,Date,Price)" +
+			"(ProductId,Name,Date,PercentOff)" +
 			"VALUES ( " + 
 			"'" + attribute['ProductId'] +  "' , " + 
+			"'" + attribute['Name'] + "' , " +  
 			"'" + attribute['Date'] + "' , " +  
-			"'" + attribute['Price'] +  "' ); " , 
+			"'" + attribute['PercentOff'] +  "' ); " , 
 			function(err,result){
 				callback(err,result);
 			}  

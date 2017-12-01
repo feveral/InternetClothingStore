@@ -536,11 +536,11 @@ productManager.AddProductIterately(
 	['L'],
 	DatabaseUtility.callback
 );
-
+/*
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',
-		Name:"80'S熱帶配色短TEE",
+		Name:"80\'S熱帶配色短TEE",
 		Price:380,
 		Color:'',
 		Size:'',
@@ -553,6 +553,7 @@ productManager.AddProductIterately(
 	['M'],
 	DatabaseUtility.callback
 );
+*/
 
 productManager.AddProductIterately(
 	{

@@ -68,6 +68,7 @@ var createShoppingCar =
 		"(ProductId INT NOT NULL , " + 
 		"MemberId INT NOT NULL , " + 
 		"Quantity INT NOT NULL , " +
+		"PRIMARY KEY(ProductId,MemberId) , " +
 		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
 		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
@@ -76,6 +77,7 @@ var createFavorite =
 	"CREATE TABLE FAVORITE" + 
 		"(ProductId INT NOT NULL , " + 
 		"MemberId INT NOT NULL , " +
+		"PRIMARY KEY(ProductId,MemberId) , " +
 		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
 		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
@@ -83,8 +85,10 @@ var createFavorite =
 var createOnSale = 
 	"CREATE TABLE ONSALE" + 
 		"(ProductId INT NOT NULL , " + 
+		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " + 
 		"Date DATE NOT NULL , " +
-		"Price INT NOT NULL , " + 
+		"PercentOff INT NOT NULL , " + 
+		"PRIMARY KEY(Name,ProductId) , " +
 		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id)" +
 	");";
 
@@ -105,9 +109,11 @@ var createOrderItem =
 		"(ProductId INT NOT NULL , " + 
 		"OrderId INT NOT NULL , " +
 		"QUANTITY INT NOT NULL , " + 
+		"PRIMARY KEY (ProductId,OrderId) , " +
 		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
 		"FOREIGN KEY(OrderId) REFERENCES ORDERLIST(Id) " +
 	");";
+
 DatabaseUtility.ExecuteSQLCommand(dropDatabaseShtick);
 DatabaseUtility.ExecuteSQLCommand(createDatabaseShtick);
 
