@@ -8,39 +8,40 @@
 
 /* Product */
 	
-	#product{
+	#main{
+		position: absolute;
+		top: 130px;
 		width: 100%;
 		height: 100%;
-		margin-left: 15%;
-		margin-right: 15%;
+		margin-left: 20%;
+		margin-right: 20%;
 	}
 
-	#product div{
+	#main > div{
 		display: inline-block;
 	}
 
-	#product p{
+	#main p{
 		margin-top: 2%;
 		margin-bottom: 3%;
 	}
 
-	#product a:hover {
+	#main a:hover {
 		background: black;
 		color: white;
 		cursor: pointer;
 	}
 
-	#product a.button{
+	#main a.button{
 		display:inline-block;
 		font-size: 14px;
 		border: 1px solid black;
-		padding-left: 10%;
-		padding-right: 10%;
-		padding-top: 2%;
-		padding-bottom: 2%;
+		width: 230px;
+		padding: 15px 0;
+		text-align: center;
 	}
 
-	#product a.sizeButton{
+	#main a.sizeButton{
 		display:inline-block;
 		font-size: 14px;
 		border: 1px solid black;
@@ -51,62 +52,60 @@
 		margin-bottom: 3%;
 	}
 
-/*ProductImage*/
-
-	#productImage{
-		width: 50%;
-	}
-
-	#productImage img {
-		width : 60%;
+	#main > img {
+		display: inline-block;
+		width : 30%;
+		margin-right: 100px;
 	}
 
 /*ProductInformation*/
+
 	#productInformation{
-		width: 45%;
+		width: 30%;
 		vertical-align: top;
 		margin-top: 10%;
 	}
+
 	#productInformation > *{
 		display: block;
+	}
+
+	#onSale{
+		font-size: 14px;
+		color: #666666;
 	}
 
 /*ProductName*/
 	#productName{
 		font-weight: bolder;
-		font-size: 20px;
+		font-size: 1.1em;
 	}
 
-/*ProductPrice*/
+/* ProductPrice */
+
 	#productPrice{
 		display:inline-block;
-		width: 32%;
+		font-size: 14px;
+		height: 25px;
+		width: 230px;
+		padding-bottom: 5px;
 		border-bottom: 1px black solid;
-		margin-bottom: 3%;
-	}
-
-/*ProductColorDiv*/
-	#productColorDiv{
-		display:inline-block;
-		float: left;
-		width: 20%;
-	}
-
-/*ProductSizeDiv*/
-	#selectSizeDiv{
-		display:inline-block;
-		float: right;
-		width: 80%;
+		margin-bottom: 15px;
 	}
 
 /*Color*/
-	#color{
-		display: inline-block;
-		border: 1px solid black;
+
+	#colorChoose{
+		width: 230px;
 		font-size: 14px;
-		margin-top: 2%;
-		margin-bottom: 3%;
 	}
+		#colorChoose div{
+			display:inline-block;
+		}
+
+		#colorChoose div:nth-child(2){
+			float: right;
+		}
 
 /*ProductColor*/
 	div.productColor{
@@ -115,11 +114,6 @@
 		height: 20px;
 		margin-top: 5%;
 		margin-bottom: 3%;
-	}
-
-	div.productColor:active {
-		border: 1px solid black;
-		background-color: yellow;
 	}
 
 
@@ -139,13 +133,7 @@
 		line-height: 20px;
 	}
 
-	#itemQuantity{
-		width: 5%;
+	#productQuantity input{
+		width: 10%;
 		text-align: center;
-		margin-left: -4px;
-		margin-right: -4px;
-		line-height: 20px;
-		padding-left: 3%;
-		padding-right:  3%;
-		vertical-align: top;
 	}

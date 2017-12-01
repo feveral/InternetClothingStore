@@ -2,12 +2,15 @@
 /* Header */
 
 	#header{
-		display: block;
+		position: fixed;
+		width: 100%;
 		font-size: 12px;
 		font-weight: bold;
 		letter-spacing: 1px;
-		height: 14.5vh;
+		height: 130px;
 		border-bottom: 2px solid black;
+		z-index: 1;
+		background-color: white;
 	}
 		#header div{
 			display: inline-block;
@@ -46,21 +49,20 @@
 /* Selector */
 
 	#selector{
-		position: absolute;
+		position: fixed;
+		top: 130px;
 		padding-top: 20px;
 		padding-left: 50vh;
 		background-color: white; 
 		border-bottom:1px solid black;
-		display: none;
+		visibility: hidden;
 		clear:left;
 		width: 100%;
 		height: 400px;
 		z-index: 1;
+	    -webkit-transition: visibility 0.1s linear; /* For Safari 3.1 to 6.0 */
+	    transition: visibility 0.1s linear;
 	}
-
-		#selector:hover{
-			display: block;
-		}
 
 		#selector div{
 			font-size: 14px;

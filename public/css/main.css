@@ -3,6 +3,8 @@
 
 	#main{
 		display: block;
+		position: absolute;
+		top: 130px;
 		margin-left: 13%;
 		margin-right: 13%;
 	}
@@ -34,6 +36,3 @@
 		height: 100%;
 		margin-bottom: 10px;
 	}
-
-
-

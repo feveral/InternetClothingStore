@@ -9,6 +9,7 @@ var db = mysql.createConnection({
 });
 
 exports.Getdb = function(){
+	exports.ExecuteSQLCommandWithoutLog("use Shtick;");
 	return db;
 }
 
@@ -18,6 +19,12 @@ exports.ExecuteSQLCommand = function(command){
 			console.log(err);
 		else
 		 	console.log(result);
+	});
+}
+
+exports.ExecuteSQLCommandWithoutLog = function(command){
+	db.query(command,function(err , result){
+
 	});
 }
 

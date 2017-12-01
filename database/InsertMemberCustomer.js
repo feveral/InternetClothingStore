@@ -2,7 +2,7 @@
 
 var DatabaseUtility = require('./DatabaseUtility.js');
 var MemberManager = require('../server/MemberManager.js');
-var memberManager = new MemberManager(DatabaseUtility.Getdb());
+var memberManager = new MemberManager();
 
 memberManager.AddCustomer(
 	{

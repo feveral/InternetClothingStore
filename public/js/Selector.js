@@ -1,10 +1,10 @@
 
 function ShowSelector(){
-	$("#selector").css("display","block");
+	$("#selector").css("visibility","visible");
 }
 
 function HideSelector(){
-	$("#selector").css("display","none");
+	$("#selector").css("visibility","hidden");
 }
 
 $(document).ready(function(){

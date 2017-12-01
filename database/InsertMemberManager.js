@@ -20,7 +20,7 @@ memberManager.AddManager(
 	{
 		Id:104820004,
 		Name:"忠禮",
-		Email:"joh860829nny@gmail.com",
+		Email:"joh8608233nny@gmail.com",
 		Cellphone:"0923961566",
 		Password:"timmy880925",
 		Address:"台中市神岡區中山路478號"
@@ -32,7 +32,7 @@ memberManager.AddManager(
 	{
 		Id:104820021,
 		Name:"忠禮",
-		Email:"joh860829nny@gmail.com",
+		Email:"joh86082jweinny@gmail.com",
 		Cellphone:"0923961566",
 		Password:"timmy880925",
 		Address:"台中市神岡區中山路478號"
@@ -44,7 +44,7 @@ memberManager.AddManager(
 	{
 		Id:104820027,
 		Name:"忠禮",
-		Email:"joh860829nny@gmail.com",
+		Email:"joh860829qewtrenny@gmail.com",
 		Cellphone:"0923961566",
 		Password:"timmy880925",
 		Address:"台中市神岡區中山路478號"
