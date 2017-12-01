@@ -2,6 +2,15 @@
 
 var DatabaseUtility = require('./DatabaseUtility.js');
 
+var dropDatabaseShtick =
+	"DROP DATABASE IF EXISTS Shtick;"
+
+var createDatabaseShtick =
+	"CREATE DATABASE Shtick;"
+
+var useShtick = 
+	"USE Shtick;";
+
 var dropTableProduct =
 	"DROP TABLE IF EXISTS PRODUCT;"
 
@@ -23,68 +32,60 @@ var dropTableOrderList =
 var dropTableOrderItem =
 	"DROP TABLE IF EXISTS ORDERITEM;"
 
+var dropTableMember =
+	"DROP TABLE IF EXISTS MEMBER;"
+
+var createMember =
+	"CREATE TABLE MEMBER" +
+		"(Id INT NOT NULL AUTO_INCREMENT , " +
+		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " +
+		"Membertype VARCHAR(50) NOT NULL , " +
+		"Email VARCHAR(255) NOT NULL , " +
+		"Cellphone VARCHAR(10) NOT NULL ," +
+		"Password VARCHAR(255) NOT NULL ," +
+		"Address VARCHAR(255) CHARACTER SET utf8 ," +
+		"PRIMARY KEY (Id)" +
+	");";
+
 var createProduct =
 	"CREATE TABLE PRODUCT" +
 	 	"(Id INT NOT NULL AUTO_INCREMENT, " +
 	 	"ManagerId INT NOT NULL, " +
 	 	"Name VARCHAR(30) CHARACTER SET utf8 NOT NULL," +
-	 	"Price INT ," +
+	 	"Price INT NOT NULL ," +
 	 	"Color VARCHAR(10) CHARACTER SET utf8 NOT NULL," +
 	 	"Size VARCHAR(5) NOT NULL," +
-	 	"Stock INT ," +
-	 	"Category VARCHAR(15) CHARACTER SET utf8," +
-	 	"SubCategory VARCHAR(15) CHARACTER SET utf8," +
-	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 ," +
-	    "PRIMARY KEY (Id)" +
-	");";
-
-var dropTableMember =
-	"DROP TABLE IF EXISTS MEMBER;";
-	
-var createMember =
-	"CREATE TABLE MEMBER" +
-		"(Id INT NOT NULL AUTO_INCREMENT , " +
-		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " +
-		"Membertype VARCHAR(50) , " +
-		"Email VARCHAR(255) NOT NULL , " +
-		"Cellphone VARCHAR(10) NOT NULL ," +
-		"Password VARCHAR(255) NOT NULL , " +
-		"Address VARCHAR(255) CHARACTER SET utf8 ," +
-		"PRIMARY KEY (Id)" +
+	 	"Stock INT NOT NULL ," +
+	 	"Category VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
+	 	"SubCategory VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
+	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 NOT NULL , " +
+	    "PRIMARY KEY (Id) ," +
+	    "FOREIGN KEY(ManagerId) REFERENCES MEMBER(Id) " +
 	");";
 
 var createShoppingCar = 
 	"CREATE TABLE SHOPPINGCAR" + 
 		"(ProductId INT NOT NULL , " + 
 		"MemberId INT NOT NULL , " + 
-		"Quantity INT NOT NULL  " +
-		//"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
-		//"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
+		"Quantity INT NOT NULL , " +
+		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
+		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
 
 var createFavorite = 
 	"CREATE TABLE FAVORITE" + 
 		"(ProductId INT NOT NULL , " + 
-		"MemberId INT NOT NULL " +
-		//"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
-		//"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
+		"MemberId INT NOT NULL , " +
+		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
+		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
 
 var createOnSale = 
 	"CREATE TABLE ONSALE" + 
 		"(ProductId INT NOT NULL , " + 
 		"Date DATE NOT NULL , " +
-		"Price INT NOT NULL  " + 
-		//"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id)" +
-	");";
-
-var createOrderItem = 
-	"CREATE TABLE ORDERITEM" + 
-		"(ProductId INT NOT NULL , " + 
-		"OrderId INT NOT NULL , " +
-		"QUANTITY INT NOT NULL  " + 
-		//"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
-		//"FOREIGN KEY(OrderId) REFERENCES ORDER(Id) " +
+		"Price INT NOT NULL , " + 
+		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id)" +
 	");";
 
 var createOrderList = 
@@ -95,15 +96,28 @@ var createOrderList =
 		"Paytype VARCHAR(10) NOT NULL , " +
 		"Time DATE NOT NULL , " + 
 		"MemberId INT NOT NULL , " +  
-		"PRIMARY KEY (Id) " +
-		//"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
+		"PRIMARY KEY (Id) , " +
+		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
 
-DatabaseUtility.ExecuteSQLCommand(dropTableProduct);
-DatabaseUtility.ExecuteSQLCommand(createProduct);
+var createOrderItem = 
+	"CREATE TABLE ORDERITEM" + 
+		"(ProductId INT NOT NULL , " + 
+		"OrderId INT NOT NULL , " +
+		"QUANTITY INT NOT NULL , " + 
+		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
+		"FOREIGN KEY(OrderId) REFERENCES ORDERLIST(Id) " +
+	");";
+DatabaseUtility.ExecuteSQLCommand(dropDatabaseShtick);
+DatabaseUtility.ExecuteSQLCommand(createDatabaseShtick);
+
+DatabaseUtility.ExecuteSQLCommand(useShtick);
 
 DatabaseUtility.ExecuteSQLCommand(dropTableMember);
 DatabaseUtility.ExecuteSQLCommand(createMember);
+
+DatabaseUtility.ExecuteSQLCommand(dropTableProduct);
+DatabaseUtility.ExecuteSQLCommand(createProduct);
 
 DatabaseUtility.ExecuteSQLCommand(dropTableShoppingCar);
 DatabaseUtility.ExecuteSQLCommand(createShoppingCar);
