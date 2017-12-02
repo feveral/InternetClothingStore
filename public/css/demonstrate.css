@@ -41,17 +41,6 @@
 		text-align: center;
 	}
 
-	#main a.sizeButton{
-		display:inline-block;
-		font-size: 14px;
-		border: 1px solid black;
-		padding-left: 3%;
-		padding-right: 3%;
-		padding-top: 1.5%;
-		padding-bottom: 1.5%;
-		margin-bottom: 3%;
-	}
-
 	#main > img {
 		display: inline-block;
 		width : 30%;
@@ -95,23 +84,26 @@
 
 /*Color*/
 
-	#colorChoose{
+	#appearenceChoose{
 		width: 230px;
 		font-size: 14px;
 	}
-		#colorChoose div{
+		#appearenceChoose div{
 			display:inline-block;
 		}
 
-		#colorChoose div:nth-child(2){
+		#appearenceChoose div:nth-child(2){
 			float: right;
 		}
 
-/*ProductColor*/
-	div.productColor{
+/* ProductColor */
+
+	#productColor > div{
+		display: inline-block;
 		background-color: green;
 		width: 20px;
 		height: 20px;
+		margin-right: 5px;
 		margin-top: 5%;
 		margin-bottom: 3%;
 	}
@@ -136,4 +128,17 @@
 	#productQuantity input{
 		width: 10%;
 		text-align: center;
+	}
+
+/* productSize */
+
+	#productSize > a{
+		display:inline-block;
+		font-size: 14px;
+		border: 1px solid black;
+		padding-left: 3%;
+		padding-right: 3%;
+		padding-top: 1.5%;
+		padding-bottom: 1.5%;
+		margin-bottom: 3%;
 	}

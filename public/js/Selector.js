@@ -1,10 +1,14 @@
 
 function ShowSelector(){
-	$("#selector").css("visibility","visible");
+	// $("#selector").css("visibility","visible");
+	 $("#selector").css("height","400px");
+	 $("#selector").css("padding-top","30px");
 }
 
 function HideSelector(){
-	$("#selector").css("visibility","hidden");
+	// $("#selector").css("visibility","hidden");
+	 $("#selector").css("height","0px");
+	 $("#selector").css("padding-top","0px");
 }
 
 $(document).ready(function(){

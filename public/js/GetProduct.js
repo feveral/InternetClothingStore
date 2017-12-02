@@ -1,10 +1,11 @@
 
 function GetProduct(categoryOrSubCategory){
-	$(document).ready(function(){
+	$(document).ready(function(){ 
 		$.ajax({
 			type: "GET",
 			url: GetServerUrl() + "/product/" + categoryOrSubCategory,
 			success: function(msg){
+				location.href = GetServerUrl() + "#" + categoryOrSubCategory;
 				RenderProduct(msg);
 		   	},
 		   	error: function(xhr, textStatus, error){
