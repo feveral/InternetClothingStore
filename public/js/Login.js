@@ -22,6 +22,27 @@ function Login(){
 	});
 }
 
+function Logout(){
+	$(document).ready(function(){
+
+		$.ajax({
+			type: "GET",
+			url: GetServerUrl() + "/login/logout",
+			data: {},
+			xhrFields: {
+				withCredentials: true
+			},
+			success: function(msg)
+			{
+				location.href = GetServerUrl();
+		   	},
+		   	error: function(xhr, textStatus, error)
+		   	{
+		        console.log(error);
+		   	}
+		});
+	});
+}
 
 function ClickMemberButton(){
 	$(document).ready(function(){
@@ -33,7 +54,7 @@ function ClickMemberButton(){
 				var object = JSON.parse(msg);
 				if(object.success)
 				{
-					location.href = GetServerUrl();
+					//location.href = GetServerUrl();
 				}
 				else
 				{

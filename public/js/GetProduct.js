@@ -66,7 +66,7 @@ function AddSize(html, product){
 function productToHtml(product){
 	var html = "";
 	html += '<div id="product" class="col-3">';
-	html += '<a href="demonstration.html"><img class="image" src="{ImagePath}"/></a>';
+	html += '<a href="demonstration.html#' + product['Name'] + '?' + product['Color'] + '"><img class="image" src="{ImagePath}"/></a>';
 	html += '<div id="productName">{Name}</div>';
 	html += '<div id="productPrice">TWD.{Price}</div>';
 	html += '<div id="productSize">';

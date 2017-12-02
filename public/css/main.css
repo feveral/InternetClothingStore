@@ -21,17 +21,22 @@
 		text-align: right;
 	}
 
-	#productSize a{
-		color: black;
-		border: 1px solid black;
-		margin-left: 4px;
-		padding-left: 2px;
-		padding-right: 2px;
-		font-size: 15px;
-	}
+		#productSize a{
+			color: black;
+			border: 1px solid black;
+			margin-left: 4px;
+			padding-left: 2px;
+			padding-right: 2px;
+			font-size: 15px;
+		}
+		
+		#productSize a:hover{
+			color: white;
+			background-color: black;
+		}
 
 	.image{
-		
+
 		display: block;
 		width: 100%;
 		height: 100%;

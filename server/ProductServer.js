@@ -15,6 +15,10 @@ module.exports = class{
 	SetAPI(){
 		var self = this;
 
+		self.router.get('/name/:name',function(req,res){
+			 // var name = 
+		});
+
 		// Get SubCategory from Category
 		self.router.get('/subCategory/:category',function(req,res){
 			var category = path.basename(req.url);

@@ -84,10 +84,8 @@ module.exports = class{
 
 		// does not test at all
 		self.router.get('/logout',function (req, res) {
-			req.logout();
-		    delete req.session;
-		    console.log('logged out');
-		    //res.sendFile(path.resolve('./public/logout.html'));
+			req.session.destroy();
+		    res.redirect('/');
 		});
 	}
 }

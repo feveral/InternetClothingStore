@@ -1,12 +1,10 @@
 
 function ShowSelector(){
-	// $("#selector").css("visibility","visible");
 	 $("#selector").css("height","400px");
 	 $("#selector").css("padding-top","30px");
 }
 
 function HideSelector(){
-	// $("#selector").css("visibility","hidden");
 	 $("#selector").css("height","0px");
 	 $("#selector").css("padding-top","0px");
 }
@@ -17,6 +15,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+	AddSubCategoryToCategory('Basic',1);
+	AddSubCategoryToCategory('Top',2);
+	AddSubCategoryToCategory('Coat',3);
+	AddSubCategoryToCategory('Bottom',4);
+	AddSubCategoryToCategory('Accessories',5);
 	$("#mainMenu span:nth-child(1)").hover(function(){
 			AddSubCategoryToCategory('Basic',1);
 			AddSubCategoryToCategory('Top',2);

@@ -40,6 +40,16 @@ module.exports = class ProductManager{
 			}	
 	}
 
+	GetProductByName(name){
+		this.db.query(
+			"SELECT * " + 
+			"FROM PRODUCT " + 
+			"WHERE Name=" + name + ";" , 
+			function(err,result){
+				console.log(result);
+			});
+	}
+
 	GetSubCategoryByCategory(category,callback){
 		this.db.query(
 			"SELECT DISTINCT SubCategory " + 
