@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	var attribute = HashToNameAndColor(location.hash);
+	$('#main img').attr('src','./image/'+ attribute.Name + "_" + attribute.Color + ".jpg");
 	GetProductByName(attribute.Name);
 
 });
@@ -11,7 +12,6 @@ function GetProductByName(productName){
 			type: 'GET',
 			url: GetServerUrl() + '/product/name/' + productName,
 			success:function(msg){
-				
 				RenderDemonstrate(JSON.parse(msg)['data']);
 			},
 			error:function(xhr, textStatus, error){
@@ -31,7 +31,7 @@ function RenderDemonstrate(products){
 	for (var c in colors){
 		$('#productColor').append('<img src="' + GetColorUrl(colors[c]) + '">');
 	}
-	
+
 	$('#productSize').empty();
 	for (var s in sizes){
 		$('#productSize').append('<a>' + sizes[s] + '</a>');
