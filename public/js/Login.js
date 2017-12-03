@@ -2,7 +2,6 @@
 function Login(){
 
 	$(document).ready(function(){
-
 		$.ajax({
 			type: "POST",
 			url: GetServerUrl() + "/login",

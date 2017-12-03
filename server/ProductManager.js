@@ -40,13 +40,13 @@ module.exports = class ProductManager{
 			}	
 	}
 
-	GetProductByName(name){
+	GetProductByName(name,callback){
 		this.db.query(
 			"SELECT * " + 
 			"FROM PRODUCT " + 
-			"WHERE Name=" + name + ";" , 
+			"WHERE Name=" + "'" + name + "'" + ";" , 
 			function(err,result){
-				console.log(result);
+				callback(err,result);
 			});
 	}
 

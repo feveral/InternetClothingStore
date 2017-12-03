@@ -16,7 +16,18 @@ module.exports = class{
 		var self = this;
 
 		self.router.get('/name/:name',function(req,res){
-			 // var name = 
+			req.url = decodeURI(req.url);
+			var name = path.basename(req.url);
+			self.productManager.GetProductByName(name,function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
 		});
 
 		// Get SubCategory from Category

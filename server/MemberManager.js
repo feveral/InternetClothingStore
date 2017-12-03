@@ -60,11 +60,11 @@ module.exports = class MemberManager{
 
 		this.GetMemberFromEmail(email,function(err,result){
 			var member = result;
-			if(result.Password === password)
+			if(!result)
 			{
-				callback(err,{success:true,user:result});
+				callback(err,{success:false,user:result});
 			}
-			else
+			else if(result.Password === password)
 			{
 				callback(err,{success:true,user:result})
 			}
