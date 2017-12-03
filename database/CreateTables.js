@@ -58,6 +58,7 @@ var createProduct =
 	 	"Stock INT NOT NULL ," +
 	 	"Category VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
 	 	"SubCategory VARCHAR(15) CHARACTER SET utf8 NOT NULL , " +
+	 	"Date DATE NOT NULL , " +
 	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 NOT NULL , " +
 	    "PRIMARY KEY (Id) ," +
 	    "FOREIGN KEY(ManagerId) REFERENCES MEMBER(Id) " +

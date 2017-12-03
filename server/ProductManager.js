@@ -1,6 +1,7 @@
 'use strict';
 
 const DatabaseUtility = require('../database/DatabaseUtility.js')
+const Utility = require('./Utility.js');
 
 module.exports = class ProductManager{
 
@@ -11,7 +12,7 @@ module.exports = class ProductManager{
 	AddProduct(attribute,callback){
 		this.db.query(
 			"INSERT INTO PRODUCT " +
-			"(ManagerId,Name,Price,Color,Size,Stock,Category,SubCategory,ImagePath)" +
+			"(ManagerId,Name,Price,Color,Size,Stock,Category,SubCategory,Date,ImagePath)" +
 			"VALUES ( " + 
 			"'" + attribute['ManagerId'] + "' , " + 
 			"'" + attribute['Name'] +  "' , " + 
@@ -21,6 +22,7 @@ module.exports = class ProductManager{
 			attribute['Stock'] + " , " +
 			"'" + attribute['Category'] +  "' , " + 
 			"'" + attribute['SubCategory'] + "' , " +  
+			"'" + attribute['Date'] + "' , " +  
 			"'" + attribute['ImagePath'] + "' ); " , 
 			function(err,result){
 				callback(err,result);
@@ -32,6 +34,7 @@ module.exports = class ProductManager{
 
 		for(let c in color)
 			for(let s in size){
+				attribute['Date'] = Utility.ProduceRandomDate();
 				attribute['Color'] = color[c];
 				attribute['Size'] = size[s];
 				attribute['Stock'] = Math.floor((Math.random() * 100) + 1);
@@ -47,7 +50,8 @@ module.exports = class ProductManager{
 			"WHERE Name=" + "'" + name + "'" + ";" , 
 			function(err,result){
 				callback(err,result);
-			});
+			}
+		);
 	}
 
 	GetSubCategoryByCategory(category,callback){
