@@ -1,18 +1,12 @@
 
 function GetProduct(categoryOrSubCategory){
-	$(document).ready(function(){ 
-		$.ajax({
-			type: "GET",
-			url: GetServerUrl() + "/product/" + categoryOrSubCategory,
-			success: function(msg){
-				location.href = GetServerUrl() + "#" + categoryOrSubCategory;
-				RenderProduct(msg);
-		   	},
-		   	error: function(xhr, textStatus, error){
-		        console.log(xhr.statusText);
-		   	}
-		});
-	});
+
+	var apiUrl = GetServerUrl() + "/product/" + categoryOrSubCategory;
+	var callback = function(msg){
+		location.href = GetServerUrl() + "#" + categoryOrSubCategory;
+		RenderProduct(msg);
+	}
+	AjaxGet(apiUrl,callback);
 }
 
 function RenderProduct(msg){

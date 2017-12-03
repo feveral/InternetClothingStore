@@ -23,3 +23,5 @@ app.use('/register', registerRouter);
 app.use(express.static('public'));
 
 app.listen(80);
+
+const Utility = require('./server/Utility.js');

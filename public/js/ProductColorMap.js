@@ -40,5 +40,8 @@ function GetColorUrl(color){
 	else{
 		return "";
 	}
+}
+
+function GetColorChinese(url){
 
 }

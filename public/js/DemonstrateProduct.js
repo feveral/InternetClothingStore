@@ -7,18 +7,11 @@ $(document).ready(function(){
 });
 
 function GetProductByName(productName){
-	$(document).ready(function(){
-		$.ajax({
-			type: 'GET',
-			url: GetServerUrl() + '/product/name/' + productName,
-			success:function(msg){
-				RenderDemonstrate(JSON.parse(msg)['data']);
-			},
-			error:function(xhr, textStatus, error){
-		        console.log(xhr.statusText);
-			}
-		});
-	});
+	var apiUrl = GetServerUrl() + '/product/name/' + productName;
+	var callback = function(msg){
+		RenderDemonstrate(JSON.parse(msg)['data']);
+	}
+	AjaxGet(apiUrl,callback);
 }
 
 function RenderDemonstrate(products){
