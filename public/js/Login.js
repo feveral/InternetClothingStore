@@ -85,3 +85,40 @@ function ChangeToRegister(){
 		$('#registerTitle').css('background-color','black');
 	});
 }
+
+
+function Register(){
+	console.log("fsahfjs");
+	$(document).ready(function(){
+		$.ajax({
+			type: "POST",
+			url: GetServerUrl() + "/register",
+			data: {
+					Email: $('input[name=registerEmail]').val(),
+					Password: $('input[name=registerPassword]').val(),
+					Cellphone: $('input[name=registerCellphone]').val(),
+					Name:"123",
+					Address:"789"
+				  },
+			xhrFields: {
+				withCredentials: true
+			},
+			success: function(msg)
+			{
+				//location.href = GetServerUrl();
+				console.log("duck");
+		   	},
+		   	error: function(xhr, textStatus, error)
+		   	{
+
+		        console.log(error);
+		   	}
+		});
+	});
+}
+
+function ClickRegister(){
+	$(document).ready(function(){
+		Register();
+	});
+}
