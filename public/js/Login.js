@@ -1,71 +1,41 @@
 
 function Login(){
 
-	$(document).ready(function(){
-		$.ajax({
-			type: "POST",
-			url: GetServerUrl() + "/login",
-			data: {Email: $('input[name=loginEmail]').val(),Password: $('input[name=loginPassword]').val()},
-			xhrFields: {
-				withCredentials: true
-			},
-			success: function(msg)
-			{
-				location.href = GetServerUrl();
-		   	},
-		   	error: function(xhr, textStatus, error)
-		   	{
-		        console.log(error);
-		   	}
-		});
-	});
+	var data = 
+	{
+		Email: $('input[name=loginEmail]').val(),
+		Password: $('input[name=loginPassword]').val()
+	};
+	var apiUrl = GetServerUrl() + "/login";
+	var callback = function(msg){
+		location.href = GetServerUrl();
+	}
+	AjaxPost(apiUrl,data,callback);
 }
 
 function Logout(){
-	$(document).ready(function(){
-
-		$.ajax({
-			type: "GET",
-			url: GetServerUrl() + "/login/logout",
-			data: {},
-			xhrFields: {
-				withCredentials: true
-			},
-			success: function(msg)
-			{
-				location.href = GetServerUrl();
-		   	},
-		   	error: function(xhr, textStatus, error)
-		   	{
-		        console.log(error);
-		   	}
-		});
-	});
+	var apiUrl = GetServerUrl() + "/login/logout";
+	var callback = function(msg){
+		location.href = GetServerUrl();
+	}
+	AjaxGet(apiUrl,callback);
 }
 
 function ClickMemberButton(){
-	$(document).ready(function(){
-		$.ajax({
-			type: "GET",
-			url: GetServerUrl() + "/login/getUserName",
-			success: function(msg)
-			{
-				var object = JSON.parse(msg);
-				if(object.success)
-				{
-					//location.href = GetServerUrl();
-				}
-				else
-				{
-					location.href = GetServerUrl() + "/login.html";
-				}
-		   	},
-		   	error: function(xhr, textStatus, error)
-		   	{
-		        console.log(xhr.statusText);
-		   	}
-		});
-	});
+
+	var apiUrl = GetServerUrl() + "/login/getUserName";
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		if(object.success)
+		{
+			//location.href = GetServerUrl();
+		}
+		else
+		{
+			location.href = GetServerUrl() + "/login.html";
+		}
+	}
+	AjaxGet(apiUrl,callback);
 }
 
 function ChangeToLogin(){
