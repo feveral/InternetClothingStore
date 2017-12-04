@@ -24,7 +24,7 @@ function AjaxPost(apiUrl,postData,callback,errorCallback=DefaultErrorCallback){
 				callback(msg);
 			},
 		   	error: function(xhr, textStatus, error){
-		        console.log(xhr.statusText);
+		        errorCallback(xhr, textStatus, error);
 		   	}
 		});
 	});

@@ -17,7 +17,7 @@ module.exports = class MemberServer{
 
 		// Get SubCategory from Category
 		self.router.get('/GET/member/',function(req,res){
-			res.end('you get all member');
+			res.end();
 		});
 	}
 }

@@ -68,6 +68,10 @@ module.exports = class MemberManager{
 			{
 				callback(err,{success:true,user:result})
 			}
+			else
+			{
+				callback(err,{success:false,user:result});
+			}
 		});
 	}
 }

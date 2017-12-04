@@ -1,0 +1,19 @@
+
+/* Main */
+	
+	html,body{
+		width: 100%;
+	}
+	
+	#main{
+		position: absolute;
+		top:130px;
+		margin-top: 5%;
+		width: 100%;
+		text-align: center;
+	}
+
+	#main span{
+		display: inline-block;
+		width: 10%;
+	}

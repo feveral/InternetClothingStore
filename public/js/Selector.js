@@ -2,11 +2,13 @@
 function ShowSelector(){
 	 $("#selector").css("height","400px");
 	 $("#selector").css("padding-top","30px");
+	 $("#selector").css("box-shadow","1px 1px 1px #666666");
 }
 
 function HideSelector(){
 	 $("#selector").css("height","0px");
 	 $("#selector").css("padding-top","0px");
+	 $("#selector").css("box-shadow","none");
 }
 
 $(document).ready(function(){
