@@ -1,7 +1,7 @@
 
 function ShowMemberMenu(){
 	if($("#member > div > a").text() != '登入'){
-		$("#memberMenu").css("height","160px");
+		$("#memberMenu").css("height","180px");
 		$("#memberMenu").css("padding-top","20px");
 	}
 }

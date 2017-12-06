@@ -1,0 +1,60 @@
+#main{
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 22%;
+	width:56%;
+	height:100%;
+	background-color: white;
+	border:1px solid rgb(222, 228, 237);
+	box-shadow: 2px 2px 8px rgba(200,200,200,0.6);
+}
+	#order > div{
+		height:100px;
+		line-height: 100px;
+	}
+
+		#order >div >span{
+			display: inline-block;
+			padding-left: 5.5%;
+
+		}
+
+		#order > div > div{
+			margin-top: 34px;
+			display: inline-block;
+			float: right;
+			margin-right: 5%;
+			height: 32px;
+			width: 15%;
+			border:1px solid grey;
+			border-radius: 5px;
+			background-color: white;
+			box-shadow: 2px 2px 2px rgba(200,200,200,0.6);
+		}
+
+		#order > div > div > div{
+			margin-right: 5%;
+			height:20px;
+			text-align: center;
+			line-height: 20px;
+			margin-top: 6px;
+			color: grey;
+		}
+
+	#order span:last-child{
+		padding-left: 12%;
+	}
+
+	#order > div:first-child{
+		height:40px;
+		line-height: 40px;
+		font-weight: bold;
+	}
+
+	#order > div:nth-child(odd){
+		background-color: white;
+	}
+
+	#order > div:nth-child(even){
+		background-color: #F7F6F3;
+	}

@@ -57,38 +57,57 @@ function ChangeToRegister(){
 }
 
 
-function Register(){
-	console.log("fsahfjs");
-	$(document).ready(function(){
-		$.ajax({
-			type: "POST",
-			url: GetServerUrl() + "/register",
-			data: {
-					Email: $('input[name=registerEmail]').val(),
-					Password: $('input[name=registerPassword]').val(),
-					Cellphone: $('input[name=registerCellphone]').val(),
-					Name:"123",
-					Address:"789"
-				  },
-			xhrFields: {
-				withCredentials: true
-			},
-			success: function(msg)
-			{
-				//location.href = GetServerUrl();
-				console.log("duck");
-		   	},
-		   	error: function(xhr, textStatus, error)
-		   	{
+function IsTextNull(data){
+	return !!data;
+}
 
-		        console.log(error);
-		   	}
-		});
-	});
+function IsAllDataNotNull(){
+	var everythingsnotNull = false;
+	if(!IsTextNull($('input[name=registerEmail]').val()))
+		alert("Email can not be null");
+	else if(!IsTextNull($('input[name=registerName]').val()))
+		alert("Name can not be null");
+	else if(!IsTextNull($('input[name=registerPassword]').val()))
+		alert("Password can not be null");
+	else if(!IsTextNull($('input[name=registerCellphone]').val()))
+		alert("Cellphone can not be null");
+	else
+		everythingsnotNull = true;
+	return everythingsnotNull;
+}
+
+function IsPassWordEqual(){
+	if($('input[name=registerPassword]').val() != $('input[name=registerComfirmPassword]').val()){
+		alert("Password is not equal to confirmPassword");
+		return false;
+	}
+	return true;
+}
+
+function Register(){
+	var data = 
+	{
+		Email: ($('input[name=registerEmail]').val()),
+		Password: ($('input[name=registerPassword]').val()),
+		Cellphone: ($('input[name=registerCellphone]').val()),
+		Name: ($('input[name=registerName]').val()),
+		Address: $('input[name=registerAddress]').val(),
+	};
+	var apiUrl = GetServerUrl() + "/member/register";
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object.message);
+		if(!object.success){
+			alert(object.message);
+		}
+	}
+	AjaxPost(apiUrl,data,callback);
 }
 
 function ClickRegister(){
 	$(document).ready(function(){
-		Register();
+		if(IsAllDataNotNull())
+			if(IsPassWordEqual())
+				Register();
 	});
 }
