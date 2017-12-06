@@ -10,7 +10,11 @@ function Login(){
 	var callback = function(msg){
 		location.href = GetServerUrl();
 	}
-	AjaxPost(apiUrl,data,callback);
+	AjaxPost(apiUrl,data,callback,HandleLoginFail);
+}
+
+function HandleLoginFail(xhr, textStatus, error){
+	$('#status').css('display','block');
 }
 
 function Logout(){
@@ -20,6 +24,8 @@ function Logout(){
 	}
 	AjaxGet(apiUrl,callback);
 }
+
+
 
 function ClickMemberButton(){
 
@@ -34,6 +40,14 @@ function ClickMemberButton(){
 		{
 			location.href = GetServerUrl() + "/login.html";
 		}
+	}
+	AjaxGet(apiUrl,callback);
+}
+
+function ClickOtherAccountButton(){
+	var apiUrl = GetServerUrl() + "/login/logout";
+	var callback = function(msg){
+		location.href = GetServerUrl() + "/login.html";
 	}
 	AjaxGet(apiUrl,callback);
 }

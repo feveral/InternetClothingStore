@@ -2,28 +2,19 @@
 <html>
 <head>
 	<title>Shtick</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8"/>
-
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+	<link rel="stylesheet" type="text/css" href="css/shoppingCar.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
-	<script type="text/javascript" src="js/GetProduct.js"></script>
-	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/UserInformation.js"></script>
-	<script type="text/javascript" src="js/MainHash.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/MemberMenu.js"></script>
-
+	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/UserInformation.js"></script>
 </head>
-
 <body>
 
 	<div id="header">
@@ -32,19 +23,19 @@
 			<span>STILLAS</span>
 			<span>SALE</span>
 			<span>NEW</span>
+
 		</div>
 		<div id="member">
 			<div>
 				<a onclick="ClickMemberButton()">登入</a>
 			</div>
-			<a href="shoppingCar.html">購物車</a>
+			<a>購物車</a>
 		</div>
 	</div>
 
 	<div id="memberMenu">
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="#">會員中心</a>
-		<a href='order.html'>訂單管理</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
@@ -56,8 +47,27 @@
 		<div><a>Accessories</a></div>
 	</div>
 
-	<div id="main" class="row"></div> 
+	<div id="main">
+		
+		<div>
+			<span>商品名稱</span>
+			<span>顏色</span>
+			<span>尺寸</span>
+			<span>數量</span>
+			<span>單價</span>
+			<span>小計</span>
+		</div>
+
+		<div>
+			<img src="./image/美式PARIS字母背心_黑色.jpg ">
+			<span>美式PARIS字母背心</span>
+			<span>黑色</span>
+			<span>XL</span>
+			<section></section>
+		</div>
+
+	</div>
+
 
 </body>
-
 </html>

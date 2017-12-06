@@ -102,3 +102,25 @@ html,body{
 			background-color: black;
 		}
 
+/* Status */
+
+	#status{
+		display: none;
+		width: 100%;
+		font-size: 14px;
+		margin-top: 5%;
+		padding: 0% , 20px;
+	    -webkit-transition: opacity 5s ease-in-out; /* For Safari 3.1 to 6.0 */
+	    transition: opacity 5s ease-in-out;	
+	    text-align: center;
+	}
+
+	#status p{
+		display: block;
+		width: 30%;
+		color: black;
+		background-color: #ff6666;
+		padding: 20px 15px;
+		margin: 0% 35%;
+		border-radius: 5px;
+	}
