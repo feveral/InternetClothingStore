@@ -1,0 +1,103 @@
+#main{
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 17%;
+	width:66%;
+	height:700px;
+	background-color: white;
+	font-family: 微軟正黑體;
+}
+
+			#main > div > div:first-child{
+				height:25px;
+				line-height:25px;
+				background-color: black;
+				color: white;
+				font-size: 15px;
+				font-weight: bold;
+			}
+
+#order{
+	width:100%;
+	height:305px;
+	background-color: white;
+	border:1px solid black;
+	box-shadow: 2px 2px 8px rgba(200,200,200,0.6);
+}
+	#order > div{
+		height:40px;
+		line-height:40px;
+	}
+
+		#order > div > span{
+			color: black;
+			display: inline-block;
+			width:18%;
+			padding-left: 0.5%;	
+		}
+
+		#order > div:nth-child(odd){
+			background-color: white;
+		}
+
+		#order > div:nth-child(even){
+			background-color: #F7F6F3;
+		}
+		
+			#order > div > span:nth-child(even){
+				border-left: 2px solid white;
+				border-right: 2px solid white;
+				width: 25%;		
+			}
+
+#shoppingData{
+	margin-top: 3%;
+	width:100%;
+	height:305px;
+	background-color: white;
+	border:1px solid black;
+	box-shadow: 2px 2px 8px rgba(200,200,200,0.6);
+	font-size: 0px;
+	font-family: 微軟正黑體;
+}
+		#shoppingData > div > span{
+			display: inline-block;
+			height:40px;
+			line-height: 40px;
+			font-size: 16px;
+			width:9%;
+			border:1.2px solid #e5d9b5;
+			text-align: center;
+		}
+
+			#shoppingData > div > span:first-child{
+				width:13%;
+			}
+
+			#shoppingData > div > span:nth-child(2){
+				width:33%;
+			}
+
+		#shoppingData > div:nth-child(2){
+			font-weight: bold;
+			background-color: red;
+			text-align: center;
+		}
+
+		#shoppingData > div:nth-child(odd){
+			background-color: #F7F6F3;
+		}
+
+		#shoppingData > div:nth-child(even){
+			background-color: white;
+		}
+
+	#goBackOrder{
+		padding-left: 45%;
+		margin-top: 30px;
+	}
+
+		#goBackOrder a{
+			color: #737272;
+		}
+
