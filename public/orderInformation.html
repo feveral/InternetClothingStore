@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/orderInformation.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -40,13 +41,6 @@
 		</div>
 	</div>
 
-	<div id="memberMenu">
-		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
-		<a href="#">會員中心</a>
-		<a href='order.html'>訂單管理</a>
-		<a href="#" onclick="Logout()">登出</a>
-	</div>
-
 	<div id="selector">
 		<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
 		<div><a>Top</a></div>
@@ -55,8 +49,81 @@
 		<div><a>Accessories</a></div>
 	</div>
 
-	<div id="main" class="row">
-	</div> 
+	<div id="memberMenu">
+		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
+		<a href="#">會員中心</a>
+		<a href='order.html'>訂單管理</a>
+		<a href="#" onclick="Logout()">登出</a>
+	</div>
+
+	<div id="main">
+		<div id="order">
+			<div>◎訂單明細</div>
+			<div>
+				<span>訂單編號:</span>
+				<span id="orderNumber">aa</span>
+			</div>
+			<div>
+				<span>收件人:</span>
+				<span id="orderNumber">cc</span>
+			</div>
+			<div>
+				<span>填寫日期：</span>
+				<span id="orderNumber">dd</span>
+			</div>
+			<div>
+				<span>訂單狀態：</span>
+				<span id="orderNumber"></span>
+			</div>
+			<div>
+				<span>運送方式:</span>
+				<span id="orderNumber"></span>
+			</div>
+			<div>
+				<span>總金額：</span>
+				<span id="orderNumber"></span>
+			</div>
+			<div>
+				<span>備註1：</span>
+				<span id="orderNumber"></span>
+			</div>
+		</div>	
+		<div id="shoppingData">
+			<div>◎購買物品內容</div>
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>尺寸</span>
+				<span>數量</span>
+				<span>折扣</span>
+				<span>數量</span>
+				<span>備註</span>
+			</div>
+			<div>
+				<span>4154545456</span>
+				<span>jj</span>
+				<span>cc</span>
+				<span>dd</span>
+				<span>50</span>
+				<span>50</span>
+				<span>no</span>
+				<span>..</span>
+			</div>
+			<div>
+				<span>4154545456</span>
+				<span>jj</span>
+				<span>cc</span>
+				<span>dd</span>
+				<span>50</span>
+				<span>50</span>
+				<span>no</span>
+				<span>..</span>
+			</div>
+		</div>	
+		<div id="goBackOrder"><a href="order.html">回訂單查詢</a></div>
+	</div>
+
 
 </body>
 

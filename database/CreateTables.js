@@ -40,7 +40,7 @@ var createMember =
 		"(Id INT NOT NULL AUTO_INCREMENT , " +
 		"Name VARCHAR(50) CHARACTER SET utf8 NOT NULL , " +
 		"Membertype VARCHAR(50) NOT NULL , " +
-		"Email VARCHAR(255) NOT NULL , " +
+		"Email VARCHAR(255) NOT NULL UNIQUE, " +
 		"Cellphone VARCHAR(10) NOT NULL ," +
 		"Password VARCHAR(255) NOT NULL ," +
 		"Address VARCHAR(255) CHARACTER SET utf8 ," +

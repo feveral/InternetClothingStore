@@ -8,12 +8,15 @@ const DatabaseUtility = require('./database/DatabaseUtility.js');
 var app = express();
 var productRouter = express.Router();
 var loginRouter = express.Router();
+var MemberRouter = express.Router();
 
 new ProductServer(productRouter);
 new LoginServer(app,loginRouter);
+new MemberServer(MemberRouter);
 
 app.use('/login', loginRouter);
 app.use('/product', productRouter);
+app.use('/member', MemberRouter);
 app.use(express.static('public'));
 
 app.listen(80);

@@ -70,3 +70,59 @@ function ChangeToRegister(){
 		$('#registerTitle').css('background-color','black');
 	});
 }
+
+
+function IsTextNull(data){
+	return !!data;
+}
+
+function IsAllDataNotNull(){
+	var everythingsnotNull = false;
+	if(!IsTextNull($('input[name=registerEmail]').val()))
+		alert("Email can not be null");
+	else if(!IsTextNull($('input[name=registerName]').val()))
+		alert("Name can not be null");
+	else if(!IsTextNull($('input[name=registerPassword]').val()))
+		alert("Password can not be null");
+	else if(!IsTextNull($('input[name=registerCellphone]').val()))
+		alert("Cellphone can not be null");
+	else
+		everythingsnotNull = true;
+	return everythingsnotNull;
+}
+
+function IsPassWordEqual(){
+	if($('input[name=registerPassword]').val() != $('input[name=registerComfirmPassword]').val()){
+		alert("Password is not equal to confirmPassword");
+		return false;
+	}
+	return true;
+}
+
+function Register(){
+	var data = 
+	{
+		Email: ($('input[name=registerEmail]').val()),
+		Password: ($('input[name=registerPassword]').val()),
+		Cellphone: ($('input[name=registerCellphone]').val()),
+		Name: ($('input[name=registerName]').val()),
+		Address: $('input[name=registerAddress]').val(),
+	};
+	var apiUrl = GetServerUrl() + "/member/register";
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object.message);
+		if(!object.success){
+			alert(object.message);
+		}
+	}
+	AjaxPost(apiUrl,data,callback);
+}
+
+function ClickRegister(){
+	$(document).ready(function(){
+		if(IsAllDataNotNull())
+			if(IsPassWordEqual())
+				Register();
+	});
+}

@@ -86,7 +86,7 @@ html,body{
 			width: 45%;
 		}
 
-		#register input[name=registerCellphone]{
+		#register input[name=registerAddress]{
 			margin-bottom: 30px;
 		}
 

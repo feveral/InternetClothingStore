@@ -74,4 +74,30 @@ module.exports = class MemberManager{
 			}
 		});
 	}
+
+	IsRegisterOK(registerData,callback){
+		this.GetMemberFromEmail(registerData.Email,function(err,result){
+			var member = result;
+			if(!result && registerData.Email)
+			{
+				console.log("success");
+				callback(err,{success:true});
+			}
+			else if(!registerData.Email)
+			{
+				console.log("email");
+				callback(err,{success:false,message:"the email cannot be null!"})
+			}
+			else
+			{
+				console.log("repeat");
+				callback(err,{success:false,message:"the email has been registered!"})
+			}
+		});
+	}
+
+	// IsPasswordEmpty(registerData){
+	// 	if(!registerData.Password)
+	// 		return true;
+	// }
 }

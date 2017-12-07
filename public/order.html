@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shtick</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"/>
+
+	<link rel="stylesheet" type="text/css" href="css/initial.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/order.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
+	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/Login.js"></script>
+	<script type="text/javascript" src="js/UserInformation.js"></script>
+	<script type="text/javascript" src="js/MainHash.js"></script>
+	<script type="text/javascript" src="js/MemberMenu.js"></script>
+
+</head>
+
+<body>
+
+<div id="header">
+	<div id="logo"><img src="./image/logo.png"></div>
+	<div id="mainMenu">
+		<span>STILLAS</span>
+		<span>SALE</span>
+	</div>
+	<div id="member">
+		<div>
+			<a onclick="ClickMemberButton()">登入</a>
+		</div>
+		<a>購物車</a>
+	</div>
+</div>
+
+<div id="memberMenu">
+	<a href="#">其他帳號登入</a>
+	<a href="#">會員中心</a>
+	<a href='order.html'>訂單管理</a>
+	<a href="#" onclick="Logout()">登出</a>
+</div>
+
+<div id="selector">
+	<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
+	<div><a>Top</a></div>
+	<div><a>Coat</a></div>
+	<div><a>Bottom</a></div>
+	<div><a>Accessories</a></div>
+</div>
+
+<div id="main">
+	<div id="order">
+		<div>
+			<span>訂單編號</span>
+			<span>訂單日期</span>
+			<span>處理情形</span>
+			<span>寄送日期</span>
+			<span>運送方式</span>
+			<span>備註</span>
+		</div>
+		<div>
+			<span>訂單編號</span>
+			<span>訂單日期</span>
+			<span>處理情形</span>
+			<span>寄送日期</span>
+			<span>運送方式</span>
+			<span>備註</span>
+			<div><a href="orderInformation.html">詳細資料</a></div>
+		</div>
+		<div>
+			<span>訂單編號</span>
+			<span>訂單日期</span>
+			<span>處理情形</span>
+			<span>寄送日期</span>
+			<span>運送方式</span>
+			<span>備註</span>
+			<div><a href="orderInformation.html">詳細資料</a></div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+
+</html>
