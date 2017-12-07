@@ -13,7 +13,23 @@
 		text-align: center;
 	}
 
-	#main span{
-		display: inline-block;
-		width: 10%;
-	}
+		#title span{
+			display: inline-block;
+			width: 10%;
+		}
+
+		#item{
+			height: 20%;
+		}
+
+		#item img {
+			height: 20%;
+		}
+
+		#item span{
+			vertical-align: top;
+			display: inline-block;
+			height: 450px;
+			line-height: 450px;
+			text-align: center;
+		}

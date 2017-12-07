@@ -1,3 +1,3 @@
 function GetServerUrl(){
-	return "http://10.100.10.109";
+	return "http://127.0.0.1";
 }

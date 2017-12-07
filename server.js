@@ -3,7 +3,6 @@ const http = require('http');
 const ProductServer = require('./server/ProductServer.js');
 const MemberServer = require('./server/MemberServer.js');
 const LoginServer = require('./server/LoginServer.js');
-
 const DatabaseUtility = require('./database/DatabaseUtility.js');
 
 var app = express();
