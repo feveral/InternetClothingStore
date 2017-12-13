@@ -24,4 +24,23 @@ module.exports = class OrderListManager{
 			}  
 		);
 	}
+
+	GetOrderListByMemberId(MemberId,callback){
+		this.db.query(
+			"SELECT * FROM ORDERLIST" + 
+			"WHERE MemberId=" + MemberId , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	GetAllOrderList(callback){
+		this.db.query(
+			"SELECT * FROM ORDERLIST", 
+			function(err,result){
+				callback(err,result);
+			}
+		);	
+	}
 }

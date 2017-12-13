@@ -43,5 +43,44 @@ function GetColorUrl(color){
 }
 
 function GetColorChinese(url){
-
+	if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-13-25.jpg")
+		return "空軍藍";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-10-25.jpg")
+		return "黑色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-18-25.jpg")
+		return "麻花白";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-14-25.jpg")
+		return "麻黑";	
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-1-25.jpg")
+		return "麻深藍";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-2-25.jpg")
+		return "粉藍";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-12-25.jpg")
+		return "深藍";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-6-25.jpg")
+		return "緞彩灰";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-15-25.jpg")
+		return "緞彩黑";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-8-25.jpg")
+		return "麻紅色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-16-25.jpg")
+		return "莓紅";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-7-25.jpg")
+		return "寶藍";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-5-25.jpg")
+		return "粉紅";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-9-25.jpg")
+		return "白色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-17-25.jpg")
+		return "灰色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-11-25.jpg")
+		return "黃色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171031/366998/366998-3-25.jpg")
+		return "橘色";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170926/388256/388256-3-25.jpg")
+		return "淺灰";
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170926/388256/388256-2-25.jpg")
+		return "深灰";
+	else
+		return "";
 }

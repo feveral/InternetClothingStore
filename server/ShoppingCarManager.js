@@ -9,12 +9,13 @@ module.exports = class ShoppingCarManager{
 	}
 
 	AddShoppingCar(attribute,callback){
+
 		this.db.query(
 			"INSERT INTO SHOPPINGCAR " +
 			"(ProductId,MemberId,Quantity)" +
 			"VALUES ( " + 
-			attribute['ProductId'] +  " , " + 
-			attribute['MemberId'] + " , " +  
+			"'" + attribute['ProductId'] +  "' , " + 
+			"'" + attribute['MemberId'] + "' , " +  
 			attribute['Quantity'] +  " ); " , 
 			function(err,result){
 				callback(err,result);
