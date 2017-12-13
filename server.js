@@ -5,8 +5,6 @@ const MemberServer = require('./server/MemberServer.js');
 const LoginServer = require('./server/LoginServer.js');
 const RegisterServer = require('./server/MemberServer.js');
 const OrderListServer = require('./server/OrderListServer.js');
-
-
 const DatabaseUtility = require('./database/DatabaseUtility.js');
 
 var app = express();

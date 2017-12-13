@@ -21,7 +21,6 @@ module.exports = class OrderListServer{
 				},
 				function(err,result){
 					res.send(JSON.stringify(result));
-					console.log(result);
 		    	});
 		});
 
@@ -32,14 +31,11 @@ module.exports = class OrderListServer{
 					OrderId:req.body.OrderId
 				},
 				function(err,result){
-					console.log("bitch");
-					console.log(result);
 					res.send(JSON.stringify(result));
 		    	});
 		});
 
 		self.router.post('/LoadOrderItem',function(req,res){
-				console.log("bitch");
 				new OrderListManager().ListOrderItem(
 				{
 					Email:req.user,

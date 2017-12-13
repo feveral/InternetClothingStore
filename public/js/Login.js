@@ -14,7 +14,8 @@ function Login(){
 }
 
 function HandleLoginFail(xhr, textStatus, error){
-	$('#status').css('display','block');
+	$('#status').css('visibility','visible');
+	//$('#status').css('opacity','0');
 }
 
 function Logout(){

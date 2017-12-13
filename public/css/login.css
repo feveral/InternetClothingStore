@@ -105,7 +105,7 @@ html,body{
 /* Status */
 
 	#status{
-		display: none;
+		visibility: hidden;
 		width: 100%;
 		font-size: 14px;
 		margin-top: 5%;

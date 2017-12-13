@@ -32,8 +32,6 @@ module.exports = class OrderListManager{
 			attribute['Email'] +
 			"'and ORDERLIST.MemberId = MEMBER.Id;",
 			function(err,result){
-				console.log(attribute['Email']);
-				console.log("aa"+result);
 				callback(err,{success:true,result:result})
 			}  
 		);
@@ -48,10 +46,6 @@ module.exports = class OrderListManager{
 			"'and ORDERLIST.Id=" + 
 			attribute['OrderId'] + ";",
 			function(err,result){
-				console.log(attribute['Email']);
-				console.log(attribute['OrderId']);
-				console.log(result);
-				console.log(err);
 				callback(err,{success:true,result:result})
 			}  
 		);
@@ -66,10 +60,6 @@ module.exports = class OrderListManager{
 			attribute['Email'] +  
 			"' and ORDERLIST.MemberId = MEMBER.Id);",
 			function(err,result){
-				console.log(attribute['Email']);
-				console.log(attribute['OrderId']);
-				console.log(result);
-				console.log(err);
 				callback(err,{success:true,result:result})
 			}  
 		);
