@@ -7,3 +7,4 @@ $(document).ready(function(){
 		GetProduct(window.location.hash.replace('#',''));
 	}
 });
+

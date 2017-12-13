@@ -1,6 +1,5 @@
 
 function GetProduct(categoryOrSubCategory){
-
 	var apiUrl = GetServerUrl() + "/product/" + categoryOrSubCategory;
 	var callback = function(msg){
 		location.href = GetServerUrl() + "#" + categoryOrSubCategory;

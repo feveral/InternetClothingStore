@@ -101,6 +101,7 @@ var createOrderList =
 		"Paytype VARCHAR(10) NOT NULL , " +
 		"Time DATE NOT NULL , " + 
 		"MemberId INT NOT NULL , " +  
+		"TotalPrice INT NOT NULL , " + 
 		"PRIMARY KEY (Id) , " +
 		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
