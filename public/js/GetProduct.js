@@ -47,7 +47,7 @@ function isNotRepeat(product, productList){
 
 function AddNewProduct(product, productList){
 		var sizeArray  = [product['Size']];
-		var productNotRepeat = {Name : product['Name'], Color : product['Color'], ImagePath : product['ImagePath'], Size : sizeArray, Price : product['Price']};
+		var productNotRepeat = {Name : product['Name'], Color : product['Color'], ImagePath : product['ImagePath'], Size : sizeArray, Price : product['Price'],PercentOff : product['PercentOff']};
 		productList.push(productNotRepeat);
 }
 
@@ -57,18 +57,41 @@ function AddSize(html, product){
 	return html;
 }
 
-function productToHtml(product){
+function AddPercentOff(product){
+	var onsalePercent = 1-(product['PercentOff']/100)
+	var html='';
+	if(product['PercentOff'] != null)
+		html += '<div>' + product['Price']*onsalePercent + '</div>';
+	else
+		html = '';
+	return html;
+}
+
+function AddFunctionClass(product){
+	var onsalePercent = 1-(product['PercentOff']/100)
+	var html='';
+	if(product['PercentOff'] != null)
+		html += 'class = deletePrice';
+	else
+		html = '';
+	return html;
+}
+
+function productToHtml(productListItem){
+
+
 	var html = "";
 	html += '<div id="product" class="col-3">';
-	html += '<a href="demonstration.html#' + product['Name'] + '?' + product['Color'] + '"><img class="image" src="{ImagePath}"/></a>';
+	html += '<a href="demonstration.html#' + productListItem['Name'] + '?' + productListItem['Color'] + '"><img class="image" src="{ImagePath}"/></a>';
 	html += '<div id="productName">{Name}</div>';
-	html += '<div id="productPrice">TWD.{Price}</div>';
+	html += '<div id="productPrice"' + AddFunctionClass(productListItem) + '><div>TWD.{Price}</div>' + AddPercentOff(productListItem) + '</div>';
 	html += '<div id="productSize">';
-	html = AddSize(html, product);
+	html = AddSize(html, productListItem);
 	html += '</div>';
 	html += '</div>';
-	html = html.replace('{Name}',product['Name']);
-	html = html.replace('{ImagePath}',product['ImagePath']);
-	html = html.replace('{Price}',product['Price']);
+	html = html.replace('{Name}',productListItem['Name']);
+	html = html.replace('{ImagePath}',productListItem['ImagePath']);
+	html = html.replace('{Price}',productListItem['Price']);
+
 	return html;
 }
