@@ -323,6 +323,137 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/ShortSleeve',function(req,res){
+			self.productManager.GetAllProductBySubCategory('短袖上衣',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+
+		self.router.get('/PlainVNeckTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面V領短TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/PlainRoundNeckTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面圓領短TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/PlainMiddleSleeveTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面七分袖TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/PlainVest',function(req,res){
+			self.productManager.GetAllProductBySubCategory('素面背心',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/Kid',function(req,res){
+			self.productManager.GetAllProductBySubCategory('Kid',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/TopHoodedTee',function(req,res){
+			self.productManager.GetAllProductBySubCategory('連帽長TEE',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/TopShirt',function(req,res){
+			self.productManager.GetAllProductBySubCategory('襯衫',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/TopVest',function(req,res){
+			self.productManager.GetAllProductBySubCategory('背心',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/CowBoyCoat',function(req,res){
+			self.productManager.GetAllProductBySubCategory('牛仔外套',function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		self.router.get('/Bottom',function(req,res){
 			self.productManager.GetAllProductByCategory('Bottom',function(err,result){
 				if (err)
@@ -387,5 +518,6 @@ module.exports = class{
 				}
 			});
 		});
+
 	}
 }
