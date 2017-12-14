@@ -6,11 +6,6 @@ require('./InsertMemberCustomer.js');
 
 require('./InsertProductBottomJeans.js');
 
-require('./InsertShoppingCar.js');
-require('./InsertOnsale.js');
-require('./InsertFavorite.js');
-require('./InsertOrderList.js');
-require('./InsertOrderItem.js');
 
 require('./InsertProductBottomShortJeans.js');
 require('./InsertProductBottomWorkingTrousers.js');
@@ -41,3 +36,8 @@ require('./InsertProductBasicPlainRoundNeckShortTee.js');
 require('./InsertProductBasicPlainMiddleSleeveTee.js');
 require('./InsertProductBasicPlainVest.js');
 
+require('./InsertShoppingCar.js');
+require('./InsertFavorite.js');
+require('./InsertOrderList.js');
+require('./InsertOrderItem.js');
+require('./InsertOnsale.js');

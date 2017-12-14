@@ -2,7 +2,7 @@
 
 var DatabaseUtility = require('./DatabaseUtility.js');
 var OrderListManager = require('../server/OrderListManager.js');
-var orderListManager = new OrderListManager(DatabaseUtility.Getdb());
+var orderListManager = new OrderListManager();
 
 orderListManager.AddOrderList(
 	{

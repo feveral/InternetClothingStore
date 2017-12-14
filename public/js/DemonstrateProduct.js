@@ -103,9 +103,14 @@ function SetQuantityClick(){
 
 function AddShoppingCarClick(){
 
-	if( !IsSizeChoose() || !IsLogin() )
+	if( !IsLogin() )
 	{
-		// Prompt User to Login or Choose Size
+		alert('請先登入，才能將商品加入購物車');
+		return;	
+	}
+	else if( !IsSizeChoose() )
+	{
+		alert('請先選擇商品尺寸');
 		return;
 	}
 

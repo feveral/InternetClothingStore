@@ -1,11 +1,15 @@
 'use strict';
 
 const DatabaseUtility = require('../database/DatabaseUtility.js')
+const ProductManager = require('./ProductManager.js');
+const Utility = require('./Utility.js');
+
 
 module.exports = class OnsaleManager{
 
 	constructor(){
 		this.db = DatabaseUtility.Getdb();
+		this.productManager = new ProductManager();
 	}
 
 	AddOnsale(attribute,callback){
@@ -22,4 +26,36 @@ module.exports = class OnsaleManager{
 			}  
 		);
 	}
+
+	AddOnsaleRandomly(name,date,percentOff,callback){
+		var self = this;
+		self.productManager.GetMaxId(function(err,maxProductId){
+			var randomProductId = Utility.ProduceRandomNumber(maxProductId,700);
+			var attribute = 
+			{
+				Name: name,
+				Date: date,
+				PercentOff: percentOff
+			}
+			for(var i = 0 ; i < randomProductId.length ; i++)
+			{
+				attribute['ProductId'] = randomProductId[i]
+				self.AddOnsale(attribute,function(err,result){
+					if(err)
+						console.log(err);
+					else
+						console.log(result);
+				});
+			}
+		});
+	}
+
+	// GetOnSaleByProductCategory(category,callback){
+	// 	this.db.query(
+	// 		"SELECT * " + 
+	// 		"FROM ONSALE,PRODUCT " + 
+	// 		"WHERE Category=" + "'" + category + "'" + "AND" + 
+	// 		"Id=ProductId AND" + 
+	// 	);
+	// }
 }
