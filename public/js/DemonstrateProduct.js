@@ -124,7 +124,9 @@ function AddShoppingCarClick(){
 		Quantity: $('#productQuantity > input').val()
 	}
 
-	var callback = function(msg){} 	
+	var callback = function(msg){
+		alert('已經將商品加入購物車');
+	} 	
 	AjaxPost(apiUrl,data,callback);
 }
 

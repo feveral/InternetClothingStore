@@ -13,6 +13,7 @@ function RenderProduct(msg){
 	var object = JSON.parse(msg)
 	var productArray = [];
 	var productList = [];
+
 	for (var i = 0; i < object['data'].length ; i++)
 		isNotRepeat(object['data'][i], productList);
 	for (var i = 0; i< productList.length ; i++)
@@ -66,7 +67,6 @@ function productToHtml(product){
 	html = AddSize(html, product);
 	html += '</div>';
 	html += '</div>';
-
 	html = html.replace('{Name}',product['Name']);
 	html = html.replace('{ImagePath}',product['ImagePath']);
 	html = html.replace('{Price}',product['Price']);
