@@ -106,9 +106,9 @@ module.exports = class ProductManager{
 
 	GetMaxId(callback){
 		this.db.query(
-			"SELECT MAX(Id) AS MaxId FROM PRODUCT" , 
+			"SELECT MAX(Id) AS MaxId FROM PRODUCT;" , 
 			function(err,result){
-				callback(err,result['MaxId']);
+				callback(err,parseInt(result[0]['MaxId']));
 			}
 		);
 	}

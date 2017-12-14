@@ -1,4 +1,4 @@
-
+'use strict';
 
 exports.ProduceRandomDate = function(){
 	var year = 2017;
@@ -7,16 +7,23 @@ exports.ProduceRandomDate = function(){
 	return (year.toString() + "-" + month.toString() + "-" + day.toString());
 }
 
-
 exports.ProduceRandomNumber = function(maxNumber,quantity){
-
-
 	var list = [];
-
-	for (var i = 0; i <= quantity; i++) 
+	for (var i = 0; i < quantity; i++) 
 	{
-		
+		while(true)
+		{
+			var randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+			if( list.indexOf(randomNumber) != -1 )
+			{
+				continue;
+			}
+			else
+			{
+				list.push(randomNumber);
+				break;
+			}
+		}
 	}
-
-	Math.floor(Math.random() * maxNumber) + 1;
+	return list;
 }
