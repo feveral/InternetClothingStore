@@ -8,4 +8,15 @@ exports.ProduceRandomDate = function(){
 }
 
 
+exports.ProduceRandomNumber = function(maxNumber,quantity){
 
+
+	var list = [];
+
+	for (var i = 0; i <= quantity; i++) 
+	{
+		
+	}
+
+	Math.floor(Math.random() * maxNumber) + 1;
+}

@@ -93,7 +93,6 @@ module.exports = class ProductManager{
 	}
 
 	GetProductFromAppearence(appearence,callback){
-
 		this.db.query(
 			"select * from PRODUCT where " + 
 			"Name=" + "'" + appearence.Name + "'" + " AND " +  
@@ -103,5 +102,14 @@ module.exports = class ProductManager{
 				callback(err,result[0]);
 			}
 		);	
+	}
+
+	GetMaxId(callback){
+		this.db.query(
+			"SELECT MAX(Id) AS MaxId FROM PRODUCT" , 
+			function(err,result){
+				callback(err,result['MaxId']);
+			}
+		);
 	}
 }

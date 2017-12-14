@@ -15,18 +15,18 @@ module.exports = class MemberServer{
 	SetApi(){
 		var self = this;
 		self.router.post('/register',function(req,res){
-				new MemberManager().IsRegisterOK(
-				{
-					Name:req.body.Name,
-					Email:req.body.Email,
-					Cellphone:req.body.Cellphone,
-					Password:req.body.Password,
-					ComfirmPassword:req.body.ComfirmPassword,
-					Address:req.body.Address
-				},
-				function(err,result){
-					self.IsRegisterWrong(req,res,result);
-		    	});
+			new MemberManager().IsRegisterOK(
+			{
+				Name:req.body.Name,
+				Email:req.body.Email,
+				Cellphone:req.body.Cellphone,
+				Password:req.body.Password,
+				ComfirmPassword:req.body.ComfirmPassword,
+				Address:req.body.Address
+			},
+			function(err,result){
+				self.IsRegisterWrong(req,res,result);
+	    	});
 		});
 	}
 
