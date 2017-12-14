@@ -147,12 +147,12 @@
 		top:129px;
 		height: 0px;
 		right: 0px;
-		width: 20%;
+		width: 23%;
 		z-index: 1;
 		font-size: 12px;
 		border-bottom-left-radius: 5px;
-	    -webkit-transition: height 0.4s , padding-top 0.7s , padding-bottom 0.7s; /* For Safari 3.1 to 6.0 */
-	    transition: height 0.4s , padding-top 0.7s , padding-bottom 0.7s;	
+	    -webkit-transition: height 0.4s ease-out, padding-top 0.7s , padding-bottom 0.7s; /* For Safari 3.1 to 6.0 */
+	    transition: height 0.4s ease-out, padding-top 0.7s , padding-bottom 0.7s;	
 	    overflow:scroll;
 	}
 		#shoppingCar > p {
