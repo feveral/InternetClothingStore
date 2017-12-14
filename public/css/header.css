@@ -187,7 +187,7 @@
 			border-radius: 5px;
 		}
 
-			#shoppingCar > div > img,p {
+			#shoppingCar > div > img , #shoppingCar > div > p {
 				vertical-align: top;
 				height: 90px;
 				line-height: 90px;
