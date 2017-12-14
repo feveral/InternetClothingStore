@@ -7,29 +7,115 @@
 	
 	#main{
 		position: absolute;
-		top:130px;
+		top: 130px;
 		margin-top: 5%;
 		width: 100%;
-		text-align: center;
+		height: 100%;
+		overflow: auto;
 	}
-
-		#title span{
-			display: inline-block;
-			width: 10%;
+		#title{
+			padding-left: 10%;
+			font-size: 0px;
 		}
 
-		#item{
-			height: 20%;
+			#title span{
+				display: inline-block;
+				width: 6%;
+				font-size: 14px;
+			}
+				#title>span:nth-child(1){
+					width: 20%;
+					text-align: left;
+					display: inline-block;
+				}
+
+				#title>span:nth-child(3){
+					width: 32%;
+					text-align: left;
+					display: inline-block;
+				}
+
+		#shoppingItem{
+			width: 100%;
+			height: 90%;
 		}
 
-		#item img {
-			height: 20%;
-		}
+			#shoppingItem>div{
+				padding-left: 10%;
+				height: 45%;
+				font-size: 0px;
+			}
 
-		#item span{
-			vertical-align: top;
-			display: inline-block;
-			height: 450px;
-			line-height: 450px;
+				#shoppingItem>div>div:nth-child(1)>img{
+					float: left;
+					height: 80%;
+					width: 15%;
+				}
+
+				#shoppingItem>div>div:nth-child(2){
+					float: right;
+					width: 80%;
+					height: 100%;
+				}
+
+				#shoppingItem>div>div:nth-child(2)>span{
+					font-size: 14px;
+					display: inline-block;
+					width: 7.5%;
+					padding-top: 15%;
+				}
+
+				#shoppingItem>div>div:nth-child(2)>span:nth-child(2){
+					width:40%;
+					height: 100%;
+				}
+
+				#shoppingItem>div:last-child{
+					border-bottom: 2px solid #d5d0c8;
+					margin-bottom: 2%;
+				}
+
+
+#checkOrderButton{
+	width:100%;
+	margin-bottom: 7%;
+}				
+		#checkOrderButton>h1{
+			margin-bottom: 1%;
 			text-align: center;
+		}
+
+		#checkOrderButton>div:nth-child(2){	
+			display: block;
+			padding-top: 0.5%;
+			padding-bottom: 0.5%;
+			border:1px solid #d5d0c8;
+			text-align: center;
+			margin: auto;
+			width:20%;
+		}
+
+		#checkOrderButton>div:nth-child(3)>div{
+			display: block;
+			margin-top: 0.75%;
+			padding-top: 0.5%;
+			padding-bottom: 0.5%;
+			border:1px solid #d5d0c8;
+			text-align: center;
+			width:9.5%;
+		}
+
+		#checkOrderButton>div:nth-child(3)>div:nth-child(1){
+			float: left;
+			margin-left:40%; 
+		}
+
+		#checkOrderButton>div:nth-child(3)>div:nth-child(2){
+			float: right;
+			margin-right:40%;
+		}
+
+		#checkOrderButton>div:nth-child(3)>div:hover{
+			background-color: black;
+			color: white;
 		}
