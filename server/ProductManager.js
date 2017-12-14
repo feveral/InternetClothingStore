@@ -72,20 +72,22 @@ module.exports = class ProductManager{
 
 	GetAllProductByCategory(category,callback){
 		this.db.query(
-			"select * from PRODUCT where " + 
-			"Category= " + 
-			"'" + category + "'" + ";" ,
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+			"WHERE Category=" + 
+			"'" + category + "'" + ";", 
 			function(err,result){
-				callback(err,result);	
+				callback(err,result);
 			}
 		);
 	}
 
 	GetAllProductBySubCategory(subCategory,callback){
 		this.db.query(
-			"select * from PRODUCT where " + 
-			"subCategory= " + 
-			"'" + subCategory + "'" + ";" ,
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+			"WHERE SubCategory=" + 
+			"'" + subCategory + "'" + ";", 
 			function(err,result){
 				callback(err,result);
 			}
