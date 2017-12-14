@@ -5,22 +5,46 @@ const path = require('path');
 const url = require('url');
 
 
-module.exports = class{
+module.exports = class OrderListServer{
 
 	constructor(router){
 		this.router = router;
-		this.orderListManager = new OrderListManager(); 
-		this.SetAPI();
+		this.OrderListManager = new OrderListManager();
+		this.SetApi();
 	}
 
-	SetAPI(){
+	SetApi(){
 		var self = this;
-		self.router.get('/:memberId',function(req,res){
-			var memberId = path.basename(req.url);
-			self.orderListManager.GetOrderListByMemberId(memberId,function(err,result){
-				console.log(result);
-				res.end(JSON.stringify({success:true,data:result}));
-			});
+		self.router.get('/LoadOrderList',function(req,res){
+				new OrderListManager().ListOrderList(
+				{
+					Email:req.user
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
+		self.router.post('/LoadOrderDetail',function(req,res){
+				new OrderListManager().ListOrderDetail(
+				{
+					Email:req.user,
+					OrderId:req.body.OrderId
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
+		self.router.post('/LoadOrderItem',function(req,res){
+				new OrderListManager().ListOrderItem(
+				{
+					Email:req.user,
+					OrderId:req.body.OrderId
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
 		});
 	}
 }

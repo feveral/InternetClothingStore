@@ -12,3 +12,39 @@ orderItemManager.AddOrderItem(
 	},
 	DatabaseUtility.callback
 );
+
+orderItemManager.AddOrderItem(
+	{
+		ProductId:2,
+		OrderId:2,
+		Quantity:1
+	},
+	DatabaseUtility.callback
+);
+
+orderItemManager.AddOrderItem(
+	{
+		ProductId:3,
+		OrderId:2,
+		Quantity:1
+	},
+	DatabaseUtility.callback
+);
+
+orderItemManager.AddOrderItem(
+	{
+		ProductId:4,
+		OrderId:2,
+		Quantity:1
+	},
+	DatabaseUtility.callback
+);
+
+orderItemManager.AddOrderItem(
+	{
+		ProductId:5,
+		OrderId:2,
+		Quantity:1
+	},
+	DatabaseUtility.callback
+);
