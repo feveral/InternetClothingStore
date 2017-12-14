@@ -4,6 +4,7 @@ const OrderListManager = require('./OrderListManager.js');
 const path = require('path');
 const url = require('url');
 
+
 module.exports = class OrderListServer{
 
 	constructor(router){
@@ -47,5 +48,3 @@ module.exports = class OrderListServer{
 		});
 	}
 }
-
-

@@ -26,6 +26,24 @@ module.exports = class OrderListManager{
 		);
 	}
 
+	GetOrderListByMemberId(MemberId,callback){
+		this.db.query(
+			"SELECT * FROM ORDERLIST" + 
+			"WHERE MemberId=" + MemberId , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	GetAllOrderList(callback){
+		this.db.query(
+			"SELECT * FROM ORDERLIST", 
+			function(err,result){
+				callback(err,result);
+			}
+		);	
+	}
 	ListOrderList(attribute,callback){
 		this.db.query(
 			"select ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment from ORDERLIST,MEMBER WHERE Email='" + 
@@ -64,8 +82,4 @@ module.exports = class OrderListManager{
 			}  
 		);
 	}
-
-
 }
-
-

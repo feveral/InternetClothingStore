@@ -97,14 +97,25 @@
 		}
 
 /* ProductColor */
-
-	#productColor > img{
-		display: inline-block;
-		width: 20px;
-		height: 20px;
-		margin-right: 5px;
+	
+	#productColor{
+		width: 60%;
 		margin-top: 5%;
-		margin-bottom: 3%;
+		margin-bottom: 5%;
+	}
+
+	#productColor > div{
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	
+
+	#productColor > div > img{
+		width: 30px;
+		height: 30px;
+		padding: 5px 6.5px 6.5px 5px;	
 	}
 
 

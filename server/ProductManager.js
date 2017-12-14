@@ -91,4 +91,17 @@ module.exports = class ProductManager{
 			}
 		);
 	}
+
+	GetProductFromAppearence(appearence,callback){
+
+		this.db.query(
+			"select * from PRODUCT where " + 
+			"Name=" + "'" + appearence.Name + "'" + " AND " +  
+			"Color=" + "'" + appearence.Color + "'" + " AND " + 
+			"Size=" + "'" + appearence.Size + "'",
+			function(err,result){
+				callback(err,result[0]);
+			}
+		);	
+	}
 }

@@ -87,5 +87,16 @@ module.exports = class{
 			req.session.destroy();
 		    res.redirect('/');
 		});
+
+		self.router.get('/isLogin',function (req, res) {
+			if(!req.user)
+			{
+				res.send(JSON.stringify({success:false}));
+			}
+			else
+			{
+				res.send(JSON.stringify({success:true}));
+			}
+		});
 	}
 }

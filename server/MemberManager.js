@@ -43,7 +43,6 @@ module.exports = class MemberManager{
 		);
 	}
 
-
 	GetMemberFromEmail(email,callback){
 		this.db.query(
 			"SELECT * " + 

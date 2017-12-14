@@ -26,8 +26,6 @@ function Logout(){
 	AjaxGet(apiUrl,callback);
 }
 
-
-
 function ClickMemberButton(){
 
 	var apiUrl = GetServerUrl() + "/login/getUserName";
