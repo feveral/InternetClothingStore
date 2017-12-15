@@ -1,5 +1,3 @@
-
-
 function InitialDemonstrationProduct(){
 	var attribute = HashToNameAndColor(location.hash);
 	$('#main img').attr('src','./image/'+ attribute.Name + "_" + attribute.Color + ".jpg");

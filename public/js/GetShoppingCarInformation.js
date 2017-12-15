@@ -9,12 +9,11 @@ function GetShoppingItem(){
 		var object = JSON.parse(msg);
 		PrintShoppingCarItem(object['data']);
 		CalculateTotal(object['data']);
-		QuantityChanged();
 	}
 	AjaxGet(apiUrl,callback);
 }
 
-function PosttShoppingItem(ProductId,Quantity){
+function PostShoppingItem(ProductId,Quantity){
 	var apiUrl = GetServerUrl() + "/shoppingCar/modify";
 	var data =
 	{
@@ -24,7 +23,22 @@ function PosttShoppingItem(ProductId,Quantity){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		CalculateTotal(object['data']);
-		console.log(object);
+	}
+	AjaxPost(apiUrl,data,callback);
+}
+
+function PostDeleteShoppingItem(ProductId){
+	var apiUrl = GetServerUrl() + "/shoppingCar/delete";
+	var data =
+	{
+		ProductId:ProductId
+	};
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		CalculateTotal(object['data']);
+		$("#shoppingItem").empty();
+		PrintShoppingCarItem(object['data']);
+		CalculateTotal(object['data']);
 	}
 	AjaxPost(apiUrl,data,callback);
 }
@@ -53,8 +67,11 @@ function PrintShoppingCarItem(data){
 			'<span><select id="selectValue">'+ AddOption(data[index]) +"</select></span>" +
 			"<span>" + data[index]['Price'] + "</span>" +
 			"<span>" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
+			"<span><img src='./image/delete.png'></span>" +
 			"</div></div>");
 	}
+	DeleteShoppingItem();
+	QuantityChanged();
 }
 
 function AddOption(dataIndex){
@@ -71,7 +88,14 @@ function AddOption(dataIndex){
 function QuantityChanged(){
 	$("#shoppingItem>div>div>span>select").on('change',function(){
 		$(this).parent().next().next().text( this.value * $(this).parent().next().text());
-		PosttShoppingItem($(this).parent().prev().prev().prev().prev().text(),this.value);
+		PostShoppingItem($(this).parent().prev().prev().prev().prev().text(),this.value);
+	});
+}
+
+function DeleteShoppingItem(){
+	$('#shoppingItem>div>div>span:nth-child(8)').click(function(){
+		var ProductId = $(this).prev().prev().prev().prev().prev().prev().prev().text();
+		PostDeleteShoppingItem(ProductId);
 	});
 }
 
@@ -80,5 +104,3 @@ function GoBackToShopping(){
 		location.href = GetServerUrl();
 	});
 }
-
-

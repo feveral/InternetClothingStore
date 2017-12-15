@@ -67,5 +67,19 @@ module.exports = class{
 				});
 			});
 		});
+
+		self.router.post('/delete',function(req,res){
+			var data =
+			{
+				ProductId:req.body.ProductId,
+			}
+			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+				self.shoppingCarManager.DeleteData(member.Id,data,function(err,result){
+					self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,result){
+						res.end(JSON.stringify({success:true,data:result}));
+					});
+				});
+			});
+		});
 	}
 }

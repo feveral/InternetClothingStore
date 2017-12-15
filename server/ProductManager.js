@@ -139,5 +139,16 @@ module.exports = class ProductManager{
 			}
 		);
 	}
+
+	GetOnsaleProduct(callback){
+		this.db.query(
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " +
+			"FROM PRODUCT left join ONSALE ON ProductId=Id" + 
+			' WHERE PercentOff <> "";',
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
 }
 

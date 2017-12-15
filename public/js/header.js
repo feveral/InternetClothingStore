@@ -1,10 +1,10 @@
 $(document).ready(function(){
-
 	InitialMemberName();
 	InitialSelector();
 	InitialMemberMenu();
 	InitialShoppingCarHover();
 	SetNewButtonProductClick();
+	SetSaleButtonProductClick();
 	SetLogoClick();
 	
 });
@@ -24,6 +24,18 @@ function SetNewButtonProductClick(){
 		AjaxGet(apiUrl,callback);
 	});
 }
+
+function SetSaleButtonProductClick(){
+	$("#mainMenu span:nth-child(2)").click(function(){
+		var apiUrl = GetServerUrl() + "/product/" + "onsaleproduct";
+		var callback = function(msg){
+			location.href = GetServerUrl() + "#" +"onsaleproduct";
+			RenderProduct(msg);
+		}
+		AjaxGet(apiUrl,callback);
+	});
+}
+
 
 function InitialMemberName(){
 	var apiUrl = GetServerUrl() + "/login/getUserName";

@@ -47,4 +47,16 @@ module.exports = class ShoppingCarManager{
 			}
 		)
 	}
+
+	DeleteData(memberId,data,callback){
+		this.db.query(
+			"DELETE FROM SHOPPINGCAR WHERE MemberId=" + 
+			memberId+ 
+			" AND ProductId=" + 
+			data['ProductId'],
+			function(err,result){
+				callback(err,result);
+			}
+		)
+	}
 }
