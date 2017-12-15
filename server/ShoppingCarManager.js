@@ -33,4 +33,18 @@ module.exports = class ShoppingCarManager{
 			}
 		)
 	}
+
+	UpdateData(memberId,data,callback){
+		this.db.query(
+			"UPDATE SHOPPINGCAR SET Quantity=" + 
+			data['Quantity'] + 
+			" WHERE ProductId=" + 
+			data['ProductId'] + 
+			" AND MemberId=" +
+			memberId + ";",
+			function(err,result){
+				callback(err,result);
+			}
+		)
+	}
 }

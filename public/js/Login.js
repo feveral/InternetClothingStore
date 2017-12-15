@@ -109,10 +109,10 @@ function Register(){
 	var apiUrl = GetServerUrl() + "/member/register";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		console.log(object.message);
-		if(!object.success){
-			alert(object.message);
-		}
+		if(object.result)
+			alert("register success!");
+		else
+			alert("this email has been registered");
 	}
 	AjaxPost(apiUrl,data,callback);
 }
