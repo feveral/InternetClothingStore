@@ -1,4 +1,15 @@
 
+
+function InitialSelector(){
+	$("#mainMenu span:nth-child(1)").hover(ShowSelector,HideSelector);
+    $("#selector").hover(ShowSelector,HideSelector);
+    AddSubCategoryToCategory('Basic',1);
+	AddSubCategoryToCategory('Top',2);
+	AddSubCategoryToCategory('Coat',3);
+	AddSubCategoryToCategory('Bottom',4);
+	AddSubCategoryToCategory('Accessories',5);
+}
+
 function ShowSelector(){
 	 $("#selector").css("height","400px");
 	 $("#selector").css("padding-top","30px");
@@ -11,42 +22,17 @@ function HideSelector(){
 	 $("#selector").css("box-shadow","none");
 }
 
-$(document).ready(function(){
-	$("#mainMenu span:nth-child(1)").hover(ShowSelector,HideSelector);
-    $("#selector").hover(ShowSelector,HideSelector);
-    AddSubCategoryToCategory('Basic',1);
-	AddSubCategoryToCategory('Top',2);
-	AddSubCategoryToCategory('Coat',3);
-	AddSubCategoryToCategory('Bottom',4);
-	AddSubCategoryToCategory('Accessories',5);
-	$("#mainMenu span:nth-child(1)").hover(function(){
-			AddSubCategoryToCategory('Basic',1);
-			AddSubCategoryToCategory('Top',2);
-			AddSubCategoryToCategory('Coat',3);
-			AddSubCategoryToCategory('Bottom',4);
-			AddSubCategoryToCategory('Accessories',5);
-	});
-	$('#logo').click(function(){
-		location.href = GetServerUrl();
-	});
-
-});
-
 function AddSubCategoryToCategory(catagoey,order){
-	$.ajax({
-		type: "GET",
-		url: GetServerUrl() + "/product/subCategory/" + catagoey,
-		success: function(msg){
-			var object = JSON.parse(msg);
-			$('#selector div:nth-child(' + order + ')').empty();
-			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagoey));
-			for (var i = 0; i < object['data'].length ; i++)
-	   			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(object['data'][i]));
-		},
-	   	error: function(xhr, textStatus, error){
-	        console.log(xhr.statusText);
-	   	}
-	});
+
+	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagoey;
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		$('#selector div:nth-child(' + order + ')').empty();
+		$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagoey));
+		for (var i = 0; i < object['data'].length ; i++)
+   			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(object['data'][i]));
+	}
+	AjaxGet(apiUrl,callback);
 }
 
 function CategoryToHtml(category){

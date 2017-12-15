@@ -1,9 +1,10 @@
-$(document).ready(function(){
 
+
+function InitialDemonstrationProduct(){
 	var attribute = HashToNameAndColor(location.hash);
 	$('#main img').attr('src','./image/'+ attribute.Name + "_" + attribute.Color + ".jpg");
 	GetProductByName(attribute.Name);
-});
+}
 
 function GetProductByName(productName){
 	var apiUrl = GetServerUrl() + '/product/name/' + productName;

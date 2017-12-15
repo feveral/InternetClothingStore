@@ -4,16 +4,17 @@
 	<title>Shtick</title>
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="css/shoppingCar.css">
+	<link rel="stylesheet" type="text/css" href="css/payment.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
-	<script type="text/javascript" src="js/Login.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
-	<script type="text/javascript" src="js/MemberMenu.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
-	<script type="text/javascript" src="js/GetShoppingCarInformation.js"></script>
+	<script type="text/javascript" src="js/MemberMenu.js"></script>
 	<script type="text/javascript" src="js/GetShoppingCar.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
@@ -26,13 +27,12 @@
 			<span>STILLAS</span>
 			<span>SALE</span>
 			<span>NEW</span>
-
 		</div>
 		<div id="member">
 			<div>
 				<a onclick="ClickMemberButton()">登入</a>
 			</div>
-			<a>購物車</a>
+			<a href="shoppingCar.html">購物車</a>
 		</div>
 	</div>
 
@@ -60,31 +60,41 @@
 		</div>
 	</div>
 
-	<div id="main">
-		<div id="title">
-			<span></span>
-			<span>商品編號</span>
-			<span>商品名稱</span>
-			<span>顏色</span>
-			<span>尺寸</span>
-			<span>數量</span>
-			<span>單價</span>
-			<span>小計</span>
-			<span>刪除</span>
-		</div>
-		<div id="shoppingItem">
-		</div>
-		<div id="checkOrderButton">
-			<h1 id="totalItemNumber">小計金額 (共3件)</h1>
-			<div><span id="totalPrice">$1212</span></div>
+	<div id="main"> 
+		<img src="./image/step_2.gif">
+		<div id="detail">
 			<div>
-				<div id="goBackToBuy"><span >繼續購物</span></div>
-				<div id="goToCheckout"><span >下一步</span></div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
+			</div>
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
 			</div>
 		</div>
-	</div> 
 
+		<div id="littleCount">
+			
+		</div>
 
+		<div id="pay">
+			<select name="YourLocation">
+				<option value="Taipei">選擇付款方式</option>
+				<option value="Taipei">7-11取貨付款</option>
+				<option value="Taoyuan">桃園</option>
+				<option value="Hsinchu">新竹</option>
+				<option value="Miaoli">苗栗</option>
+			</select>	
+		</div>
+	</div>
 
 </body>
 </html>

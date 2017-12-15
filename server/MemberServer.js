@@ -40,6 +40,7 @@ module.exports = class MemberServer{
 			Address:req.body.Address
 		},
 		function(err,result){
+
 		});				
 	}
 

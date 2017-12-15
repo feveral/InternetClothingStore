@@ -1,0 +1,66 @@
+
+#main{
+	display: block;
+	position: absolute;
+	top: 140px;
+	width: 100%;
+	text-align: center;
+}
+	#main > img{
+		width: 80%;
+	}
+
+#detail{
+	margin: 15px 10% 0px 10% ;
+	text-align: center;
+}
+
+	#detail > div{
+		display: block;
+		background-color: #F7F6F3;
+		padding-top:15px;
+		padding-bottom:15px;
+	}
+
+	#detail > div:nth-child(1){
+		display: block;
+		font-weight: bold;
+		margin-bottom: 15px;
+		background-color: white;
+	}
+
+		#detail > div > span{
+			display: inline-block;
+		}
+ 
+		#detail > div > span:nth-child(1){
+			width: 10%;
+		}		
+
+		#detail > div > span:nth-child(2){
+			width: 40%;
+		}
+		
+		#detail > div > span:nth-child(3){
+			width: 10%;
+		}
+		
+		#detail > div > span:nth-child(4){
+			width: 10%;
+		}
+
+		#detail > div > span:nth-child(5){
+			width: 10%;
+		}
+
+	#pay > select{
+		background-color: black;
+		color: white;
+		overflow: hidden;
+		-webkit-border-radius: 20px;
+	    -moz-border-radius: 20px;
+	    border-radius: 20px;
+		height: 29px;
+		width: 150px;
+		text-align-last: center;
+	} 

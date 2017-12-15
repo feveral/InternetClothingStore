@@ -1,9 +1,4 @@
 
-$(document).ready(function(){
-	InitialShoppingCarHover();
-});
-
-
 function InitialShoppingCarHover(){
 
 	$('#member > a').hover(ShowShoppingCarHeader,HideShoppingCarHeader);
