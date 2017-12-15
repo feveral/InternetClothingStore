@@ -1,13 +1,44 @@
 $(document).ready(function(){
+	GetShoppingItem();
+	GoBackToShopping();
+});
+
+function GetShoppingItem(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		PrintShoppingCarItem(object['data']);
+		CalculateTotal(object['data']);
 		QuantityChanged();
-		GoBackToShopping();
 	}
 	AjaxGet(apiUrl,callback);
-});
+}
+
+function PosttShoppingItem(ProductId,Quantity){
+	var apiUrl = GetServerUrl() + "/shoppingCar/modify";
+	var data =
+	{
+		ProductId:ProductId,
+		Quantity:Quantity
+	};
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		CalculateTotal(object['data']);
+		console.log(object);
+	}
+	AjaxPost(apiUrl,data,callback);
+}
+
+function CalculateTotal(data){
+	var totalPrice = 0;
+	var totalItemNumber = 0;
+	for (var index in data){
+		totalPrice += data[index]['Quantity']*data[index]['Price'];
+		totalItemNumber += data[index]['Quantity'];
+	}
+	$("#totalItemNumber").text("小計金額 (共" +totalItemNumber +  "件)");
+	$("#totalPrice").text("$" + totalPrice);
+}
 
 function PrintShoppingCarItem(data){
 	for (var index in data){
@@ -40,6 +71,7 @@ function AddOption(dataIndex){
 function QuantityChanged(){
 	$("#shoppingItem>div>div>span>select").on('change',function(){
 		$(this).parent().next().next().text( this.value * $(this).parent().next().text());
+		PosttShoppingItem($(this).parent().prev().prev().prev().prev().text(),this.value);
 	});
 }
 

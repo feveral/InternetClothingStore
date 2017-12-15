@@ -15,7 +15,7 @@ module.exports = class MemberServer{
 	SetApi(){
 		var self = this;
 		self.router.post('/register',function(req,res){
-			new MemberManager().IsRegisterOK(
+			new MemberManager().AddCustomer(
 			{
 				Name:req.body.Name,
 				Email:req.body.Email,
@@ -25,32 +25,8 @@ module.exports = class MemberServer{
 				Address:req.body.Address
 			},
 			function(err,result){
-				self.IsRegisterWrong(req,res,result);
+				res.send(JSON.stringify({result:result}));
 	    	});
 		});
-	}
-
-	AddCustomer(req,res){
-		new MemberManager().AddCustomer(
-		{
-			Name:req.body.Name,
-			Email:req.body.Email,
-			Cellphone:req.body.Cellphone,
-			Password:req.body.Password,
-			Address:req.body.Address
-		},
-		function(err,result){
-
-		});				
-	}
-
-	IsRegisterWrong(req,res,result){
-		if(result.success){
-			this.AddCustomer(req,res);
-			res.send(JSON.stringify({success:true,message:"success register!"}));
-		}
-		else{
-			res.send(JSON.stringify({success:false,message:result.message}));
-		}
 	}
 }
