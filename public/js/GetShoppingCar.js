@@ -16,13 +16,15 @@ function InitialShoppingCarHover(){
 
 function RenderShoppingCarHover(msg){
 	var object = JSON.parse(msg);
+	if(!object['success']) // check is login
+	{
+		return;
+	}
 	var data = object['data'];
 	$('#shoppingCar > div:nth-child(2)').empty();
 
-
 	for(var i = 0 ; i < data.length ; i++)
 	{
-		console.log(data[i]);
 		$('#shoppingCar > div:nth-child(2)').append(DataToShoppingCarHoverHtml(data[i]));
 	}
 }
