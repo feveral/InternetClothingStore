@@ -64,6 +64,22 @@
 	text-align: right;
 }
 
+#before{
+	position: fixed;
+	bottom: 0;
+	left: 15%;
+	bottom: 1%;
+	cursor: pointer;
+}
+
+#next{
+	position: fixed;
+	bottom: 0;
+	right: 15%;
+	bottom: 1%;
+	cursor: pointer;
+}
+
 #pay {
 	padding-top: 20px;
 	margin-left: 25%;
