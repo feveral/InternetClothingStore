@@ -12,7 +12,7 @@ function HideSelector(){
 }
 
 $(document).ready(function(){
-	$("#mainMenu span").hover(ShowSelector,HideSelector);
+	$("#mainMenu span:nth-child(1)").hover(ShowSelector,HideSelector);
     $("#selector").hover(ShowSelector,HideSelector);
 });
 

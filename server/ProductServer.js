@@ -45,6 +45,19 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/newproduct',function(req,res){
+			self.productManager.GetNewProduct(function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		// Get product which subHeader is workingPant
 		self.router.get('/WorkingPant',function(req,res){
 			self.productManager.GetAllProductBySubCategory('工作長褲',function(err,result){

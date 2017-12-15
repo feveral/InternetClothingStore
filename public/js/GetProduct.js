@@ -61,7 +61,7 @@ function AddPercentOff(product){
 	var onsalePercent = 1-(product['PercentOff']/100)
 	var html='';
 	if(product['PercentOff'] != null)
-		html += '<div>' + product['Price']*onsalePercent + '</div>';
+		html += '<div>' + Math.round(product['Price']*onsalePercent) + '</div>';
 	else
 		html = '';
 	return html;

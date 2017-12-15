@@ -24,7 +24,7 @@
 	#productPrice>div:nth-child(2){
 		display: inline-block;
 		float: right;
-		padding-right: 65%;
+		padding-right: 63%;
 		color: red; 
 	}
 

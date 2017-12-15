@@ -114,4 +114,16 @@ module.exports = class ProductManager{
 			}
 		);
 	}
+
+	GetNewProduct(callback){
+		this.db.query(
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " +
+			"FROM PRODUCT left join ONSALE ON ProductId=Id" + 
+			' WHERE PRODUCT.Date>="2017-12-01" AND PRODUCT.Date <="2017-12-30";',
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
 }
+
