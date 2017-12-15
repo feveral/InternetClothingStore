@@ -19,12 +19,12 @@
 
 	#productPrice>div:nth-child(1){
 		display: inline-block;
+		margin-right: 10px;
+		font-size: 15px;
 	}
 
 	#productPrice>div:nth-child(2){
 		display: inline-block;
-		float: right;
-		padding-right: 65%;
 		color: red; 
 	}
 

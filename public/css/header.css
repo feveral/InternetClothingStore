@@ -151,22 +151,22 @@
 		z-index: 1;
 		font-size: 12px;
 		border-bottom-left-radius: 5px;
-	    -webkit-transition: height 0.4s ease-out, padding-top 0.7s , padding-bottom 0.7s; /* For Safari 3.1 to 6.0 */
-	    transition: height 0.4s ease-out, padding-top 0.7s , padding-bottom 0.7s;	
+	    -webkit-transition: height 0.3s ease-out, padding-top 0.7s , padding-bottom 0.7s; /* For Safari 3.1 to 6.0 */
+	    transition: height 0.3s ease-out, padding-top 0.7s , padding-bottom 0.7s;	
 	    overflow:scroll;
 	}
 		#shoppingCar > p {
 			width: 100%;
-			height: 70px;
+			height: 50px;
 			line-height: 70px;
 			font-size: 15px;
 			font-weight: bold;
+			display: block;
 			text-align: center;
 		}
 
-		#shoppingCar > div {
+		#shoppingCar > div:nth-child(2) {
 			display: block;
-			height: 90px;
 			text-align: center;
 			margin-bottom: 20px;
 		}
@@ -174,30 +174,43 @@
 		#shoppingCar > div:last-child {
 			margin-top: 10px;
 			height: 50px;
+			text-align: center;
 		}
 
-		#shoppingCar > div > a {
-			display: inline-block;
-			width: 40%;
-			font-size: 14px;
-			background-color: black;
-			color: white;
-			padding: 10px 25px;
-			margin: 0px 10px;
-			border-radius: 5px;
-		}
-
-			#shoppingCar > div > img , #shoppingCar > div > p {
-				vertical-align: top;
-				height: 90px;
-				line-height: 90px;
+			#shoppingCar > div > a {
 				display: inline-block;
-				padding-right: 5px;
+				width: 40%;
+				font-size: 14px;
+				text-align: center;
+				background-color: black;
+				color: white;
+				padding: 10px 25px;
+				margin: 0px 10px;
+				border-radius: 5px;
 			}
 
-			#shoppingCar > div > img {
-				width: 80px;
-			}
+				#shoppingCar > div > div > * {
+					vertical-align: top;
+					height: 90px;
+					line-height: 90px;
+					display: inline-block;
+					padding-right: 5px;
+					margin-bottom: 10px;
+				}
+
+				#shoppingCar > div > div > p:nth-child(2) {
+					border-bottom: 1px #ededed solid;
+					width: 55%;
+				}
+
+				#shoppingCar > div > div > p:nth-child(3) {
+					border-bottom: 1px #ededed solid;
+					width: 15%;
+				}
+
+				#shoppingCar > div > div > img {
+					width: 60px;
+				}
 
 
 
