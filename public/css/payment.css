@@ -4,10 +4,15 @@
 	position: absolute;
 	top: 140px;
 	width: 100%;
+	height: 60%;
 	text-align: center;
 }
 	#main > img{
 		width: 80%;
+	}
+
+	#main > div:nth-child(2){
+		margin-bottom: 15%;
 	}
 
 #detail{
@@ -53,7 +58,44 @@
 			width: 10%;
 		}
 
-	#pay > select{
+#littleCount{
+	display: block;
+	margin: 20px 10%; 
+	text-align: right;
+}
+
+#pay {
+	padding-top: 20px;
+	margin-left: 25%;
+	margin-right: 25%;
+	height: 12%;
+	width: 50%;
+	border: 2px #666 solid;
+	background-color: white;
+	z-index: 1;
+	position: fixed;
+	bottom: 0;
+}
+
+	#pay > div {
+		margin-bottom: 20px;
+	}
+
+		#pay > div > * {
+			display: inline-block;
+			width: 20%;
+		}
+
+		#pay > div > p{
+			font-weight: bold;
+		}
+
+		#pay >div >div{
+			font-size: 20px;
+			color: red;
+		}
+
+	#pay > div > select{
 		background-color: black;
 		color: white;
 		overflow: hidden;
@@ -61,6 +103,6 @@
 	    -moz-border-radius: 20px;
 	    border-radius: 20px;
 		height: 29px;
-		width: 150px;
+		width: 20%;
 		text-align-last: center;
 	} 
