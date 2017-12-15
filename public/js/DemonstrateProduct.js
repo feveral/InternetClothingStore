@@ -126,6 +126,7 @@ function AddShoppingCarClick(){
 
 	var callback = function(msg){
 		alert('已經將商品加入購物車');
+		InitialShoppingCarHover();
 	} 	
 	AjaxPost(apiUrl,data,callback);
 }

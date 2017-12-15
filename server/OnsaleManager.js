@@ -50,12 +50,20 @@ module.exports = class OnsaleManager{
 		});
 	}
 
-	// GetOnSaleByProductCategory(category,callback){
-	// 	this.db.query(
-	// 		"SELECT * " + 
-	// 		"FROM ONSALE,PRODUCT " + 
-	// 		"WHERE Category=" + "'" + category + "'" + "AND" + 
-	// 		"Id=ProductId AND" + 
-	// 	);
-	// }
+	AddOnsaleByProductName(productName,attribute,callback){
+		var self = this;
+		self.productManager.GetIdsByName(productName,function(err,Ids){
+
+			for(var i = 0 ; i < Ids.length ; i++)
+			{
+				attribute['ProductId'] = Ids[i];
+				self.AddOnsale(attribute,function(err,result){
+					if(err)
+						console.log(err);
+					else
+						console.log(result);
+				});
+			}
+		});
+	}
 }

@@ -19,6 +19,8 @@
 
 	#productPrice>div:nth-child(1){
 		display: inline-block;
+		margin-right: 10px;
+		font-size: 15px;
 	}
 
 	#productPrice>div:nth-child(2){

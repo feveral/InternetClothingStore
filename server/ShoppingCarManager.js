@@ -9,7 +9,6 @@ module.exports = class ShoppingCarManager{
 	}
 
 	AddShoppingCar(attribute,callback){
-
 		this.db.query(
 			"INSERT INTO SHOPPINGCAR " +
 			"(ProductId,MemberId,Quantity)" +
@@ -24,6 +23,14 @@ module.exports = class ShoppingCarManager{
 	}
 
 	GetItemsByMemberId(memberId,callback){
-
+		this.db.query(
+			"SELECT PRODUCT.Name,Color,Size,Price,ImagePath,PercentOff " + 
+			"FROM SHOPPINGCAR ,PRODUCT LEFT JOIN ONSALE ON ONSALE.ProductId=PRODUCT.Id " + 
+			"WHERE SHOPPINGCAR.MemberId='" + memberId + "' AND " + 
+			"PRODUCT.Id=SHOPPINGCAR.ProductId;", 
+			function(err,result){
+				callback(err,result);
+			}
+		)
 	}
 }

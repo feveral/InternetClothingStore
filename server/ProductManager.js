@@ -106,6 +106,20 @@ module.exports = class ProductManager{
 		);	
 	}
 
+	GetIdsByName(name,callback){
+		this.db.query(
+			"select Id from PRODUCT where " + 
+			"Name=" + "'" + name + "';",
+			function(err,result){
+				var list = []
+				for (var i = 0 ; i < result.length ; i++) {
+					list.push(result[i]["Id"]);
+				}
+				callback(err,list);
+			}
+		);
+	}
+
 	GetMaxId(callback){
 		this.db.query(
 			"SELECT MAX(Id) AS MaxId FROM PRODUCT;" , 

@@ -49,6 +49,8 @@ module.exports = class MemberManager{
 			"FROM MEMBER " +  
 			"WHERE Email=" + "'" + email + "'" + ";",
 			function(err,result){
+				console.log(err);
+				console.log(result);
 				callback(err,result[0]);
 			}
 		);

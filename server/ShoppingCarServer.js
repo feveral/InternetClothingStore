@@ -38,5 +38,19 @@ module.exports = class{
 				});
 			});
 		});
+
+		self.router.get('/',function(req,res){
+
+			if( req.user === undefined )
+			{
+				res.end(JSON.stringify({success:false}));
+				return;
+			}
+			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+				self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,result){
+					res.end(JSON.stringify({success:true,data:result}));
+				});
+			});
+		});
 	}
 }
