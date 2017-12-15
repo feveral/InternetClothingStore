@@ -24,7 +24,7 @@ module.exports = class ShoppingCarManager{
 
 	GetItemsByMemberId(memberId,callback){
 		this.db.query(
-			"SELECT PRODUCT.Name,Color,Size,Price,ImagePath,PercentOff " + 
+			"SELECT PRODUCT.Id,PRODUCT.Name,Color,Size,Price,ImagePath,PercentOff,Quantity " + 
 			"FROM SHOPPINGCAR ,PRODUCT LEFT JOIN ONSALE ON ONSALE.ProductId=PRODUCT.Id " + 
 			"WHERE SHOPPINGCAR.MemberId='" + memberId + "' AND " + 
 			"PRODUCT.Id=SHOPPINGCAR.ProductId;", 

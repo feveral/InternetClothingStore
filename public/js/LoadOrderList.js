@@ -22,7 +22,6 @@ function PrintOrder(result){
 	var processedResult = []; 
 	for(var r in result){
 		var id = result[r]['Id'];
-		console.log(id);
 		$("#order").append(
 		"<div> " + 
 		"<span>" + result[r]['Id'] + "</span>" +

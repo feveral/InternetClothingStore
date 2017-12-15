@@ -14,10 +14,7 @@ function HideSelector(){
 $(document).ready(function(){
 	$("#mainMenu span:nth-child(1)").hover(ShowSelector,HideSelector);
     $("#selector").hover(ShowSelector,HideSelector);
-});
-
-$(document).ready(function(){
-	AddSubCategoryToCategory('Basic',1);
+    AddSubCategoryToCategory('Basic',1);
 	AddSubCategoryToCategory('Top',2);
 	AddSubCategoryToCategory('Coat',3);
 	AddSubCategoryToCategory('Bottom',4);
@@ -29,6 +26,10 @@ $(document).ready(function(){
 			AddSubCategoryToCategory('Bottom',4);
 			AddSubCategoryToCategory('Accessories',5);
 	});
+	$('#logo').click(function(){
+		location.href = GetServerUrl();
+	});
+
 });
 
 function AddSubCategoryToCategory(catagoey,order){
