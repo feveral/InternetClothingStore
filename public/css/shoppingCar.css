@@ -17,9 +17,11 @@
 			width: 100%;
 			text-align: center;
 		}
+
 		#main>div:nth-child(1)>div:nth-child(1){
 			margin-bottom: 0.7%;
 		}
+
 		#main>div:nth-child(1)>div:nth-child(2){
 			text-align: center;
 			margin-bottom: 2%;
@@ -44,9 +46,14 @@
 					text-align: left;
 				}
 
+				#title>span:nth-child(2){
+					text-align: center;
+				}
+
+
 				#title>span:nth-child(3){
 					width: 20%;
-					text-align: left;
+					text-align: center;
 				}
 
 		#shoppingItem{
@@ -55,47 +62,53 @@
 			margin-bottom: 15%;
 		}
 
-			#shoppingItem>div{
-				padding-left: 14.5%;
-				height: 30%;
-				font-size: 0px;
-			}
 
-				#shoppingItem>div>div:nth-child(1)>img{
-					float: left;
-					height: 80%;
-					width: 10%;
-				}
+	#shoppingItem>div{
+		padding-left: 14.5%;
+		height: 30%;
+		font-size: 0px;
+	}
 
-				#shoppingItem>div>div:nth-child(2){
-					float: right;
-					width: 80%;
-					height: 80%;
-				}
+		#shoppingItem>div>div:nth-child(1)>img{
+			float: left;
+			height: 60%;
+			width: 9%;
+		}
 
-				#shoppingItem>div>div:nth-child(2)>span{
-					font-size: 14px;
-					display: inline-block;
-					width: 7.5%;
-					padding-top: 10%;
-				}
+		#shoppingItem>div>div:nth-child(2){
+			float: right;
+			width: 80%;
+			height: 80%;
+		}
 
-				#shoppingItem>div>div:nth-child(2)>span:nth-child(2){
-					width:25%;
-				}
+		#shoppingItem>div>div:nth-child(2)>span:first-child{
+			text-align: center;
+		}
 
-				#shoppingItem>div:last-child{
-					border-bottom: 2px solid #d5d0c8;
-					margin-bottom: 2%;
-				}
+		#shoppingItem>div>div:nth-child(2)>span{
+			font-size: 14px;
+			display: inline-block;
+			width: 7.5%;
+			padding-top: 10%;
+		}
+
+		#shoppingItem>div>div:nth-child(2)>span:nth-child(2){
+			text-align: center;
+			width:25%;
+		}
+
+		#shoppingItem>div:last-child{
+			margin-bottom: 2%;
+		}
 
 
-#checkOrderButton{
-	position: relative;
-	width:100%;
+#checkOrderButton{	
 	position: fixed;
 	bottom: 0;
-	background-color: white;
+	width:100%;
+	background-color: #f9f9f9;
+	padding-top: 15px;
+	border-top: 2px solid #d5d0c8;
 }				
 		#checkOrderButton>h1{
 			text-align: center;
@@ -122,20 +135,32 @@
 			text-align: center;
 			width:9.5%;
 			margin-bottom: 2%;
+			cursor: pointer;
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:nth-child(1){
+		#checkOrderButton>div:nth-child(3)>a:nth-child(1){
 			float: left;
 			margin-left:40%; 
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:nth-child(2){
+		#checkOrderButton>div:nth-child(3)>a:nth-child(2){
 			float: right;
 			margin-right:40%;
 		}
 
-/*		#checkOrderButton>div:nth-child(3)>div:hover{
+		#checkOrderButton>div:nth-child(3)>a{
+			padding: 0.8% 1.5%;
+			margin: 1% 0%;
+			width:9%;
+			display: inline-block;
+			border:1px solid #d5d0c8;
+			text-align: center;
+		}
+
+		#checkOrderButton>div:nth-child(3)>a:hover{
 			background-color: black;
 			color: white;
-		}*/
+		}
+
+
 

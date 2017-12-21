@@ -1,6 +1,18 @@
 $(document).ready(function(){
-	InitialProduct();
+
+	if(window.location.hash.replace('#','') != '')
+	{
+		GetProduct(window.location.hash.replace('#',''));
+	}
+	else
+	{
+		InitialProduct();
+	}
 });
+
+$(window).bind('hashchange', function() { 
+	GetProduct(window.location.hash.replace('#',''));
+}); 
 
 
 function InitialProduct(){

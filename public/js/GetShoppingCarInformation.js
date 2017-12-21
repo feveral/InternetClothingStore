@@ -22,6 +22,7 @@ function PostShoppingItem(ProductId,Quantity){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		CalculateTotal(object['data']);
+		InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
@@ -38,6 +39,7 @@ function PostDeleteShoppingItem(ProductId){
 		$("#shoppingItem").empty();
 		PrintShoppingCarItem(object['data']);
 		CalculateTotal(object['data']);
+		InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }

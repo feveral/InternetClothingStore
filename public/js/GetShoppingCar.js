@@ -36,7 +36,6 @@ function DataToShoppingCarHoverHtml(data){
 	       '</div>';
 }
 
-
 function ShowShoppingCarHeader(){
 	$('#shoppingCar').css('height','450px');
 }

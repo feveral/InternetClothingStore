@@ -50,7 +50,6 @@ function PaymentTypeChanged(){
 function GoToBookingData(){
 	if(($("select[name='payment']").val() != 0) && ($("select[name='shippingment']").val() != 0))
 	{
-		console.log("kk");
 		var apiUrl =  $("select[name='payment']").val() + "?" + $("select[name='shippingment']").val();
 		location.href = GetServerUrl() + "/shoppingCar.html" + "#" + apiUrl;
 		var callback = function(msg){
@@ -60,5 +59,5 @@ function GoToBookingData(){
 		//AjaxGet(apiUrl,callback);
 	}
 	else
-		alert("please choose option!");
+		alert("請選擇付款方式及運送方式 !");
 }
