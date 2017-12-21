@@ -13,8 +13,11 @@
 		width: 100%;
 		height: 100%;
 	}
+		#main>div:nth-child(1){
+			width: 100%;
+			text-align: center;
+		}
 		#main>div:nth-child(1)>div:nth-child(1){
-			padding-left: 20%;
 			margin-bottom: 0.7%;
 		}
 		#main>div:nth-child(1)>div:nth-child(2){
@@ -49,7 +52,7 @@
 		#shoppingItem{
 			width: 100%;
 			height: 90%;
-			overflow: auto;
+			margin-bottom: 15%;
 		}
 
 			#shoppingItem>div{
@@ -90,6 +93,9 @@
 #checkOrderButton{
 	position: relative;
 	width:100%;
+	position: fixed;
+	bottom: 0;
+	background-color: white;
 }				
 		#checkOrderButton>h1{
 			text-align: center;
@@ -128,7 +134,8 @@
 			margin-right:40%;
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:hover{
+/*		#checkOrderButton>div:nth-child(3)>div:hover{
 			background-color: black;
 			color: white;
-		}
+		}*/
+
