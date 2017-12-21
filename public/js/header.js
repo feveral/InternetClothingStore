@@ -6,9 +6,7 @@ $(document).ready(function(){
 	SetNewButtonProductClick();
 	SetSaleButtonProductClick();
 	SetLogoClick();
-	
 });
-
 
 function SetLogoClick(){
 	$('#logo').click( function(){ location.href = GetServerUrl(); } );
