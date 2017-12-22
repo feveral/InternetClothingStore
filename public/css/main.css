@@ -17,6 +17,10 @@
 		padding-bottom: 7px;
 	}
 
+	#productPrice {
+		margin-bottom: 8px;		
+	}
+
 	#productPrice>div:nth-child(1){
 		display: inline-block;
 		margin-right: 10px;
@@ -25,8 +29,7 @@
 
 	#productPrice>div:nth-child(2){
 		display: inline-block;
-		float: right;
-		padding-right: 50%;
+		margin-left: 15px;
 		color: red; 
 	}
 

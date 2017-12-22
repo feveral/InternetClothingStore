@@ -55,7 +55,7 @@ function FindNotrepeatSizeFromProducts(products){
 function HashToNameAndColor(href){
 	href = href.replace('#','');
 	var hrefSplit = href.split('?');
-	return { Name:hrefSplit[0] , Color:hrefSplit[1] }; 
+	return { Name:decodeURI(hrefSplit[0]) , Color:decodeURI(hrefSplit[1]) }; 
 }
 
 function SetColorClick(){
