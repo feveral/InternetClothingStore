@@ -13,9 +13,12 @@
 		width: 100%;
 		height: 100%;
 	}
+		#main>div:nth-child(1){
+			width: 100%;
+			text-align: center;
+		}
 
 		#main>div:nth-child(1)>div:nth-child(1){
-			padding-left: 20%;
 			margin-bottom: 0.7%;
 		}
 
@@ -133,17 +136,29 @@
 			cursor: pointer;
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:nth-child(1){
+		#checkOrderButton>div:nth-child(3)>a:nth-child(1){
 			float: left;
 			margin-left:40%; 
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:nth-child(2){
+		#checkOrderButton>div:nth-child(3)>a:nth-child(2){
 			float: right;
 			margin-right:40%;
 		}
 
-		#checkOrderButton>div:nth-child(3)>div:hover{
+		#checkOrderButton>div:nth-child(3)>a{
+			padding: 0.8% 1.5%;
+			margin: 1% 0%;
+			width:9%;
+			display: inline-block;
+			border:1px solid #d5d0c8;
+			text-align: center;
+		}
+
+		#checkOrderButton>div:nth-child(3)>a:hover{
 			background-color: black;
 			color: white;
 		}
+
+
+

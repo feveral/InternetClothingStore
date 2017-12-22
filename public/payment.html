@@ -13,12 +13,12 @@
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/GetPaymentInformation.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/MemberMenu.js"></script>
 	<script type="text/javascript" src="js/GetShoppingCar.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
-	<script type="text/javascript" src="js/payment.js"></script>
 
 </head>
 <body>
@@ -74,22 +74,6 @@
 					<span>單價</span>
 					<span>小計</span>
 				</div>
-				<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
 			</div>
 
 			<div id="littleCount">
@@ -97,7 +81,7 @@
 			</div>
 		</div>
 
-		<a id="before"><img src="./image/before.png"></a>
+		<a id="before" href="shoppingCar.html"><img src="./image/before.png"></a>
 
 		<div id="pay">
 			<div>
@@ -119,13 +103,13 @@
 					<option value="2">7-11取貨</option>
 				</select>
 
-				<div>
+				<div id="paymentPrice">
 					$593
 				</div>
 			</div>
 			<a href="#"></a>
 		</div>
-		<a id="next"><img src="./image/next.png"></a>
+		<a id="next" href="#" onclick="GoToBookingData()"><img src="./image/next.png"></a>
 
 	</div>
 

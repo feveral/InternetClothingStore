@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	GetShoppingItem();
-	GoBackToShopping();
 });
 
 function GetShoppingItem(){
@@ -98,11 +97,5 @@ function DeleteShoppingItem(){
 	$('#shoppingItem>div>div>span:nth-child(8)').click(function(){
 		var ProductId = $(this).prev().prev().prev().prev().prev().prev().prev().text();
 		PostDeleteShoppingItem(ProductId);
-	});
-}
-
-function GoBackToShopping(){
-	$('#goBackToBuy').click(function(){
-		location.href = GetServerUrl();
 	});
 }
