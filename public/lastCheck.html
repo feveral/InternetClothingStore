@@ -4,7 +4,7 @@
 	<title>Shtick</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" type="text/css" href="lastCheck.css">
+	<link rel="stylesheet" type="text/css" href="css/lastCheck.css">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,6 +12,16 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
+	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/Template.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
+	<script type="text/javascript" src="js/Login.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+
 </head>
 
 <body>
@@ -21,6 +31,7 @@
 		<div id="mainMenu">
 			<span>STILLAS</span>
 			<span>SALE</span>
+			<span>NEW</span>
 		</div>
 		<div id="member">
 			<div>
@@ -31,7 +42,7 @@
 	</div>
 
 	<div id="memberMenu">
-		<a href="#">其他帳號登入</a>
+		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="#">會員中心</a>
 		<a href='order.html'>訂單管理</a>
 		<a href="#" onclick="Logout()">登出</a>
@@ -43,6 +54,91 @@
 		<div><a>Coat</a></div>
 		<div><a>Bottom</a></div>
 		<div><a>Accessories</a></div>
+	</div>
+
+	<div id="shoppingCar">
+		<p>您的購物車：</p> 
+		<div></div>
+		<div>
+			<a href="shoppingCar.html">前往購物車</a>
+			<a href="shoppingCar.html">直接結帳</a>
+		</div>
+	</div>
+
+	<div id="main"> 
+		<img src="./image/step_3.gif">
+		<div id="detail">
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
+			</div>
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
+			</div>
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
+			</div>
+		</div>
+
+		<div id="littleCount">
+			<div>運費 ： 80 元</div>
+			<div>付款資料 ： 2160元</div>
+		</div>
+
+
+		<div id="payment">
+			<p>付款資料</p>
+			<div>
+				<p>付款方式</p>
+				<p>國泰世華刷卡</p>
+			</div>
+			<div>
+				<p>應付金額</p>
+				<p>673</p>
+			</div>
+		</div>
+
+		<div id="information">
+			<p>收件人資料</p>
+			<div>
+				<p>E-mail</p>
+				<p>feveraly@gmail.com</p>
+			</div>
+			<div>
+				<p>運送方式</p>
+				<p>宅配</p>
+			</div>
+			<div>
+				<p>手機</p>
+				<input type="text" name="recipient">
+			</div>
+			<div>
+				<p>地址</p>
+				<input type="text" name="recipient">
+			</div>
+			<div>
+				<p>備註</p>
+				<textarea type="text" name="recipient" placeholder="如果有特別的注意事項也請告訴我們"></textarea>
+			</div>
+		</div>
+		<div id="functionButton">
+			<a href="payment.html">上一步</a>
+			<a href="#">下一步</a>
+		</div>
 	</div>
 
 </body>

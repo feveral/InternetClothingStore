@@ -51,9 +51,9 @@ function GoToBookingData(){
 	if(($("select[name='payment']").val() != 0) && ($("select[name='shippingment']").val() != 0))
 	{
 		var apiUrl =  $("select[name='payment']").val() + "?" + $("select[name='shippingment']").val();
-		location.href = GetServerUrl() + "/shoppingCar.html" + "#" + apiUrl;
+		location.href = GetServerUrl() + "/lastCheck.html" + "#" + apiUrl;
 		var callback = function(msg){
-			location.href = GetServerUrl() + "shoppingCar.html" + "#" + apiUrl;
+			location.href = GetServerUrl() + "/lastCheck.html" + "#" + apiUrl;
 			RenderProduct(msg);
 		}
 		//AjaxGet(apiUrl,callback);

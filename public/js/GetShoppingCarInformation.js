@@ -1,6 +1,3 @@
-$(document).ready(function(){
-	GetShoppingItem();
-});
 
 function GetShoppingItem(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";

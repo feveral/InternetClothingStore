@@ -1,12 +1,8 @@
 
 function InitialShoppingCarHover(){
-
 	$('#member > a').hover(ShowShoppingCarHeader,HideShoppingCarHeader);
 	$('#shoppingCar').hover(ShowShoppingCarHeader,HideShoppingCarHeader);
-
-	var apiUrl = GetServerUrl() + '/shoppingCar';
-	var callback = RenderShoppingCarHover;
-	AjaxGet(apiUrl,callback);
+	GetShoppingCar(RenderShoppingCarHover);
 }
 
 function RenderShoppingCarHover(msg){
@@ -20,20 +16,8 @@ function RenderShoppingCarHover(msg){
 
 	for(var i = 0 ; i < data.length ; i++)
 	{
-		$('#shoppingCar > div:nth-child(2)').append(DataToShoppingCarHoverHtml(data[i]));
+		$('#shoppingCar > div:nth-child(2)').append(ShoppingCarHoverHtml(data[i]));
 	}
-}
-
-function DataToShoppingCarHoverHtml(data){
-	if (data['PercentOff'] != null)
-	{
-		data['Price'] = data['Price'] * (100-data['PercentOff']) / 100 ; 
-	}
-	return '<div>' +
-		       '<img src="' + data['ImagePath'] + '">' + 
-	           '<p>' + data['Name'] + "</p>" + 
-	           '<p>TWD.' + data['Price'] + "</p>" + 
-	       '</div>';
 }
 
 function ShowShoppingCarHeader(){
