@@ -28,5 +28,13 @@ module.exports = class MemberServer{
 				res.send(JSON.stringify({result:result}));
 	    	});
 		});
+
+		self.router.get('/getMemberInformation',function(req,res){
+			new MemberManager().GetMemberFromEmail(
+			req.user,
+			function(err,result){
+				res.send(JSON.stringify({result:result}));
+	    	});
+		});
 	}
 }

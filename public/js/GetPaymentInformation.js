@@ -50,13 +50,8 @@ function PaymentTypeChanged(){
 function GoToBookingData(){
 	if(($("select[name='payment']").val() != 0) && ($("select[name='shippingment']").val() != 0))
 	{
-		var apiUrl =  $("select[name='payment']").val() + "?" + $("select[name='shippingment']").val();
-		location.href = GetServerUrl() + "/lastCheck.html" + "#" + apiUrl;
-		var callback = function(msg){
-			location.href = GetServerUrl() + "/lastCheck.html" + "#" + apiUrl;
-			RenderProduct(msg);
-		}
-		//AjaxGet(apiUrl,callback);
+		var payTypeUrl =  $("select[name='payment']").val() + "?" + $("select[name='shippingment']").val();
+		location.href = GetServerUrl() + "/lastCheck.html" + "#" + payTypeUrl;
 	}
 	else
 		alert("請選擇付款方式及運送方式 !");
