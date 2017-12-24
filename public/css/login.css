@@ -41,11 +41,13 @@ html,body{
 	}
 
 		#login input{
+			border: 2px #ccc solid;
+			border-radius: 5px;
 			width: 45%;
 		}
 
 
-		#login div{
+		#login div{			
 			padding: 30px;
 		}
 
@@ -83,6 +85,8 @@ html,body{
 	}
 
 		#register input{
+			border: 2px #ccc solid;
+			border-radius: 5px;
 			width: 45%;
 		}
 
