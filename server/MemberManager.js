@@ -61,7 +61,7 @@ module.exports = class MemberManager{
 			{
 				callback(err,false);
 			}
-			else(result.Membertype === 'MemberType')
+			else(result.Membertype === 'Manager')
 			{
 				callback(err,true);
 			}

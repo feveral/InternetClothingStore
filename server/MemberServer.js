@@ -79,21 +79,23 @@ module.exports = class MemberServer{
 		});
 
 		self.router.get('/isManager',function(req,res){
+
 			if(req.user === undefined)
 			{
-				res.send(JSON.stringify({success:false,reason:'You should Login'}));
+				res.end(JSON.stringify({success:false,reason:'You should Login'}));
 				return;
 			}
 			new MemberManager().IsManager(req.user,function(err,isManager){
 				if(err)
 				{
-					res.send(JSON.stringify({success:false,reason:err}));
+					res.end(JSON.stringify({success:false,reason:err}));
 				}
 				else
 				{
-					res.send(JSON.stringify({success:true,result:isManager}));
+					res.end(JSON.stringify({success:isManager}));
 				}
 	    	});
+	    	
 		});
 	}
 }

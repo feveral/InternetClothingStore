@@ -36,8 +36,8 @@ function AddSubCategoryToCategory(catagoey,order){
 }
 
 function CategoryToHtml(category){
-	var hash = "#" + GetCategoryEnglish(category);
-	var html = '<a href="'+ hash + '" onclick="GetProduct(\'{category}\')">{category}</a>';
+	var hash = GetServerUrl() + "#" + GetCategoryEnglish(category);
+	var html = '<a href="'+ hash + '" onclick="GetProductByCategory(\'{category}\',RenderCustomerProduct)">{category}</a>';
 	html = html.replace('{category}',GetCategoryEnglish(category));	
 	return html.replace('{category}',category);
 }
