@@ -59,7 +59,7 @@ function AddSize(html, product){
 function AddPercentOff(product){
 	var onsalePercent = 1-(product['PercentOff']/100)
 	var html='';
-	if(product['PercentOff'] != null)
+	if(product['PercentOff'])
 		html += '<div>TWD.' + Math.round(product['Price']*onsalePercent) + '</div>';
 	else
 		html = '';
