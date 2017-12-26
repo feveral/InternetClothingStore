@@ -54,6 +54,17 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetProductById(id,callback){
+		this.db.query(
+			"SELECT * " + 
+			"FROM PRODUCT " + 
+			"WHERE Id=" + "'" + id + "'" + ";" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetSubCategoryByCategory(category,callback){
 		this.db.query(
 			"SELECT DISTINCT SubCategory " + 

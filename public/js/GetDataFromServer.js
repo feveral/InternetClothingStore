@@ -4,6 +4,11 @@ function GetProductByCategory(categoryOrSubCategory,callback){
 	AjaxGet(apiUrl,callback);
 }
 
+function GetProductById(id,callback){
+	var apiUrl = GetServerUrl() + "/product/" + id;
+	AjaxGet(apiUrl,callback);	
+}
+
 function GetShoppingCar(callback){
 	var apiUrl = GetServerUrl() + '/shoppingCar';
 	AjaxGet(apiUrl,callback);

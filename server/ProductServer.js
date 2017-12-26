@@ -15,6 +15,21 @@ module.exports = class{
 	SetAPI(){
 		var self = this;
 
+		self.router.get('/id/:Id',function(req,res){
+			req.url = decodeURI(req.url);
+			var Id = path.basename(req.url);
+			self.productManager.GetProductById(Id,function(err,result){
+				if (err)
+				{
+					res.end(JSON.stringify({success:false , reason:err}));
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		self.router.get('/name/:name',function(req,res){
 			req.url = decodeURI(req.url);
 			var name = path.basename(req.url);

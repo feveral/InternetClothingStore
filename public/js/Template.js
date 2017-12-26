@@ -13,7 +13,7 @@ function ShoppingCarHoverHtml(attribute){
 
 function ManagerProductHtml(attribute){
 
-	return '<div id="product" class="col">' + 
+	return '<div id="product">' + 
 		   		'<a href="#">' + 
 		   			'<img class="image" src="' + attribute['ImagePath'] + '">'+ 
 		   		'</a>' +
