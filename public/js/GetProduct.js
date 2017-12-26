@@ -20,7 +20,6 @@ function RenderProduct(msg){
 	 	$("#main").append(productToHtml(productList[i]));
 }
 
-
 function isNotRepeat(product, productList){
 	var theSame = 0;
 	if(productList.length == 0)	
@@ -78,9 +77,9 @@ function AddFunctionClass(product){
 }
 
 function productToHtml(productListItem){
-
+	/* origin col-3*/
 	var html = "";
-	html += '<div id="product" class="col-3">';
+	html += '<div id="product" class="col">';
 	html += '<a href="demonstration.html#' + productListItem['Name'] + '?' + productListItem['Color'] + '"><img class="image" src="{ImagePath}"/></a>';
 	html += '<div id="productName">{Name}</div>';
 	html += '<div id="productPrice"' + AddFunctionClass(productListItem) + '><div>TWD.{Price}</div>' + AddPercentOff(productListItem) + '</div>';

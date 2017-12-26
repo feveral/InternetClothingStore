@@ -1,16 +1,14 @@
 $(document).ready(function(){
-	GetShoppingItemToPayment();
+	ShoppingCarToPayment();
 	PaymentTypeChanged();
 });
 
-function GetShoppingItemToPayment(){
-	var apiUrl = GetServerUrl() + "/shoppingCar";
-	var callback = function(msg){
+function ShoppingCarToPayment(){
+	GetShoppingCar(function(msg){
 		var object = JSON.parse(msg);
 		PrintPaymentData(object['data']);
 		CalculatePaymentTotal(object['data']);
-	}
-	AjaxGet(apiUrl,callback);
+	});
 }
 
 function PrintPaymentData(data){

@@ -1,7 +1,7 @@
 
 function InitialShoppingCarHover(){
-	$('#member > a').hover(ShowShoppingCarHeader,HideShoppingCarHeader);
-	$('#shoppingCar').hover(ShowShoppingCarHeader,HideShoppingCarHeader);
+	$('#member > a').hover(ShowShoppingCarHover,HideShoppingCarHover);
+	$('#shoppingCar').hover(ShowShoppingCarHover,HideShoppingCarHover);
 	GetShoppingCar(RenderShoppingCarHover);
 }
 
@@ -20,10 +20,10 @@ function RenderShoppingCarHover(msg){
 	}
 }
 
-function ShowShoppingCarHeader(){
+function ShowShoppingCarHover(){
 	$('#shoppingCar').css('height','450px');
 }
 
-function HideShoppingCarHeader(){
+function HideShoppingCarHover(){
 	$('#shoppingCar').css('height','0px');	
 }

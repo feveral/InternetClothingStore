@@ -100,7 +100,7 @@ function SetQuantityClick(){
 	});
 }
 
-function AddShoppingCarClick(){
+function ClickAddShoppingCar(){
 
 	if( !IsLogin() )
 	{

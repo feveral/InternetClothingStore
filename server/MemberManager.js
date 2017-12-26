@@ -54,11 +54,24 @@ module.exports = class MemberManager{
 		);
 	}
 
+	IsManager(email,password,callback){
+
+		this.GetMemberFromEmail(email,function(err,result){
+			if(result.Membertype != 'Manager')
+			{
+				callback(err,false);
+			}
+			else(result.Membertype === 'MemberType')
+			{
+				callback(err,true);
+			}
+		});
+	}
+
 	// return correct or not and member information
 	IsSignInCorrect(email,password,callback){
 
 		this.GetMemberFromEmail(email,function(err,result){
-			var member = result;
 			if(!result)
 			{
 				callback(err,{success:false,user:result});

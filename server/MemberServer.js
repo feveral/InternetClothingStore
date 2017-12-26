@@ -51,5 +51,18 @@ module.exports = class MemberServer{
 				res.send(JSON.stringify({result:result}));
 	    	});
 		});
+
+		self.router.get('/isManager',function(req,res){
+			new MemberManager().IsManager(req.user,function(err,isManager){
+				if(err)
+				{
+					res.send(JSON.stringify({success:false,reason:err}));
+				}
+				else
+				{
+					res.send(JSON.stringify({success:true,result:isManager}));
+				}
+	    	});
+		});
 	}
 }
