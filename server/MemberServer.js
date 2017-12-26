@@ -29,6 +29,47 @@ module.exports = class MemberServer{
 	    	});
 		});
 
+		self.router.post('/modify',function(req,res){
+			new MemberManager().UpdateMemberInformation(
+			{
+				Name:req.body.Name,
+				Email:req.user,
+				Cellphone:req.body.Cellphone,
+				Address:req.body.Address
+			},
+			function(err,result){
+				if (err)
+				{
+					res.end(JSON.stringify({success:false , result:err}));
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , result:result}));
+				}
+	    	});
+		});
+
+		self.router.post('/modifyPassword',function(req,res){
+			new MemberManager().UpdateMemberPassword(
+			{
+				Email:req.user,
+				OriginPassword:req.body.OriginPassword,
+				NewPassword:req.body.NewPassword
+			},
+			function(err,result){
+				if (err)
+				{
+					res.end(JSON.stringify({success:false , result:err}));
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , result:result}));
+				}
+	    	});
+		});
+
 		self.router.get('/getMemberInformation',function(req,res){
 			new MemberManager().GetMemberFromEmail(
 			req.user,

@@ -96,9 +96,12 @@ var createOnSale =
 var createOrderList = 
 	"CREATE TABLE ORDERLIST" + 
 		"(Id INT NOT NULL AUTO_INCREMENT , " +
-		"State VARCHAR(10) NOT NULL ," +
-		"Shipment VARCHAR(10) NOT NULL , " + 
-		"Paytype VARCHAR(10) NOT NULL , " +
+		"State VARCHAR(10) CHARACTER SET utf8 NOT NULL ," +
+		"Shipment VARCHAR(10) CHARACTER SET utf8 NOT NULL , " + 
+		"Paytype VARCHAR(10) CHARACTER SET utf8 NOT NULL , " +
+		"CreditCardNumber VARCHAR(10) DEFAULT 'NULL'," + 
+		"StoreName VARCHAR(10) CHARACTER SET utf8 DEFAULT 'NULL'," + 
+		"SendAddress VARCHAR(50) CHARACTER SET utf8 DEFAULT 'NULL', " + 
 		"Time DATE NOT NULL , " + 
 		"MemberId INT NOT NULL , " +  
 		"TotalPrice INT NOT NULL , " + 

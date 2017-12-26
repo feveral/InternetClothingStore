@@ -171,7 +171,7 @@
 		height: 0px;
 		right: 0px;
 		width: 15%;
-		z-index: 1;
+		z-index: 3;
 		text-align: center;
 		border-bottom-left-radius: 5px;
 	    -webkit-transition: height 0.4s , padding-top 0.7s , padding-bottom 0.7s,border 2s ease-out; /* For Safari 3.1 to 6.0 */

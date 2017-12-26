@@ -21,4 +21,20 @@ module.exports = class OrderItemManager{
 			}  
 		);
 	}
+
+	AddOrderItemIterately(OrderId,data,callback){
+		for (var i = 0;i < data.length; i++){
+			this.db.query(
+				"INSERT INTO ORDERITEM " +
+				"(ProductId,OrderId,Quantity) " +
+				"VALUES ( " + 
+				data[i].Id +  " , " + 
+				OrderId +  " , " + 
+				data[i].Quantity +  " ); " , 
+				function(err,result){
+					callback(err,result);
+				}  
+			);
+		}
+	}
 }

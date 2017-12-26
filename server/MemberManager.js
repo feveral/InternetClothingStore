@@ -86,4 +86,36 @@ module.exports = class MemberManager{
 			}
 		});
 	}
+
+	UpdateMemberInformation(attribute,callback){
+		this.db.query(
+			"UPDATE MEMBER " +
+			"SET Name=" + 
+			"'" + attribute['Name'] + "', " + 
+			" Cellphone =" + 
+			"'" + attribute['Cellphone'] +  "' , " + 
+			" Address=" + 
+			"'" + attribute['Address'] + "'" + 
+			" WHERE Email=" + 
+			"'" + attribute['Email'] +  "' ; " , 
+			function(err,result){
+				callback(err,result);
+			}  
+		);
+	}
+
+	UpdateMemberPassword(attribute,callback){
+		this.db.query(
+			"UPDATE MEMBER " +
+			"SET Password=" + 
+			"'" + attribute['NewPassword'] + "' " + 
+			" WHERE Email=" + 
+			"'" + attribute['Email'] +  "' " + 
+			" AND Password=" + 
+			"'" + attribute['OriginPassword'] +  "';", 
+			function(err,result){
+				callback(err,result);
+			}  
+		);
+	}
 }
