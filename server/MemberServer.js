@@ -29,6 +29,21 @@ module.exports = class MemberServer{
 	    	});
 		});
 
+		self.router.post('/Modify',function(req,res){
+			new MemberManager().UpdateMemberInformation(
+			{
+				Name:req.body.Name,
+				Email:req.body.Email,
+				Cellphone:req.body.Cellphone,
+				Password:req.body.Password,
+				ComfirmPassword:req.body.ComfirmPassword,
+				Address:req.body.Address
+			},
+			function(err,result){
+				res.send(JSON.stringify({result:result}));
+	    	});
+		});
+
 		self.router.get('/getMemberInformation',function(req,res){
 			new MemberManager().GetMemberFromEmail(
 			req.user,

@@ -73,4 +73,8 @@ module.exports = class MemberManager{
 			}
 		});
 	}
+
+	UpdateMemberInformation(attribute,callback){
+
+	}
 }

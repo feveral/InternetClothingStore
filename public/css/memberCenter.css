@@ -40,14 +40,18 @@
 			background-color: #F7F6F3;
 		}
 
-		#memberData>div:nth-child(3)>input:nth-child(1){
-			width:5%;
-		}
-
 		#memberData>div:nth-child(6){
 			height:60px;
 			padding-left: 85%;
 			line-height: 60px;
+		}
+
+		#memberData>div:nth-child(4)>input{
+			width:25%;
+		}
+
+		#memberData>div:nth-child(5)>input{
+			width:25%;
 		}
 
 		#memberData>div:nth-child(6)>div{
