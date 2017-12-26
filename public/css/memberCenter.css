@@ -40,21 +40,17 @@
 			background-color: #F7F6F3;
 		}
 
-		#memberData>div:nth-child(6){
+		#memberData>div:nth-child(4)>input{
+			width:25%;
+		}
+
+		#memberData>div:nth-child(5){
 			height:60px;
 			padding-left: 85%;
 			line-height: 60px;
 		}
 
-		#memberData>div:nth-child(4)>input{
-			width:25%;
-		}
-
-		#memberData>div:nth-child(5)>input{
-			width:25%;
-		}
-
-		#memberData>div:nth-child(6)>div{
+		#memberData>div:nth-child(5)>div{
 			height: 30px;
 			line-height: 30px;
 			text-align: center;
@@ -63,7 +59,6 @@
 			margin:0% 1%;
 			padding:0% 1%;
 			border:1px solid #ccc;
-			background-color: white;
 		}
 
 		#memberData>div>p{
@@ -108,17 +103,21 @@
 			margin: 0% 15%;
 		}
 
-		#changePasswordMain>div>div:nth-child(4)>div:nth-child(1){
-			margin-right: 5%;
+		#changePasswordMain>div>div:nth-child(4)>div:hover{
+			background-color: #ccc;
+			color:white;
+		}
+
+		#changePasswordMain>div>div:nth-child(4)>div{
 			padding: 2% 5%;
-			border:2px solid blue;
+			border:2px solid #ccc;
 			background-color: white;
 		}
 
-		#changePasswordMain>div>div:nth-child(4)>div:nth-child(2){
-			margin-left: 5%;
-			border:2px solid #ccc;
-			padding: 2% 5%;
-			background-color: white;
-		}
+	#modifyButton:hover{
+		background-color: black;
+		color:white;
+		cursor: pointer;
+	}
+
 	
