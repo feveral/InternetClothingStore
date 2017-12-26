@@ -54,7 +54,7 @@ module.exports = class MemberManager{
 		);
 	}
 
-	IsManager(email,password,callback){
+	IsManager(email,callback){
 
 		this.GetMemberFromEmail(email,function(err,result){
 			if(result.Membertype != 'Manager')

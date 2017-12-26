@@ -3,7 +3,7 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/demonstrate.css">
@@ -21,8 +21,6 @@
 	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/UserInformation.js"></script>
-	<script type="text/javascript" src="js/MemberMenu.js"></script>
 	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/demonstration.js"></script>
@@ -30,6 +28,13 @@
 </head>
 
 <body>
+
+	<div id="phoneHeader">
+		<img src="./image/menu_icon.png">
+		<h1>S H T I C K </h1>
+		<img src="./image/shoppingCar_icon.png">
+	</div>
+
 	<div id="header">
 		<div id="logo"><img src="./image/logo.png"></div>
 		<div id="mainMenu">
@@ -70,10 +75,10 @@
 		</div>
 	</div>
 
-	<div id="main">
-		<img src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" >
+	<div id="main" class="container row">
+		<img src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" class="col-12" >
 
-		<div id="productInformation">
+		<div id="productInformation" class="col-6">
 			<p id="productName">簡約多色刷毛長袖大學TEE</p>
 			<a class="button">加入收藏</a>
 			<p id="onSale">早秋新品，單件85折</p>			
