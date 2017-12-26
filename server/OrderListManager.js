@@ -11,13 +11,15 @@ module.exports = class OrderListManager{
 	AddOrderList(attribute,callback){
 		this.db.query(
 			"INSERT INTO ORDERLIST" +
-			"(Id,State,Shipment,Paytype,Time,MemberId,TotalPrice)" +
+			"(State,Shipment,Paytype,Time,StoreName,SendAddress,CreditCardNumber,MemberId,TotalPrice)" +
 			"VALUES ( " +
-			attribute['Id'] +  " , " + 
 			"'" + attribute['State'] +  "' , " + 
 			"'" + attribute['Shipment'] +  "' , " + 
 			"'" + attribute['Paytype'] +  "' , " +
 			"'" + attribute['Time'] +  "' , " + 
+			"'" + attribute['StoreName'] +  "' , " + 
+			"'" + attribute['SendAddress'] +  "' , " + 
+			"'" + attribute['CreditCardNumber'] +  "' , " + 
 			attribute['MemberId'] +  " , " + 
 			attribute['TotalPrice'] + " ); " , 
 			function(err,result){
@@ -29,7 +31,19 @@ module.exports = class OrderListManager{
 	GetOrderListByMemberId(MemberId,callback){
 		this.db.query(
 			"SELECT * FROM ORDERLIST" + 
-			"WHERE MemberId=" + MemberId , 
+			" WHERE MemberId=" + MemberId , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	GetNewestOrderListByMemberId(MemberId,callback){
+		this.db.query(
+			"SELECT Id FROM ORDERLIST" + 
+			" WHERE MemberId=" + MemberId +
+			" order by Id desc " + 
+			"limit 1", 
 			function(err,result){
 				callback(err,result);
 			}
@@ -44,6 +58,7 @@ module.exports = class OrderListManager{
 			}
 		);	
 	}
+
 	ListOrderList(attribute,callback){
 		this.db.query(
 			"select ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment from ORDERLIST,MEMBER WHERE Email='" + 
