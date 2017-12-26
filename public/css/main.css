@@ -4,13 +4,16 @@
 	#main{
 		display: block;
 		position: absolute;
-		top: 130px;
+		top: 150px;
 		margin-left: 13%;
 		margin-right: 13%;
 	}
 
 	#product{
 		display: inline-block;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 5px;
 	}
 
 	#productName{
@@ -35,6 +38,7 @@
 
 	#productSize{
 		text-align: right;
+		margin-right: 30px;
 	}
 
 		#productSize a{
