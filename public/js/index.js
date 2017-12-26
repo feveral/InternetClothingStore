@@ -3,24 +3,22 @@ $(document).ready(function(){
 	
 	if(window.location.hash.replace('#','') != '')
 	{
-		GetProduct(window.location.hash.replace('#',''));
+		GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct)
 	}
 	else
 	{
 		InitialProduct();
 	}
-	//IfManagerGotoManagerPage();
+	IfManagerGotoManagerPage();
 });
 
 $(window).bind('hashchange', function() { 
-	GetProduct(window.location.hash.replace('#',''));
+	GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct);
 }); 
 
 
 function InitialProduct(){
-	GetNewProduct(function(msg){
-		RenderProduct(msg);
-	});
+	GetNewProduct(RenderCustomerProduct);
 }
 
 function IfManagerGotoManagerPage(){
