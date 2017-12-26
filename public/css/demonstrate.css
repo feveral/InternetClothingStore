@@ -13,8 +13,7 @@
 		top: 130px;
 		width: 100%;
 		height: 100%;
-		margin-left: 20%;
-		margin-right: 20%;
+		margin-left: 20%
 	}
 
 	#main > div{
@@ -43,16 +42,19 @@
 
 	#main > img {
 		display: inline-block;
-		width : 30%;
+		width: 350px;
 		margin-right: 100px;
+		margin-top: 5%;
+		vertical-align: top;
+		top:0;
 	}
 
 /*ProductInformation*/
 
 	#productInformation{
-		width: 30%;
+		width: 50%;
 		vertical-align: top;
-		margin-top: 10%;
+		margin-top: 5%;
 	}
 
 	#productInformation > *{
@@ -100,8 +102,8 @@
 	
 	#productColor{
 		width: 70%;
-		margin-top: 5%;
-		margin-bottom: 5%;
+		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 	#productColor > div{
