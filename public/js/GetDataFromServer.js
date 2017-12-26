@@ -1,5 +1,5 @@
 
-function GetProductByCategory(callback){
+function GetProductByCategory(categoryOrSubCategory,callback){
 	var apiUrl = GetServerUrl() + "/product/" + categoryOrSubCategory;
 	AjaxGet(apiUrl,callback);
 }
@@ -11,5 +11,10 @@ function GetShoppingCar(callback){
 
 function GetIsManager(callback){
 	var apiUrl = GetServerUrl() + '/member/isManager';
+	AjaxGet(apiUrl,callback);
+}
+
+function GetNewProduct(callback){
+	var apiUrl = GetServerUrl() + "/product/" + "newproduct";
 	AjaxGet(apiUrl,callback);
 }
