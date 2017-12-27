@@ -27,7 +27,7 @@ module.exports = class{
 			}
 
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
-				self.productManager.GetProductFromAppearence(appearence,function(err,product){
+				self.productManager.GetProductByAppearence(appearence,function(err,product){
 					var attribute = appearence;
 					attribute['ProductId'] = product.Id;
 					attribute['MemberId'] = member.Id;

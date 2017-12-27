@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
-	GetProductByCategory('Top',RenderManagerProduct);
-
+	if(window.location.hash.replace('#','') != '')
+	{
+		GetProductByCategory(window.location.hash.replace('#',''),RenderManagerProduct)
+	}
+	else
+	{
+		GetNewProduct(RenderManagerProduct);
+	}
 });

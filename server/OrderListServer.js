@@ -130,8 +130,6 @@ module.exports = class OrderListServer{
 					})
 				})
 			});
-
-
 		});
 	}
 }
