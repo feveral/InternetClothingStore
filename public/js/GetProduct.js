@@ -79,7 +79,6 @@ function AddFunctionClass(product){
 
 function productToHtml(productListItem){
 
-
 	var html = "";
 	html += '<div id="product" class="col-3">';
 	html += '<a href="demonstration.html#' + productListItem['Name'] + '?' + productListItem['Color'] + '"><img class="image" src="{ImagePath}"/></a>';

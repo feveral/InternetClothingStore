@@ -33,7 +33,3 @@ app.use('/favorite', FavoriteRouter);
 app.use(express.static('public'));
 
 app.listen(80);
-
-
-const OnsaleManager = require('./server/OnsaleManager.js');
-new OnsaleManager();

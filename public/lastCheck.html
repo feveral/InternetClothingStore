@@ -4,9 +4,9 @@
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<link rel="stylesheet" type="text/css" href="css/lastCheck.css">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="css/demonstrate.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -15,27 +15,24 @@
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/LastCheck.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
-	<script type="text/javascript" src="js/ProductColorMap.js"></script>
-	<script type="text/javascript" src="js/DemonstrateProduct.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
-	<script type="text/javascript" src="js/Login.js"></script>
 	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
-	<script type="text/javascript" src="js/GetFavoriteInformation.js"></script>
+	<script type="text/javascript" src="js/Login.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
-	<script type="text/javascript" src="js/demonstration.js"></script>
 
 </head>
 
 <body>
+
 	<div id="header">
 		<div id="logo"><img src="./image/logo.png"></div>
 		<div id="mainMenu">
 			<span>STILLAS</span>
 			<span>SALE</span>
 			<span>NEW</span>
-
 		</div>
 		<div id="member">
 			<div>
@@ -46,7 +43,7 @@
 	</div>
 
 	<div id="memberMenu">
-		<a href="#">其他帳號登入</a>
+		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="#">會員中心</a>
 		<a href='order.html'>訂單管理</a>
 		<a href="favorite.html">我的收藏</a>
@@ -54,7 +51,7 @@
 	</div>
 
 	<div id="selector">
-		<div><a>Basic</a><a>長袖上衣</a></div>
+		<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
 		<div><a>Top</a></div>
 		<div><a>Coat</a></div>
 		<div><a>Bottom</a></div>
@@ -71,41 +68,64 @@
 	</div>
 
 	<div id="main">
-		<img src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" >
-
-		<div id="productInformation">
-			<p id="productName">簡約多色刷毛長袖大學TEE</p>
-			<a class="button" onclick="AddFavoriteClick()">加入收藏</a>
-			<p id="onSale">早秋新品，單件85折</p>
-
-			<div id="productPrice">
-				<span>TWD.580</span>
+		<img src="./image/step_3.gif">
+		<div id="detail">
+			<div>
+				<span>商品編號</span>
+				<span>商品名稱</span>
+				<span>規格</span>
+				<span>數量</span>
+				<span>單價</span>
+				<span>小計</span>
 			</div>
+		</div>
 
-			<div id=appearenceChoose>
-				<div>麻黑</div>
-				<div>尚未選擇尺寸</div>
+		<div id="littleCount">
+			<div>運費 ： 80 元</div>
+			<div>付款資料 ： 2160元</div>
+		</div>
+
+
+		<div id="payment">
+			<p>付款資料</p>
+			<div>
+				<p>付款方式</p>
+				<p>國泰世華刷卡</p>
 			</div>
-
-			<div id="productColor">
-				<img>
+			<div id="creditCardTotalPay">
+				<p>應付金額</p>
+				<p>673</p>
 			</div>
+		</div>
 
-			<div id="productSize">
-				<a>S</a>
-				<a>M</a>
-				<a>L</a>
-				<a>XL</a>
+		<div id="information">
+			<p>收件人資料</p>
+			<div>
+				<p>E-mail</p>
+				<p>feveraly@gmail.com</p>
 			</div>
-
-			<div id="productQuantity">
-				<a>-</a>
-				<input type="text" value=1>
-				<a>+</a>
+			<div>
+				<p>運送方式</p>
+				<p>宅配</p>
 			</div>
-
-			<a class="button" onclick="AddShoppingCarClick()">加入購物車</a>
-			<a class="button">立即購買</a>
+			<div>
+				<p>手機</p>
+				<input type="text" name="recipient">
+			</div>
+			<div>
+				<p>地址</p>
+				<input type="text" name="recipient">
+			</div>
+			<div>
+				<p>備註</p>
+				<textarea type="text" name="recipient" placeholder="如果有特別的注意事項也請告訴我們"></textarea>
+			</div>
+		</div>
+		<div id="functionButton">
+			<a href="payment.html">上一步</a>
+			<a href="#">下一步</a>
 		</div>
 	</div>
+
 </body>
+</html>

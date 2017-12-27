@@ -1,25 +1,25 @@
 ### Installation
 
 1. 請先安裝 nodejs 、 npm 與 Mysql
-2. Mysql裡，一定要有個名為Shtick的資料庫，並且理面是空的
+2. 更改 database/DatabaseUtility.js 檔案裡第8行的密碼，更改為自己的 mysql root 密碼 
 3. 刷新資料庫 ， 請執行database資料夾裡的InitialDatabase.js
+
 ```javascript=
 node InitialDatabase.js
 ```
 
-### Command
-
-##### 開啟server
+### 開啟server
 
 ```shell=
 node server.js
+```
 
 ### Dependent
 
 1. express
-2. mysql
-3. body-parser 
-4. passport
-5. passport-local
-
-```
+2. express-session
+3. mysql
+4. body-parser 
+5. passport
+6. passport-local
+7. cookie-parser

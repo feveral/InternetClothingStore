@@ -8,7 +8,6 @@ $(document).ready(function(){
 			if(object.success)
 			{
 				PrintOrder(object.result);
-				console.log("ccc"+object.result[0]['Email']);
 			}
 	   	},
 	   	error: function(xhr, textStatus, error)

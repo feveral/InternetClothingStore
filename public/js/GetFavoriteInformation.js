@@ -1,16 +1,16 @@
 
 function GetShoppingItem(){
-	var apiUrl = GetServerUrl() + "/shoppingCar";
+	var apiUrl = GetServerUrl() + "/favorite";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		PrintShoppingCarItem(object['data']);
+		PrintFavoriteItem(object['data']);
 		CalculateTotal(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
 }
 
 function PostShoppingItem(ProductId,Quantity){
-	var apiUrl = GetServerUrl() + "/shoppingCar/modify";
+	var apiUrl = GetServerUrl() + "/favorite";
 	var data =
 	{
 		ProductId:ProductId,
@@ -18,14 +18,14 @@ function PostShoppingItem(ProductId,Quantity){
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		CalculateTotal(object['data']);
-		InitialShoppingCarHover();
+	  CalculateTotal(object['data']);
+		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
 
 function PostDeleteShoppingItem(ProductId){
-	var apiUrl = GetServerUrl() + "/shoppingCar/delete";
+	var apiUrl = GetServerUrl() + "/favorite/delete";
 	var data =
 	{
 		ProductId:ProductId
@@ -34,9 +34,9 @@ function PostDeleteShoppingItem(ProductId){
 		var object = JSON.parse(msg);
 		CalculateTotal(object['data']);
 		$("#shoppingItem").empty();
-		PrintShoppingCarItem(object['data']);
+		PrintFavoriteItem(object['data']);
 		CalculateTotal(object['data']);
-		InitialShoppingCarHover();
+		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
@@ -52,7 +52,7 @@ function CalculateTotal(data){
 	$("#totalPrice").text("$" + totalPrice);
 }
 
-function PrintShoppingCarItem(data){
+function PrintFavoriteItem(data){
 	for (var index in data){
 		$("#shoppingItem").append(
 			"<div>" +
@@ -64,7 +64,6 @@ function PrintShoppingCarItem(data){
 			"<span>" + data[index]['Size'] + "</span>" +
 			'<span><select id="selectValue">'+ AddOption(data[index]) +"</select></span>" +
 			"<span>" + data[index]['Price'] + "</span>" +
-			"<span>" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
 			"<span><img src='./image/delete.png'></span>" +
 			"</div></div>");
 	}

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Shtick</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/payment.css">
@@ -12,11 +13,16 @@
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/GetPaymentInformation.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/MemberMenu.js"></script>
-	<script type="text/javascript" src="js/GetShoppingCar.js"></script>
+	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/Login.js"></script>
+	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 
 </head>
 <body>
@@ -40,6 +46,7 @@
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="#">會員中心</a>
 		<a href='order.html'>訂單管理</a>
+		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
@@ -52,7 +59,7 @@
 	</div>
 
 	<div id="shoppingCar">
-		<p>您的購物車：</p> 
+		<p>您的購物車：</p>
 		<div></div>
 		<div>
 			<a href="shoppingCar.html">前往購物車</a>
@@ -60,115 +67,11 @@
 		</div>
 	</div>
 
-	<div id="main"> 
+	<div id="main">
 		<img src="./image/step_2.gif">
 		<div>
 			<div id="detail">
 				<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-				<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
-					<span>商品編號</span>
-					<span>商品名稱</span>
-					<span>規格</span>
-					<span>數量</span>
-					<span>單價</span>
-					<span>小計</span>
-				</div>
-								<div>
 					<span>商品編號</span>
 					<span>商品名稱</span>
 					<span>規格</span>
@@ -183,7 +86,7 @@
 			</div>
 		</div>
 
-		<a id="before"><img src="./image/before.png"></a>
+		<a id="before" href="shoppingCar.html"><img src="./image/before.png"></a>
 
 		<div id="pay">
 			<div>
@@ -205,13 +108,13 @@
 					<option value="2">7-11取貨</option>
 				</select>
 
-				<div>
+				<div id="paymentPrice">
 					$593
 				</div>
 			</div>
 			<a href="#"></a>
 		</div>
-		<a id="next"><img src="./image/next.png"></a>
+		<a id="next" href="#" onclick="GoToBookingData()"><img src="./image/next.png"></a>
 
 	</div>
 

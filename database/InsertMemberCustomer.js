@@ -14,3 +14,14 @@ memberManager.AddCustomer(
 	},
 	DatabaseUtility.callback
 );
+
+memberManager.AddCustomer(
+	{
+		Name:"customer",
+		Email:"customer",
+		Cellphone:"0923961566",
+		Password:"customer",
+		Address:"customer"
+	},
+	DatabaseUtility.callback
+);

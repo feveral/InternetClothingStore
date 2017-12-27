@@ -2,9 +2,8 @@
 <html>
 <head>
 	<title>Shtick</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8"/>
-
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
@@ -15,12 +14,12 @@
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/MainHash.js"></script>
-	<script type="text/javascript" src="js/MemberMenu.js"></script>
-	<script type="text/javascript" src="js/GetShoppingCar.js"></script>
+	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 
@@ -39,7 +38,6 @@
 				<a onclick="ClickMemberButton()">登入</a>
 			</div>
 			<a href="shoppingCar.html">購物車</a>
-			<a href="favorite.html">收藏</a>
 		</div>
 	</div>
 
@@ -47,6 +45,7 @@
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="#">會員中心</a>
 		<a href='order.html'>訂單管理</a>
+		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 

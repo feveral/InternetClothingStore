@@ -6,9 +6,7 @@ $(document).ready(function(){
 	SetNewButtonProductClick();
 	SetSaleButtonProductClick();
 	SetLogoClick();
-	
 });
-
 
 function SetLogoClick(){
 	$('#logo').click( function(){ location.href = GetServerUrl(); } );
@@ -36,7 +34,6 @@ function SetSaleButtonProductClick(){
 	});
 }
 
-
 function InitialMemberName(){
 	var apiUrl = GetServerUrl() + "/login/getUserName";
 	var callback = function(msg){
@@ -47,4 +44,24 @@ function InitialMemberName(){
 		}
 	}
 	AjaxGet(apiUrl,callback);
+}
+
+function InitialMemberMenu(){
+	$("#member div:nth-child(1)").hover(ShowMemberMenu,HideMemberMenu);
+    $("#memberMenu").hover(ShowMemberMenu,HideMemberMenu);
+}
+
+
+function ShowMemberMenu(){
+	if($("#member > div > a").text() != '登入'){
+		$("#memberMenu").css("height","200px");
+		$("#memberMenu").css("padding-top","20px");
+		$("#memberMenu").css("box-shadow","3px 1px 1px #666666");
+	}
+}
+
+function HideMemberMenu(){
+	$("#memberMenu").css("height","0px");
+	$("#memberMenu").css("padding-top","0px");
+	$("#memberMenu").css("box-shadow","none");
 }
