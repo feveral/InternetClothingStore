@@ -23,7 +23,6 @@ function Logout(){
 	AjaxGet(apiUrl,callback);
 }
 
-
 function Register(){
 	var data = 
 	{

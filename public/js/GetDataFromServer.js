@@ -5,8 +5,28 @@ function GetProductByCategory(categoryOrSubCategory,callback){
 }
 
 function GetProductById(id,callback){
-	var apiUrl = GetServerUrl() + "/product/" + id;
+	var apiUrl = GetServerUrl() + "/product/id/" + id;
 	AjaxGet(apiUrl,callback);	
+}
+
+function GetProductColorByName(name,callback){
+	var apiUrl = GetServerUrl() + "/product/color/" + name;
+	AjaxGet(apiUrl,callback);	
+}
+
+function GetProductSizeByName(name,callback){
+	var apiUrl = GetServerUrl() + "/product/size/" + name;
+	AjaxGet(apiUrl,callback);	
+}
+
+function GetProductByName(name,callback){
+	var apiUrl = GetServerUrl() + "/product/name/" + name;
+	AjaxGet(apiUrl,callback);	
+}
+
+function GetProductByAppearence(name,color,size,callback){
+	var apiUrl = GetServerUrl() + "/product/appearence/?Name=" + name + '&Color=' + color + '&Size=' + size ;
+	AjaxGet(apiUrl,callback);
 }
 
 function GetShoppingCar(callback){

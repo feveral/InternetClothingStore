@@ -1,6 +1,7 @@
 'use strict';
 
 const ProductManager = require('./ProductManager.js');
+const querystring = require('querystring');
 const path = require('path');
 const url = require('url');
 
@@ -30,10 +31,57 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/appearence/',function(req,res){
+			var parsedUrl = url.parse(decodeURI(req.url));  
+			var parsedQs = querystring.parse(parsedUrl.query);
+			var name = path.basename(req.url);
+			self.productManager.GetProductByAppearence(parsedQs,function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+
 		self.router.get('/name/:name',function(req,res){
 			req.url = decodeURI(req.url);
 			var name = path.basename(req.url);
 			self.productManager.GetProductByName(name,function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/color/:color',function(req,res){
+			req.url = decodeURI(req.url);
+			var color = path.basename(req.url);
+			self.productManager.GetColorByName(color,function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/size/:size',function(req,res){
+			req.url = decodeURI(req.url);
+			var size = path.basename(req.url);
+			self.productManager.GetSizeByName(size,function(err,result){
 				if (err)
 				{
 					console.log(err);

@@ -79,8 +79,6 @@ module.exports = class OrderListServer{
 					})
 				})
 			});
-
-
 		});
 	}
 }

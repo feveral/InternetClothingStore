@@ -65,6 +65,28 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetColorByName(name,callback){
+		this.db.query(
+			"SELECT DISTINCT Color " + 
+			"FROM PRODUCT " + 
+			"WHERE Name=" + "'" + name + "'" + ";" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	GetSizeByName(name,callback){
+		this.db.query(
+			"SELECT DISTINCT Size " + 
+			"FROM PRODUCT " + 
+			"WHERE Name=" + "'" + name + "'" + ";" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetSubCategoryByCategory(category,callback){
 		this.db.query(
 			"SELECT DISTINCT SubCategory " + 
@@ -105,7 +127,7 @@ module.exports = class ProductManager{
 		);
 	}
 
-	GetProductFromAppearence(appearence,callback){
+	GetProductByAppearence(appearence,callback){
 		this.db.query(
 			"select * from PRODUCT where " + 
 			"Name=" + "'" + appearence.Name + "'" + " AND " +  

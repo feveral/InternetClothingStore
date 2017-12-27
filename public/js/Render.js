@@ -1,4 +1,18 @@
 
+function RenderShoppingCarHover(msg){
+	var object = JSON.parse(msg);
+	if(!object['success']) // check is login
+	{
+		return;
+	}
+	var data = object['data'];
+	$('#shoppingCar > div:nth-child(2)').empty();
+
+	for(var i = 0 ; i < data.length ; i++)
+	{
+		$('#shoppingCar > div:nth-child(2)').append(ShoppingCarHoverHtml(data[i]));
+	}
+}
 
 function RenderManagerProduct(msg){
 	var data = JSON.parse(msg)['data'];
@@ -32,4 +46,29 @@ function RenderCustomerProduct(msg){
 			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');		
 		}
 	}
+}
+
+function RenderFunctionColor(msg){
+	var data = JSON.parse(msg)['data'];
+	$('#functionColor').empty();
+	for(var i = 0 ; i < data.length ; i++)
+	{
+		$('#functionColor').append('<div onclick="ClickFunctionColor(this)"><img src="' + GetColorUrl(data[i]['Color']) +'"></div>');
+	}
+}
+
+function RenderFunctionSize(msg){
+	var data = JSON.parse(msg)['data'];
+	$('#functionSize').empty();
+	for(var i = 0 ; i < data.length ; i++)
+	{
+		$('#functionSize').append('<div onclick="ClickFunctionSize(this)">' + data[i]['Size'] + '</div>')
+	}
+	$('#functionSize > div:first-child').css('background-color','black');
+	$('#functionSize > div:first-child').css('color','white');
+	$('#functionDetail > h3:last-child').text($('#functionSize > div:first-child').text());
+}
+
+function RenderFunctionPriceStock(msg){
+
 }

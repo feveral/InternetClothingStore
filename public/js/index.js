@@ -7,7 +7,7 @@ $(document).ready(function(){
 	}
 	else
 	{
-		InitialProduct();
+		GetNewProduct(RenderCustomerProduct);
 	}
 	IfManagerGotoManagerPage();
 });
@@ -15,11 +15,6 @@ $(document).ready(function(){
 $(window).bind('hashchange', function() { 
 	GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct);
 }); 
-
-
-function InitialProduct(){
-	GetNewProduct(RenderCustomerProduct);
-}
 
 function IfManagerGotoManagerPage(){
 	GetIsManager(function(msg){

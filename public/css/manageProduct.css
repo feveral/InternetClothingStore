@@ -2,36 +2,63 @@
 
 #function{
 	position: fixed;
-	top: 10%;
-	left: 30%;
-	border-radius: 5px;
-	display: block;
-	z-index: 1000;
-	width: 40%;
-	height: 80vh;
-	background-color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border: 1px black solid;
-	padding: 4%;
-	text-align: center;
+	background-color: rgba(50,50,50,0.6);
+	z-index: 1;
+	width: 100%;
+	height: 100%;
 	display: none;
 }
-	#function > div > *{
-		display: inline-block;
+
+	#function input{
+		border: 2px #aaa solid;
+		padding: 3px;
+		border-radius: 5px;
 	}
-	
+
+	#function > div {
+		position: fixed;
+		top: 10%;
+		left: 30%;
+		border-radius: 5px;
+		display: block;
+		z-index: 2;
+		width: 40%;
+		height: 80vh;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border: 1px black solid;
+		padding: 2%;
+		text-align: center;
+	}
+
 	#function h2{
 		font-size: 20px;
 		font-weight: bold;
+		margin-bottom: 10px;
 	}
 
-	#function > img{
-		width: 250px;
+	#function h3{
+		font-size: 17px;		
+		font-weight: bold;
 	}
+
+		#function > div > img{
+			width: 240px;
+		}
+
+			#function > div > div > *{
+				display: inline-block;
+			}
 
 #functionColor{
 	width: 100%;
 }
+
+	#functionColor > div{
+		margin-right: 5px;
+		padding: 5px 5px 3px 5px;
+		cursor: pointer;
+	}
 
 #functionSize{
 	margin-top: 5px;
@@ -51,13 +78,9 @@
 
 #functionStock{
 	margin-top: 20px;
+	margin-bottom: 5px;
 }
 
-#functionStock input{
-	border: 2px #aaa solid;
-	padding: 3px;
-	border-radius: 5px;
-}
 
 #functionAction{
 	position: absolute;

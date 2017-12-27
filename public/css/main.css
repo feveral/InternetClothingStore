@@ -60,9 +60,7 @@
 
 	@media only screen and (max-width: 800px) {
 		.image{
-			display: block;
 			width: 100%;
-			margin-bottom: 10px;
 		}
 
 		#main{
@@ -73,11 +71,15 @@
 
 	@media only screen and (min-width: 800px) {
 		.image{
-			display: block;
 			height: 100%;
 			width: 100%;
-			margin-bottom: 10px;
 		}
+	}
+
+	.image{
+		display: block;
+		cursor: pointer;
+		margin-bottom: 10px;
 	}
 
 	.deletePrice div:nth-child(1){
