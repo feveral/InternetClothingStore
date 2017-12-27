@@ -31,6 +31,13 @@ module.exports = class OrderListServer{
 		    	});
 		});
 
+		self.router.get('/LoadAllOrder',function(req,res){
+				new OrderListManager().GetAllOrderList(
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
 		self.router.post('/LoadOrderDetail',function(req,res){
 				new OrderListManager().ListOrderDetail(
 				{
@@ -53,6 +60,49 @@ module.exports = class OrderListServer{
 		    	});
 		});
 
+		self.router.post('/LoadManagerOrderDetail',function(req,res){
+				new OrderListManager().ListManagerOrderDetail(
+				{
+					OrderId:req.body.OrderId
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
+		self.router.post('/LoadManagerOrderItem',function(req,res){
+				new OrderListManager().ListManagerOrderItem(
+				{
+					OrderId:req.body.OrderId
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
+		self.router.post('/PostManagerOrderState',function(req,res){
+				new OrderListManager().PostManagerOrderState(
+				{
+					OrderId:req.body.OrderId,
+					State:req.body.State,
+				},
+				function(err,result){
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
+		self.router.post('/DeleteOrder',function(req,res){
+				new OrderListManager().DeleteOrder(
+				{
+					OrderId:req.body.OrderId,
+				},
+				function(err,result){
+					console.log(err);
+					console.log(result);
+					res.send(JSON.stringify(result));
+		    	});
+		});
+
 		self.router.post('/postOrder',function(req,res){
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
 				self.OrderListManager.AddOrderList(
@@ -65,7 +115,8 @@ module.exports = class OrderListServer{
 					Time:req.body.Time,
 					StoreName:req.body.StoreName,
 					SendAddress:req.body.SendAddress,
-					TotalPrice:req.body.totalPrice
+					TotalPrice:req.body.totalPrice,
+					Remarks:req.body.Remarks,
 				},
 				function(err,result){
 					res.send(JSON.stringify(result));

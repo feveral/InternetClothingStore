@@ -77,3 +77,54 @@ function CustomerProductHtml(attribute){
 			return '';
 	}
 
+/* managerOrder.js*/
+function RenderAllOrder(allorder){
+	for (var index in allorder){
+		$("#OrderList").append(
+			"<div>" + 
+			"<span>" + allorder[index]['Id'] + "</span>" +
+			"<span>" + allorder[index]['Time'].split("T")[0] + "</span>" +
+			"<span>" + allorder[index]['State'] + "</span>" +
+			"<span>" + allorder[index]['Shipment'] + "</span>" +
+			"<span>" + IsRemarksNull(allorder[index]['Remarks']) + "</span>" +
+			"<span><a href='#' onclick='GetManagerOrder(" +allorder[index]['Id'] +  ")'>詳細資料</a></span>" + 
+			"<span><img src='./image/delete.png'></span>" + 
+			"</div>");
+	}
+	DeleteOrder();
+}
+
+function IsRemarksNull(Remarks){
+	if(!Remarks)
+		return "   ";
+	return Remarks;
+}
+
+/*orderInformation.js*/
+function PrintDetail(result){
+	$("#orderNumber").text(result[0]['Id']);
+	$("#receiver").text(result[0]['Name']);
+	$("#data").text(result[0]['Time'].split("T")[0]);
+	$("#state").text(result[0]['State']);
+	$("#shipment").text(result[0]['Shipment']);
+	$("#price").text(result[0]['TotalPrice']);
+	$("#other").text(result[0]['Remarks']);
+}
+
+function PrintShoppingItem(result){
+	var processedResult = []; 
+	for(var r in result){
+		var id = result[r]['Name'];
+		$("#shoppingData").append(
+		"<div> " + 
+		"<span>" + result[r]['ProductId'] + "</span>" +
+		"<span>" + result[r]['Name'] + "</span>" +
+		"<span>" + result[r]['Color'] + "</span>" +
+		"<span>" + result[r]['Size'] + "</span>" +
+		"<span>" + result[r]['Quantity'] + "</span>" +
+		"<span>" + " no " + "</span>" +
+		"<span>" + result[r]['Price'] + "</span>" +
+		"<span>" + " .. " + "</span>" +
+		"</div>");
+	}
+}

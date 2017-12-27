@@ -97,6 +97,11 @@
 			background-color: white;
 		}
 
+	#changeOrderState{
+		padding-left: 45%;
+		margin-top: 30px;
+	}
+		
 	#goBackOrder{
 		padding-left: 45%;
 		margin-top: 30px;
@@ -105,4 +110,3 @@
 		#goBackOrder a{
 			color: #737272;
 		}
-

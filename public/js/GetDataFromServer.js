@@ -18,3 +18,10 @@ function GetNewProduct(callback){
 	var apiUrl = GetServerUrl() + "/product/" + "newproduct";
 	AjaxGet(apiUrl,callback);
 }
+
+
+/*post  managerOrderDetail.js*/
+function DeleteOrderFromManager(data,callback){
+	var apiUrl = GetServerUrl() + "/order/DeleteOrder";
+	AjaxPost(apiUrl,data,callback);
+}

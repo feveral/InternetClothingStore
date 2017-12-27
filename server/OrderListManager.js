@@ -11,7 +11,7 @@ module.exports = class OrderListManager{
 	AddOrderList(attribute,callback){
 		this.db.query(
 			"INSERT INTO ORDERLIST" +
-			"(State,Shipment,Paytype,Time,StoreName,SendAddress,CreditCardNumber,MemberId,TotalPrice)" +
+			"(State,Shipment,Paytype,Time,StoreName,SendAddress,CreditCardNumber,Remarks,MemberId,TotalPrice)" +
 			"VALUES ( " +
 			"'" + attribute['State'] +  "' , " + 
 			"'" + attribute['Shipment'] +  "' , " + 
@@ -20,6 +20,7 @@ module.exports = class OrderListManager{
 			"'" + attribute['StoreName'] +  "' , " + 
 			"'" + attribute['SendAddress'] +  "' , " + 
 			"'" + attribute['CreditCardNumber'] +  "' , " + 
+			"'" + attribute['Remarks'] +  "' , " + 
 			attribute['MemberId'] +  " , " + 
 			attribute['TotalPrice'] + " ); " , 
 			function(err,result){
@@ -61,7 +62,7 @@ module.exports = class OrderListManager{
 
 	ListOrderList(attribute,callback){
 		this.db.query(
-			"select ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment from ORDERLIST,MEMBER WHERE Email='" + 
+			"select ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment,ORDERLIST.Remarks from ORDERLIST,MEMBER WHERE Email='" + 
 			attribute['Email'] +
 			"'and ORDERLIST.MemberId = MEMBER.Id;",
 			function(err,result){
@@ -72,7 +73,7 @@ module.exports = class OrderListManager{
 
 	ListOrderDetail(attribute,callback){
 		this.db.query(
-			"select Name,ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment,TotalPrice"+
+			"select Name,ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment,TotalPrice,Remarks"+
 			" from ORDERLIST join MEMBER  on  ORDERLIST.MemberId = MEMBER.Id"+
 			" WHERE Email='" + 
 			attribute['Email'] +
@@ -92,6 +93,56 @@ module.exports = class OrderListManager{
 			" AND OrderId IN(select ORDERLIST.Id from ORDERLIST,MEMBER WHERE Email= '" +
 			attribute['Email'] +  
 			"' and ORDERLIST.MemberId = MEMBER.Id);",
+			function(err,result){
+				callback(err,{success:true,result:result})
+			}  
+		);
+	}
+
+	ListManagerOrderDetail(attribute,callback){
+		this.db.query(
+			"select Name,ORDERLIST.Id,ORDERLIST.Time,ORDERLIST.State,ORDERLIST.Shipment,TotalPrice,Remarks"+
+			" from ORDERLIST join MEMBER  on  ORDERLIST.MemberId = MEMBER.Id"+
+			" WHERE " + 
+			"ORDERLIST.Id=" + 
+			attribute['OrderId'] + ";",
+			function(err,result){
+				callback(err,{success:true,result:result})
+			}  
+		);
+	}
+
+	ListManagerOrderItem(attribute,callback){
+		this.db.query(
+			"SELECT ProductId,OrderId,Quantity,PRODUCT.Name,Size,Color,Price " + 
+			"FROM ORDERITEM join PRODUCT on ORDERITEM.ProductId = PRODUCT.Id WHERE OrderId= " + 
+			attribute['OrderId'] +
+			" AND OrderId IN(select ORDERLIST.Id from ORDERLIST,MEMBER WHERE " +  
+			" ORDERLIST.MemberId = MEMBER.Id);",
+			function(err,result){
+				callback(err,{success:true,result:result})
+			}  
+		);
+	}
+
+	PostManagerOrderState(attribute,callback){
+		this.db.query(
+			"UPDATE ORDERLIST " + 
+			"SET State = " +
+			"'" + attribute['State'] + "' " +
+			"WHERE Id = " + 
+			attribute['OrderId'] + ";",
+			function(err,result){
+				callback(err,{success:true,result:result})
+			}  
+		);
+	}
+
+	DeleteOrder(attribute,callback){
+		this.db.query(
+			"DELETE FROM ORDERLIST " + 
+			"WHERE Id = " + 
+			attribute['OrderId'] + ";",
 			function(err,result){
 				callback(err,{success:true,result:result})
 			}  

@@ -26,4 +26,21 @@ function ClickMemberButton(){
 	AjaxGet(apiUrl,callback);
 }
 
-/*  */
+/*managerOrderDetail.js*/
+function DeleteOrder(){
+	$("#OrderList>div>span>img").click(function(){
+	console.log("123");
+	console.log($(this).parent().prev().prev().prev().prev().prev().prev().text());
+	var orderId = $(this).parent().prev().prev().prev().prev().prev().prev().text();
+	var data = 
+	{
+		OrderId : orderId,
+	};
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object);
+	}
+	DeleteOrderFromManager(data,callback);
+	location.href = GetServerUrl() + "/managerOrder.html";
+	});
+}

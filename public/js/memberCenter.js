@@ -46,12 +46,20 @@ function PostModifyPassword(){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		console.log(object);
-		if(object['success'])
+		console.log(object['result']['affectedRows']);
+		if(object['result']['affectedRows']!=0)
 			alert("修改密碼成功");
 		else
 			alert("修改密碼失敗");
+		CleanPassword();
 	}
 	AjaxPost(apiUrl,data,callback);
+}
+
+function CleanPassword(){
+	$('input[name=enterOriginPassword]').val("");
+	$('input[name=modifyPassword]').val("");
+	$('input[name=checkPassword]').val("");
 }
 
 function RenderMemberInformation(memberdata){
