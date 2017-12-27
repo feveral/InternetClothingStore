@@ -46,7 +46,9 @@ function PaymentTypeChanged(){
 }
 
 function GoToBookingData(){
-	if(($("select[name='payment']").val() != 0) && ($("select[name='shippingment']").val() != 0))
+	if(($("select[name='payment']").val() == 1) && ($("select[name='shippingment']").val() == 1))
+		alert("7-11取貨付款只能7-11取貨！");
+	else if(($("select[name='payment']").val() != 0) && ($("select[name='shippingment']").val() != 0))
 	{
 		var payTypeUrl =  $("select[name='payment']").val() + "?" + $("select[name='shippingment']").val();
 		location.href = GetServerUrl() + "/lastCheck.html" + "#" + payTypeUrl;

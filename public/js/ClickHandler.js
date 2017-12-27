@@ -26,6 +26,25 @@ function ClickMemberButton(){
 	AjaxGet(apiUrl,callback);
 }
 
+
+/*managerOrderDetail.js*/
+
+function DeleteOrder(){
+	$("#OrderList>div>span>img").click(function(){
+	var orderId = $(this).parent().prev().prev().prev().prev().prev().prev().text();
+	var data = 
+	{
+		OrderId : orderId,
+	};
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object);
+	}
+	DeleteOrderFromManager(data,callback);
+	location.href = GetServerUrl() + "/managerOrder.html";
+	});
+}
+
 /* ManageProduct */
 
 function ClickFunctionSize(self){
@@ -94,3 +113,4 @@ function ClickFunctionDelete(){
 		alert("成功刪除產品");
 	});
 }
+

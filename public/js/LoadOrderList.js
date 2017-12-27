@@ -27,7 +27,7 @@ function PrintOrder(result){
 		"<span>" + ExtractTimeString(result[r]['Time']) + "</span>" +
 		"<span>" + result[r]['State'] + "</span>" +
 		"<span>" + result[r]['Shipment'] + "</span>" +
-		"<span>" + " " + "</span>" +
+		"<span>" + IsNullNotRender(result[r]['Remarks']) + "</span>" +
 		"<div><a href='#'" + "onclick=GetOrder("+ result[r]['Id'] +")>詳細資料</a>"+ 
 		"</div>");
 	}
@@ -35,4 +35,10 @@ function PrintOrder(result){
 
 function ExtractTimeString(TimeString){
 	return TimeString.split("T")[0];
+}
+
+function IsNullNotRender(Remarks){
+	if(!Remarks)
+		return "";
+	return Remarks;
 }

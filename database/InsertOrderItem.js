@@ -25,7 +25,7 @@ orderItemManager.AddOrderItem(
 orderItemManager.AddOrderItem(
 	{
 		ProductId:3,
-		OrderId:2,
+		OrderId:3,
 		Quantity:1
 	},
 	DatabaseUtility.callback
@@ -34,7 +34,7 @@ orderItemManager.AddOrderItem(
 orderItemManager.AddOrderItem(
 	{
 		ProductId:4,
-		OrderId:2,
+		OrderId:4,
 		Quantity:1
 	},
 	DatabaseUtility.callback
@@ -43,7 +43,7 @@ orderItemManager.AddOrderItem(
 orderItemManager.AddOrderItem(
 	{
 		ProductId:5,
-		OrderId:2,
+		OrderId:5,
 		Quantity:1
 	},
 	DatabaseUtility.callback

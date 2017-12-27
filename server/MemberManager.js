@@ -118,6 +118,11 @@ module.exports = class MemberManager{
 			" AND Password=" + 
 			"'" + attribute['OriginPassword'] +  "';", 
 			function(err,result){
+				console.log(attribute['NewPassword']);
+				console.log(attribute['Email']);
+				console.log(attribute['OriginPassword']);
+				console.log(result);
+				console.log(err);
 				callback(err,result);
 			}  
 		);
