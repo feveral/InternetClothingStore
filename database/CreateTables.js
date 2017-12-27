@@ -61,6 +61,7 @@ var createProduct =
 	 	"Date DATE NOT NULL , " +
 	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 NOT NULL , " +
 	    "PRIMARY KEY (Id) ," +
+	    "UNIQUE(Name,Color,Size) , " + 
 	    "FOREIGN KEY(ManagerId) REFERENCES MEMBER(Id) " +
 	");";
 

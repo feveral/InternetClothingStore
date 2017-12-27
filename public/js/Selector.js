@@ -1,34 +1,12 @@
 
 
-function InitialSelector(){
-	$("#mainMenu span:nth-child(1)").hover(ShowSelector,HideSelector);
-    $("#selector").hover(ShowSelector,HideSelector);
-    AddSubCategoryToCategory('Basic',1);
-	AddSubCategoryToCategory('Top',2);
-	AddSubCategoryToCategory('Coat',3);
-	AddSubCategoryToCategory('Bottom',4);
-	AddSubCategoryToCategory('Accessories',5);
-}
+function AddSubCategoryToCategory(catagory,order){
 
-function ShowSelector(){
-	 $("#selector").css("height","400px");
-	 $("#selector").css("padding-top","30px");
-	 $("#selector").css("box-shadow","1px 1px 1px #666666");
-}
-
-function HideSelector(){
-	 $("#selector").css("height","0px");
-	 $("#selector").css("padding-top","0px");
-	 $("#selector").css("box-shadow","none");
-}
-
-function AddSubCategoryToCategory(catagoey,order){
-
-	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagoey;
+	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagory;
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		$('#selector div:nth-child(' + order + ')').empty();
-		$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagoey));
+		$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagory));
 		for (var i = 0; i < object['data'].length ; i++)
    			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(object['data'][i]));
 	}

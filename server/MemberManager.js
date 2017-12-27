@@ -57,7 +57,11 @@ module.exports = class MemberManager{
 	IsManager(email,callback){
 
 		this.GetMemberFromEmail(email,function(err,result){
-			if(result.Membertype != 'Manager')
+			if(err || result === undefined)
+			{
+				callback(err,false);
+			}
+			else if(result.Membertype != 'Manager')
 			{
 				callback(err,false);
 			}

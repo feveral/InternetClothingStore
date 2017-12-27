@@ -1,4 +1,8 @@
 
+function GetServerUrl(){
+	return "http://192.168.1.8";
+}
+
 function AjaxGet(apiUrl,callback){
 	$(document).ready(function(){ 
 		$.ajax({

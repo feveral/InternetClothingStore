@@ -67,8 +67,14 @@ function RenderFunctionSize(msg){
 	$('#functionSize > div:first-child').css('background-color','black');
 	$('#functionSize > div:first-child').css('color','white');
 	$('#functionDetail > h3:last-child').text($('#functionSize > div:first-child').text());
+	var productName = $('#function h2').text();
+	var color = $('#functionDetail > h3:first-child').text();
+	var size = $('#functionDetail > h3:last-child').text();
+	GetProductByAppearence(productName,color,size,RenderFunctionPriceStock);
 }
 
 function RenderFunctionPriceStock(msg){
-
+	var data = JSON.parse(msg)['data'];
+	$('#functionPrice input').val(data['Price']);
+	$('#functionStock input').val(data['Stock']);
 }
