@@ -1,16 +1,15 @@
 
-function GetShoppingItem(){
+function GetFavoriteItem(){
 	var apiUrl = GetServerUrl() + "/favorite";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		PrintFavoriteItem(object['data']);
-		CalculateTotal(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
 }
 
-function PostShoppingItem(ProductId,Quantity){
-	var apiUrl = GetServerUrl() + "/favorite";
+function PostFavoriteItem(ProductId,Quantity){
+	var apiUrl = GetServerUrl() + "/favorite/modify";
 	var data =
 	{
 		ProductId:ProductId,
@@ -18,13 +17,11 @@ function PostShoppingItem(ProductId,Quantity){
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-	  CalculateTotal(object['data']);
-		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
 
-function PostDeleteShoppingItem(ProductId){
+function PostDeleteFavoriteItem(ProductId){
 	var apiUrl = GetServerUrl() + "/favorite/delete";
 	var data =
 	{
@@ -32,29 +29,15 @@ function PostDeleteShoppingItem(ProductId){
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		CalculateTotal(object['data']);
-		$("#shoppingItem").empty();
+		$("#favoriteItem").empty();
 		PrintFavoriteItem(object['data']);
-		CalculateTotal(object['data']);
-		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
 
-function CalculateTotal(data){
-	var totalPrice = 0;
-	var totalItemNumber = 0;
-	for (var index in data){
-		totalPrice += data[index]['Quantity']*data[index]['Price'];
-		totalItemNumber += data[index]['Quantity'];
-	}
-	$("#totalItemNumber").text("小計金額 (共" +totalItemNumber +  "件)");
-	$("#totalPrice").text("$" + totalPrice);
-}
-
 function PrintFavoriteItem(data){
 	for (var index in data){
-		$("#shoppingItem").append(
+		$("#favoriteItem").append(
 			"<div>" +
 			"<div><img src=" + data[index]['ImagePath'] + "></div>"+
 			"<div> " +
@@ -62,13 +45,11 @@ function PrintFavoriteItem(data){
 			"<span>" + data[index]['Name'] + "</span>" +
 			"<span>" + data[index]['Color'] + "</span>" +
 			"<span>" + data[index]['Size'] + "</span>" +
-			'<span><select id="selectValue">'+ AddOption(data[index]) +"</select></span>" +
 			"<span>" + data[index]['Price'] + "</span>" +
 			"<span><img src='./image/delete.png'></span>" +
 			"</div></div>");
 	}
-	DeleteShoppingItem();
-	QuantityChanged();
+	DeleteFavoriteItem();
 }
 
 function AddOption(dataIndex){
@@ -82,16 +63,9 @@ function AddOption(dataIndex){
 	return htmlSelector;
 }
 
-function QuantityChanged(){
-	$("#shoppingItem>div>div>span>select").on('change',function(){
-		$(this).parent().next().next().text( this.value * $(this).parent().next().text());
-		PostShoppingItem($(this).parent().prev().prev().prev().prev().text(),this.value);
-	});
-}
-
-function DeleteShoppingItem(){
-	$('#shoppingItem>div>div>span:nth-child(8)').click(function(){
+function DeleteFavoriteItem(){
+	$('#favoriteItem>div>div>span:nth-child(6)').click(function(){
 		var ProductId = $(this).prev().prev().prev().prev().prev().prev().prev().text();
-		PostDeleteShoppingItem(ProductId);
+		PostDeleteFavoriteItem(ProductId);
 	});
 }

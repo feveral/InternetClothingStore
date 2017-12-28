@@ -3,10 +3,10 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
-	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/demonstrate.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -16,19 +16,26 @@
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
+	<script type="text/javascript" src="js/Render.js"></script>
 	<script type="text/javascript" src="js/ProductColorMap.js"></script>
 	<script type="text/javascript" src="js/DemonstrateProduct.js"></script>
-	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
 	<script type="text/javascript" src="js/GetFavoriteInformation.js"></script>
+	<script type="text/javascript" src="js/ClickHandler.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/demonstration.js"></script>
 
 </head>
 
 <body>
+
+	<div id="phoneHeader">
+		<img src="./image/menu_icon.png">
+		<h1>S H T I C K </h1>
+		<img src="./image/shoppingCar_icon.png">
+	</div>
+
 	<div id="header">
 		<div id="logo"><img src="./image/logo.png"></div>
 		<div id="mainMenu">
@@ -47,7 +54,7 @@
 
 	<div id="memberMenu">
 		<a href="#">其他帳號登入</a>
-		<a href="#">會員中心</a>
+		<a href="memberCenter.html">會員中心</a>
 		<a href='order.html'>訂單管理</a>
 		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
@@ -70,12 +77,12 @@
 		</div>
 	</div>
 
-	<div id="main">
-		<img src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" >
+	<div id="main" class="container row">
+		<img src="image/簡約多色刷毛長袖大學TEE_深灰.jpg" class="col-12" >
 
-		<div id="productInformation">
+		<div id="productInformation" class="col-6">
 			<p id="productName">簡約多色刷毛長袖大學TEE</p>
-			<a class="button" onclick="AddFavoriteClick()">加入收藏</a>
+			<a class="button" onclick="ClickAddFavorite()">加入收藏</a>
 			<p id="onSale">早秋新品，單件85折</p>
 
 			<div id="productPrice">
@@ -104,7 +111,7 @@
 				<a>+</a>
 			</div>
 
-			<a class="button" onclick="AddShoppingCarClick()">加入購物車</a>
+			<a class="button" onclick="ClickAddShoppingCar()">加入購物車</a>
 			<a class="button">立即購買</a>
 		</div>
 	</div>

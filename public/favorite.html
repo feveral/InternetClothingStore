@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Shtick</title>
+	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/favorite.css">
@@ -11,13 +12,13 @@
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
+	<script type="text/javascript" src="js/Render.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
-	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
 	<script type="text/javascript" src="js/GetFavoriteInformation.js"></script>
 	<script type="text/javascript" src="js/Favorite.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/ClickHandler.js"></script>
 
 </head>
 <body>
@@ -40,7 +41,7 @@
 
 	<div id="memberMenu">
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
-		<a href="#">會員中心</a>
+		<a href="memberCenter.html">會員中心</a>
 		<a href='order.html'>訂單管理</a>
 		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
@@ -71,10 +72,9 @@
 			<span>顏色</span>
 			<span>尺寸</span>
 			<span>單價</span>
-			<span>加入購物車</span>
 			<span>刪除</span>
 		</div>
-		<div id="shoppingItem">
+		<div id="favoriteItem">
 		</div>
 	</div>
 

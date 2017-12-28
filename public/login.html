@@ -3,6 +3,7 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
@@ -11,60 +12,67 @@
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
+	<script type="text/javascript" src="js/Render.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/GetProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/ClickHandler.js"></script>
 
 </head>
 <body>
-
-<div id="header">
-	<div id="logo"><img src="./image/logo.png"></div>
-	<div id="mainMenu">
-		<span>STILLAS</span>
-		<span>SALE</span>
-		<span>NEW</span>
-
-	</div>
-	<div id="member">
-		<a>登入</a>
-		<a href="shoppingCar.html">購物車</a>
-	</div>
-</div>
-
-<div id="selector">
-	<div><a>Basic</a></div>
-	<div><a>Top</a></div>
-	<div><a>Coat</a></div>
-	<div><a>Bottom</a></div>
-	<div><a>Accessories</a></div>
-</div>
-
-<div id="main">
-	<div id="loginTitle"  onclick="ChangeToLogin()">登   入</div>
-	<div id="registerTitle"  onclick="ChangeToRegister()">註   冊</div>
-
-	<div id="login">
-		<div><input type="text" name="loginEmail" placeholder="E-mail"></div>
-		<div><input type="password" name="loginPassword" placeholder="密碼 : "></div>
-		<a id="submit" onclick="Login()" href="#">會 員 登 入</a>
+	<div id="phoneHeader">
+		<img src="./image/menu_icon.png">
+		<h1>S H T I C K </h1>
+		<img src="./image/shoppingCar_icon.png">
 	</div>
 
-	<div id="register">
-		<div><input type="text" name="registerEmail" placeholder="E-mail : "></div>
-		<div><input type="text" name="registerName" placeholder="名字 : "></div>
-		<div><input type="password" name="registerPassword" placeholder="密碼 : "></div>
-		<div><input type="password" name="registerComfirmPassword" placeholder="確認密碼 : "></div>
-		<div><input type="text" name="registerCellphone" placeholder="手機 : "></div>
-		<div><input type="text" name="registerAddress" placeholder="地址 : "></div>
-		<a onclick="ClickRegister()" href="#" >會 員 註 冊</a>
+	<div id="header">
+		<div id="logo"><img src="./image/logo.png"></div>
+		<div id="mainMenu">
+			<span>STILLAS</span>
+			<span>SALE</span>
+			<span>NEW</span>
+
+		</div>
+		<div id="member">
+			<a>登入</a>
+			<a href="shoppingCar.html">購物車</a>
+		</div>
 	</div>
-	</br>
-	<div id="status">
-		<p>錯誤的帳號或密碼</p>
+
+	<div id="selector">
+		<div><a>Basic</a></div>
+		<div><a>Top</a></div>
+		<div><a>Coat</a></div>
+		<div><a>Bottom</a></div>
+		<div><a>Accessories</a></div>
 	</div>
-</div>
+
+	<div id="main">
+		<div id="loginTitle"  onclick="ClickChangeToLogin()">登   入</div>
+		<div id="registerTitle"  onclick="ClickChangeToRegister()">註   冊</div>
+
+		<div id="login">
+			<div><input type="text" name="loginEmail" placeholder="E-mail"></div>
+			<div><input type="password" name="loginPassword" placeholder="密碼 : "></div>
+			<a id="submit" onclick="Login()" href="#">會 員 登 入</a>
+		</div>
+
+		<div id="register">
+			<div><input type="text" name="registerEmail" placeholder="E-mail : "></div>
+			<div><input type="text" name="registerName" placeholder="名字 : "></div>
+			<div><input type="password" name="registerPassword" placeholder="密碼 : "></div>
+			<div><input type="password" name="registerComfirmPassword" placeholder="確認密碼 : "></div>
+			<div><input type="text" name="registerCellphone" placeholder="手機 : "></div>
+			<div><input type="text" name="registerAddress" placeholder="地址 : "></div>
+			<a onclick="ClickRegister()" href="#" >會 員 註 冊</a>
+		</div>
+		</br>
+		<div id="status">
+			<p>錯誤的帳號或密碼</p>
+		</div>
+	</div>
 
 </body>
 </html>

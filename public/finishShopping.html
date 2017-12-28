@@ -3,35 +3,25 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+	<link rel="stylesheet" type="text/css" href="css/shoppingCar.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
-	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/GetProduct.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/GetShoppingCarInformation.js"></script>
+	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
+	<script type="text/javascript" src="js/shoppingCar.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
-	<script type="text/javascript" src="js/ClickHandler.js"></script>
-	<script type="text/javascript" src="js/Render.js"></script>
 
 </head>
-
 <body>
-
-	<div id="phoneHeader">
-		<img src="./image/menu_icon.png">
-		<h1>S H T I C K </h1>
-		<img src="./image/shoppingCar_icon.png">
-	</div>
 
 	<div id="header">
 		<div id="logo"><img src="./image/logo.png"></div>
@@ -39,12 +29,13 @@
 			<span>STILLAS</span>
 			<span>SALE</span>
 			<span>NEW</span>
+
 		</div>
 		<div id="member">
 			<div>
 				<a onclick="ClickMemberButton()">登入</a>
 			</div>
-			<a href="shoppingCar.html">購物車</a>
+			<a>購物車</a>
 		</div>
 	</div>
 
@@ -52,7 +43,6 @@
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="memberCenter.html">會員中心</a>
 		<a href='order.html'>訂單管理</a>
-		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
@@ -65,17 +55,12 @@
 	</div>
 
 	<div id="shoppingCar">
-		<p>您的購物車：</p>
+		<p>您的購物車：</p> 
 		<div></div>
 		<div>
 			<a href="shoppingCar.html">前往購物車</a>
-			<a href="shoppingCar.html">直接結帳</a>
+			<a href="#">直接結帳</a>
 		</div>
 	</div>
-
-	<div id="main" class="row container" >
-	</div>
-
 </body>
-
 </html>

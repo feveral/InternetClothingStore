@@ -1,21 +1,16 @@
 function InitialDemonstrationProduct(){
 	var attribute = HashToNameAndColor(location.hash);
 	$('#main img').attr('src','./image/'+ attribute.Name + "_" + attribute.Color + ".jpg");
-	GetProductByName(attribute.Name);
-}
-
-function GetProductByName(productName){
-	var apiUrl = GetServerUrl() + '/product/name/' + productName;
-	var callback = function(msg){
-		RenderDemonstrate(JSON.parse(msg)['data']);
+	GetProductByName(attribute.Name,function(msg){
+		RenderDemonstrate(msg);
 		SetColorClick();
 		SetSizeClick();
 		SetQuantityClick();
-	}
-	AjaxGet(apiUrl,callback);
+	});
 }
 
-function RenderDemonstrate(products){
+function RenderDemonstrate(msg){
+	var products = JSON.parse(msg)['data'];
 	var colors = FindNotrepeatColorFromProducts(products);
 	var sizes = FindNotrepeatSizeFromProducts(products);
 	$('#productName').text(products[0].Name);
@@ -100,14 +95,14 @@ function SetQuantityClick(){
 	});
 }
 
-function AddShoppingCarClick(){
+function ClickAddShoppingCar(){
 
-	if( !IsLogin() )
+	if( $('#member > div > a').text() === '登入' )
 	{
 		alert('請先登入，才能將商品加入購物車');
 		return;
 	}
-	else if( !IsSizeChoose() )
+	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
 	{
 		alert('請先選擇商品尺寸');
 		return;
@@ -115,7 +110,6 @@ function AddShoppingCarClick(){
 
 	var apiUrl = GetServerUrl() + '/shoppingCar' ;
 	var data =
-
 	{
 		Name: $('#productName').text(),
 		Color: $('#appearenceChoose > div:nth-child(1)').text(),
@@ -130,14 +124,14 @@ function AddShoppingCarClick(){
 	AjaxPost(apiUrl,data,callback);
 }
 
-function AddFavoriteClick(){
+function ClickAddFavorite(){
 
-	if( !IsLogin() )
+	if( $('#member > div > a').text() === '登入' )
 	{
 		alert('請先登入，才能將商品加入收藏');
 		return;
 	}
-	else if( !IsSizeChoose() )
+	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
 	{
 		alert('請先選擇商品尺寸');
 		return;
@@ -145,7 +139,6 @@ function AddFavoriteClick(){
 
 	var apiUrl = GetServerUrl() + '/favorite' ;
 	var data =
-
 	{
 		Name: $('#productName').text(),
 		Color: $('#appearenceChoose > div:nth-child(1)').text(),
@@ -155,20 +148,7 @@ function AddFavoriteClick(){
 
 	var callback = function(msg){
 		alert('已經將商品加入收藏');
+		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
-}
-
-function IsSizeChoose(){
-	if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸')
-		return false;
-	else
-		return true;
-}
-
-function IsLogin(){
-	if( $('#member > div > a').text() === '登入' )
-		return false;
-	else
-		return true;
 }

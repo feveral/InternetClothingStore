@@ -1,0 +1,123 @@
+#main{
+	display: block;
+	position: absolute;
+	top: 140px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 3%;
+}
+
+#main>div:nth-child(odd){
+	font-size: 15px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+
+#memberData{
+	width: 50%;
+	margin: 0% 25%;
+	text-align: left;
+	background-color: white;
+}
+	#memberData input{
+		border:1px solid #ccc;
+	}
+
+	#memberData>div{
+		padding-left: 2%;
+		height:50px;
+	}
+		#memberData>div>input{
+			width:15%;
+		}
+
+		#memberData>div:nth-child(odd){
+			background-color: white;
+		}
+
+		#memberData>div:nth-child(even){
+			background-color: #F7F6F3;
+		}
+
+		#memberData>div:nth-child(4)>input{
+			width:25%;
+		}
+
+		#memberData>div:nth-child(5){
+			height:60px;
+			padding-left: 85%;
+			line-height: 60px;
+		}
+
+		#memberData>div:nth-child(5)>div{
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			display: inline-block;
+			width:90%;
+			margin:0% 1%;
+			padding:0% 1%;
+			border:1px solid #ccc;
+		}
+
+		#memberData>div>p{
+			height:50px;
+			line-height: 50px;
+			width:15%;
+			margin-right: 2%;
+			padding-right: 2%;
+			text-align: right;
+			border-right: 1px solid white;
+		}
+
+		#memberData>div>*{
+			display: inline-block;
+		}
+
+	#changePasswordMain{
+		width: 50%;
+		margin: 0% 25%;
+		background-color: #F7F6F3;
+		font-size: 14px;
+	}
+
+		#changePasswordMain>div{
+			width: 40%;
+			margin: 0% 30%;
+			border:1px solid #E6E2D8;
+		}
+
+		#changePasswordMain>div>div>*{
+			display: inline-block;
+			margin: 4% 0%;
+			padding: 1% 0%;
+		}
+
+		#changePasswordMain>div>div>p{
+			padding-right:5%;
+		}
+
+		#changePasswordMain>div>div:nth-child(4){
+			width: 70%;
+			margin: 0% 15%;
+		}
+
+		#changePasswordMain>div>div:nth-child(4)>div:hover{
+			background-color: #ccc;
+			color:white;
+		}
+
+		#changePasswordMain>div>div:nth-child(4)>div{
+			padding: 2% 5%;
+			border:2px solid #ccc;
+			background-color: white;
+		}
+
+	#modifyButton:hover{
+		background-color: black;
+		color:white;
+		cursor: pointer;
+	}
+
+	

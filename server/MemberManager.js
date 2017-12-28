@@ -54,11 +54,24 @@ module.exports = class MemberManager{
 		);
 	}
 
+	IsManager(email,callback){
+
+		this.GetMemberFromEmail(email,function(err,result){
+			if(result.Membertype != 'Manager')
+			{
+				callback(err,false);
+			}
+			else(result.Membertype === 'Manager')
+			{
+				callback(err,true);
+			}
+		});
+	}
+
 	// return correct or not and member information
 	IsSignInCorrect(email,password,callback){
 
 		this.GetMemberFromEmail(email,function(err,result){
-			var member = result;
 			if(!result)
 			{
 				callback(err,{success:false,user:result});
@@ -72,5 +85,37 @@ module.exports = class MemberManager{
 				callback(err,{success:false,user:result});
 			}
 		});
+	}
+
+	UpdateMemberInformation(attribute,callback){
+		this.db.query(
+			"UPDATE MEMBER " +
+			"SET Name=" + 
+			"'" + attribute['Name'] + "', " + 
+			" Cellphone =" + 
+			"'" + attribute['Cellphone'] +  "' , " + 
+			" Address=" + 
+			"'" + attribute['Address'] + "'" + 
+			" WHERE Email=" + 
+			"'" + attribute['Email'] +  "' ; " , 
+			function(err,result){
+				callback(err,result);
+			}  
+		);
+	}
+
+	UpdateMemberPassword(attribute,callback){
+		this.db.query(
+			"UPDATE MEMBER " +
+			"SET Password=" + 
+			"'" + attribute['NewPassword'] + "' " + 
+			" WHERE Email=" + 
+			"'" + attribute['Email'] +  "' " + 
+			" AND Password=" + 
+			"'" + attribute['OriginPassword'] +  "';", 
+			function(err,result){
+				callback(err,result);
+			}  
+		);
 	}
 }

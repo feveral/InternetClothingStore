@@ -6,7 +6,6 @@ require('./InsertMemberCustomer.js');
 
 require('./InsertProductBottomJeans.js');
 
-
 require('./InsertProductBottomShortJeans.js');
 require('./InsertProductBottomWorkingTrousers.js');
 require('./InsertProductBottomWorkingShorts.js');

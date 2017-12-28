@@ -31,17 +31,17 @@
 		}
 
 	#title{
-		padding-right: 10.5%;
+		padding-left: 0%;
 		font-size: 0px;
 	}
 
 			#title>span{
 				display: inline-block;
-				width: 5.9%;
+				width: 4.2%;
 				font-size: 14px;
 			}
 				#title>span:nth-child(1){
-					padding-right: 20%;
+					padding-left:20%;
 					width: 12%;
 					text-align: left;
 				}
@@ -50,51 +50,51 @@
 					text-align: center;
 				}
 
-
 				#title>span:nth-child(3){
-					width: 20%;
+					width: 12.0%;
 					text-align: center;
 				}
 
-#shoppingItem{
+
+#favoriteItem{
+	padding-left: 28.0%;
 	width: 100%;
 	height: 90%;
 }
 
-	#shoppingItem>div{
-		padding-left: 14.5%;
+	#favoriteItem>div{
 		height: 30%;
 		font-size: 0px;
 	}
 
-		#shoppingItem>div>div:nth-child(1)>img{
+		#favoriteItem>div>div:nth-child(1)>img{
 			float: left;
 			height: 60%;
 			width: 9%;
 		}
 
-		#shoppingItem>div>div:nth-child(2){
+		#favoriteItem>div>div:nth-child(2){
 			float: right;
 			width: 80%;
 			height: 80%;
 		}
 
-		#shoppingItem>div>div:nth-child(2)>span:first-child{
+		#favoriteItem>div>div:nth-child(2)>span:first-child{
 			text-align: center;
 		}
 
-		#shoppingItem>div>div:nth-child(2)>span{
+		#favoriteItem>div>div:nth-child(2)>span{
 			font-size: 14px;
 			display: inline-block;
-			width: 7.5%;
+			width: 7.6%;
 			padding-top: 10%;
 		}
 
-		#shoppingItem>div>div:nth-child(2)>span:nth-child(2){
+		#favoriteItem>div>div:nth-child(2)>span:nth-child(2){
 			text-align: center;
 			width:25%;
 		}
 
-		#shoppingItem>div:last-child{
+		#favoriteItem>div:last-child{
 			margin-bottom: 10%;
 		}

@@ -94,6 +94,14 @@
 			margin-right: 35px;
 		}
 
+		#payment > div > p:nth-child(2) {
+			margin-right: 20px;
+		}
+
+		#payment > div > select{
+			width:6%;
+		} 
+
 
 
 #information{

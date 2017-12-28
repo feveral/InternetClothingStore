@@ -1,24 +1,26 @@
 $(document).ready(function(){
 
+	
 	if(window.location.hash.replace('#','') != '')
 	{
-		GetProduct(window.location.hash.replace('#',''));
+		GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct)
 	}
 	else
 	{
-		InitialProduct();
+		GetNewProduct(RenderCustomerProduct);
 	}
+	IfManagerGotoManagerPage();
 });
 
 $(window).bind('hashchange', function() { 
-	GetProduct(window.location.hash.replace('#',''));
+	GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct);
 }); 
 
-
-function InitialProduct(){
-	var apiUrl = GetServerUrl() + "/product/" + "newproduct";
-	var callback = function(msg){
-		RenderProduct(msg);
-	}
-	AjaxGet(apiUrl,callback);
+function IfManagerGotoManagerPage(){
+	GetIsManager(function(msg){
+		if( JSON.parse(msg)['success'] )
+		{
+			location.href = GetServerUrl() + '/manageProduct.html';
+		}
+	});
 }
