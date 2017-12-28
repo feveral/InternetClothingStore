@@ -11,6 +11,9 @@ $(document).ready(function(){
 	}
 });
 
+$(window).bind('hashchange', function() { 
+	GetProductByCategory(window.location.hash.replace('#',''),RenderManagerProduct);
+}); 
 
 function IfNotManagerGotoIndex(){
 	GetIsManager(function(msg){
@@ -21,6 +24,3 @@ function IfNotManagerGotoIndex(){
 	});
 }
 
-function ClickManagerOnSale(){
-
-}

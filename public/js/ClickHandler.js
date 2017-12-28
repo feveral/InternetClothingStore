@@ -135,6 +135,25 @@ function ClickFunctionDelete(){
 	});
 }
 
+function ChangeManagerSearchText(){
+	var keyWord = $('#search > input').val();
+	if( keyWord === '' )
+	{
+		if(window.location.hash.replace('#','') != '')
+		{
+			GetProductByCategory(window.location.hash.replace('#',''),RenderManagerProduct)
+		}
+		else
+		{
+			GetNewProduct(RenderCustomerProduct);
+		}
+	}
+	else
+	{
+		GetSearchProductByName($('#search > input').val(),RenderManagerProduct);
+	}
+}
+
 function ClickManagerOnSale(){
 
 }
