@@ -11,6 +11,7 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/ClickHandler.js"></script>
@@ -37,7 +38,11 @@
 			</div>
 			<div>
 				<span>訂單狀態：</span>
-				<span id="state"></span>
+				<select id="state">
+					<option value="處理中">處理中</option>
+					<option value="已出貨">已出貨</option>
+					<option value="已到店">已到店</option>
+				</select>
 			</div>
 			<div>
 				<span>運送方式:</span>
@@ -65,13 +70,6 @@
 				<span>備註</span>
 			</div>
 		</div>	
-		<div id="changeOrderState">
-			<select>
-				<option value="0">處理中</option>
-				<option value="1">已出貨</option>
-				<option value="2">已到店</option>
-			</select>
-		</div>
 		<div id="goBackOrder"><a href="managerOrder.html">回訂單查詢</a></div>
 	</div>
 </body>

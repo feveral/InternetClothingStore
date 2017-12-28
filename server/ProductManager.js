@@ -75,6 +75,15 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetAllColor(callback){
+		this.db.query(
+		"SELECT DISTINCT(Color) FROM PRODUCT;",
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetSearchProductByName(name,callback){
 		this.db.query(
 			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 

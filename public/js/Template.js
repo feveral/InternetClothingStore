@@ -125,7 +125,7 @@ function PrintDetail(result){
 	$("#orderNumber").text(result[0]['Id']);
 	$("#receiver").text(result[0]['Name']);
 	$("#data").text(result[0]['Time'].split("T")[0]);
-	$("#state").text(result[0]['State']);
+	$("#order>div>select").val(result[0]['State']);
 	$("#shipment").text(result[0]['Shipment']);
 	$("#price").text(result[0]['TotalPrice']);
 	$("#other").text(result[0]['Remarks']);

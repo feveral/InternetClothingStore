@@ -161,21 +161,23 @@ function ClickManagerOnSale(){
 /* Demonstration */
 
 
-function ClickAddShoppingCar(){
+function ClickAddShoppingCar(boolToShoppingCar){
 
 	if( $('#member > div > a').text() === '登入' )
 	{
 		alert('請先登入，才能將商品加入購物車');
-		return;
+		boolToShoppingCar = false;
+		return;	
 	}
 	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
 	{
 		alert('請先選擇商品尺寸');
+		boolToShoppingCar = false;
 		return;
 	}
 
 	var apiUrl = GetServerUrl() + '/shoppingCar' ;
-	var data =
+	var data = 
 	{
 		Name: $('#productName').text(),
 		Color: $('#appearenceChoose > div:nth-child(1)').text(),
@@ -186,8 +188,10 @@ function ClickAddShoppingCar(){
 	var callback = function(msg){
 		alert('已經將商品加入購物車');
 		InitialShoppingCarHover();
-	}
+	} 	
 	AjaxPost(apiUrl,data,callback);
+	if(boolToShoppingCar)
+		location.href = GetServerUrl() + "/shoppingCar.html";
 }
 
 
