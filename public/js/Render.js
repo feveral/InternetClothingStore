@@ -79,3 +79,27 @@ function RenderFunctionPriceStock(msg){
 	$('#functionStock input').val(data['Stock']);
 }
 
+/*managerupload.js*/
+function RenderAllColor(){
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		for(var color in object['data']){
+			$("#Color>select").append("<option value=" + object['data'][color]['Color'] + ">" +  object['data'][color]['Color'] +  "</option>");
+		}
+	}
+	GetAllProductColor(callback);
+}
+
+
+function GetAllProductColor(callback){
+	var apiUrl = GetServerUrl() + "/product/" + "AllColor";
+	console.log("ff");
+	AjaxGet(apiUrl,callback);
+}
+
+function PostNewProduct(data,callback){
+	var apiUrl = GetServerUrl() + "/product/" + "InsertNewProduct";
+	console.log("cc");
+	console.log(data);
+	AjaxPost(apiUrl,data,callback);
+}	

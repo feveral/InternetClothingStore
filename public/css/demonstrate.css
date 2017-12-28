@@ -79,7 +79,15 @@
 		border-bottom: 1px black solid;
 		margin-bottom: 15px;
 	}
+		#productPrice span:first-child{
+			float: left;
+		}
 
+		#productPrice span:last-child{
+			float: right;
+			color: red;
+			font-size: 16px;
+		}
 /*Color*/
 
 	#appearenceChoose{
@@ -153,6 +161,10 @@
 		margin-right: 1%;
 		margin-bottom: 3%;
 	}
+
+.deletePrice{
+	text-decoration:line-through;
+}
 
 /* RWD */
 

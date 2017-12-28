@@ -1,0 +1,64 @@
+#main{
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 10%;
+	width:66%;
+	height:100%;
+	padding-top: 10%;
+}
+	#main>div>img{
+		width:60%;
+		height: 600px;
+	}
+
+	#main>div:first-child{
+		display: inline-block;
+		float:left;
+		width:60%;
+		height:600px;
+		text-align: center;
+	}
+
+#ProductInformation{
+	display: inline-block;
+	margin-left: 0%;
+	float: right;
+	width:40%;
+}
+	#ProductInformation>div{
+		height:70px;
+		text-align: center;
+		padding-top: 3%;
+		width:100%;
+	}
+
+	#ProductInformation>div>span{
+		text-align: left;
+		width:10%;
+		padding-right: 3%;
+	}
+
+	#ProductInformation>div:nth-child(8)>span{
+		padding-right: 2%;
+	}
+
+	#ProductInformation>div>input,select{
+		width:35%;
+		border: 2px #aaa solid;
+		padding: 3px;
+		border-radius: 5px;
+	}
+
+	#ProductInformation>div:last-child{
+		border:1px solid red;
+		width:30%;
+		height:42px;
+		background-color: red;
+		color:white;
+		margin-left: 35%;
+		font-size: 18px;
+		border-radius: 7px;
+	}
+
+
+	

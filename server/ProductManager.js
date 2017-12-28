@@ -75,6 +75,15 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetAllColor(callback){
+		this.db.query(
+		"SELECT DISTINCT(Color) FROM PRODUCT;",
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetSearchProductByName(name,callback){
 		this.db.query(
 			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
@@ -88,9 +97,9 @@ module.exports = class ProductManager{
 
 	GetProductByName(name,callback){
 		this.db.query(
-			"SELECT * " + 
-			"FROM PRODUCT " + 
-			"WHERE Name=" + "'" + name + "'" + ";" , 
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+			"WHERE PRODUCT.Name=" + "'" + name + "'" + ";" , 
 			function(err,result){
 				callback(err,result);
 			}
@@ -110,9 +119,9 @@ module.exports = class ProductManager{
 
 	GetPriceByNameColor(name,color,callback){
 		this.db.query(
-			"SELECT DISTINCT Price " + 
-			"FROM PRODUCT " + 
-			"WHERE Name=" + "'" + name + "' AND " +  
+			"SELECT DISTINCT Price,PercentOff " + 
+			"FROM PRODUCT  LEFT JOIN ONSALE ON Id=ProductId  " + 
+			"WHERE PRODUCT.Name=" + "'" + name + "' AND " +  
 			"Color='" + color +"';" , 
 			function(err,result){
 				callback(err,result);

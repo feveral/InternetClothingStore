@@ -14,8 +14,10 @@ function RenderDemonstrate(msg){
 	var products = JSON.parse(msg)['data'];
 	var colors = FindNotrepeatColorFromProducts(products);
 	var sizes = FindNotrepeatSizeFromProducts(products);
-	$('#productName').text(products[0].Name);
-	$('#productPrice').text("TWD. " + products[0].Price);
+	$('#productName').text(attribute.Name);
+	GetProductPriceByNameColor(attribute.Name,attribute.Color,function(msg){
+		ChangeDemonstrattePrice(JSON.parse(msg)['data'][0]['Price'],JSON.parse(msg)['data'][0]['PercentOff']);
+	});
 
 	$('#productColor').empty();
 	for (var c in colors){
@@ -54,6 +56,21 @@ function HashToNameAndColor(href){
 	return { Name:decodeURI(hrefSplit[0]) , Color:decodeURI(hrefSplit[1]) };
 }
 
+function ChangeDemonstrattePrice(price,percentOff){
+	$('#productPrice').empty();
+	$('#productPrice').append("<span>TWD. " + price + '</span>');
+	if( percentOff != null)
+	{
+		$('#productPrice').append("<span>TWD. " + Math.round(price*(100-percentOff)/100) + '</span>');
+		$('#productPrice span:first-child').addClass("deletePrice");
+	}
+	else
+	{
+		$('#productPrice').append("<span></span>");
+	}
+}
+
+
 function SetColorClick(){
 	var attribute = HashToNameAndColor(location.hash);
 	$('#appearenceChoose > div:nth-child(1)').text(attribute.Color);
@@ -65,7 +82,7 @@ function SetColorClick(){
 		$('#main > img').attr('src','./image/'+ attribute.Name + "_" + GetColorChinese(orininImagePath) + ".jpg");
 		$('#appearenceChoose > div:nth-child(1)').text(GetColorChinese(orininImagePath));
 		GetProductPriceByNameColor($('#productName').text(),$('#appearenceChoose > div:nth-child(1)').text(),function(msg){
-			$('#productPrice').text("TWD. " + JSON.parse(msg)['data'][0]['Price']);
+			ChangeDemonstrattePrice(JSON.parse(msg)['data'][0]['Price'],JSON.parse(msg)['data'][0]['PercentOff']);
 		});
 	});
 }
@@ -98,60 +115,4 @@ function SetQuantityClick(){
 	});
 }
 
-function ClickAddShoppingCar(){
 
-	if( $('#member > div > a').text() === '登入' )
-	{
-		alert('請先登入，才能將商品加入購物車');
-		return;
-	}
-	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
-	{
-		alert('請先選擇商品尺寸');
-		return;
-	}
-
-	var apiUrl = GetServerUrl() + '/shoppingCar' ;
-	var data =
-	{
-		Name: $('#productName').text(),
-		Color: $('#appearenceChoose > div:nth-child(1)').text(),
-		Size: $('#appearenceChoose > div:nth-child(2)').text(),
-		Quantity: $('#productQuantity > input').val()
-	}
-
-	var callback = function(msg){
-		alert('已經將商品加入購物車');
-		InitialShoppingCarHover();
-	}
-	AjaxPost(apiUrl,data,callback);
-}
-
-function ClickAddFavorite(){
-
-	if( $('#member > div > a').text() === '登入' )
-	{
-		alert('請先登入，才能將商品加入收藏');
-		return;
-	}
-	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
-	{
-		alert('請先選擇商品尺寸');
-		return;
-	}
-
-	var apiUrl = GetServerUrl() + '/favorite' ;
-	var data =
-	{
-		Name: $('#productName').text(),
-		Color: $('#appearenceChoose > div:nth-child(1)').text(),
-		Size: $('#appearenceChoose > div:nth-child(2)').text(),
-		Quantity: $('#productQuantity > input').val()
-	}
-
-	var callback = function(msg){
-		alert('已經將商品加入收藏');
-		//InitialShoppingCarHover();
-	}
-	AjaxPost(apiUrl,data,callback);
-}
