@@ -92,6 +92,18 @@
 			margin-right: 22px;
 		}
 
+	#search{
+		vertical-align: top;
+		margin-top:80px;
+		float: right;
+		margin-right: 100px;		
+	}
+		#search input {
+			border: 2px #aaa solid;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
 	#member{
 		vertical-align: top;
 		padding-top: 5px;
@@ -110,6 +122,8 @@
 		#member a:hover{
 			color: rgb(221,170,0);
 		}
+
+
 
 /* Selector */
 

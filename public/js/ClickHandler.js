@@ -26,6 +26,27 @@ function ClickMemberButton(){
 	AjaxGet(apiUrl,callback);
 }
 
+/* index */
+
+function ChangeCustomerSearchText(){
+	var keyWord = $('#search > input').val();
+	if( keyWord === '' )
+	{
+		if(window.location.hash.replace('#','') != '')
+		{
+			GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct)
+		}
+		else
+		{
+			GetNewProduct(RenderCustomerProduct);
+		}
+	}
+	else
+	{
+		GetSearchProductByName($('#search > input').val(),RenderCustomerProduct);
+	}
+}
+
 
 /*managerOrderDetail.js*/
 
@@ -114,3 +135,6 @@ function ClickFunctionDelete(){
 	});
 }
 
+function ClickManagerOnSale(){
+
+}

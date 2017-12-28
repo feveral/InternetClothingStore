@@ -75,6 +75,17 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetSearchProductByName(name,callback){
+		this.db.query(
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+			"WHERE PRODUCT.Name LIKE '%" + name + "%';" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetProductByName(name,callback){
 		this.db.query(
 			"SELECT * " + 

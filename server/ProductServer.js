@@ -33,6 +33,21 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/search/:toSearch',function(req,res){
+			req.url = decodeURI(req.url);
+			var toSearch = path.basename(req.url);
+			self.productManager.GetSearchProductByName(toSearch,function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		self.router.get('/appearence/',function(req,res){
 			var parsedUrl = url.parse(decodeURI(req.url));  
 			var parsedQs = querystring.parse(parsedUrl.query);
