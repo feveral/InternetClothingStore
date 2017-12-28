@@ -44,7 +44,8 @@ function PostDeleteShoppingItem(ProductId){
 function CalculateTotal(data){
 	var totalPrice = 0;
 	var totalItemNumber = 0;
-	for (var index in data){
+	for (var index in data)
+	{
 		totalPrice += data[index]['Quantity']*data[index]['Price'];
 		totalItemNumber += data[index]['Quantity'];
 	}
