@@ -29,6 +29,11 @@ function GetProductByName(name,callback){
 	AjaxGet(apiUrl,callback);	
 }
 
+function GetProductPriceByNameColor(name,color,callback){
+	var apiUrl = GetServerUrl() + "/product/price/?Name=" + name + '&Color=' + color ;
+	AjaxGet(apiUrl,callback);
+}
+
 function GetProductByAppearence(name,color,size,callback){
 	var apiUrl = GetServerUrl() + "/product/appearence/?Name=" + name + '&Color=' + color + '&Size=' + size ;
 	AjaxGet(apiUrl,callback);

@@ -10,6 +10,7 @@ function InitialDemonstrationProduct(){
 }
 
 function RenderDemonstrate(msg){
+	var attribute = HashToNameAndColor(location.hash);
 	var products = JSON.parse(msg)['data'];
 	var colors = FindNotrepeatColorFromProducts(products);
 	var sizes = FindNotrepeatSizeFromProducts(products);
@@ -63,11 +64,13 @@ function SetColorClick(){
 		$(this).parent().css('border','1px solid black');
 		$('#main > img').attr('src','./image/'+ attribute.Name + "_" + GetColorChinese(orininImagePath) + ".jpg");
 		$('#appearenceChoose > div:nth-child(1)').text(GetColorChinese(orininImagePath));
+		GetProductPriceByNameColor($('#productName').text(),$('#appearenceChoose > div:nth-child(1)').text(),function(msg){
+			$('#productPrice').text("TWD. " + JSON.parse(msg)['data'][0]['Price']);
+		});
 	});
 }
 
 function SetSizeClick(){
-
 	$('#productSize > a').click(function(){
 		$('#productSize > a').css('background-color','white');
 		$('#productSize > a').css('color','black');

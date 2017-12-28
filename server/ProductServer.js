@@ -48,10 +48,24 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/price/',function(req,res){
+			var parsedUrl = url.parse(decodeURI(req.url));  
+			var parsedQs = querystring.parse(parsedUrl.query);
+			self.productManager.GetPriceByNameColor(parsedQs['Name'],parsedQs['Color'],function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});	
+		});
+
 		self.router.get('/appearence/',function(req,res){
 			var parsedUrl = url.parse(decodeURI(req.url));  
 			var parsedQs = querystring.parse(parsedUrl.query);
-			var name = path.basename(req.url);
 			self.productManager.GetProductByAppearence(parsedQs,function(err,result){
 				if (err)
 				{

@@ -108,6 +108,18 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetPriceByNameColor(name,color,callback){
+		this.db.query(
+			"SELECT DISTINCT Price " + 
+			"FROM PRODUCT " + 
+			"WHERE Name=" + "'" + name + "' AND " +  
+			"Color='" + color +"';" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetColorByName(name,callback){
 		this.db.query(
 			"SELECT DISTINCT Color " + 
