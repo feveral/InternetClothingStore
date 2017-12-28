@@ -157,3 +157,67 @@ function ChangeManagerSearchText(){
 function ClickManagerOnSale(){
 
 }
+
+/* Demonstration */
+
+
+function ClickAddShoppingCar(){
+
+	if( $('#member > div > a').text() === '登入' )
+	{
+		alert('請先登入，才能將商品加入購物車');
+		return;
+	}
+	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
+	{
+		alert('請先選擇商品尺寸');
+		return;
+	}
+
+	var apiUrl = GetServerUrl() + '/shoppingCar' ;
+	var data =
+	{
+		Name: $('#productName').text(),
+		Color: $('#appearenceChoose > div:nth-child(1)').text(),
+		Size: $('#appearenceChoose > div:nth-child(2)').text(),
+		Quantity: $('#productQuantity > input').val()
+	}
+
+	var callback = function(msg){
+		alert('已經將商品加入購物車');
+		InitialShoppingCarHover();
+	}
+	AjaxPost(apiUrl,data,callback);
+}
+
+
+/* Favorite */
+
+function ClickAddFavorite(){
+
+	if( $('#member > div > a').text() === '登入' )
+	{
+		alert('請先登入，才能將商品加入收藏');
+		return;
+	}
+	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
+	{
+		alert('請先選擇商品尺寸');
+		return;
+	}
+
+	var apiUrl = GetServerUrl() + '/favorite' ;
+	var data =
+	{
+		Name: $('#productName').text(),
+		Color: $('#appearenceChoose > div:nth-child(1)').text(),
+		Size: $('#appearenceChoose > div:nth-child(2)').text(),
+		Quantity: $('#productQuantity > input').val()
+	}
+
+	var callback = function(msg){
+		alert('已經將商品加入收藏');
+		//InitialShoppingCarHover();
+	}
+	AjaxPost(apiUrl,data,callback);
+}
