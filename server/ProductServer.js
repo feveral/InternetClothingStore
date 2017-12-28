@@ -1,6 +1,7 @@
 'use strict';
 
 const ProductManager = require('./ProductManager.js');
+const MemberManager = require('./MemberManager.js');
 const querystring = require('querystring');
 const path = require('path');
 const url = require('url');
@@ -10,6 +11,7 @@ module.exports = class{
 	constructor(router){
 		this.router = router;
 		this.productManager = new ProductManager();
+		this.memberManager = new MemberManager();
 		this.SetAPI();
 	}
 
@@ -412,7 +414,6 @@ module.exports = class{
 			});
 		});
 
-
 		self.router.get('/PlainVNeckTee',function(req,res){
 			self.productManager.GetAllProductBySubCategory('素面V領短TEE',function(err,result){
 				if (err)
@@ -595,5 +596,67 @@ module.exports = class{
 			});
 		});
 
+		self.router.post('/delete',function(req,res){
+			var attribute = 
+			{
+				Name: req.body.Name,
+				Color: req.body.Color,
+				Size: req.body.Size,
+				Stock: req.body.Stock,
+				Price: req.body.Price
+			};
+			self.memberManager.IsManager(req.user,function(err,isManager){
+				if(isManager)
+				{
+					self.productManager.DeleteProductByNameColor(attribute,function(err,result){
+						if(err)
+						{
+							res.end(JSON.stringify({success:false,reason:err}));
+						}
+						else
+						{
+							res.end(JSON.stringify({success:true}));
+						}
+					});
+				}
+			});
+		});
+
+		self.router.post('/update',function(req,res){
+			var attribute = 
+			{
+				Name: req.body.Name,
+				Color: req.body.Color,
+				Size: req.body.Size,
+				Stock: req.body.Stock,
+				Price: req.body.Price
+			};
+			self.memberManager.IsManager(req.user,function(err,isManager){
+				if(isManager)
+				{
+					self.productManager.UpdateProductPrice(attribute,function(err,result){
+						if(err)
+						{
+							res.end(JSON.stringify({success:false,reason:err}));
+						}
+						else
+						{
+							res.end(JSON.stringify({success:true}));
+						}
+					});
+
+					self.productManager.UpdateProductStock(attribute,function(err,result){
+						if(err)
+						{
+							res.end(JSON.stringify({success:false,reason:err}));
+						}
+						else
+						{
+							res.end(JSON.stringify({success:true}));
+						}
+					});
+				}
+			});
+		});
 	}
 }

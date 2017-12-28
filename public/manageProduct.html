@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/ProductColorMap.js"></script>
+	<script type="text/javascript" src="js/PostData.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/Render.js"></script>
@@ -54,13 +55,13 @@
 			</div>
 
 			<div id="functionPrice">
-				<p>價格 ： </p>
+				<p>原價 ： </p>
 				<input type="text" name="price" value="960">
 			</div>
 
 			<div id="functionAction">
-				<div>刪除</div>
-				<div>儲存</div>
+				<div onclick="ClickFunctionDelete()">刪除</div>
+				<div onclick="ClickFunctionSave()">儲存</div>
 				<div onclick="ClickFunctionCancle()">取消</div>
 			</div>
 		</div>

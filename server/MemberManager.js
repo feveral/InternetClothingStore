@@ -57,7 +57,11 @@ module.exports = class MemberManager{
 	IsManager(email,callback){
 
 		this.GetMemberFromEmail(email,function(err,result){
-			if(result.Membertype != 'Manager')
+			if(err || result === undefined)
+			{
+				callback(err,false);
+			}
+			else if(result.Membertype != 'Manager')
 			{
 				callback(err,false);
 			}
@@ -114,6 +118,11 @@ module.exports = class MemberManager{
 			" AND Password=" + 
 			"'" + attribute['OriginPassword'] +  "';", 
 			function(err,result){
+				console.log(attribute['NewPassword']);
+				console.log(attribute['Email']);
+				console.log(attribute['OriginPassword']);
+				console.log(result);
+				console.log(err);
 				callback(err,result);
 			}  
 		);

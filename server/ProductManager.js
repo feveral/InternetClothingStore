@@ -43,6 +43,38 @@ module.exports = class ProductManager{
 			}	
 	}
 
+	UpdateProductPrice(attribute,callback){
+		this.db.query(
+			"UPDATE PRODUCT " + 
+			"SET Price='" + attribute['Price'] + "' " +
+			"WHERE Name='" + attribute['Name'] + "' AND Color='" + attribute['Color'] + "';" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	UpdateProductStock(attribute,callback){
+		this.db.query(
+			"UPDATE PRODUCT " + 
+			"SET Stock='" + attribute['Stock'] + "' " +
+			"WHERE Name='" + attribute['Name'] + "' AND Size='" + attribute['Size'] + "' AND Color='" + attribute['Color'] + "';" , 
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
+	DeleteProductByNameColor(attribute,callback){
+		this.db.query(
+			"DELETE FROM PRODUCT " + 
+			"WHERE Name='" + attribute['Name'] + "' AND Color='" + attribute['Color'] + "';" ,
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
+
 	GetProductByName(name,callback){
 		this.db.query(
 			"SELECT * " + 
@@ -183,5 +215,8 @@ module.exports = class ProductManager{
 			}
 		);
 	}
+
+
+
 }
 

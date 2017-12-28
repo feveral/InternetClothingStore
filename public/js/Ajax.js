@@ -1,6 +1,10 @@
 
+function GetServerUrl(){
+	return "http://127.0.0.1";
+}
+
 function AjaxGet(apiUrl,callback){
-	$(document).ready(function(){ 
+	$(document).ready(function(){
 		$.ajax({
 			type: "GET",
 			url: apiUrl,
@@ -15,7 +19,7 @@ function AjaxGet(apiUrl,callback){
 }
 
 function AjaxPost(apiUrl,postData,callback,errorCallback=DefaultErrorCallback){
-	$(document).ready(function(){ 
+	$(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			url: apiUrl,

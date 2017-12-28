@@ -24,9 +24,6 @@ productManager.AddProductIterately(
 	DatabaseUtility.callback
 );
 
-var subCategory = 'Basic'
-var category = '短袖上衣'
-
 productManager.AddProductIterately(
 	{
 		ManagerId:'104820021',

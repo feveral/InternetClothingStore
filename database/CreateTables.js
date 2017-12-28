@@ -61,6 +61,7 @@ var createProduct =
 	 	"Date DATE NOT NULL , " +
 	 	"ImagePath VARCHAR(255) CHARACTER SET utf8 NOT NULL , " +
 	    "PRIMARY KEY (Id) ," +
+	    "UNIQUE(Name,Color,Size) , " + 
 	    "FOREIGN KEY(ManagerId) REFERENCES MEMBER(Id) " +
 	");";
 
@@ -104,7 +105,8 @@ var createOrderList =
 		"SendAddress VARCHAR(50) CHARACTER SET utf8 DEFAULT 'NULL', " + 
 		"Time DATE NOT NULL , " + 
 		"MemberId INT NOT NULL , " +  
-		"TotalPrice INT NOT NULL , " + 
+		"TotalPrice INT NOT NULL , " +
+		"Remarks VARCHAR(100) CHARACTER SET utf8, " + 
 		"PRIMARY KEY (Id) , " +
 		"FOREIGN KEY(MemberId) REFERENCES MEMBER(Id)" +
 	");";
@@ -116,7 +118,7 @@ var createOrderItem =
 		"QUANTITY INT NOT NULL , " + 
 		"PRIMARY KEY (ProductId,OrderId) , " +
 		"FOREIGN KEY(ProductId) REFERENCES PRODUCT(Id) , " +
-		"FOREIGN KEY(OrderId) REFERENCES ORDERLIST(Id) " +
+		"FOREIGN KEY(OrderId) REFERENCES ORDERLIST(Id) ON DELETE CASCADE" +
 	");";
 
 DatabaseUtility.ExecuteSQLCommand(dropDatabaseShtick);

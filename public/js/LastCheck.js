@@ -35,24 +35,9 @@ function PostOrderToServer(){
 		StoreName:($("#information>div:nth-child(3)>select").val()),
 		SendAddress:($("#information>div:nth-child(5)>input").val()),
 		totalPrice:($("#creditCardTotalPay>p:nth-child(2)").text()),
+		Remarks:($("#information>div>textarea").val()),
 	};
 	data = MakeDataNull(data);
-	console.log(($("#payment>div:nth-child(2)>p:nth-child(2)").text()));
-	console.log(($("#information>div:nth-child(3)>p:nth-child(2)").text()));
-	console.log(($("#payment>div:nth-child(2)>input").val()));
-
-	console.log(($("#information>div:nth-child(3)>select").val()));
-	console.log(($("#information>div:nth-child(5)>input").val()));
-	console.log(($("#creditCardTotalPay>p:nth-child(2)").text()));
-
-	console.log(data['Shiptype']);
-	console.log(data['Paytype']);
-	console.log(data['CreditCardNumber']);
-	console.log(data['StoreName']);
-	console.log(data['SendAddress']);
-	console.log(data['totalPrice']);
-	console.log(data['Time']);
-
 	var callback = function(msg){
 		console.log(msg);
 		var object = JSON.parse(msg);

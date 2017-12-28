@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	
+	IfManagerGotoManagerPage();
 	if(window.location.hash.replace('#','') != '')
 	{
 		GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct)
@@ -9,7 +9,6 @@ $(document).ready(function(){
 	{
 		GetNewProduct(RenderCustomerProduct);
 	}
-	IfManagerGotoManagerPage();
 });
 
 $(window).bind('hashchange', function() { 
