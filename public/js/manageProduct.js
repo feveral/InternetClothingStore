@@ -20,3 +20,7 @@ function IfNotManagerGotoIndex(){
 		}
 	});
 }
+
+function ClickManagerOnSale(){
+
+}

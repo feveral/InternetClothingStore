@@ -1,39 +1,4 @@
 
-
-function AddSubCategoryToCategory(catagory,order){
-
-	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagory;
-	var callback = function(msg){
-		var object = JSON.parse(msg);
-		$('#selector div:nth-child(' + order + ')').empty();
-		$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(catagory));
-		for (var i = 0; i < object['data'].length ; i++)
-   			$('#selector div:nth-child(' + order + ')').append(CategoryToHtml(object['data'][i]));
-	}
-	AjaxGet(apiUrl,callback);
-}
-
-function AddSubCategoryToCategoryManager(catagory,order){
-
-	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagory;
-	var callback = function(msg){
-		var object = JSON.parse(msg);
-		$('#selector div:nth-child(' + order + ')').empty();
-		$('#selector div:nth-child(' + order + ')').append(ManagerSubCategoryHtml(catagory));
-		for (var i = 0; i < object['data'].length ; i++)
-   			$('#selector div:nth-child(' + order + ')').append(ManagerSubCategoryHtml(object['data'][i]));
-	}
-	AjaxGet(apiUrl,callback);
-}
-
-
-function CategoryToHtml(category){
-	var hash = GetServerUrl() + "#" + GetCategoryEnglish(category);
-	var html = '<a href="'+ hash + '" onclick="GetProductByCategory(\'{category}\',RenderCustomerProduct)">{category}</a>';
-	html = html.replace('{category}',GetCategoryEnglish(category));	
-	return html.replace('{category}',category);
-}
-
 function GetCategoryEnglish(category){
 
 	if(category == '素面大學TEE'){

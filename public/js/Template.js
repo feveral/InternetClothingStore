@@ -62,7 +62,14 @@ function CustomerProductHtml(attribute){
 		   	'</div>';
 }
 
+/* managerHeader */
 
+function ManagerSubCategoryHtml(subCategory){
+	var hash = GetServerUrl() + "#" + GetCategoryEnglish(subCategory);
+	var html = '<a href="'+ hash + '" onclick="GetProductByCategory(\'{subCategory}\',RenderManagerProduct)">{subCategory}</a>';
+	html = html.replace('{subCategory}',GetCategoryEnglish(subCategory));	
+	return html.replace('{subCategory}',subCategory);
+}
 
 /* lastCheck.html*/
 

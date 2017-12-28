@@ -44,6 +44,15 @@ function GetNewProduct(callback){
 	AjaxGet(apiUrl,callback);
 }
 
+function GetUserName(callback){
+	var apiUrl = GetServerUrl() + "/login/getUserName";
+	AjaxGet(apiUrl,callback);
+}
+
+function GetSubCategoryByCategory(catagory,callback){
+	var apiUrl = GetServerUrl() + "/product/subCategory/" + catagory;
+	AjaxGet(apiUrl,callback);
+}
 
 /*post  managerOrderDetail.js*/
 function DeleteOrderFromManager(data,callback){

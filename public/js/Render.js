@@ -78,3 +78,4 @@ function RenderFunctionPriceStock(msg){
 	$('#functionPrice input').val(data['Price']);
 	$('#functionStock input').val(data['Stock']);
 }
+
