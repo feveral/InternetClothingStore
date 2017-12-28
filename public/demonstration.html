@@ -21,7 +21,7 @@
 	<script type="text/javascript" src="js/DemonstrateProduct.js"></script>
 	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/ShoppingCarHover.js"></script>
+	<script type="text/javascript" src="js/GetFavoriteInformation.js"></script>
 	<script type="text/javascript" src="js/ClickHandler.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/demonstration.js"></script>
@@ -54,8 +54,9 @@
 
 	<div id="memberMenu">
 		<a href="#">其他帳號登入</a>
-		<a href="#">會員中心</a>
+		<a href="memberCenter.html">會員中心</a>
 		<a href='order.html'>訂單管理</a>
+		<a href="favorite.html">我的收藏</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
@@ -68,7 +69,7 @@
 	</div>
 
 	<div id="shoppingCar">
-		<p>您的購物車：</p> 
+		<p>您的購物車：</p>
 		<div></div>
 		<div>
 			<a href="shoppingCar.html">前往購物車</a>
@@ -81,8 +82,8 @@
 
 		<div id="productInformation" class="col-6">
 			<p id="productName">簡約多色刷毛長袖大學TEE</p>
-			<a class="button">加入收藏</a>
-			<p id="onSale">早秋新品，單件85折</p>			
+			<a class="button" onclick="ClickAddFavorite()">加入收藏</a>
+			<p id="onSale">早秋新品，單件85折</p>
 
 			<div id="productPrice">
 				<span>TWD.580</span>
@@ -103,7 +104,7 @@
 				<a>L</a>
 				<a>XL</a>
 			</div>
-				
+
 			<div id="productQuantity">
 				<a>-</a>
 				<input type="text" value=1>
@@ -111,7 +112,7 @@
 			</div>
 
 			<a class="button" onclick="ClickAddShoppingCar()">加入購物車</a>
-			<a class="button">立即購買</a>	
+			<a class="button">立即購買</a>
 		</div>
 	</div>
 </body>

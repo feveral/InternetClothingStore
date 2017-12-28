@@ -55,9 +55,9 @@ function CalculateTotal(data){
 function PrintShoppingCarItem(data){
 	for (var index in data){
 		$("#shoppingItem").append(
-			"<div>" + 
+			"<div>" +
 			"<div><img src=" + data[index]['ImagePath'] + "></div>"+
-			"<div> " + 
+			"<div> " +
 			"<span>" + data[index]['Id'] + "</span>" +
 			"<span>" + data[index]['Name'] + "</span>" +
 			"<span>" + data[index]['Color'] + "</span>" +

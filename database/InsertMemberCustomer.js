@@ -17,11 +17,11 @@ memberManager.AddCustomer(
 
 memberManager.AddCustomer(
 	{
-		Name:"鳴人",
-		Email:"yt2019@yahoo.com.tw",
-		Cellphone:"0970981207",
-		Password:"5566",
-		Address:"高雄市三民區黃興路158巷36號"
+		Name:"customer",
+		Email:"customer",
+		Cellphone:"0923961566",
+		Password:"customer",
+		Address:"customer"
 	},
 	DatabaseUtility.callback
 );

@@ -3,34 +3,25 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+	<link rel="stylesheet" type="text/css" href="css/favorite.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
-	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/Render.js"></script>
 	<script type="text/javascript" src="js/Login.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
+	<script type="text/javascript" src="js/GetFavoriteInformation.js"></script>
+	<script type="text/javascript" src="js/Favorite.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script type="text/javascript" src="js/ClickHandler.js"></script>
-	<script type="text/javascript" src="js/Render.js"></script>
 
 </head>
-
 <body>
-
-	<div id="phoneHeader">
-		<img src="./image/menu_icon.png">
-		<h1>S H T I C K </h1>
-		<img src="./image/shoppingCar_icon.png">
-	</div>
 
 	<div id="header">
 		<div id="logo"><img src="./image/logo.png"></div>
@@ -38,6 +29,7 @@
 			<span>STILLAS</span>
 			<span>SALE</span>
 			<span>NEW</span>
+
 		</div>
 		<div id="member">
 			<div>
@@ -55,6 +47,15 @@
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
+	<div id="shoppingCar">
+		<p>您的購物車：</p>
+		<div></div>
+		<div>
+			<a href="shoppingCar.html">前往購物車</a>
+			<a href="#">直接結帳</a>
+		</div>
+	</div>
+
 	<div id="selector">
 		<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
 		<div><a>Top</a></div>
@@ -63,18 +64,19 @@
 		<div><a>Accessories</a></div>
 	</div>
 
-	<div id="shoppingCar">
-		<p>您的購物車：</p>
-		<div></div>
-		<div>
-			<a href="shoppingCar.html">前往購物車</a>
-			<a href="shoppingCar.html">直接結帳</a>
+	<div id="main">
+		<div id="title">
+			<span></span>
+			<span>商品編號</span>
+			<span>商品名稱</span>
+			<span>顏色</span>
+			<span>尺寸</span>
+			<span>單價</span>
+			<span>刪除</span>
+		</div>
+		<div id="favoriteItem">
 		</div>
 	</div>
 
-	<div id="main" class="row container" >
-	</div>
-
 </body>
-
 </html>
