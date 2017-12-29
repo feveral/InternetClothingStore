@@ -15,8 +15,8 @@ function IfNotMemberGotoMemberPage(){
 		}
 		else
 		{
+			alert("登入以使用更多功能！");
 			location.href = GetServerUrl() + '/index.html';
-			alert("please login!");
 		}
 	});
 }
