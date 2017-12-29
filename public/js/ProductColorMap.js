@@ -188,7 +188,7 @@ function GetColorUrl(color){
 	else if(color==="暗紅")
 		return "http://www.wendhouse.com/SHTICK/Shang_Pin/170704/566046/566046-6-25.jpg";
 	else if(color==="水藍")
-		return "http://www.wendhouse.com/SHTICK/Shang_Pin/170504/566032/566032-6-25.jpg";
+		return "http://www.wendhouse.com/SHTICK/Shang_Pin/171016/555023/555023-2-25.jpg";
 	else if(color==="麻粉綠")
 		return "http://www.wendhouse.com/SHTICK/Shang_Pin/170427/566031/566031-20-25.jpg";
 	else if(color==="麻水藍")
@@ -455,7 +455,7 @@ function GetColorChinese(url){
 		return "麻寶藍";
 	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170704/566046/566046-6-25.jpg")
 		return "暗紅";
-	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170504/566032/566032-6-25.jpg")
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/171016/555023/555023-2-25.jpg")
 		return "水藍";
 	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170427/566031/566031-20-25.jpg")
 		return "麻粉綠";
