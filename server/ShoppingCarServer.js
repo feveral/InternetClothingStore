@@ -3,6 +3,8 @@
 const ShoppingCarManager = require('./ShoppingCarManager.js');
 const ProductManager = require('./ProductManager.js');
 const MemberManager = require('./MemberManager.js');
+const CheckoutManager = require('./CheckoutManager.js');
+
 const path = require('path');
 const url = require('url');
 
@@ -13,6 +15,7 @@ module.exports = class{
 		this.shoppingCarManager = new ShoppingCarManager();
 		this.productManager = new ProductManager(); 
 		this.memberManager = new MemberManager();
+		this.checkoutManager = new CheckoutManager();
 		this.SetAPI();
 	}
 
@@ -48,6 +51,10 @@ module.exports = class{
 			}
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
 				self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,result){
+					console.log(result);
+					if(result.length>0)
+						result = self.checkoutManager.CalculateTotal(result);
+					console.log(result);
 					res.end(JSON.stringify({success:true,data:result}));
 				});
 			});
