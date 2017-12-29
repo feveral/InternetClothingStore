@@ -19,7 +19,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['迷彩藍','迷彩黑'],
+	['藍色','迷彩黑'],
 	['S','M','L','XL','2XL'],
 	DatabaseUtility.callback
 );
@@ -105,7 +105,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['綠白','橘黃'],
+	['綠色','黃色'],
 	['S','M','L','XL','2XL'],
 	DatabaseUtility.callback
 );
@@ -156,7 +156,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['黑白','黑紅','黑橘'],
+	['黑白','紅色','黑橘'],
 	['S','M','L','XL','2XL'],
 	DatabaseUtility.callback
 );

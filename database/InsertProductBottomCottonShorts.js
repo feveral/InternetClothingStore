@@ -19,7 +19,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['深藍','黑色','淺灰','米白'],
+	['深藍','黑色','淺灰','白色'],
 	['M','L','XL'],
 	DatabaseUtility.callback
 );
@@ -53,7 +53,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['灰色','黑色','緞黑'],
+	['灰色','黑色','緞彩黑'],
 	['S','M','L','XL','2XL'],
 	DatabaseUtility.callback
 );
