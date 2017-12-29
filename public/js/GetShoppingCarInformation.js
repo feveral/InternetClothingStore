@@ -46,7 +46,14 @@ function CalculateTotal(data){
 	var totalItemNumber = 0;
 	for (var index in data)
 	{
-		totalPrice += data[index]['Quantity']*data[index]['Price'];
+		if(data[index]['PercentOff'] === null)
+		{
+			totalPrice += data[index]['Quantity']*data[index]['Price'];
+		}
+		else
+		{
+			totalPrice += data[index]['Quantity']*data[index]['Price']*(100-data[index]['PercentOff'])/100;
+		}
 		totalItemNumber += data[index]['Quantity'];
 	}
 	$("#totalItemNumber").text("小計金額 (共" +totalItemNumber +  "件)");
@@ -54,7 +61,12 @@ function CalculateTotal(data){
 }
 
 function PrintShoppingCarItem(data){
-	for (var index in data){
+	for (var index in data)
+	{
+		if(data[index]['PercentOff'] != null)
+		{
+			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ; 
+		}
 		$("#shoppingItem").append(
 			"<div>" +
 			"<div><img src=" + data[index]['ImagePath'] + "></div>"+
