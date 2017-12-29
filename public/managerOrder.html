@@ -5,6 +5,7 @@
 	<meta charset="utf-8"/>
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/managerOrder.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -14,6 +15,7 @@
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/Redirect.js"></script>
 	<script type="text/javascript" src="js/ClickHandler.js"></script>
 	<script type="text/javascript" src="js/managerOrder.js"></script>
 	<script type="text/javascript" src="js/GetOrderInformation.js"></script>
@@ -21,6 +23,54 @@
 </head>
 
 <body>
+
+	<div id="phoneHeader">
+		<img src="./image/menu_icon.png">
+		<h1>S H T I C K </h1>
+		<img src="./image/shoppingCar_icon.png">
+	</div>
+
+	<div id="header">
+		<div id="logo"><img src="./image/logo.png"></div>
+		<div id="mainMenu">
+			<span>STILLAS</span>
+			<span onclick="ClickManagerOnSale()">SALE</span>
+		</div>
+		<div id="member">
+			<div>
+				<a onclick="ClickMemberButton()">登入</a>
+			</div>
+			<a href="managerOrder.html">訂單管理</a>
+		</div>
+		<div id="search">
+			<input type="text" name="search" placeholder="Search" onchange="ChangeManagerSearchText()">
+		</div>
+	</div>
+
+	<div id="memberMenu">
+		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
+		<a href="memberCenter.html">會員中心</a>
+		<a href='order.html'>訂單管理</a>
+		<a href="#" onclick="Logout()">登出</a>
+	</div>
+
+	<div id="selector">
+		<div><a>Basic</a><a>長袖上衣</a><a>連貿大學TEE</a></div>
+		<div><a>Top</a></div>
+		<div><a>Coat</a></div>
+		<div><a>Bottom</a></div>
+		<div><a>Accessories</a></div>
+	</div>
+
+	<div id="shoppingCar">
+		<p>您的購物車：</p> 
+		<div></div>
+		<div>
+			<a href="shoppingCar.html">前往購物車</a>
+			<a href="shoppingCar.html">直接結帳</a>
+		</div>
+	</div>
+
 	<div id="main">
 		<div id="selectorMain">
 			<span>選擇排序方式</span>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotManagerGotoIndex();
 	var orderId = location.hash.split('#')[1];
 	console.log(orderId);
 	GetManagerOrderDetail(orderId);

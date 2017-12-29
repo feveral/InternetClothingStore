@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotManagerGotoIndex();
 	GetAllOrderFromServer();
 });
 
@@ -11,6 +12,5 @@ function GetAllOrderFromServer(){
 	}
 	AjaxGet(apiUrl,callback);
 }
-
 
 

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotManagerGotoIndex();
 	ChangePicture();
 	RenderAllColor();
 	console.log("cc");
