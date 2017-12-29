@@ -28,6 +28,7 @@ function PostNewProductDetail(){
 			Price:($("input[name='Price']")).val(),
 			Category:($("input[name='Category']")).val(),
 			SubCategory:($("input[name='SubCategory']")).val(),
+			ImagePath:("./image/" + ($("input[name='Name']")).val() + "_" + ($("#Color>select")).val()) + ".jpg",
 		}
 		var callback = function(msg){
 			var object = JSON.parse(msg);

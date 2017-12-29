@@ -44,7 +44,7 @@ module.exports = class{
 					Price:req.body.Price,
 					Category:req.body.Category,
 					SubCategory:req.body.SubCategory,
-					ImagePath:"./image/"+req.body.Name,
+					ImagePath:req.body.ImagePath,
 					Date:req.body.Date,
 				}
 				,function(err,result){
