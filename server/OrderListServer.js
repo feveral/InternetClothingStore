@@ -124,11 +124,11 @@ module.exports = class OrderListServer{
 						self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,shoppingCar){
 							self.orderItemManager.AddOrderItemIterately(order[0].Id,shoppingCar,function(err,result){
 								self.shoppingCarManager.DeleteDataFromMemberId(member.Id,function(err,result){
-								})
-							})
-						})
-					})
-				})
+								});
+							});
+						});
+					});
+				});
 			});
 		});
 	}

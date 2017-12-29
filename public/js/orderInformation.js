@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotMemberGotoMemberPage()
 	var orderId = location.hash.split('#')[1];
 	GetOrderDetail(orderId);
 	GetOrderItem(orderId);

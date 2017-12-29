@@ -51,10 +51,8 @@ module.exports = class{
 			}
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
 				self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,result){
-					console.log(result);
 					if(result.length>0)
 						result = self.checkoutManager.CalculateTotal(result);
-					console.log(result);
 					res.end(JSON.stringify({success:true,data:result}));
 				});
 			});
