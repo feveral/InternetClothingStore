@@ -28,7 +28,7 @@ function GetOrderItem(orderId){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		console.log(object);
-		PrintShoppingItem(object.result);
+		PrintShoppingItem(object);
 	}
 	AjaxPost(apiUrl,data,callback);
 }

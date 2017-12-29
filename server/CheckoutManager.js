@@ -19,5 +19,13 @@ module.exports = class CheckoutManager{
 		data[0]['totalClothNumber'] = totalClothNumber;
 		return data;
 	}
+
+	CalculateProductOnsale(data){
+		for(var dataIndex in data){
+			if(data[dataIndex]['PercentOff'])
+				data[dataIndex]['Price'] = data[dataIndex]['Price']*(1-data[dataIndex]['PercentOff']/100);
+		}
+		return data;
+	}
 	
 }
