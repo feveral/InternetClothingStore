@@ -5,7 +5,7 @@ const mysql = require('mysql');
 var db = mysql.createConnection({
   	host: "localhost",
   	user: "root",
-  	password: "5566",
+  	password: "timmy880925",
 });
 
 exports.Getdb = function(){
