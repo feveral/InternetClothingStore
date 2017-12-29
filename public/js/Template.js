@@ -138,6 +138,7 @@ function PrintDetail(result){
 }
 
 function PrintShoppingItem(result){
+	console.log(result);
 	var processedResult = []; 
 	for(var r in result){
 		var id = result[r]['Name'];
@@ -148,9 +149,16 @@ function PrintShoppingItem(result){
 		"<span>" + result[r]['Color'] + "</span>" +
 		"<span>" + result[r]['Size'] + "</span>" +
 		"<span>" + result[r]['Quantity'] + "</span>" +
-		"<span>" + " no " + "</span>" +
+		"<span>" + DoPercentOffString(result[r]['PercentOff']) + "</span>" +
 		"<span>" + result[r]['Price'] + "</span>" +
 		"<span>" + " .. " + "</span>" +
 		"</div>");
 	}
+}
+
+function DoPercentOffString(percentOff){
+	if(!percentOff)
+		return "no";
+	else 
+		return percentOff+"%";
 }
