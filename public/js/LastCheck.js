@@ -34,7 +34,6 @@ function PostOrderToServer(){
 		Time:GetDateTime(),
 		StoreName:($("#information>div:nth-child(3)>select").val()),
 		SendAddress:($("#information>div:nth-child(5)>input").val()),
-		totalPrice:($("#creditCardTotalPay>p:nth-child(2)").text()),
 		Remarks:($("#information>div>textarea").val()),
 	};
 	data = MakeDataNull(data);
