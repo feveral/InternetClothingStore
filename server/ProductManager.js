@@ -97,7 +97,7 @@ module.exports = class ProductManager{
 
 	GetProductByName(name,callback){
 		this.db.query(
-			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
 			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
 			"WHERE PRODUCT.Name=" + "'" + name + "'" + ";" , 
 			function(err,result){
