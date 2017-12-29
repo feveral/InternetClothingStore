@@ -8,7 +8,7 @@ function GetShoppingItemToLastCheck(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		PrintShopppingCarItemInLastCheck(object['data']);
+		RenderShopppingCarItemInLastCheck(object['data']);
 		CalculatePaymentTotal(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
