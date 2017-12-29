@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	IfNotMemberGotoMemberPage()
+	IfNotMemberGotoMemberPage();
 	var orderId = location.hash.split('#')[1];
 	GetOrderDetail(orderId);
 	GetOrderItem(orderId);
@@ -26,8 +26,7 @@ function GetOrderItem(orderId){
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		console.log(object);
-		PrintShoppingItem(object.result);
+		PrintShoppingItem(object);
 	}
 	AjaxPost(apiUrl,data,callback);
 }
