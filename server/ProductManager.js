@@ -249,6 +249,16 @@ module.exports = class ProductManager{
 	}
 
 
+	// LossProductQuantity(data,callback){
+	// 	this.db.query(
+	// 		"update PRODUCT SET Quantity = Quantity - " + data[0]['Quantity'] + "WHERE Id = " + data[0]['Id'] + ";",    
+	// 		function(err,result){
+	// 			callback(err,result);
+	// 		}
+	// 	);
+	// }
+
+
 
 }
 
