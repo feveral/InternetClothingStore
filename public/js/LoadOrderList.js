@@ -27,7 +27,7 @@ function PrintOrder(result){
 		"<span>" + ExtractTimeString(result[r]['Time']) + "</span>" +
 		"<span>" + result[r]['State'] + "</span>" +
 		"<span>" + result[r]['Shipment'] + "</span>" +
-		"<span>" + IsNullNotRender(result[r]['Remarks']) + "</span>" +
+		'<span title="' + IsNullNotRender(result[r]['Remarks']) + '">' + IsNullNotRender(result[r]['Remarks']) + "</span>" +
 		"<div><a href='#'" + "onclick=GetOrder("+ result[r]['Id'] +")>詳細資料</a>"+ 
 		"</div>");
 	}

@@ -39,7 +39,6 @@ function CalculatePaymentTotal(data){
 		totalPrice += data[index]['Quantity']*data[index]['Price'];
 		totalItemNumber += data[index]['Quantity'];
 	}
-	totalPrice += 80;
 	$("#littleCount").text("共" +totalItemNumber + "件" + " 小計:$" + totalPrice);
 	$("#paymentPrice").text(totalPrice);
 }
