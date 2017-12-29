@@ -29,8 +29,6 @@ module.exports = class ShoppingCarManager{
 			"WHERE SHOPPINGCAR.MemberId='" + memberId + "' AND " + 
 			"PRODUCT.Id=SHOPPINGCAR.ProductId;", 
 			function(err,result){
-				console.log(result)
-
 				callback(err,result);
 			}
 		)

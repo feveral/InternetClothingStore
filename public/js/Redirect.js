@@ -11,7 +11,7 @@ function IfNotMemberGotoMemberPage(){
 	GetUserName(function(msg){
 		if( JSON.parse(msg)['success'] )
 		{
-			console.log("success");
+			// console.log("success");
 		}
 		else
 		{

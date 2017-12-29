@@ -126,6 +126,7 @@ function IsRemarksNull(Remarks){
 	return Remarks;
 }
 
+
 /*orderInformation.js*/
 function PrintDetail(result){
 	$("#orderNumber").text(result[0]['Id']);
@@ -162,3 +163,4 @@ function DoPercentOffString(percentOff){
 	else 
 		return percentOff+"%";
 }
+

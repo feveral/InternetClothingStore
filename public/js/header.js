@@ -13,6 +13,7 @@ function SetLogoClick(){
 	$('#logo').click( function(){ location.href = GetServerUrl(); } );
 }
 
+
 function SetNewButtonProductClick(){
 	$("#mainMenu span:nth-child(3)").click(function(){
 		var apiUrl = GetServerUrl() + "/product/" + "newproduct";

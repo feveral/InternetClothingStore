@@ -14,15 +14,16 @@ function RenderDemonstrate(msg){
 	var products = JSON.parse(msg)['data'];
 	var colors = FindNotrepeatColorFromProducts(products);
 	var sizes = FindNotrepeatSizeFromProducts(products);
-	console.log(products);
 	$('#productName').text(attribute.Name);
 	GetProductPriceByNameColor(attribute.Name,attribute.Color,function(msg){
 		ChangeDemonstrattePrice(JSON.parse(msg)['data'][0]['Price'],JSON.parse(msg)['data'][0]['PercentOff']);
 	});
-	if( products[0]['OnsaleName'] != null )
+	if( products[0]['OnsaleName'] != null ){
 		$('#onSale').text(products[0]['OnsaleName']);
-	else
+	}
+	else{
 		$('#onSale').text("");
+	}
 	$('#productColor').empty();
 	for (var c in colors){
 		$('#productColor').append('<div><img src="' + GetColorUrl(colors[c]) + '"></div>');
