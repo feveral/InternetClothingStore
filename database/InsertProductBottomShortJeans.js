@@ -19,7 +19,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['藍迷彩','黑迷彩'],
+	['藍色','迷彩黑'],
 	['M','L','XL'],
 	DatabaseUtility.callback
 );

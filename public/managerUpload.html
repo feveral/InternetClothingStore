@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shtick</title>
+	<meta charset="utf-8"/>
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+	<link rel="stylesheet" type="text/css" href="css/initial.css">
+	<link rel="stylesheet" type="text/css" href="css/managerUpload.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script type="text/javascript" src="js/APIUrl.js"></script>
+	<script type="text/javascript" src="js/Ajax.js"></script>
+	<script type="text/javascript" src="js/TimeUtility.js"></script>
+	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
+	<script type="text/javascript" src="js/managerUpload.js"></script>
+	<script type="text/javascript" src="js/Render.js"></script>
+	</script>
+</head>
+
+<body>
+	<div id="main">
+		<div>
+			<img src="./image/test.jpg">
+		</div>
+		<div id="ProductInformation">
+			<div id="Name">
+				<span>商品名稱:</span>
+				<input type="text" name="Name">
+			</div>
+			<div id="Quantity">
+				<span>商品數量:</span>
+				<input type="text" name="Quantity">
+			</div>
+			<div id="Size">
+				<span>商品尺寸:</span>
+				<input type="text" name="Size">
+			</div>
+			<div id="Color">
+				<span>商品顏色:</span>
+				<select>
+				</select>
+			</div>
+			<div id="Price">
+				<span>商品價格:</span>
+				<input type="text" name="Price">
+			</div>
+			<div id="Category">
+				<span>商品類別:</span>
+				<input type="text" name="Category">
+			</div>
+			<div id="SubCategory">
+				<span>商品子類別:</span>
+				<input type="text" name="SubCategory">
+			</div>
+			<div id="SelectPicture">
+				<form action="" >
+					<input id="picture" type="file" accept="image/*">
+					<input type="submit">
+				</form>
+			</div>
+			<div>
+				<div id="submitButton">上傳商品</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

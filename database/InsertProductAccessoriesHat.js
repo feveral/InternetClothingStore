@@ -70,7 +70,7 @@ productManager.AddProductIterately(
 		SubCategory: subCategory,
 		ImagePath:''
 	},
-	['寶藍色','暗紅色','深藍色','白色','粉色'],
+	['寶藍','暗紅','深藍色','白色','粉紅'],
 	['F'],
 	DatabaseUtility.callback
 );

@@ -33,6 +33,47 @@ module.exports = class{
 			});
 		});
 
+		self.router.post('/InsertNewProduct',function(req,res){
+			self.productManager.AddProduct(
+				{
+					ManagerId:104820004,
+					Name:req.body.Name,
+					Stock:req.body.Quantity,
+					Size:req.body.Size,
+					Color:req.body.Color,
+					Price:req.body.Price,
+					Category:req.body.Category,
+					SubCategory:req.body.SubCategory,
+					ImagePath:req.body.ImagePath,
+					Date:req.body.Date,
+				}
+				,function(err,result){
+				if (err)
+				{
+					console.log(err);
+					res.end(JSON.stringify({success:false , reason:err}));
+				} 
+				else
+				{
+					console.log(result);
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/AllColor',function(req,res){
+			self.productManager.GetAllColor(function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		self.router.get('/search/:toSearch',function(req,res){
 			req.url = decodeURI(req.url);
 			var toSearch = path.basename(req.url);

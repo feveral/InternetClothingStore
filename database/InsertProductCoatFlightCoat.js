@@ -104,7 +104,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['黑紅'],
+	['黑色'],
 	['S'],
 	DatabaseUtility.callback
 );

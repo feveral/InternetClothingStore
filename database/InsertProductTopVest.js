@@ -19,7 +19,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['白色','米黃','紫灰','綠色','莓紅','藍色','螢光黃','酒紅','鐵灰','咖啡','土黃','大紅','淺綠','灰色','湖藍','螢光綠','麻咖啡','深莓紅'],
+	['白色','米黃','紫灰','綠色','莓紅','藍色','螢光黃','酒紅','鐵灰','咖啡','土黃','紅色','淺綠','灰色','湖藍','螢光綠','麻咖啡','深莓紅'],
 	['S','M','L','XL'],
 	DatabaseUtility.callback
 );
@@ -36,7 +36,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['粉條','藍條','深灰','黑條','灰色'],
+	['粉紅','藍色','深灰','黑色','灰色'],
 	['S','M','L','XL'],
 	DatabaseUtility.callback
 );
@@ -87,7 +87,7 @@ productManager.AddProductIterately(
 		SubCategory: category,
 		ImagePath:''
 	},
-	['白色','緞黑','緞灰','麻紅','黑色'],
+	['白色','緞彩黑','緞彩灰','麻紅色','黑色'],
 	['S','M','L','XL'],
 	DatabaseUtility.callback
 );

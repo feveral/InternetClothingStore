@@ -39,7 +39,7 @@ function PostManagerOrderState(){
 	var data = 
 	{
 		OrderId:$('#orderNumber').text(),
-		State:$('#state').text(),
+		State:$("#order>div>select option:selected").text(),
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
@@ -49,13 +49,7 @@ function PostManagerOrderState(){
 }
 
 function ChangeOrderState(){
-	$("#changeOrderState>select").on('change',function(){
-		if(this.value == 0)
-			$('#state').text("處理中");
-		else if(this.value == 1)
-			$('#state').text("已出貨");
-		else
-			$('#state').text("已到店");
+	$("#order>div>select").on('change',function(){
 		PostManagerOrderState();
 	});
 }
