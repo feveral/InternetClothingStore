@@ -1,6 +1,6 @@
 
 function GetServerUrl(){
-	return "http://127.0.0.1";
+	return "http://192.168.1.8";
 }
 
 function AjaxGet(apiUrl,callback){

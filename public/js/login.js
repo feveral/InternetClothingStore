@@ -51,23 +51,7 @@ function ClickOtherAccountButton(){
 	AjaxGet(apiUrl,callback);
 }
 
-function ChangeToLogin(){
-	$(document).ready(function(){
-		$('#login').show();
-		$('#register').hide();
-		$('#loginTitle').css('background-color','black');
-		$('#registerTitle').css('background-color','#666666');
-	});
-}
 
-function ChangeToRegister(){
-	$(document).ready(function(){
-		$('#register').show();
-		$('#login').hide();
-		$('#loginTitle').css('background-color','#666666');
-		$('#registerTitle').css('background-color','black');
-	});
-}
 
 
 function IsTextNull(data){
@@ -110,9 +94,14 @@ function Register(){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		if(object.result)
-			alert("register success!");
+		{
+			alert("註冊成功!");
+			AjaxPost(GetServerUrl() + "/login",{Email:data.Email,Password:data.Password},function(msg){
+				location.href = GetServerUrl();
+			});
+		}
 		else
-			alert("this email has been registered");
+			alert("此信箱已有人註冊!");
 	}
 	AjaxPost(apiUrl,data,callback);
 }

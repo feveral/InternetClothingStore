@@ -8,7 +8,7 @@ function GetShoppingItemToLastCheck(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		PrintShopppingCarItemInLastCheck(object['data']);
+		RenderShopppingCarItemInLastCheck(object['data']);
 		CalculatePaymentTotal(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
@@ -34,7 +34,6 @@ function PostOrderToServer(){
 		Time:GetDateTime(),
 		StoreName:($("#information>div:nth-child(3)>select").val()),
 		SendAddress:($("#information>div:nth-child(5)>input").val()),
-		totalPrice:($("#creditCardTotalPay>p:nth-child(2)").text()),
 		Remarks:($("#information>div>textarea").val()),
 	};
 	data = MakeDataNull(data);

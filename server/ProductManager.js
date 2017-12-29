@@ -97,7 +97,7 @@ module.exports = class ProductManager{
 
 	GetProductByName(name,callback){
 		this.db.query(
-			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " + 
+			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
 			"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
 			"WHERE PRODUCT.Name=" + "'" + name + "'" + ";" , 
 			function(err,result){
@@ -247,6 +247,16 @@ module.exports = class ProductManager{
 			}
 		);
 	}
+
+
+	// LossProductQuantity(data,callback){
+	// 	this.db.query(
+	// 		"update PRODUCT SET Quantity = Quantity - " + data[0]['Quantity'] + "WHERE Id = " + data[0]['Id'] + ";",    
+	// 		function(err,result){
+	// 			callback(err,result);
+	// 		}
+	// 	);
+	// }
 
 
 

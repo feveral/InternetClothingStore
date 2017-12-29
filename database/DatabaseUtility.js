@@ -31,6 +31,6 @@ exports.ExecuteSQLCommandWithoutLog = function(command){
 exports.callback = function(err,result){
 	if(err)
 		console.log(err);
-	else
-		console.log(result);
+	// else
+	// 	console.log(result);
 }

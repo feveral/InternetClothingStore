@@ -18,7 +18,12 @@ function RenderDemonstrate(msg){
 	GetProductPriceByNameColor(attribute.Name,attribute.Color,function(msg){
 		ChangeDemonstrattePrice(JSON.parse(msg)['data'][0]['Price'],JSON.parse(msg)['data'][0]['PercentOff']);
 	});
-
+	if( products[0]['OnsaleName'] != null ){
+		$('#onSale').text(products[0]['OnsaleName']);
+	}
+	else{
+		$('#onSale').text("");
+	}
 	$('#productColor').empty();
 	for (var c in colors){
 		$('#productColor').append('<div><img src="' + GetColorUrl(colors[c]) + '"></div>');

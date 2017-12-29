@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotMemberGotoMemberPage()
 	GetMemberInformationToCenter();
 	ClickModifyDataButton();
 	ClickModifyPasswordButton();

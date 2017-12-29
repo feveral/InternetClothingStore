@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	IfNotManagerGotoIndex();
 	ChangePicture();
 	RenderAllColor();
 	console.log("cc");
@@ -15,7 +16,6 @@ function ChangePicture(){
 }
 
 function PostNewProductDetail(){
-	console.log("ww");
 	$("#submitButton").click(function(){
 		console.log($('#picture').val());
 		var data = 
@@ -26,14 +26,33 @@ function PostNewProductDetail(){
 			Size:($("input[name='Size']")).val(),
 			Color:($("#Color>select")).val(),
 			Price:($("input[name='Price']")).val(),
-			Category:($("input[name='Category']")).val(),
+			Category:($("#Category>select")).val(),
 			SubCategory:($("input[name='SubCategory']")).val(),
+			ImagePath:("./image/" + ($("input[name='Name']")).val() + "_" + ($("#Color>select")).val()) + ".jpg",
 		}
 		var callback = function(msg){
 			var object = JSON.parse(msg);
 		}
 		console.log(data);
-		PostNewProduct(data,callback);
-		console.log("ee");
+		if(IsAllNotNull(data))
+			PostNewProduct(data,callback);
 	});
+}
+
+function IsValueNull(value){
+	if(!value)
+		return true;
+}
+
+function IsAllNotNull(data){
+	var bool = true;
+	for(dataIndex in data)
+	{
+		if(IsValueNull(data[dataIndex]))
+		{
+			alert("有格子未填");
+			return false;
+		}
+	}
+	return bool;
 }

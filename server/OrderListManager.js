@@ -87,14 +87,15 @@ module.exports = class OrderListManager{
 
 	ListOrderItem(attribute,callback){
 		this.db.query(
-			"SELECT ProductId,OrderId,Quantity,PRODUCT.Name,Size,Color,Price " + 
-			"FROM ORDERITEM join PRODUCT on ORDERITEM.ProductId = PRODUCT.Id WHERE OrderId= " + 
+			"SELECT ORDERITEM.ProductId,OrderId,Quantity,PRODUCT.Name,Size,Color,Price,PercentOff " + 
+			"FROM (ORDERITEM join PRODUCT on ORDERITEM.ProductId = PRODUCT.Id) left join ONSALE on ORDERITEM.ProductId=ONSALE.ProductId " + 
+			"WHERE OrderId= " + 
 			attribute['OrderId'] +
 			" AND OrderId IN(select ORDERLIST.Id from ORDERLIST,MEMBER WHERE Email= '" +
 			attribute['Email'] +  
 			"' and ORDERLIST.MemberId = MEMBER.Id);",
 			function(err,result){
-				callback(err,{success:true,result:result})
+				callback(err,result);
 			}  
 		);
 	}

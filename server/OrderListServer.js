@@ -4,6 +4,8 @@ const OrderListManager = require('./OrderListManager.js');
 const MemberManager = require('./MemberManager.js');
 const ShoppingCarManager = require('./ShoppingCarManager.js');
 const OrderItemManager = require('./OrderItemManager.js');
+const CheckoutManager = require('./CheckoutManager.js');
+const ProductManager = require('./ProductManager.js');
 const path = require('path');
 const url = require('url');
 
@@ -16,6 +18,8 @@ module.exports = class OrderListServer{
 		this.memberManager = new MemberManager();
 		this.shoppingCarManager = new ShoppingCarManager();
 		this.orderItemManager = new OrderItemManager();
+		this.checkoutManager = new CheckoutManager();
+		this.productManager = new ProductManager();
 		this.SetApi();
 	}
 
@@ -56,6 +60,7 @@ module.exports = class OrderListServer{
 					OrderId:req.body.OrderId
 				},
 				function(err,result){
+					result = self.checkoutManager.CalculateProductOnsale(result);
 					res.send(JSON.stringify(result));
 		    	});
 		});
@@ -105,30 +110,34 @@ module.exports = class OrderListServer{
 
 		self.router.post('/postOrder',function(req,res){
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
-				self.OrderListManager.AddOrderList(
-				{
-					MemberId:member.Id,
-					State:req.body.State,
-					Shipment:req.body.Shiptype,
-					Paytype:req.body.Paytype,
-					CreditCardNumber:req.body.CreditCardNumber,
-					Time:req.body.Time,
-					StoreName:req.body.StoreName,
-					SendAddress:req.body.SendAddress,
-					TotalPrice:req.body.totalPrice,
-					Remarks:req.body.Remarks,
-				},
-				function(err,result){
-					res.send(JSON.stringify(result));
-					self.OrderListManager.GetNewestOrderListByMemberId(member.Id,function(err,order){
-						self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,shoppingCar){
-							self.orderItemManager.AddOrderItemIterately(order[0].Id,shoppingCar,function(err,result){
-								self.shoppingCarManager.DeleteDataFromMemberId(member.Id,function(err,result){
-								})
-							})
-						})
-					})
-				})
+				self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,shoppingCar){
+					self.OrderListManager.AddOrderList(
+					{
+						MemberId:member.Id,
+						State:req.body.State,
+						Shipment:req.body.Shiptype,
+						Paytype:req.body.Paytype,
+						CreditCardNumber:req.body.CreditCardNumber,
+						Time:req.body.Time,
+						StoreName:req.body.StoreName,
+						SendAddress:req.body.SendAddress,
+						TotalPrice:self.checkoutManager.CalculateTotal(shoppingCar)[0]['totalPrice']+80,
+						Remarks:req.body.Remarks,
+					},
+					function(err,result){
+						res.send(JSON.stringify(result));
+						self.OrderListManager.GetNewestOrderListByMemberId(member.Id,function(err,order){
+							self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,shoppingCar){
+								shoppingCar = (self.checkoutManager.CalculateProductOnsale(shoppingCar));
+
+								self.orderItemManager.AddOrderItemIterately(order[0].Id,shoppingCar,function(err,result){
+									self.shoppingCarManager.DeleteDataFromMemberId(member.Id,function(err,result){
+									});
+								});
+							});
+						});
+					});
+				});
 			});
 		});
 	}

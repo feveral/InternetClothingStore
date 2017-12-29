@@ -3,8 +3,9 @@ function GetShoppingItem(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
+		console.log(object);
 		PrintShoppingCarItem(object['data']);
-		CalculateTotal(object['data']);
+		//CalculateTotal(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
 }
@@ -54,7 +55,14 @@ function CalculateTotal(data){
 }
 
 function PrintShoppingCarItem(data){
-	for (var index in data){
+	for (var index in data)
+	{
+		var style = "";
+		if(data[index]['PercentOff'] != null)
+		{
+			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ; 
+			style = 'class=redColor';
+		}
 		$("#shoppingItem").append(
 			"<div>" +
 			"<div><img src=" + data[index]['ImagePath'] + "></div>"+
@@ -64,11 +72,13 @@ function PrintShoppingCarItem(data){
 			"<span>" + data[index]['Color'] + "</span>" +
 			"<span>" + data[index]['Size'] + "</span>" +
 			'<span><select id="selectValue">'+ AddOption(data[index]) +"</select></span>" +
-			"<span>" + data[index]['Price'] + "</span>" +
-			"<span>" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
 			"<span><img src='./image/delete.png'></span>" +
 			"</div></div>");
 	}
+	$("#totalItemNumber").text("小計金額 (共" + data[0]['totalClothNumber'] +  "件)");
+	$("#totalPrice").text("$" + data[0]['totalPrice'] );
 	DeleteShoppingItem();
 	QuantityChanged();
 }

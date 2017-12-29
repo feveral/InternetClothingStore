@@ -82,16 +82,22 @@ function AppendCreditCardNumber(){
 			"<input type='text' name='creditCardNumber'>";
 }
 
-function PrintShopppingCarItemInLastCheck(data){
+function RenderShopppingCarItemInLastCheck(data){
 	for (var index in data){
+		var style = "";
+		if(data[index]['PercentOff'] != null)
+		{
+			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ; 
+			style = 'class=redColor';
+		}
 		$("#detail").append(
 			"<div>" + 
 			"<span>" + data[index]['Id'] + "</span>" +
 			"<span>" + data[index]['Name'] + "</span>" +
 			"<span>" + data[index]['Size'] + "</span>" +
 			"<span>" + data[index]['Quantity'] + "</span>" +
-			"<span>" + data[index]['Price'] + "</span>" +
-			"<span>" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
 			"</div>");
 	}
 }
@@ -120,6 +126,7 @@ function IsRemarksNull(Remarks){
 	return Remarks;
 }
 
+
 /*orderInformation.js*/
 function PrintDetail(result){
 	$("#orderNumber").text(result[0]['Id']);
@@ -132,6 +139,7 @@ function PrintDetail(result){
 }
 
 function PrintShoppingItem(result){
+	console.log(result);
 	var processedResult = []; 
 	for(var r in result){
 		var id = result[r]['Name'];
@@ -142,9 +150,17 @@ function PrintShoppingItem(result){
 		"<span>" + result[r]['Color'] + "</span>" +
 		"<span>" + result[r]['Size'] + "</span>" +
 		"<span>" + result[r]['Quantity'] + "</span>" +
-		"<span>" + " no " + "</span>" +
+		"<span>" + DoPercentOffString(result[r]['PercentOff']) + "</span>" +
 		"<span>" + result[r]['Price'] + "</span>" +
 		"<span>" + " .. " + "</span>" +
 		"</div>");
 	}
 }
+
+function DoPercentOffString(percentOff){
+	if(!percentOff)
+		return "no";
+	else 
+		return percentOff+"%";
+}
+

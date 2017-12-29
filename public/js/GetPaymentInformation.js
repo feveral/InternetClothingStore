@@ -12,15 +12,22 @@ function ShoppingCarToPayment(){
 }
 
 function PrintPaymentData(data){
+
 	for (var index in data){
+		var style = "";
+		if(data[index]['PercentOff'] != null)
+		{
+			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ; 
+			style = 'class=redColor';
+		}
 		$("#detail").append(
 			"<div>" + 
 			"<span>" + data[index]['Id'] + "</span>" +
 			"<span>" + data[index]['Name'] + "</span>" +
 			"<span>" + data[index]['Size'] + "</span>" +
 			"<span>" + data[index]['Quantity'] + "</span>" +
-			"<span>" + data[index]['Price'] + "</span>" +
-			"<span>" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Price'] + "</span>" +
+			"<span " + style + ">" + data[index]['Quantity']*data[index]['Price'] + "</span>" +
 			"</div>");
 	}
 }
