@@ -1,10 +1,9 @@
 #main{
 	position: absolute;
-	margin-top: 15px;
-	margin-left: 10%;
-	width:66%;
+	width:100%;
 	height:100%;
-	padding-top: 10%;
+	padding-top: 50px;
+	text-align: center;
 }
 	#main>div>img{
 		width:60%;
@@ -14,16 +13,14 @@
 	#main>div:first-child{
 		display: inline-block;
 		float:left;
-		width:60%;
+		width:100%;
 		height:600px;
 		text-align: center;
 	}
 
 #ProductInformation{
 	display: inline-block;
-	margin-left: 0%;
-	float: right;
-	width:40%;
+	width:100%;
 }
 	#ProductInformation>div{
 		height:70px;
@@ -49,16 +46,19 @@
 		border-radius: 5px;
 	}
 
-	#ProductInformation>div:last-child{
-		border:1px solid red;
-		width:30%;
-		height:42px;
-		background-color: red;
-		color:white;
-		margin-left: 35%;
-		font-size: 18px;
-		border-radius: 7px;
-	}
 
+
+#SelectPicture input:last-child{
+	display: block;
+	border:1px solid red;
+	width:30%;
+	height:42px;
+	background-color: red;
+	color:white;
+	margin-left: 35%;
+	font-size: 18px;
+	border-radius: 7px;
+	margin-top: 10px;
+}
 
 	
