@@ -12,7 +12,6 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
-	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/TimeUtility.js"></script>
 	<script type="text/javascript" src="js/Redirect.js"></script>
@@ -79,9 +78,9 @@
 				<span>商品名稱:</span>
 				<input type="text" name="Name">
 			</div>
-			<div id="Quantity">
+			<div id="Stock">
 				<span>商品數量:</span>
-				<input type="text" name="Quantity">
+				<input type="text" name="Stock">
 			</div>
 			<div id="Size">
 				<span>商品尺寸:</span>
@@ -99,11 +98,11 @@
 			<div id="Category">
 				<span>商品類別:</span>
 				<select>
-				<option value="Basic">Basic</option>
-				<option value="Top">Top</option>
-				<option value="Coat">Coat</option>
-				<option value="Bottom">Bottom</option>
-				<option value="Accessories">Accessories</option>
+					<option value="Basic">Basic</option>
+					<option value="Top">Top</option>
+					<option value="Coat">Coat</option>
+					<option value="Bottom">Bottom</option>
+					<option value="Accessories">Accessories</option>
 				</select>
 			</div>
 			<div id="SubCategory">
@@ -111,14 +110,17 @@
 				<input type="text" name="SubCategory">
 			</div>
 			<div id="SelectPicture">
-				<form action="" >
-					<input id="picture" type="file" accept="image/*">
+				<form action="/product/upload" method="post" enctype="multipart/form-data">
+					<input id="picture" type="file" name="filetoupload">
 					<input type="submit">
 				</form>
 			</div>
 			<div>
 				<div id="submitButton">上傳商品</div>
 			</div>
+
+			<div onclick="test()">123</div>
+
 		</div>
 	</div>
 </body>
