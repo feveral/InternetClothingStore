@@ -17,16 +17,16 @@ function RenderShoppingCarHover(msg){
 function RenderManagerProduct(msg){
 	var data = JSON.parse(msg)['data'];
 	$('#main').empty();
-	for (var i = 0 ; i < data.length ; i++) 
+	for (var i = 0 ; i < data.length ; i++)
 	{
-		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();	
+		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();
 		if(item.length === 0 )
 		{
 			$('#main').append(ManagerProductHtml(data[i]));
 		}
 		else
 		{
-			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');		
+			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');
 		}
 	}
 }
@@ -34,19 +34,36 @@ function RenderManagerProduct(msg){
 function RenderCustomerProduct(msg){
 	var data = JSON.parse(msg)['data'];
 	$('#main').empty();
-	for (var i = 0 ; i < data.length ; i++) 
+	for (var i = 0 ; i < data.length ; i++)
 	{
-		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();	
+		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();
 		if(item.length === 0 )
 		{
 			$('#main').append(CustomerProductHtml(data[i]));
 		}
 		else
 		{
-			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');		
+			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');
 		}
 	}
 }
+
+/*function RenderFavoriteProduct(msg){
+	var data = JSON.parse(msg)['data'];
+	$('#favoriteItem').empty();
+	for (var i = 0 ; i < data.length ; i++)
+	{
+		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();
+		if(item.length === 0 )
+		{
+			$('#favoriteItem').append(CustomerProductHtml(data[i]));
+		}
+		else
+		{
+			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');
+		}
+	}
+}*/
 
 function RenderFunctionColor(msg){
 	var data = JSON.parse(msg)['data'];
@@ -102,7 +119,7 @@ function PostNewProduct(data,callback){
 	console.log("cc");
 	console.log(data);
 	AjaxPost(apiUrl,data,callback);
-}	
+}
 
 
 /*orderInformation*/
@@ -118,11 +135,11 @@ function PrintDetail(result){
 }
 
 function PrintShoppingItem(result){
-	var processedResult = []; 
+	var processedResult = [];
 	for(var r in result){
 		var id = result[r]['Name'];
 		$("#shoppingData").append(
-		"<div> " + 
+		"<div> " +
 		"<span>" + result[r]['ProductId'] + "</span>" +
 		"<span>" + result[r]['Name'] + "</span>" +
 		"<span>" + result[r]['Color'] + "</span>" +
