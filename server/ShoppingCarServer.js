@@ -13,7 +13,7 @@ module.exports = class{
 	constructor(router){
 		this.router = router;
 		this.shoppingCarManager = new ShoppingCarManager();
-		this.productManager = new ProductManager(); 
+		this.productManager = new ProductManager();
 		this.memberManager = new MemberManager();
 		this.checkoutManager = new CheckoutManager();
 		this.SetAPI();
@@ -22,7 +22,7 @@ module.exports = class{
 	SetAPI(){
 		var self = this;
 		self.router.post('/',function(req,res){
-			var appearence = 
+			var appearence =
 			{
 				Name: req.body.Name,
 				Color: req.body.Color,

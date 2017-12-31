@@ -13,8 +13,8 @@ module.exports = class FavoriteManager{
 			"INSERT INTO FAVORITE " +
 			"(ProductId,MemberId)" +
 			"VALUES ( " +
-			attribute['ProductId'] +  " , " +
-			attribute['MemberId'] +  " ); " ,
+			"'" + attribute['ProductId'] +  "' , " +
+			"'" + attribute['MemberId'] +  "' ); " ,
 			function(err,result){
 				callback(err,result);
 			}
