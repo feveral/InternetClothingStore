@@ -47,6 +47,8 @@ module.exports = class {
 			}
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
 				self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
+          			if(result.length>0)
+						result = self.checkoutManager.CalculateTotal(result);
 					res.end(JSON.stringify({success:true,data:result}));
 				});
 			});

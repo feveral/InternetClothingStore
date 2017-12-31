@@ -78,7 +78,7 @@ function PrintShoppingCarItem(data){
 			"</div></div>");
 	}
 	$("#totalItemNumber").text("小計金額 (共" + data[0]['totalClothNumber'] +  "件)");
-	$("#totalPrice").text("$" + data[0]['totalPrice'] );
+	$("#totalPrice").text("$" + Math.round(data[0]['totalPrice']) );
 	DeleteShoppingItem();
 	QuantityChanged();
 }

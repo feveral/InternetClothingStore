@@ -39,7 +39,9 @@ function PrintFavoriteItem(data){
 	for (var index in data){
 		$("#favoriteItem").append(
 			"<div>" +
+			'<a  href="demonstration.html#' + data[index]['Name'] + '?' + data[index]['Color'] + '">' +
 			"<div><img src=" + data[index]['ImagePath'] + "></div>"+
+			'</a>' +
 			"<div> " +
 			"<span>" + data[index]['Id'] + "</span>" +
 			"<span>" + data[index]['Name'] + "</span>" +
@@ -64,7 +66,7 @@ function AddOption(dataIndex){
 }
 
 function DeleteFavoriteItem(){
-	$('#favoriteItem>div>div>span:nth-child(6)').click(function(){
+	$('#favoriteItem>div>div:nth-child(2)>span:nth-child(6)').click(function(){
 		var ProductId = $(this).prev().prev().prev().prev().prev().prev().prev().text();
 		PostDeleteFavoriteItem(ProductId);
 	});

@@ -16,9 +16,11 @@
 	<script type="text/javascript" src="js/Template.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/Redirect.js"></script>
-	<script type="text/javascript" src="js/ClickHandler.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/managerOrder.js"></script>
 	<script type="text/javascript" src="js/GetOrderInformation.js"></script>
+	<script type="text/javascript" src="js/managerHeader.js"></script>
+	<script type="text/javascript" src="js/ClickHandler.js"></script>
 	</script>
 </head>
 
@@ -34,7 +36,6 @@
 		<div id="logo"><img src="./image/logo.png"></div>
 		<div id="mainMenu">
 			<span>STILLAS</span>
-			<span onclick="ClickManagerOnSale()">SALE</span>
 		</div>
 		<div id="member">
 			<div>
@@ -42,15 +43,12 @@
 			</div>
 			<a href="managerOrder.html">訂單管理</a>
 		</div>
-		<div id="search">
-			<input type="text" name="search" placeholder="Search" onchange="ChangeManagerSearchText()">
-		</div>
 	</div>
 
 	<div id="memberMenu">
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="memberCenter.html">會員中心</a>
-		<a href='order.html'>訂單管理</a>
+		<a href='managerUpload.html'>商品上架</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 

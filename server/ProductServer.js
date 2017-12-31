@@ -2,7 +2,10 @@
 
 const ProductManager = require('./ProductManager.js');
 const MemberManager = require('./MemberManager.js');
+const Utility = require('./Utility.js');
 const querystring = require('querystring');
+var formidable = require('formidable');
+var fs = require('fs');
 const path = require('path');
 const url = require('url');
 
@@ -34,30 +37,30 @@ module.exports = class{
 		});
 
 		self.router.post('/InsertNewProduct',function(req,res){
-			self.productManager.AddProduct(
-				{
-					ManagerId:104820004,
-					Name:req.body.Name,
-					Stock:req.body.Quantity,
-					Size:req.body.Size,
-					Color:req.body.Color,
-					Price:req.body.Price,
-					Category:req.body.Category,
-					SubCategory:req.body.SubCategory,
-					ImagePath:req.body.ImagePath,
-					Date:req.body.Date,
-				}
-				,function(err,result){
-				if (err)
-				{
-					console.log(err);
-					res.end(JSON.stringify({success:false , reason:err}));
-				} 
-				else
-				{
-					console.log(result);
-					res.end(JSON.stringify({success:true , data:result}));
-				}
+			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+				self.productManager.AddProduct(
+					{
+						ManagerId:member.Id,
+						Name:req.body.Name,
+						Stock:req.body.Quantity,
+						Size:req.body.Size,
+						Color:req.body.Color,
+						Price:req.body.Price,
+						Category:req.body.Category,
+						SubCategory:req.body.SubCategory,
+						ImagePath:req.body.ImagePath,
+						Date:req.body.Date,
+					}
+					,function(err,result){
+					if (err)
+					{
+						res.end(JSON.stringify({success:false , reason:err}));
+					} 
+					else
+					{
+						res.end(JSON.stringify({success:true , data:result}));
+					}
+				});
 			});
 		});
 
@@ -728,5 +731,32 @@ module.exports = class{
 				}
 			});
 		});
+
+		self.router.post('/upload/',function(req,res){
+			var parsedUrl = url.parse(decodeURI(req.url));  
+			var attribute = querystring.parse(parsedUrl.query);
+			var form = new formidable.IncomingForm();
+			console.log(attribute);
+
+			form.uploadDir = process.cwd();
+    		form.parse(req, function (err, fields, files) {
+    			var oldpath = files.filetoupload.path;
+			    var newpath = process.cwd() + '/public/image/' + attribute.Name + '_' + attribute.Color + '.jpg';
+        		fs.rename(oldpath, newpath, function (err) {});
+ 			});
+    		self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+				attribute['ImagePath'] = './image/' + attribute['Name'] + '_' + attribute['Color'] + '.jpg';
+	    		attribute['Date'] = Utility.GetDateTime();
+	    		attribute['ManagerId'] = member.Id;
+				self.productManager.AddProduct(
+					attribute,
+					function(err,result){
+						console.log(err);
+						console.log(result);
+						res.redirect('/managerUpload.html');
+					}
+				);
+			});
+  		});
 	}
 }

@@ -74,7 +74,12 @@ function ManagerSubCategoryHtml(subCategory){
 /* lastCheck.html*/
 
 function AppendStoreLocation(){
-	return "<select><option value='中山分店'>中山分店</option><option value='濟南分店'>濟南分店</option></select>";
+	return "<select><option value='中山分店'>台北市-中山分店</option>" + 
+		   "<option value='台北市-濟南分店'>台北市-濟南分店</option>" + 
+		   "<option value='台北市-德芝門市'>台北市-德芝門市</option>" + 
+		   "<option value='台北市-士東門市'>台北市-士東門市</option>" + 
+		   "<option value='台北市-文林門市'>台北市-文林門市</option>" + 
+		   "<option value='台北市-新士林門市'>台北市-新士林門市</option></select>" ;
 }
 
 function AppendCreditCardNumber(){

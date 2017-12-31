@@ -2,16 +2,20 @@ $(document).ready(function(){
 	IfNotManagerGotoIndex();
 	ChangePicture();
 	RenderAllColor();
-	console.log("cc");
 	PostNewProductDetail();
 });
 
 function ChangePicture(){
-	$("form").submit(function(){
-		var picturePath = $('#picture').val();
-		picturePath = picturePath.replace("C:\\fakepath\\", "");
-		$("#main>div>img").attr("src", "./image/" + picturePath);
-		return false;
+	$("#SelectPicture form").submit(function(){
+		$("#SelectPicture form").attr('action','/product/upload/?' + 
+			"Name=" + $('#Name input').val() + 
+			"&Stock=" + $('#Stock input').val() + 
+			"&Size=" + $('#Size input').val() + 
+			"&Color=" + $('#Color select').val() +
+			"&Price=" + $('#Price input').val() +  
+			"&Category=" + $('#Category select').val() +
+			"&SubCategory=" + $('#SubCategory input').val());
+		return true;
 	});
 }
 

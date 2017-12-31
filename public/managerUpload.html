@@ -3,7 +3,6 @@
 <head>
 	<title>Shtick</title>
 	<meta charset="utf-8"/>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<link rel="stylesheet" type="text/css" href="css/initial.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/managerUpload.css">
@@ -12,13 +11,16 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
-	<script type="text/javascript" src="js/APIUrl.js"></script>
 	<script type="text/javascript" src="js/Ajax.js"></script>
 	<script type="text/javascript" src="js/TimeUtility.js"></script>
 	<script type="text/javascript" src="js/Redirect.js"></script>
+	<script type="text/javascript" src="js/Selector.js"></script>
 	<script type="text/javascript" src="js/GetDataFromServer.js"></script>
 	<script type="text/javascript" src="js/managerUpload.js"></script>
 	<script type="text/javascript" src="js/Render.js"></script>
+	<script type="text/javascript" src="js/Template.js"></script>
+	<script type="text/javascript" src="js/ClickHandler.js"></script>
+	<script type="text/javascript" src="js/managerHeader.js"></script>
 	</script>
 </head>
 
@@ -41,15 +43,12 @@
 			</div>
 			<a href="managerOrder.html">訂單管理</a>
 		</div>
-		<div id="search">
-			<input type="text" name="search" placeholder="Search" onchange="ChangeManagerSearchText()">
-		</div>
 	</div>
 
 	<div id="memberMenu">
 		<a href="#" onclick="ClickOtherAccountButton()">其他帳號登入</a>
 		<a href="memberCenter.html">會員中心</a>
-		<a href='order.html'>訂單管理</a>
+		<a href='managerUpload.html'>商品上架</a>
 		<a href="#" onclick="Logout()">登出</a>
 	</div>
 
@@ -71,17 +70,15 @@
 	</div>
 
 	<div id="main">
-		<div>
-			<img src="./image/愛心霓虹燈_紅色.jpg">
-		</div>
+
 		<div id="ProductInformation">
 			<div id="Name">
 				<span>商品名稱:</span>
 				<input type="text" name="Name">
 			</div>
-			<div id="Quantity">
+			<div id="Stock">
 				<span>商品數量:</span>
-				<input type="text" name="Quantity">
+				<input type="text" name="Stock">
 			</div>
 			<div id="Size">
 				<span>商品尺寸:</span>
@@ -99,11 +96,11 @@
 			<div id="Category">
 				<span>商品類別:</span>
 				<select>
-				<option value="Basic">Basic</option>
-				<option value="Top">Top</option>
-				<option value="Coat">Coat</option>
-				<option value="Bottom">Bottom</option>
-				<option value="Accessories">Accessories</option>
+					<option value="Basic">Basic</option>
+					<option value="Top">Top</option>
+					<option value="Coat">Coat</option>
+					<option value="Bottom">Bottom</option>
+					<option value="Accessories">Accessories</option>
 				</select>
 			</div>
 			<div id="SubCategory">
@@ -111,14 +108,12 @@
 				<input type="text" name="SubCategory">
 			</div>
 			<div id="SelectPicture">
-				<form action="" >
-					<input id="picture" type="file" accept="image/*">
-					<input type="submit">
+				<form action="/product/upload" method="post" enctype="multipart/form-data">
+					<input id="picture" type="file" name="filetoupload">
+					<input type="submit" value="上傳商品">
 				</form>
 			</div>
-			<div>
-				<div id="submitButton">上傳商品</div>
-			</div>
+
 		</div>
 	</div>
 </body>

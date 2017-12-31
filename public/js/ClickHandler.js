@@ -2,7 +2,7 @@
 
 
 
-/* Login.html */ 
+/* Login.html */
 
 function ClickChangeToLogin(){
 	$('#login').show();
@@ -69,7 +69,7 @@ function ChangeCustomerSearchText(){
 function DeleteOrder(){
 	$("#OrderList>div>span>img").click(function(){
 	var orderId = $(this).parent().prev().prev().prev().prev().prev().prev().text();
-	var data = 
+	var data =
 	{
 		OrderId : orderId,
 	};
@@ -122,7 +122,7 @@ function ClickFunctionCancle(){
 }
 
 function ClickFunctionSave(){
-	var data = 
+	var data =
 	{
 		Name: $('#function h2').text(),
 		Color: $('#functionDetail > h3:first-child').text(),
@@ -137,7 +137,7 @@ function ClickFunctionSave(){
 }
 
 function ClickFunctionDelete(){
-	var data = 
+	var data =
 	{
 		Name: $('#function h2').text(),
 		Color: $('#functionDetail > h3:first-child').text(),
@@ -183,7 +183,7 @@ function ClickAddShoppingCar(boolToShoppingCar){
 	{
 		alert('請先登入，才能將商品加入購物車');
 		boolToShoppingCar = false;
-		return;	
+		return;
 	}
 	else if( $('#appearenceChoose > div:nth-child(2)').text() === '尚未選擇尺寸' )
 	{
@@ -193,7 +193,7 @@ function ClickAddShoppingCar(boolToShoppingCar){
 	}
 
 	var apiUrl = GetServerUrl() + '/shoppingCar' ;
-	var data = 
+	var data =
 	{
 		Name: $('#productName').text(),
 		Color: $('#appearenceChoose > div:nth-child(1)').text(),
@@ -204,7 +204,7 @@ function ClickAddShoppingCar(boolToShoppingCar){
 	var callback = function(msg){
 		alert('已經將商品加入購物車');
 		InitialShoppingCarHover();
-	} 	
+	}
 	AjaxPost(apiUrl,data,callback);
 	if(boolToShoppingCar)
 		location.href = GetServerUrl() + "/shoppingCar.html";
@@ -237,7 +237,6 @@ function ClickAddFavorite(){
 
 	var callback = function(msg){
 		alert('已經將商品加入收藏');
-		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
 }
