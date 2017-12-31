@@ -2,6 +2,7 @@
 
 const DatabaseUtility = require('../database/DatabaseUtility.js')
 const Utility = require('./Utility.js');
+var async = require('async');
 
 module.exports = class ProductManager{
 
@@ -249,15 +250,78 @@ module.exports = class ProductManager{
 	}
 
 
-	// LossProductQuantity(data,callback){
-	// 	this.db.query(
-	// 		"update PRODUCT SET Quantity = Quantity - " + data[0]['Quantity'] + "WHERE Id = " + data[0]['Id'] + ";",    
-	// 		function(err,result){
-	// 			callback(err,result);
-	// 		}
-	// 	);
-	// }
+	LossProductQuantity(data,callback){
+		this.db.query(
+			"update PRODUCT SET Stock = Stock - " + data['Quantity'] + " WHERE Id = " + data['Id'] + ";",    
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
 
+	LossProductQuantityIterative(data,callback){
+		console.log(data);
+		for (var dataIndex in data)
+		{
+			this.LossProductQuantity(data[dataIndex],callback);
+		}
+	}
+
+	DetermineIfQuantityIsEnough(data,callback){
+		var self = this;
+		var resultData = {};
+		var todo = [];
+		var count = 0;
+
+		async.whilst(
+			function(){
+				return count < data.length;
+			},
+			function(callback){
+				self.CheckQuantityById(data[count]['Id'],data[count]['Quantity'],callback);
+				count++;
+			},
+			function (err,result){
+				console.log("err" + err);
+				console.log(err);
+				callback(err,true);
+			}
+
+
+
+		);
+	}
+
+
+	CheckQuantityById(productId,quantity,callback){
+		console.log(productId);
+		this.db.query(
+			"SELECT Name,Stock,Size,Color  From PRODUCT WHERE Id = " + 
+			productId +
+			";",    
+			function(err,result){
+				console.log(result);
+				console.log(result[0]['Stock']);
+				if(result[0]['Stock'] < quantity)
+				{	
+					console.log("error");
+					err = result;			
+				}
+				callback(err,result);
+			}
+		);
+	}
+
+	GetQuantityById(productId,callback){
+		this.db.query(
+			"SELECT Stock From PRODUCT WHERE Id = " + 
+			productId +
+			";",    
+			function(err,result){
+				callback(err,result);
+			}
+		);
+	}
 
 
 }

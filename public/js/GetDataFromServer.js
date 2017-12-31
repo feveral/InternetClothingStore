@@ -69,3 +69,9 @@ function DeleteOrderFromManager(data,callback){
 	var apiUrl = GetServerUrl() + "/order/DeleteOrder";
 	AjaxPost(apiUrl,data,callback);
 }
+
+/*shoppingCar.js*/
+function CheckProductQuantityIfEnough(callback){
+	var apiUrl = GetServerUrl() + "/shoppingCar/CheckQuantity";
+	AjaxGet(apiUrl,callback);
+}

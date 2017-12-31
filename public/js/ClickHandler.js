@@ -35,7 +35,7 @@ function ClickMemberButton(){
 	var apiUrl = GetServerUrl() + "/login/getUserName";
 	var callback = function(msg){
 		if((JSON.parse(msg)).success)
-			location.href = GetServerUrl() + "/memberCenter";
+			location.href = GetServerUrl() + "/memberCenter.html";
 		else
 			location.href = GetServerUrl() + "/login.html";
 	}
@@ -240,4 +240,23 @@ function ClickAddFavorite(){
 		//InitialShoppingCarHover();
 	}
 	AjaxPost(apiUrl,data,callback);
+}
+
+/*shoppingCar*/
+function ClickNextStopInShoppingCar(){
+	$("#checkOrderButton>div:nth-child(3)>a:nth-child(2)").click(function(){
+		var callback = function(msg){
+			var object = JSON.parse(msg);
+			console.log(object);
+			if(!object['success'])
+			{
+				alert("sorry!" + object['data'][0]['Name'] + object['data'][0]['Color'] + object['data'][0]['Size'] +
+				 "只有" +   object['data'][0]['Stock'] + "件");
+			}
+			else
+				location.href = GetServerUrl() + "/payment.html";
+
+		} 	
+		CheckProductQuantityIfEnough(callback);
+	});
 }

@@ -58,6 +58,28 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/CheckQuantity',function(req,res){
+
+			if( req.user === undefined )
+			{
+				res.end(JSON.stringify({success:false}));
+				return;
+			}
+			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+				self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,result){
+					self.productManager.DetermineIfQuantityIsEnough(result,function(checkerr,checkresult){
+						console.log("ccccc");
+						console.log(checkresult);
+						console.log(checkerr);
+						if(checkerr)
+							res.end(JSON.stringify({success:false,data:checkerr}));
+						else
+							res.end(JSON.stringify({success:true,data:checkresult}));
+					});
+				});
+			});
+		});
+
 		self.router.post('/modify',function(req,res){
 			var data =
 			{

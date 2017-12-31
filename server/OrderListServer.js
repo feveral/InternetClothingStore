@@ -128,8 +128,11 @@ module.exports = class OrderListServer{
 						res.send(JSON.stringify(result));
 						self.OrderListManager.GetNewestOrderListByMemberId(member.Id,function(err,order){
 							self.shoppingCarManager.GetItemsByMemberId(member.Id,function(err,shoppingCar){
+								self.productManager.LossProductQuantityIterative(shoppingCar,function(err,result){
+									console.log(err);
+									console.log(result);
+								});
 								shoppingCar = (self.checkoutManager.CalculateProductOnsale(shoppingCar));
-
 								self.orderItemManager.AddOrderItemIterately(order[0].Id,shoppingCar,function(err,result){
 									self.shoppingCarManager.DeleteDataFromMemberId(member.Id,function(err,result){
 									});
