@@ -19,7 +19,7 @@ function RenderManagerProduct(msg){
 	$('#main').empty();
 	for (var i = 0 ; i < data.length ; i++)
 	{
-		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();
+		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent().parent();
 		if(item.length === 0 )
 		{
 			$('#main').append(ManagerProductHtml(data[i]));
@@ -36,13 +36,13 @@ function RenderCustomerProduct(msg){
 	$('#main').empty();
 	for (var i = 0 ; i < data.length ; i++)
 	{
-		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent();
+		var item = $("img[src='" + data[i]['ImagePath'] + "']").parent().parent();
 		if(item.length === 0 )
 		{
 			$('#main').append(CustomerProductHtml(data[i]));
 		}
 		else
-		{
+		{	
 			item.children('#productSize').append('<a>'+ data[i]['Size'] +'</a>');
 		}
 	}

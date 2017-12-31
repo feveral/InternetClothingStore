@@ -339,7 +339,7 @@ function GetColorChinese(url){
 		return "米黃";
 	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/160914/388132/388132-1-25.jpg")
 		return "反光黑";
-	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/160914/388132/388132-2-25.jpg")
+	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170912/388249/388249-9-25.jpg")
 		return "灰白條";
 	else if(url === "http://www.wendhouse.com/SHTICK/Shang_Pin/170912/388249/388249-8-25.jpg")
 		return "黑白條";
