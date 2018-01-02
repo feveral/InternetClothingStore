@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 $(window).bind('hashchange', function() { 
 	GetProductByCategory(window.location.hash.replace('#',''),RenderCustomerProduct);
+	$('select').val("default");
 }); 
 
 function IfManagerGotoManagerPage(){
