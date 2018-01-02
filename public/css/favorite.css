@@ -9,7 +9,7 @@
 		position: absolute;
 		display: block;
 		top: 130px;
-		margin-top: 5%;
+		margin-top: 1.5%;
 		width: 100%;
 		height: 100%;
 	}
@@ -31,14 +31,18 @@
 		}
 
 	#title{
+		margin-bottom:2%;
 		padding-left: 0%;
 		font-size: 0px;
+		background-color: rgb(194, 194, 194);
+		color: white;
 	}
 
 			#title>span{
 				display: inline-block;
 				width: 6.2%;
 				font-size: 14px;
+				border-right: 2px solid white;
 			}
 				#title>span:nth-child(1){
 					padding-left:0%;
@@ -49,6 +53,7 @@
 				#title>span:nth-child(2){
 					text-align: center;
 					width: 10%;
+					border-left: 2px solid white;
 				}
 
 				#title>span:nth-child(3){

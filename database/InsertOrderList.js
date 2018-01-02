@@ -6,7 +6,7 @@ var orderListManager = new OrderListManager();
 
 orderListManager.AddOrderList(
 	{
-		State:"arrived",
+		State:"處理中",
 		Shipment:"宅配",
 		Paytype:"creditcard",
 		TotalPrice:100,
@@ -22,7 +22,7 @@ orderListManager.AddOrderList(
 
 orderListManager.AddOrderList(
 	{
-		State:"arrived",
+		State:"處理中",
 		Shipment:"7-11取貨",
 		Paytype:"7-11取貨付款",
 		TotalPrice:200,
@@ -38,7 +38,7 @@ orderListManager.AddOrderList(
 
 orderListManager.AddOrderList(
 	{
-		State:"arrived",
+		State:"處理中",
 		Shipment:"7-11取貨",
 		Paytype:"creditcard",
 		TotalPrice:300,
@@ -54,7 +54,7 @@ orderListManager.AddOrderList(
 
 orderListManager.AddOrderList(
 	{
-		State:"arrived",
+		State:"處理中",
 		Shipment:"宅配",
 		Paytype:"creditcard",
 		TotalPrice:500,
@@ -70,7 +70,7 @@ orderListManager.AddOrderList(
 
 orderListManager.AddOrderList(
 	{
-		State:"arrived",
+		State:"處理中",
 		Shipment:"宅配",
 		Paytype:"creditcard",
 		TotalPrice:600,

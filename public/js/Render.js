@@ -107,9 +107,26 @@ function RenderAllColor(){
 	GetAllProductColor(callback);
 }
 
+function RenderAllSubCategory(){
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object);
+		$("#SubCategory>select").empty();
+		for(var category in object['data']){
+			$("#SubCategory>select").append("<option value=" + object['data'][category] + ">" +  object['data'][category] +  "</option>");
+		}
+	}
+	GetAllProductSubCategory(callback);
+}
 
 function GetAllProductColor(callback){
 	var apiUrl = GetServerUrl() + "/product/" + "AllColor";
+	AjaxGet(apiUrl,callback);
+}
+
+function GetAllProductSubCategory(callback){
+	var category = $("#Category>select").val();
+	var apiUrl = GetServerUrl() + "/product/" + "SubCategory/" + category;
 	AjaxGet(apiUrl,callback);
 }
 
@@ -121,11 +138,22 @@ function PostNewProduct(data,callback){
 
 /*orderInformation*/
 
-function PrintDetail(result){
+function PrintManagerDetail(result){
 	$("#orderNumber").text(result[0]['Id']);
 	$("#receiver").text(result[0]['Name']);
 	$("#data").text(result[0]['Time'].split("T")[0]);
 	$("#order>div>select").val(result[0]['State']);
+	$("#shipment").text(result[0]['Shipment']);
+	$("#price").text(result[0]['TotalPrice']);
+	$("#other").text(result[0]['Remarks']);
+}
+
+function PrintCustomerDetail(result){
+	console.log(result);
+	$("#orderNumber").text(result[0]['Id']);
+	$("#receiver").text(result[0]['Name']);
+	$("#data").text(result[0]['Time'].split("T")[0]);
+	$("#state").text(result[0]['State']);
 	$("#shipment").text(result[0]['Shipment']);
 	$("#price").text(result[0]['TotalPrice']);
 	$("#other").text(result[0]['Remarks']);
