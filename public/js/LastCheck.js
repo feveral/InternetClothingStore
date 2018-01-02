@@ -113,7 +113,8 @@ function PrintMemberInformationInLastCheck(memberdata){
 
 function ClickCheckout(){
 	$("#functionButton>a:nth-child(2)").click(function(){
-		PostOrderToServer();
+		if(LastCheckProductQuantity())
+			PostOrderToServer();
 	});
 }
 
@@ -131,4 +132,20 @@ function GetDateTime() {
     var day  = date.getDate();
     day = (day < 10 ? "0" : "") + day;
     return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
+}
+
+function LastCheckProductQuantity(){
+	var IsAllProductEnough = true;
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object);
+		if(!object['success'])
+		{
+			IsAllProductEnough = false;
+			alert("sorry!" + object['data'][0]['Name'] + object['data'][0]['Color'] + object['data'][0]['Size'] +
+			 "只有" +   object['data'][0]['Stock'] + "件");
+		}
+	} 	
+	CheckProductQuantityIfEnough(callback);
+	return IsAllProductEnough;
 }
