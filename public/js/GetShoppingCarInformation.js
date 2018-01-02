@@ -60,7 +60,7 @@ function PrintShoppingCarItem(data){
 		var style = "";
 		if(data[index]['PercentOff'] != null)
 		{
-			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ; 
+			data[index]['Price'] = Math.round(data[index]['Price'] * (100-data[index]['PercentOff'])/100) ;
 			style = 'class=redColor';
 		}
 		$("#shoppingItem").append(

@@ -30,7 +30,6 @@ module.exports = class {
 					var attribute = appearence;
 					attribute['ProductId'] = product.Id;
 					attribute['MemberId'] = member.Id;
-					attribute['Quantity'] = req.body.Quantity;
 					self.favoriteManger.AddFavorite(attribute,function(err,result){
 						res.end(JSON.stringify({success:true}));
 					});
@@ -47,8 +46,6 @@ module.exports = class {
 			}
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
 				self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
-          			if(result.length>0)
-						result = self.checkoutManager.CalculateTotal(result);
 					res.end(JSON.stringify({success:true,data:result}));
 				});
 			});
@@ -58,29 +55,26 @@ module.exports = class {
 			var data =
 			{
 				ProductId:req.body.ProductId,
-				Quantity:req.body.Quantity,
 			}
 			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
-				self.favoriteManger.UpdateData(member.Id,data,function(err,result){
-					self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
-						res.end(JSON.stringify({success:true,data:result}));
-					});
+				self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
+					res.end(JSON.stringify({success:true,data:result}));
 				});
 			});
 		});
 
-		self.router.post('/delete',function(req,res){
-			var data =
-			{
-				ProductId:req.body.ProductId,
-			}
-			self.memberManager.GetMemberFromEmail(req.user,function(err,member){
-				self.favoriteManger.DeleteData(member.Id,data,function(err,result){
-					self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
-						res.end(JSON.stringify({success:true,data:result}));
-					});
-				});
-			});
-		});
+    self.router.post('/delete',function(req,res){
+      var data =
+      {
+        ProductId:req.body.ProductId,
+      }
+      self.memberManager.GetMemberFromEmail(req.user,function(err,member){
+        self.favoriteManger.DeleteData(member.Id,data,function(err,result){
+          self.favoriteManger.GetItemsByMemberId(member.Id,function(err,result){
+            res.end(JSON.stringify({success:true,data:result}));
+          });
+        });
+      });
+    });
 	}
 }

@@ -3,6 +3,7 @@ function GetFavoriteItem(){
 	var apiUrl = GetServerUrl() + "/favorite";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
+		console.log(object);
 		PrintFavoriteItem(object['data']);
 	}
 	AjaxGet(apiUrl,callback);
@@ -13,7 +14,6 @@ function PostFavoriteItem(ProductId,Quantity){
 	var data =
 	{
 		ProductId:ProductId,
-		Quantity:Quantity
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
@@ -54,20 +54,9 @@ function PrintFavoriteItem(data){
 	DeleteFavoriteItem();
 }
 
-function AddOption(dataIndex){
-	var htmlSelector='';
-	for (var i = 1; i < 10; i++){
-		htmlSelector += "<option value='" + i ;
-		if(i == dataIndex['Quantity'])
-			htmlSelector += "'selected=\"selected\"";
-		htmlSelector += "'>" + i + "</option>";
-	}
-	return htmlSelector;
-}
-
 function DeleteFavoriteItem(){
-	$('#favoriteItem>div>div:nth-child(2)>span:nth-child(6)').click(function(){
-		var ProductId = $(this).prev().prev().prev().prev().prev().prev().prev().text();
+	$('#favoriteItem>div>div>span:nth-child(6)').click(function(){
+		var ProductId = $(this).prev().prev().prev().prev().prev().text();
 		PostDeleteFavoriteItem(ProductId);
 	});
 }
