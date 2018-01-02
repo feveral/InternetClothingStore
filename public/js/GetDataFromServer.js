@@ -4,6 +4,14 @@ function GetProductByCategory(categoryOrSubCategory,callback){
 	AjaxGet(apiUrl,callback);
 }
 
+function GetProductBySelectType(selectType,Subcategory,callback){
+	console.log(Subcategory);
+	var apiUrl = GetServerUrl() + "/product/selectType/?selectType=" + selectType + "&Subcategory="  + Subcategory;
+	if(Subcategory =="" || Subcategory =="newproduct")
+		var apiUrl = GetServerUrl() + "/product/selectTypeNew/?selectType=" + selectType;
+	AjaxGet(apiUrl,callback);
+}
+
 function GetSearchProductByName(name,callback){
 	var apiUrl = GetServerUrl() + "/product/search/" + name;
 	AjaxGet(apiUrl,callback);	

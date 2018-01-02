@@ -92,6 +92,36 @@ module.exports = class{
 			});
 		});
 
+		self.router.get('/selectType/',function(req,res){
+			var parsedUrl = url.parse(decodeURI(req.url));  
+			var parsedQs = querystring.parse(parsedUrl.query);
+			self.productManager.GetProductByPrice(parsedQs['selectType'],parsedQs['Subcategory'],function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
+		self.router.get('/selectTypeNew/',function(req,res){
+			var parsedUrl = url.parse(decodeURI(req.url));  
+			var parsedQs = querystring.parse(parsedUrl.query);
+			self.productManager.GetProductNewByPrice(parsedQs['selectType'],function(err,result){
+				if (err)
+				{
+					console.log(err);
+				} 
+				else
+				{
+					res.end(JSON.stringify({success:true , data:result}));
+				}
+			});
+		});
+
 		self.router.get('/price/',function(req,res){
 			var parsedUrl = url.parse(decodeURI(req.url));  
 			var parsedQs = querystring.parse(parsedUrl.query);

@@ -2,7 +2,9 @@ $(document).ready(function(){
 	IfNotManagerGotoIndex();
 	ChangePicture();
 	RenderAllColor();
+	RenderAllSubCategory();
 	PostNewProductDetail();
+	WhenCategoryChanged();
 });
 
 function ChangePicture(){
@@ -14,7 +16,7 @@ function ChangePicture(){
 			"&Color=" + $('#Color select').val() +
 			"&Price=" + $('#Price input').val() +  
 			"&Category=" + $('#Category select').val() +
-			"&SubCategory=" + $('#SubCategory input').val());
+			"&SubCategory=" + $('#SubCategory select').val());
 		return true;
 	});
 }
@@ -41,6 +43,12 @@ function PostNewProductDetail(){
 		if(IsAllNotNull(data))
 			PostNewProduct(data,callback);
 	});
+}
+
+function WhenCategoryChanged(){
+	$("#Category>select").on('change',function(){
+		RenderAllSubCategory();
+	})
 }
 
 function IsValueNull(value){

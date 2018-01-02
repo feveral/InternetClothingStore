@@ -107,6 +107,116 @@ module.exports = class ProductManager{
 		);
 	}
 
+	GetProductByPrice(selectType,Subcategory,callback){
+		if(selectType == "LowToHigh"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.SubCategory=" + "'" + Subcategory + "'" + 
+				"ORDER BY Price ASC"+";" , 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "HighToLow"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.SubCategory=" + "'" + Subcategory + "'" + 
+				"ORDER BY Price DESC"+";", 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "default"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.SubCategory=" + "'" + Subcategory + "'" + ";",
+				function(err,result){
+					callback(err,result);
+				}
+			);
+
+		}
+	}
+
+	GetProductNewByPrice(selectType,callback){
+		if(selectType == "LowToHigh"){
+			this.db.query(
+				"(SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				'ORDER BY DATE DESC ' + 
+				"Limit 30 )" +
+				"ORDER BY Price ASC"+";" , 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "HighToLow"){
+			this.db.query(
+				"(SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				'ORDER BY DATE DESC ' + 
+				"Limit 30 )" +
+				"ORDER BY Price DESC"+";" , 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "default"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " +
+				"FROM PRODUCT left join ONSALE ON ProductId=Id " + 
+				'ORDER BY DATE DESC ' + 
+				"Limit 30;",
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+	}
+
+	GetProductCategoryByPrice(selectType,category,callback){
+		if(selectType == "LowToHigh"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.Category=" + "'" + category + "'" + 
+				"ORDER BY Price ASC"+";" , 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "HighToLow"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.Category=" + "'" + category + "'" + 
+				"ORDER BY Price DESC"+";", 
+				function(err,result){
+					callback(err,result);
+				}
+			);
+		}
+		else if(selectType == "default"){
+			this.db.query(
+				"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff,ONSALE.Name AS OnsaleName  " + 
+				"FROM PRODUCT LEFT JOIN ONSALE ON Id=ProductId " + 
+				"WHERE PRODUCT.Category=" + "'" + category + "'" + ";",
+				function(err,result){
+					callback(err,result);
+				}
+			);
+
+		}
+	}
+
 	GetProductById(id,callback){
 		this.db.query(
 			"SELECT * " + 
@@ -230,8 +340,9 @@ module.exports = class ProductManager{
 	GetNewProduct(callback){
 		this.db.query(
 			"SELECT PRODUCT.Name,Price,Color,Size,Stock,PRODUCT.Date,ImagePath,PercentOff " +
-			"FROM PRODUCT left join ONSALE ON ProductId=Id" + 
-			' WHERE PRODUCT.Date>="2017-12-01" AND PRODUCT.Date <="2017-12-30";',
+			"FROM PRODUCT left join ONSALE ON ProductId=Id " + 
+			'ORDER BY DATE DESC ' + 
+			"Limit 30;",
 			function(err,result){
 				callback(err,result);
 			}

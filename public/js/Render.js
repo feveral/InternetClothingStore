@@ -107,10 +107,26 @@ function RenderAllColor(){
 	GetAllProductColor(callback);
 }
 
+function RenderAllSubCategory(){
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		console.log(object);
+		$("#SubCategory>select").empty();
+		for(var category in object['data']){
+			$("#SubCategory>select").append("<option value=" + object['data'][category] + ">" +  object['data'][category] +  "</option>");
+		}
+	}
+	GetAllProductSubCategory(callback);
+}
 
 function GetAllProductColor(callback){
 	var apiUrl = GetServerUrl() + "/product/" + "AllColor";
-	console.log("ff");
+	AjaxGet(apiUrl,callback);
+}
+
+function GetAllProductSubCategory(callback){
+	var category = $("#Category>select").val();
+	var apiUrl = GetServerUrl() + "/product/" + "SubCategory/" + category;
 	AjaxGet(apiUrl,callback);
 }
 
