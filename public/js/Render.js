@@ -132,8 +132,6 @@ function GetAllProductSubCategory(callback){
 
 function PostNewProduct(data,callback){
 	var apiUrl = GetServerUrl() + "/product/" + "InsertNewProduct";
-	console.log("cc");
-	console.log(data);
 	AjaxPost(apiUrl,data,callback);
 }
 
@@ -162,7 +160,7 @@ function PrintShoppingItem(result){
 		"<span>" + result[r]['Size'] + "</span>" +
 		"<span>" + result[r]['Quantity'] + "</span>" +
 		"<span>" + " no " + "</span>" +
-		"<span>" + result[r]['Price'] + "</span>" +
+		"<span>" + Math.round(result[r]['Price']) + "</span>" +
 		"<span>" + " .. " + "</span>" +
 		"</div>");
 	}

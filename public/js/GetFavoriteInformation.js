@@ -3,7 +3,6 @@ function GetFavoriteItem(){
 	var apiUrl = GetServerUrl() + "/favorite";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		console.log(object);
 		PrintFavoriteItem(object['data']);
 	}
 	AjaxGet(apiUrl,callback);

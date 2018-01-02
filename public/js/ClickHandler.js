@@ -100,10 +100,12 @@ function ClickFunctionSize(self){
 function ClickFunctionColor(self){
 	var productName = $('#function h2').text();
 	var color = GetColorChinese($(self).children().attr('src'));
+	var size = $('#functionDetail > h3:last-child').text();
 	$('#functionColor > div').css('border','0px');
 	$(self).css('border','1px black solid');
 	$('#functionDetail > h3:first-child').text(color);
 	$('#function > div > img').attr('src','./image/' + productName + "_" + color + ".jpg");
+	GetProductByAppearence(productName,color,size,RenderFunctionPriceStock);
 }
 
 function ClickManageProduct(self){
