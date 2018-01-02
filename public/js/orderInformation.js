@@ -13,7 +13,7 @@ function GetOrderDetail(orderId){
 	};
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		PrintDetail(object.result);
+		PrintCustomerDetail(object.result);
 	}
 	AjaxPost(apiUrl,data,callback);
 }

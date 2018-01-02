@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	IfNotManagerGotoIndex();
 	var orderId = location.hash.split('#')[1];
-	console.log(orderId);
 	GetManagerOrderDetail(orderId);
 	GetManagerOrderItem(orderId);
 	ChangeOrderState();
@@ -16,7 +15,7 @@ function GetManagerOrderDetail(orderId){
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		console.log(object);
-		PrintDetail(object.result);
+		PrintManagerDetail(object.result);
 	}
 	AjaxPost(apiUrl,data,callback);
 }
