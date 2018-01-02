@@ -92,22 +92,22 @@ productManager.AddProductIterately(
 	DatabaseUtility.callback
 );
 
-productManager.AddProductIterately(
-	{
-		ManagerId:'104820027',
-		Name:"SHTICK素面圓領長TEE",
-		Price:239,
-		Color:'',
-		Size:'',
-		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
-		ImagePath:''
-	},
-	['黑色','白色','橘色','灰色','空軍藍','緞彩灰','緞彩黑','黑白條','藍白條','灰白條'],
-	['S','M','L','XL'],
-	DatabaseUtility.callback
-);
+// productManager.AddProductIterately(
+// 	{
+// 		ManagerId:'104820027',
+// 		Name:"SHTICK素面圓領長TEE",
+// 		Price:239,
+// 		Color:'',
+// 		Size:'',
+// 		Stock:0,
+// 		Category: subCategory,
+// 		SubCategory: category,
+// 		ImagePath:''
+// 	},
+// 	['黑色','白色','橘色','灰色','空軍藍','緞彩灰','緞彩黑','黑白條','藍白條','灰白條'],
+// 	['S','M','L','XL'],
+// 	DatabaseUtility.callback
+// );
 
 productManager.AddProductIterately(
 	{

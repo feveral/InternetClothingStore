@@ -5,7 +5,7 @@ const mysql = require('mysql');
 var db = mysql.createConnection({
   	host: "localhost",
   	user: "root",
-  	password: "timmy880925",
+  	password: "5566",
 });
 
 exports.Getdb = function(){
@@ -29,8 +29,6 @@ exports.ExecuteSQLCommandWithoutLog = function(command){
 }
 
 exports.callback = function(err,result){
-	if(err)
-		console.log(err);
-	else
+	if(!err)
 		console.log(result);
 }

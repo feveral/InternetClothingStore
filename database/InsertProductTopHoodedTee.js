@@ -143,22 +143,22 @@ productManager.AddProductIterately(
 	DatabaseUtility.callback
 );
 
-productManager.AddProductIterately(
-	{
-		ManagerId:'104820027',
-		Name:"SHTICK簡約多色連帽長TEE",
-		Price:980,
-		Color:'',
-		Size:'',
-		Stock:0,
-		Category: subCategory,
-		SubCategory: category,
-		ImagePath:''
-	},
-	['麻花白','米黃','緞彩黑','藕粉','麻深藍','墨綠','深灰','黑色'],
-	['S','M','L','XL'],
-	DatabaseUtility.callback
-);
+// productManager.AddProductIterately(
+// 	{
+// 		ManagerId:'104820027',
+// 		Name:"SHTICK簡約多色連帽長TEE",
+// 		Price:980,
+// 		Color:'',
+// 		Size:'',
+// 		Stock:0,
+// 		Category: subCategory,
+// 		SubCategory: category,
+// 		ImagePath:''
+// 	},
+// 	['麻花白','米黃','緞彩黑','藕粉','麻深藍','墨綠','深灰','黑色'],
+// 	['S','M','L','XL'],
+// 	DatabaseUtility.callback
+// );
 
 productManager.AddProductIterately(
 	{
