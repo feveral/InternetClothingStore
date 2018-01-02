@@ -3,7 +3,6 @@ function GetShoppingItem(){
 	var apiUrl = GetServerUrl() + "/shoppingCar";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
-		console.log(object);
 		PrintShoppingCarItem(object['data']);
 		//CalculateTotal(object['data']);
 	}
@@ -85,7 +84,7 @@ function PrintShoppingCarItem(data){
 
 function AddOption(dataIndex){
 	var htmlSelector='';
-	for (var i = 1; i < 10; i++){
+	for (var i = 1; i < 101; i++){
 		htmlSelector += "<option value='" + i ;
 		if(i == dataIndex['Quantity'])
 			htmlSelector += "'selected=\"selected\"";

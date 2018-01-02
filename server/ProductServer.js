@@ -4,8 +4,8 @@ const ProductManager = require('./ProductManager.js');
 const MemberManager = require('./MemberManager.js');
 const Utility = require('./Utility.js');
 const querystring = require('querystring');
-var formidable = require('formidable');
-var fs = require('fs');
+const formidable = require('formidable');
+const fs = require('fs');
 const path = require('path');
 const url = require('url');
 
@@ -736,7 +736,6 @@ module.exports = class{
 			var parsedUrl = url.parse(decodeURI(req.url));  
 			var attribute = querystring.parse(parsedUrl.query);
 			var form = new formidable.IncomingForm();
-			console.log(attribute);
 
 			form.uploadDir = process.cwd();
     		form.parse(req, function (err, fields, files) {
@@ -751,8 +750,6 @@ module.exports = class{
 				self.productManager.AddProduct(
 					attribute,
 					function(err,result){
-						console.log(err);
-						console.log(result);
 						res.redirect('/managerUpload.html');
 					}
 				);
