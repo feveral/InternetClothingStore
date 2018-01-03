@@ -28,7 +28,7 @@ memberManager.AddCustomer(
 
 memberManager.AddCustomer(
 	{
-		Name:"Me",
+		Name:"大雄",
 		Email:"yt2019@yahoo.com.tw",
 		Cellphone:"0970981207",
 		Password:"5566",

@@ -48,13 +48,6 @@
 		-webkit-text-size-adjust: none;
 	}
 
-	select{
-		width:10%;
-		border: 2px #aaa solid;
-		padding: 3px;
-		border-radius: 5px;
-	}
-
 /* Box Model */
 
 	*, *:before, *:after {
