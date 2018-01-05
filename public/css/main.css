@@ -71,6 +71,15 @@
 			background-color: black;
 		}
 
+#Productselect select {
+	border-radius: 20px;
+	width: 105px;
+	padding-left: 10px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
 	@media only screen and (max-width: 800px) {
 		.image{
 			width: 100%;
@@ -98,3 +107,4 @@
 	.deletePrice div:nth-child(1){
 		text-decoration:line-through;
 	}
+
