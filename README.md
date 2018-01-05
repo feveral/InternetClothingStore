@@ -16,8 +16,13 @@ node server.js
 ```shell=
 sudo node server.js
 ```
+6. 瀏覽器網址打上自己的IP，即可使用系統
+7. Manager帳號
+	E-mail : feveraly@gmail.com
+	password : 5566
 
-### node dependent
+
+### nodejs dependent
 
 1. express
 2. express-session
