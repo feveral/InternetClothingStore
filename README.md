@@ -6,7 +6,7 @@
 ```javascript=
 node InitialDatabase.js
 ```
-4. 將IP更改為自己電腦的IP，修改檔案public/js/Ajax.js 第3行的IP為自己的IP ，否則只有自己電腦能連上
+4. 修改檔案public/js/Ajax.js 第3行的IP為自己的IP ，否則只有自己電腦能連上
 5. 完成之後即可開啟server 
 ```javascript= 
 node server.js
